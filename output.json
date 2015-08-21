@@ -1,0 +1,22 @@
+[
+  {
+    "description": "should post a comment",
+    "assertions": [],
+    "duration": 16
+  },
+  {
+    "description": "should not have 404 links",
+    "assertions": [],
+    "duration": 28266
+  },
+  {
+    "description": "should not have 404 links",
+    "assertions": [],
+    "duration": 17956
+  },
+  {
+    "description": "should not have 404 links",
+    "assertions": [],
+    "duration": 12493
+  }
+]
