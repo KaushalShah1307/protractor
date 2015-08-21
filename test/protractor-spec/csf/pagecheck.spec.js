@@ -1,7 +1,8 @@
-describe('csf -', function() {
-  it('should not have 404 links', function() {
-    browser.ignoreSynchronization = false;
-    browser.get('/new-csf-1');
-    globals.testAllLinks();
-  });
+var CSFPage = require('./csf.page.js');
+describe('article -', function() {
+	it('should not have 404 links', function() {
+		var csfPage = new CSFPage();
+		csfPage.get();
+		globals.testAllLinks();
+	});
 });
