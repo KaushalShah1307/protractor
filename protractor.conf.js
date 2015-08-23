@@ -1,7 +1,7 @@
 exports.config = {
   	baseUrl: 'http://www-staging.forbes.com',
-	getPageTimeout: 15000,
-  	allScriptsTimeout: 15000,
+	getPageTimeout: 30000,
+  	allScriptsTimeout: 30000,
   	resultJsonOutputFile: 'output.json',
 	jasmineNodeOpts: {
 		isVerbose: true,
@@ -10,24 +10,24 @@ exports.config = {
 		includeStackTrace: false
 	},
 	multiCapabilities: [
-		// {
-		// 	browserName: 'chrome',
-		// 	logName: 'Desktop Chrome',
-		// 	chromeOptions: {
-		// 		args: [
-		// 			'verbose'
-		// 		],
-		// 	},
-		// 	loggingPrefs: {
-		// 		browser: 'ALL',
-		// 		driver: 'ALL',
-		// 		client: 'ALL',
-		// 		server: 'ALL'
-		// 	},
-		// 	perfLoggingPrefs: {
-		// 		enableNetwork: true
-		// 	}
-		// },
+		{
+			browserName: 'chrome',
+			logName: 'Desktop Chrome',
+			chromeOptions: {
+				args: [
+					'verbose'
+				],
+			},
+			loggingPrefs: {
+				browser: 'ALL',
+				driver: 'ALL',
+				client: 'ALL',
+				server: 'ALL'
+			},
+			perfLoggingPrefs: {
+				enableNetwork: true
+			}
+		},
 		{
 			browserName: 'chrome',
 			logName: 'Mobile Chrome',

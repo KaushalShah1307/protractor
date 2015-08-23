@@ -1,3 +1,5 @@
+var Firebase = require('firebase');
+
 globals = {};
 
 httpGet = function(siteUrl) {
@@ -38,3 +40,5 @@ globals.testAllLinks = function() {
 		});
 	});
 }
+
+globals.firebase = new Firebase('https://protractor-forbes.firebaseio-demo.com/');

@@ -1,6 +1,7 @@
 var CSFPage = function() {
   this.get = function() {
-    browser.get('/new-csf-1/');
+  	browser.ignoreSynchronization = false;
+    browser.get('/business-of-golf/');
   };
 };
 module.exports = CSFPage;
