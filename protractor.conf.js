@@ -7,7 +7,7 @@ exports.config = {
 		isVerbose: true,
 		showColors: true, // Use colors in the command line report.
 		defaultTimeoutInterval: 60000,
-		includeStackTrace: false
+		includeStackTrace: true
 	},
 	multiCapabilities: [
 		{
@@ -41,7 +41,18 @@ exports.config = {
 	suites: {
 		article: [
 			'test/protractor-spec/global.spec.js',
-			'test/protractor-spec/article/**/*.js'
+			'test/protractor-spec/article/**/*.page.js',
+			'test/protractor-spec/article/**/*.spec.js'
+		],
+		contrib: [
+			'test/protractor-spec/global.spec.js',
+			'test/protractor-spec/contrib/**/*.page.js',
+			'test/protractor-spec/contrib/**/*.spec.js'
+		],
+		csf: [
+			'test/protractor-spec/global.spec.js',
+			'test/protractor-spec/csf/**/*.page.js',
+			'test/protractor-spec/csf/**/*.spec.js'
 		]
 	},
 	specs: [
