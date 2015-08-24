@@ -1,10 +1,8 @@
-Setup:
-
+Setup
 npm install -g protractor
-
 webdriver-manager update
 
-Run:
+Run
 protractor protractor.spec.js --baseUrl http://www.forbes.com
 
 TODO
