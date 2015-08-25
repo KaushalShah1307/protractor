@@ -1,60 +1,51 @@
-globals = {};
+describe('globals',function() {
+	globals = {};
 
-var http = require('http');
-httpGet = function(siteUrl) {
-	var defer = protractor.promise.defer();
+	var http = require('http');
+	httpGet = function(siteUrl) {
+		var defer = protractor.promise.defer();
 
-	http.get(siteUrl, function(response) {
+		http.get(siteUrl, function(response) {
 
-		defer.fulfill({
-			statusCode: response.statusCode
+			defer.fulfill({
+				statusCode: response.statusCode
+			});
+
+		}).on('error', function(e) {
+			defer.reject("Got http.get error: " + e.message);
 		});
 
-		response.setEncoding('utf8');
+		return defer.promise;
+	}
 
-		// response.on('data', function() {
+	var checked = [];
+	globals.testAllLinks = function() {
+		describe('links', function() {
+			it('should not 404', function(done) {
+				$$('a').then(function(links) {
+					links.forEach(function(element) {
+						element.getAttribute('href').then(function(href) {
 
-		// 	console.log(siteUrl);
-		// 	defer.resolve({
-		// 		statusCode: response.statusCode
-		// 	});
-		// });
-
-	}).on('error', function(e) {
-		defer.reject("Got http.get error: " + e.message);
-	});
-
-	return defer.promise;
-}
-
-var checked = [];
-globals.testAllLinks = function() {
-	// browser.getCurrentUrl().then(function(url) {
-		// describe('Links on '+url+ ':', function() {
-			browser.findElements(by.css('a')).then(function(links) {
-				links.forEach(function(element) {
-					element.getAttribute('href').then(function(href) {
-
-						if (href && href.indexOf('mailto') < 0 && href.indexOf('https') < 0 && checked.indexOf(href) < 0) {
-							checked.push(href);
-							// console.log(href);
-							httpGet(href).then(function(result) {
-								describe(href, function() {
+							if (href && href.indexOf('mailto') < 0 && href.indexOf('https') < 0 && checked.indexOf(href) < 0) {
+								checked.push(href);
+								httpGet(href).then(function(result) {
 									console.log(href);
-									it('should not 404', function() {
-										console.log('it',href);
-										expect(result.statusCode).toBeLessThan(400);
-									});
+									expect(result.statusCode).toBeLessThan(305);
+									setTimeout(function() {
+										if(href === checked[checked.length - 1]) {
+											done();
+										}
+									},500)
 								});
-							});
-						}
+							}
 
+						});
 					});
 				});
 			});
-		// });
-	// });
-}
-var Firebase = require('firebase');
+		});
+	}
+	var Firebase = require('firebase');
 
-// globals.firebase = new Firebase('https://protractor-forbes.firebaseio-demo.com/');
+	// globals.firebase = new Firebase('https://protractor-forbes.firebaseio-demo.com/');
+});

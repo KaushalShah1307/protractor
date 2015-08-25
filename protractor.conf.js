@@ -7,7 +7,7 @@ exports.config = {
 	jasmineNodeOpts: {
 		isVerbose: true,
 		showColors: true, // Use colors in the command line report.
-		defaultTimeoutInterval: 120000,
+		defaultTimeoutInterval: 60000,
 		includeStackTrace: true,
 		// realtimeFailure: true,
 		print: function() {}
@@ -69,18 +69,18 @@ exports.config = {
 		// var CustomReporter = require('custom-reporter');
 		// console.log(CustomReporter);
 		// jasmine.getEnv().addReporter(new CustomReporter());
-		// var SpecReporter = require('jasmine-spec-reporter');
+		var SpecReporter = require('jasmine-spec-reporter');
 		// add jasmine spec reporter
-		// jasmine.getEnv().addReporter(new SpecReporter({
-		// 	displayStacktrace: 'summary',
-		// 	displayFailuresSummary: true, // display summary of all failures after execution
-		// 	displayPendingSummary: true,  // display summary of all pending specs after execution
-		// 	displaySuccessfulSpec: true,  // display each successful spec
-		// 	displayFailedSpec: true,      // display each failed spec
-		// 	displayPendingSpec: true,    // display each pending spec
-		// 	displaySpecDuration: true,   // display each spec duration
-		// 	displaySuiteNumber: true,
-		// }));
+		jasmine.getEnv().addReporter(new SpecReporter({
+			displayStacktrace: 'summary',
+			displayFailuresSummary: true, // display summary of all failures after execution
+			displayPendingSummary: true,  // display summary of all pending specs after execution
+			displaySuccessfulSpec: true,  // display each successful spec
+			displayFailedSpec: true,      // display each failed spec
+			displayPendingSpec: true,    // display each pending spec
+			displaySpecDuration: true,   // display each spec duration
+			displaySuiteNumber: true,
+		}));
 		browser.ignoreSynchronization = true;
 		browser.get('/');
 		browser.manage().window().maximize();
