@@ -1,7 +1,7 @@
 var ContribPage = function() {
   this.get = function() {
-  	browser.ignoreSynchronization = false;
-    browser.get('/sites/gordonkelly/');
+  	console.log('getting contrib');
+    browser.get('/sites/gordonkelly/',5000);
   };
 };
 module.exports = ContribPage;

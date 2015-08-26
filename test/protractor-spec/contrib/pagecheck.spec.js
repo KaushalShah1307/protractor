@@ -1,8 +1,6 @@
 var ContribPage = require('./contribhp.page.js');
 describe('contribhp -', function() {
-	it('should not have 404 links', function() {
-		var contribPage = new ContribPage();
-		contribPage.get();
-		globals.testAllLinks();
-	});
+	var contribPage = new ContribPage();
+	contribPage.get();
+	globals.testAllLinks();
 });
