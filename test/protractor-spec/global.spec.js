@@ -35,15 +35,16 @@
 
 	var testedLinks = {};
 	var counter = 0;
-	globals.testAllLinks = function() {
-		describe('links', function() {
-			it('should not 404', function(done) {
-				// console.log(testedLinks);
+	globals.testAllLinks = function(done) {
+		// describe('links', function() {
+				// console.log('it');
+			// it('should not 404', function(done) {
+				console.log(testedLinks);
 				$$('a').filter(function(element) {
 					return element.getAttribute('href').then(function(href) {
 						var flag = (href && !testedLinks[href] && href.indexOf('http') === 0 && href.indexOf('https') < 0) ? true : false;
 						if (flag) {
-							// testedLinks[href] = element;
+							testedLinks[href] = true;
 						}
 						// console.log(href,flag);
 						return flag;
@@ -62,8 +63,7 @@
 					links.forEach(function(link) {
 						httpGet(link.href).then(function(result) {
 							expect(result.statusCode).toBeLessThan(400);
-							// console.log(++counter);
-							testedLinks[link.href] = true;
+							console.log(link);
 							if (--linksToBeChecked === 0) {
 								done();
 							}
@@ -71,8 +71,8 @@
 						});
 					});
 				});
-			});
-		});
+			// });
+		// });
 	}
 	var Firebase = require('firebase');
 
