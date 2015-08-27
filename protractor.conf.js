@@ -9,28 +9,28 @@ exports.config = {
 		showColors: true, // Use colors in the command line report.
 		defaultTimeoutInterval: 40000,
 		includeStackTrace: true,
-		// realtimeFailure: true,
-		// print: function() {}
+		realtimeFailure: true,
+		print: function() {}
 	},
 	multiCapabilities: [
-		// {
-		// 	browserName: 'chrome',
-		// 	logName: 'Desktop Chrome',
-		// 	// chromeOptions: {
-		// 	// 	args: [
-		// 	// 		'verbose'
-		// 	// 	],
-		// 	// },
-		// 	// loggingPrefs: {
-		// 	// 	browser: 'ALL',
-		// 	// 	driver: 'ALL',
-		// 	// 	client: 'ALL',
-		// 	// 	server: 'ALL'
-		// 	// },
-		// 	// perfLoggingPrefs: {
-		// 	// 	enableNetwork: true
-		// 	// }
-		// },
+		{
+			browserName: 'chrome',
+			logName: 'Desktop Chrome',
+			// chromeOptions: {
+			// 	args: [
+			// 		'verbose'
+			// 	],
+			// },
+			// loggingPrefs: {
+			// 	browser: 'ALL',
+			// 	driver: 'ALL',
+			// 	client: 'ALL',
+			// 	server: 'ALL'
+			// },
+			// perfLoggingPrefs: {
+			// 	enableNetwork: true
+			// }
+		},
 		{
 			browserName: 'chrome',
 			logName: 'Mobile Chrome',
@@ -59,7 +59,7 @@ exports.config = {
 		]
 	},
 	specs: [
-		// 'custom-reporter.js',
+		'custom-reporter.js',
 		'test/protractor-spec/global.spec.js',
 		'test/protractor-spec/**/*.page.js',
 		'test/protractor-spec/**/*.spec.js'

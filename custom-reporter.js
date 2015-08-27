@@ -9,7 +9,7 @@ var myReporter = {
 		// console.log('specStarted',result);
 	},
 	specDone: function(result) {
-		console.log('specDone',result.fullName,result.status);
+		console.log('specDone',result);
 	},
 	suiteDone: function(result) {
 		// console.log('suiteDone', result);
