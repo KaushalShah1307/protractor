@@ -1,3 +1,8 @@
+
+var Firebase = require('firebase');
+
+firebase = new Firebase('https://protractor-forbes.firebaseio-demo.com/');
+
 var myReporter = {
 	jasmineStarted: function(suiteInfo) {
 		console.log(suiteInfo);
@@ -9,7 +14,7 @@ var myReporter = {
 		// console.log('specStarted',result);
 	},
 	specDone: function(result) {
-		console.log('specDone',result);
+		console.log('specDone');
 	},
 	suiteDone: function(result) {
 		// console.log('suiteDone', result);

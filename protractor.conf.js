@@ -7,7 +7,7 @@ exports.config = {
 	jasmineNodeOpts: {
 		isVerbose: true,
 		showColors: true, // Use colors in the command line report.
-		defaultTimeoutInterval: 40000,
+		defaultTimeoutInterval: 60000,
 		includeStackTrace: true,
 		realtimeFailure: true,
 		print: function() {}
