@@ -3,17 +3,10 @@ globals = {};
 
 var http = require('http');
 
-globals.getModule = function(moduleName) {
-	browser.executeAsyncScript(function(moduleName) {
-		return $('body').injector().get(moduleName);
-	}, moduleName)
-}
-
 globals.httpGet = function(siteUrl) {
 	var defer = protractor.promise.defer();
 
 	http.get(siteUrl, function(response) {
-		// console.log(response.statusCode);
 
 		defer.fulfill({
 			statusCode: response.statusCode
@@ -29,7 +22,6 @@ httpGetResponse = function(siteUrl) {
 	var defer = protractor.promise.defer();
 
 	http.get(siteUrl, function(response) {
-		// console.log(response.statusCode);
 
 		defer.fulfill(response.statusCode);
 
@@ -65,7 +57,6 @@ globals.testAllLinks = function(done) {
 			// expect(link).toNot404();
 			globals.httpGet(link.href).then(function(result) {
 				expect(result.statusCode).toBeLessThan(400);
-				console.log(link.href, result.statusCode);2
 				if (--linksToBeChecked === 0) {
 					done();
 				}

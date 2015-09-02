@@ -7,14 +7,15 @@ describe('article -', function() {
 	});
 
 	it('should have ads', function() {
-		globals.getModule('ArticleAdsService').then(function(aas) {
-			console.log(aas);
+		browser.executeAsyncScript(function() {
+			callback = arguments[0];
+			callback(Object.keys($('body').injector().get('ArticleAdsService').ad_slots));
+		}).then(function(result) {
+			result.forEach(function(key) {
+				expect($$('#' + key + ' iframe').count()).toBeGreaterThan(0);
+			})
+			// console.log(result);
 		})
-		// console.log(browser.rootEl);
-		$(".article-headline").evaluate('article.article').then(function(res) {
-			console.log('ad slots',res);
-		});
-		expect($$('.top-ad iframe').count()).toBeGreaterThan(0);
 	})
 
 	it('should open the sidebar', function() {
