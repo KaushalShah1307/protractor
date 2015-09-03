@@ -20,8 +20,8 @@ var myReporter = {
 						nextKey = "session-"+nextNumber;
 
 					sessionRef = environmentRef.child(nextKey);
+					console.log('Results from this session can be seen at', sessionRef.toString());
 					sessionRef.set(suiteInfo);
-					console.log("session ready");
 				});
 
 					//Start with session-0 key if there are none in the database
@@ -36,7 +36,6 @@ var myReporter = {
 	},
 	suiteStarted: function(result) {
 		if (sessionRef) {
-			console.log(result.id);
 			suiteRef = sessionRef.child(result.id);
 			suiteRef.set(result);
 		} else {
@@ -66,7 +65,4 @@ var myReporter = {
 		// console.log(suiteInfo);
 	}
 };
-
-console.log('reporter');
-// module.exports = myReporter;/
 jasmine.getEnv().addReporter(myReporter);
