@@ -4,7 +4,7 @@ var nodemailer = require('nodemailer');
 
 var firebase = new Firebase('https://protractor-forbes.firebaseio.com/');
 // console.log(firebase);
-var timestamp =  = new Date().getTime(),
+var timestamp = new Date().getTime(),
 	environmentRef,
 	environmentName,
 	sessionRef,
@@ -45,7 +45,7 @@ var myReporter = {
 					sessionRef.set(suiteInfo);
 				}
 
-				emailHead = 'Tests were run on '.concat(suiteInfo.browser.logName, ' for ', environmentName, ' at ', timestamp.toString(), '.', lb, lb);
+				emailHead = 'Tests were run on '.concat(suiteInfo.browser.logName, ' for ', environmentName, ' at ', new Date(timestamp).toString(), '.', lb, lb);
 				emailFoot = '<a href='.concat(sessionRef.toString(), '>Full Results');
 			}, function (errorObject) {
 				console.log("The read failed: " + errorObject.code);
@@ -86,7 +86,6 @@ var myReporter = {
 		}
 	},
 	suiteDone: function(result) {
-		console.log('suiteDone',suiteText);
 		emailBody = emailBody.concat(suiteText);
 	},
 	jasmineDone: function(suiteInfo) {
@@ -94,7 +93,7 @@ var myReporter = {
 		transporter.sendMail({
 			from: 'forbesqatest@forbes.com',
 			to: 'jjean@forbes.com, forbesjjean@gmail.com',
-			subject: '[' + timestamp.toString() + '] Protractor Report',
+			subject: '[' + new Date(timestamp).toString() + '] Protractor Report',
 			html: '<div><p>' + emailHead + emailBody + emailFoot + '</p></div>'
 		});
 	}
