@@ -66,7 +66,6 @@ exports.config = {
 		'test/protractor-spec/**/*.spec.js'
 	],
 	onPrepare: function() {
-		console.log('Preparing');
 		// var CustomReporter = require('custom-reporter');
 		// console.log(CustomReporter);
 		// jasmine.getEnv().addReporter(new CustomReporter());
@@ -83,6 +82,7 @@ exports.config = {
 			displaySuiteNumber: true,
 		}));
 		browser.ignoreSynchronization = true;
+		browser.get('/');
 		browser.get('/');
 		browser.manage().window().maximize();
 		browser.ignoreSynchronization = false;
