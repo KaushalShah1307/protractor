@@ -108,7 +108,7 @@ var myReporter = {
 		email = true;
 		transporter.sendMail({
 			from: 'forbesqatest@forbes.com',
-			to: email ? ', jjean@forbes.com, kshah@forbes.com, vsupitsky@forbes.com' : 'jjean@forbes.com, forbesjjean@gmail.com',
+			to: email ? ', jjean@forbes.com, kshah@forbes.com, vsupitskiy@forbes.com' : 'jjean@forbes.com, forbesjjean@gmail.com',
 			subject: '[' + new Date(timestamp).toString() + '] Protractor Report',
 			html: '<div>' + emailHead + emailBody + emailFoot + '</div>'
 		});
