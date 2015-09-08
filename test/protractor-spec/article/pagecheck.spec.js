@@ -22,18 +22,5 @@ describe('article -', function() {
 		});
 	});
 
-	it('should open the sidebar', function() {
-		var commentsTrigger = $('.article-comments'),
-			commentsPanel = $('.article-sidebar-panel.article-comments-panel');
-
-		console.log(commentsTrigger.click, commentsPanel.isDispalyed);
-		expect(commentsPanel.isDisplayed()).toBe(false);
-		commentsTrigger.click();
-		console.log(commentsTrigger.click, commentsPanel.isDispalyed);
-		expect(commentsPanel.isDispalyed()).toBe(true);
-		commentsTrigger.click();
-		expect(commentsPanel.isDisplayed()).toBe(false);
-	});
-
 	globals.testAllLinks();
 });

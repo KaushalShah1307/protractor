@@ -45,7 +45,7 @@ exports.config = {
 		article: [
 			'custom-reporter.js',
 			'test/protractor-spec/global.spec.js',
-			'test/protractor-spec/article/**/*.page.js',
+			'test/protractor-spec/article/*pagecheck.spec.js',
 			'test/protractor-spec/article/**/*.spec.js'
 		],
 		contrib: [
@@ -62,8 +62,12 @@ exports.config = {
 	specs: [
 		'custom-reporter.js',
 		'test/protractor-spec/global.spec.js',
-		'test/protractor-spec/**/*.page.js',
-		'test/protractor-spec/**/*.spec.js'
+		'test/protractor-spec/article/*pagecheck.spec.js',
+		'test/protractor-spec/article/**/*.spec.js',
+		'test/protractor-spec/csf/*pagecheck.spec.js',
+		'test/protractor-spec/csf/**/*.spec.js',
+		'test/protractor-spec/contrib/*pagecheck.spec.js',
+		'test/protractor-spec/contrib/**/*.spec.js',
 	],
 	onPrepare: function() {
 		// var CustomReporter = require('custom-reporter');
@@ -82,7 +86,7 @@ exports.config = {
 			displaySuiteNumber: true,
 		}));
 		browser.ignoreSynchronization = true;
-		browser.get('/');
+		browser.get('http://www-staging-2.forbes.com/welcome');
 		browser.get('/');
 		browser.manage().window().maximize();
 		browser.ignoreSynchronization = false;

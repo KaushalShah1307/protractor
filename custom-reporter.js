@@ -19,11 +19,13 @@ var transporter = nodemailer.createTransport({
 });
 
 var emailBody = '',
+	tab = '&nbsp;&nbsp;&nbsp;&nbsp;',
 	lb = '<br>';
 
 var myReporter = {
 	jasmineStarted: function(suiteInfo) {
 		suiteInfo.time = timestamp;
+		this.suitesInProgress = 0;
 		browser.getProcessedConfig().then(function(config) {
 			suiteInfo.browser = config.capabilities;
 			environmentName = config.baseUrl.replace("http://","").replace(".forbes.com","").replace("/","");
@@ -46,7 +48,7 @@ var myReporter = {
 				}
 
 				emailHead = 'Tests were run on '.concat(suiteInfo.browser.logName, ' for ', environmentName, ' at ', new Date(timestamp).toString(), '.', lb, lb);
-				emailFoot = '<a href='.concat(sessionRef.toString(), '>Full Results');
+				emailFoot = '<a href='.concat(sessionRef.toString(), '>Full Results</a>');
 			}, function (errorObject) {
 				console.log("The read failed: " + errorObject.code);
 			});
@@ -56,7 +58,18 @@ var myReporter = {
 		if (sessionRef) {
 			suiteRef = sessionRef.child(result.id);
 			suiteRef.set(result);
-			suiteText = result.fullName + ': ' + lb;
+			var indent = '';
+			if (this.suitesInProgress > 0) {
+				for (var j = 0; j <= this.suitesInProgress; j++) {
+					indent += tab;
+					if (j === this.suitesInProgress) {
+						emailBody += '<p>' + indent.concat(result.description) + '</p>';
+					}
+				}
+			} else {
+				emailBody += '<p>' + indent.concat(result.description) + '</p>';
+			}
+			this.suitesInProgress++;
 		} else {
 			setTimeout(function() {
 				return myReporter.suiteStarted(result)
@@ -69,16 +82,19 @@ var myReporter = {
 		if (suiteRef) {
 			specRef = suiteRef.child(result.id);
 			specRef.set(result);
-			if (result.failedExpectations.length > 0) {
-				specText = result.description.concat(' ', lb);
-				result.failedExpectations.forEach(function(failedExpectation, index, array) {
-					specText = specText.concat('   ', failedExpectation.message, lb);
-
-					if (index === (array.length -1)) {
-						suiteText = suiteText.concat(specText, lb);
+			var indent = '',
+				color = result.failedExpectations.length === 0 ? '#afa' : '#faa';
+			if (this.suitesInProgress > 0) {
+				for (var j = 0; j <= this.suitesInProgress; j++) {
+					indent += tab;
+					if (j === this.suitesInProgress) {
+						emailBody += '<p style="background-color:' + color + ';">' + indent.concat(result.description, ' ', result.status) + '</p>';
 					}
-				});
+				}
+			} else {
+				emailBody += '<p style="background-color:' + color + ';">' + indent.concat(result.description, ' ', result.status) + '</p>';
 			}
+
 		} else {
 			setTimeout(function() {
 				return myReporter.specDone(result)
@@ -86,15 +102,15 @@ var myReporter = {
 		}
 	},
 	suiteDone: function(result) {
-		emailBody = emailBody.concat(suiteText);
+		this.suitesInProgress--;
 	},
 	jasmineDone: function(suiteInfo) {
-
+		email = true;
 		transporter.sendMail({
 			from: 'forbesqatest@forbes.com',
-			to: 'jjean@forbes.com, forbesjjean@gmail.com',
+			to: email ? ', jjean@forbes.com, kshah@forbes.com, vsupitsky@forbes.com' : 'jjean@forbes.com, forbesjjean@gmail.com',
 			subject: '[' + new Date(timestamp).toString() + '] Protractor Report',
-			html: '<div><p>' + emailHead + emailBody + emailFoot + '</p></div>'
+			html: '<div>' + emailHead + emailBody + emailFoot + '</div>'
 		});
 	}
 };

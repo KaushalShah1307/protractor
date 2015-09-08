@@ -83,7 +83,7 @@ globals.testAllLinks = function() {
 				return {
 					href: element.getAttribute('href'),
 				}
-			}).then(function(links, index) {
+			}).then(function(links) {
 				var linksToBeChecked = links.length;
 
 				if(linksToBeChecked.length === 0) {
