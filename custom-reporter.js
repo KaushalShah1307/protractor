@@ -131,6 +131,19 @@ var myReporter = {
 			subject: '[' + dateString + '] [' + environmentName + '] Protractor Report',
 			html: '<div>' + emailHead + emailBody + emailFoot + '</div>'
 		});
+
+		if (email) {
+			var https = require('https');
+			var slack_message = https.request({
+				hostname: 'forbesdev.slack.com',
+				path: '/services/hooks/slackbot?token=5z1O62OQb5pipH8Pz3LcVuXS&channel=%23protractor',
+				method: 'POST'
+			}, function(req) {
+				// console.log(req);
+			});
+			slack_message.write(environmentName + ' (' + currentConfig.logName + '): ' + failedExpectationCount + ' Expectations Failed.');
+			slack_message.end();
+		}
 	}
 };
 jasmine.getEnv().addReporter(myReporter);

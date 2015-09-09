@@ -82,7 +82,6 @@ exports.config = {
 		// console.log(CustomReporter);
 		// jasmine.getEnv().addReporter(new CustomReporter());
 		var SpecReporter = require('jasmine-spec-reporter');
-
 		// // add jasmine spec reporter
 		jasmine.getEnv().addReporter(new SpecReporter({
 			displayStacktrace: 'summary',
