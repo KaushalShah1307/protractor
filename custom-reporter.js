@@ -10,7 +10,8 @@ var date = new Date(),
 	environmentName,
 	sessionRef,
 	suiteRef,
-	failedExpectationCount = 0;
+	failedExpectationCount = 0,
+	currentConfig;
 
 var transporter = nodemailer.createTransport({
 	service: 'gmail',
@@ -30,7 +31,7 @@ var myReporter = {
 		suiteInfo.time = date.getTime();
 		this.suitesInProgress = 0;
 		browser.getProcessedConfig().then(function(config) {
-			suiteInfo.browser = config.capabilities;
+			suiteInfo.browser = currentConfig = config.capabilities;
 			environmentName = config.baseUrl.replace("http://","").replace(".forbes.com","").replace("/","");
 			environmentRef = firebase.child(environmentName);
 			environmentRef.child('lastSession').once("value", function(lastSession) {
@@ -120,13 +121,13 @@ var myReporter = {
 	},
 
 	jasmineDone: function(suiteInfo) {
-		email = true;
+		email = process.env.USER === 'bpoon';
 
 		emailHead += '<p>' + failedExpectationCount + ' Expectations Failed.</p>';
 
 		transporter.sendMail({
 			from: 'forbesqatest@forbes.com',
-			to: email ? ', jjean@forbes.com, kshah@forbes.com, vsupitskiy@forbes.com' : 'jjean@forbes.com, forbesjjean@gmail.com',
+			to: email ? ', jjean@forbes.com, kshah@forbes.com, vsupitskiy@forbes.com' : process.env.USER + '@forbes.com, forbesjjean@gmail.com',
 			subject: '[' + dateString + '] [' + environmentName + '] Protractor Report',
 			html: '<div>' + emailHead + emailBody + emailFoot + '</div>'
 		});
