@@ -1,5 +1,5 @@
 var ArticlePage = require('./article.page.js');
-describe('article -', function() {
+describe('[Article] general-', function() {
 	beforeEach(function() {
 		jasmine.addMatchers({
 			toHaveAd: globals.matchers.toHaveAd

@@ -83,17 +83,24 @@ var myReporter = {
 		if (suiteRef) {
 			specRef = suiteRef.child(result.id);
 			specRef.set(result);
+
 			var indent = '',
 				color = result.failedExpectations.length === 0 ? '#afa' : '#faa';
 			if (this.suitesInProgress > 0) {
 				for (var j = 0; j <= this.suitesInProgress; j++) {
 					indent += tab;
 					if (j === this.suitesInProgress) {
-						emailBody += '<p style="background-color:' + color + ';">' + indent.concat(result.description, ' ', result.status) + '</p>';
+						emailBody += '<p style="background-color:' + color + ';">' + indent.concat(result.description) + '</p>';
+						result.failedExpectations.forEach(function(failedExpectation) {
+							emailBody += '<p style="background-color:' + color + ';">' + indent.concat(tab, failedExpectation.message) + '</p>';
+						});
 					}
 				}
 			} else {
-				emailBody += '<p style="background-color:' + color + ';">' + indent.concat(result.description, ' ', result.status) + '</p>';
+				emailBody += '<p style="background-color:' + color + ';">' + indent.concat(result.description) + '</p>';
+				result.failedExpectations.forEach(function(failedExpectation) {
+					emailBody += '<p style="background-color:' + color + ';">' + indent.concat(tab, failedExpectation.message) + '</p>';
+				});
 			}
 
 		} else {
@@ -101,6 +108,7 @@ var myReporter = {
 				return myReporter.specDone(result)
 			}, 200);
 		}
+
 	},
 
 	suiteDone: function(result) {
@@ -112,7 +120,7 @@ var myReporter = {
 		transporter.sendMail({
 			from: 'forbesqatest@forbes.com',
 			to: email ? ', jjean@forbes.com, kshah@forbes.com, vsupitskiy@forbes.com' : 'jjean@forbes.com, forbesjjean@gmail.com',
-			subject: '[' + new Date(timestamp).toString() + '] Protractor Report',
+			subject: '[' + new Date(timestamp).toString() + '] Protractor Report from ' + environmentName,
 			html: '<div>' + emailHead + emailBody + emailFoot + '</div>'
 		});
 	}

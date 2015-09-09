@@ -23,7 +23,7 @@ globals.matchers = {
 					pass: httpGetResponse(link.href).then(function(linkResponse) {
 						return linkResponse < 400;
 					}),
-					message: 'Link with href:' + link.href + (this.pass ? ' does not 404' : 'is a 404 link')
+					message: 'Link with href:' + link.href + (this.pass ? ' does not 404' : ' is a bad link')
 				}
 			}
 		}
@@ -62,7 +62,7 @@ httpGetResponse = function(siteUrl) {
 
 var testedLinks = {};
 globals.testAllLinks = function() {
-	describe('Links', function() {
+	describe('Links-', function() {
 
 		beforeEach(function() {
 			jasmine.addMatchers({

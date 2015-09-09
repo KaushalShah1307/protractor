@@ -1,4 +1,4 @@
-describe('sidebar', function() {
+describe('[Article] sidebar-', function() {
 	var commentsPanel,
 		commentsTrigger;
 	beforeEach(function() {
