@@ -23,6 +23,7 @@ var emailBody = '',
 	lb = '<br>';
 
 var myReporter = {
+
 	jasmineStarted: function(suiteInfo) {
 		suiteInfo.time = timestamp;
 		this.suitesInProgress = 0;
@@ -30,30 +31,28 @@ var myReporter = {
 			suiteInfo.browser = config.capabilities;
 			environmentName = config.baseUrl.replace("http://","").replace(".forbes.com","").replace("/","");
 			environmentRef = firebase.child(environmentName);
-			environmentRef.orderByChild("time").limitToLast(1).once("value", function(lastSession) {
-				lastSession.forEach(function(data) {
-					var key = data.key(),
-						nextNumber = parseInt(key.replace("session-",""))+1,
-						nextKey = "session-"+nextNumber;
+			environmentRef.child('lastSession').once("value", function(lastSession) {
 
+				//Start with session-0 key if there are none in the database
+				if (lastSession.val()) {
+					lastKey = lastSession.val(),
+					nextNumber = parseInt(lastKey.replace("session-",""))+1,
+					nextKey = "session-" + nextNumber;
+					environmentRef.child('lastSession').set(nextKey);
 					sessionRef = environmentRef.child(nextKey);
-					console.log('Results from this session can be seen at', sessionRef.toString());
-					sessionRef.set(suiteInfo);
-				});
-
-					//Start with session-0 key if there are none in the database
-				if(!lastSession.val()) {
+				} else {
 					sessionRef = environmentRef.child("session-0");
+					environmentRef.child('lastSession').set("session-0");
 					sessionRef.set(suiteInfo);
 				}
 
+				console.log('Results from this session can be seen at', sessionRef.toString());
 				emailHead = 'Tests were run on '.concat(suiteInfo.browser.logName, ' for ', environmentName, ' at ', new Date(timestamp).toString(), '.', lb, lb);
 				emailFoot = '<a href='.concat(sessionRef.toString(), '>Full Results</a>');
-			}, function (errorObject) {
-				console.log("The read failed: " + errorObject.code);
 			});
 		});
 	},
+
 	suiteStarted: function(result) {
 		if (sessionRef) {
 			suiteRef = sessionRef.child(result.id);
@@ -76,8 +75,10 @@ var myReporter = {
 			}, 200);
 		}
 	},
+
 	specStarted: function(result) {
 	},
+
 	specDone: function(result) {
 		if (suiteRef) {
 			specRef = suiteRef.child(result.id);
@@ -101,9 +102,11 @@ var myReporter = {
 			}, 200);
 		}
 	},
+
 	suiteDone: function(result) {
 		this.suitesInProgress--;
 	},
+
 	jasmineDone: function(suiteInfo) {
 		email = true;
 		transporter.sendMail({
