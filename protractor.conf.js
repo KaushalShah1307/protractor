@@ -31,14 +31,21 @@ exports.config = {
 			// 	enableNetwork: true
 			// }
 		},
+		{
+			browserName: 'chrome',
+			logName: 'Mobile Chrome',
+			chromeOptions: {
+				mobileEmulation: {
+					deviceName: 'Apple iPhone 6 Plus'
+				}
+			},
+			exclude: [
+				'test/protractor-spec/article/article-sidebar.spec.js',
+			]
+		},
 		// {
-		// 	browserName: 'chrome',
-		// 	logName: 'Mobile Chrome',
-		// 	chromeOptions: {
-		// 		mobileEmulation: {
-		// 			deviceName: 'Apple iPhone 6 Plus'
-		// 		}
-		// 	}
+		// 	browserName: 'firefox',
+		// 	logName: 'Desktop Firefox'
 		// }
 	],
 	suites: {

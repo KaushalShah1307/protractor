@@ -4,11 +4,13 @@ var nodemailer = require('nodemailer');
 
 var firebase = new Firebase('https://protractor-forbes.firebaseio.com/');
 // console.log(firebase);
-var timestamp = new Date().getTime(),
+var date = new Date(),
+	dateString = date.toDateString() + ' ' + date.toLocaleTimeString(),
 	environmentRef,
 	environmentName,
 	sessionRef,
-	suiteRef;
+	suiteRef,
+	failedExpectationCount = 0;
 
 var transporter = nodemailer.createTransport({
 	service: 'gmail',
@@ -25,7 +27,7 @@ var emailBody = '',
 var myReporter = {
 
 	jasmineStarted: function(suiteInfo) {
-		suiteInfo.time = timestamp;
+		suiteInfo.time = date.getTime();
 		this.suitesInProgress = 0;
 		browser.getProcessedConfig().then(function(config) {
 			suiteInfo.browser = config.capabilities;
@@ -47,7 +49,7 @@ var myReporter = {
 				}
 
 				console.log('Results from this session can be seen at', sessionRef.toString());
-				emailHead = 'Tests were run on '.concat(suiteInfo.browser.logName, ' for ', environmentName, ' at ', new Date(timestamp).toString(), '.', lb, lb);
+				emailHead = '<p>Tests were run on '.concat(suiteInfo.browser.logName, ' for ', environmentName, ' at ', dateString, '.</p>');
 				emailFoot = '<a href='.concat(sessionRef.toString(), '>Full Results</a>');
 			});
 		});
@@ -92,6 +94,7 @@ var myReporter = {
 					if (j === this.suitesInProgress) {
 						emailBody += '<p style="background-color:' + color + ';">' + indent.concat(result.description) + '</p>';
 						result.failedExpectations.forEach(function(failedExpectation) {
+							failedExpectationCount++;
 							emailBody += '<p style="background-color:' + color + ';">' + indent.concat(tab, failedExpectation.message) + '</p>';
 						});
 					}
@@ -99,6 +102,7 @@ var myReporter = {
 			} else {
 				emailBody += '<p style="background-color:' + color + ';">' + indent.concat(result.description) + '</p>';
 				result.failedExpectations.forEach(function(failedExpectation) {
+					failedExpectationCount++;
 					emailBody += '<p style="background-color:' + color + ';">' + indent.concat(tab, failedExpectation.message) + '</p>';
 				});
 			}
@@ -117,10 +121,13 @@ var myReporter = {
 
 	jasmineDone: function(suiteInfo) {
 		email = true;
+
+		emailHead += '<p>' + failedExpectationCount + ' Expectations Failed.</p>';
+
 		transporter.sendMail({
 			from: 'forbesqatest@forbes.com',
 			to: email ? ', jjean@forbes.com, kshah@forbes.com, vsupitskiy@forbes.com' : 'jjean@forbes.com, forbesjjean@gmail.com',
-			subject: '[' + new Date(timestamp).toString() + '] Protractor Report from ' + environmentName,
+			subject: '[' + dateString + '] [' + environmentName + '] Protractor Report',
 			html: '<div>' + emailHead + emailBody + emailFoot + '</div>'
 		});
 	}
