@@ -11,6 +11,7 @@ var date = new Date(),
 	sessionRef,
 	suiteRef,
 	failedExpectationCount = 0,
+	passedExpectationCount = 0,
 	currentConfig,
 	suitesInProgress = 0,
 	suites = [];
@@ -105,6 +106,7 @@ var myReporter = {
 							failedExpectationCount++;
 							emailBody += '<p style="background-color:' + color + ';">' + indent.concat(tab, failedExpectation.message) + '</p>';
 						});
+						passedExpectationCount += result.passedExpectations.length;
 					}
 				}
 			} else {
@@ -130,7 +132,7 @@ var myReporter = {
 	jasmineDone: function(suiteInfo) {
 		from_server = process.env.USER === 'bpoon';
 
-		emailHead += '<p>' + failedExpectationCount + ' Expectations Failed.</p>';
+		emailHead += '<p>' + passedExpectationCount + ' out of ' + (passedExpectationCount + failedExpectationCount) + ' Expectations Passed.</p>';
 
 		if (failedExpectationCount === 0 || !from_server) {
 			transporter.sendMail({
@@ -149,7 +151,7 @@ var myReporter = {
 		}, function(req) {
 			// console.log(req);
 		});
-		slack_message.write(environmentName + ' (' + currentConfig.logName + '): ' + failedExpectationCount + ' Expectations Failed.');
+		slack_message.write(environmentName + ' (' + currentConfig.logName + '):\n' + passedExpectationCount + ' out of ' + (passedExpectationCount + failedExpectationCount) + ' Expectations Passed.');
 		slack_message.end();
 	}
 };
