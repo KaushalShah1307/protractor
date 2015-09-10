@@ -115,6 +115,7 @@ var myReporter = {
 					failedExpectationCount++;
 					emailBody += '<p style="background-color:' + color + ';">' + indent.concat(tab, failedExpectation.message) + '</p>';
 				});
+				passedExpectationCount += result.passedExpectations.length;
 			}
 
 		} else {
@@ -143,7 +144,6 @@ var myReporter = {
 			});
 		}
 		var destination = from_server ? '%23protractor' : ('@'+process.env.USER);
-		var https = require('https');
 		var slack_message = https.request({
 			hostname: 'forbesdev.slack.com',
 			path: '/services/hooks/slackbot?token=5z1O62OQb5pipH8Pz3LcVuXS&channel=' + destination,

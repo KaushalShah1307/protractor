@@ -12,17 +12,19 @@ describe('ContribHP', function() {
 			contribPage.get();
 		});
 
-		it('should have ads', function() {
-			browser.executeAsyncScript(function() {
-				callback = arguments[0];
-				callback(Object.keys($('body').injector().get('ContribAdService').ad_slots));
-			}).then(function(result) {
-				result.forEach(function(key) {
-					expect(key).toHaveAd();
+		globals.testAllLinks();
+
+		describe('Ads', function() {
+			it('should appear on the page', function() {
+				browser.executeAsyncScript(function() {
+					callback = arguments[0];
+					callback(Object.keys($('body').injector().get('ContribAdService').ad_slots));
+				}).then(function(result) {
+					result.forEach(function(key) {
+						expect(key).toHaveAd();
+					});
 				});
 			});
-		});
-
-		globals.testAllLinks();
+		})
 	});
 });

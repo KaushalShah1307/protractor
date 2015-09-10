@@ -1,7 +1,8 @@
 
 globals = {};
 
-var http = require('http');
+http = require('http');
+https = require('https');
 
 globals.matchers = {
 	toHaveAd: function(util, customEqualityTesters) {
@@ -31,25 +32,16 @@ globals.matchers = {
 
 }
 
-globals.httpGet = function(siteUrl) {
+var httpGetResponse = function(href) {
 	var defer = protractor.promise.defer();
 
-	http.get(siteUrl, function(response) {
+	if (href.indexOf('https') < 0) {
+		httpProtocol = http;
+	} else {
+		httpProtocol = https;
+	}
 
-		defer.fulfill({
-			statusCode: response.statusCode
-		});
-
-	}).on('error', function(e) {
-		defer.reject("Got http.get error: " + e.message);
-	});
-
-	return defer.promise;
-}
-httpGetResponse = function(siteUrl) {
-	var defer = protractor.promise.defer();
-
-	http.get(siteUrl, function(response) {
+	httpProtocol.get(href, function(response) {
 
 		defer.fulfill(response.statusCode);
 
@@ -73,7 +65,7 @@ globals.testAllLinks = function() {
 		it('should not 404', function(done) {
 			$$('a').filter(function(element) {
 				return element.getAttribute('href').then(function(href) {
-					var flag = (href && !testedLinks[href] && href.indexOf('http') === 0 && href.indexOf('https') < 0) ? true : false;
+					var flag = (href && !testedLinks[href] && href.indexOf('http') === 0) ? true : false;
 					if (flag) {
 						testedLinks[href] = true;
 					}
