@@ -14,8 +14,6 @@
     "protractor": "^2.1.0"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
     "jasmine-spec-reporter": "^2.4.0"
   }
 }
