@@ -4,17 +4,10 @@ var Firebase = require('firebase'),
 	nodemailer = require('nodemailer');
 
 
-var date = new Date(),
-	dateString = date.toDateString() + ' ' + date.toLocaleTimeString(),
-	environmentRef,
-	environmentName,
-	sessionRef,
-	suiteRef,
-	failedExpectationCount = 0,
-	passedExpectationCount = 0,
-	suitesInProgress = 0,
+var date = new Date(), dateString = date.toDateString() + ' ' + date.toLocaleTimeString(),
+	environmentRef, environmentName, sessionRef, suiteRef,
+	failedExpectationCount = passedExpectationCount = suitesInProgress = suitesInProgress = 0,
 	currentConfig,
-	suitesInProgress = 0,
 	failedExpectations = [],
 	suites = [];
 
@@ -125,10 +118,7 @@ var FbsReporter = {
 	jasmineDone: function(suiteInfo) {
 		from_server = process.env.USERNAME === 'bpoon';
 
-		emailHead += '<p>' + passedExpectationCount + ' out of ' + (passedExpectationCount + failedExpectationCount) + ' Expectations Passed.</p>';
-
 		if (failedExpectationCount !== 0 || !from_server) {
-
 			var transporter = nodemailer.createTransport({
 				service: 'gmail',
 				auth: {
@@ -136,6 +126,8 @@ var FbsReporter = {
 					pass: 'forbes123'
 				}
 			});
+			
+			emailHead += '<p>' + passedExpectationCount + ' out of ' + (passedExpectationCount + failedExpectationCount) + ' Expectations Passed.</p>';
 
 			transporter.sendMail({
 				from: 'forbesqatest@forbes.com',
@@ -144,14 +136,13 @@ var FbsReporter = {
 				html: '<div>' + emailHead + emailBody + emailFoot + '</div>'
 			});
 		}
-		var destination = from_server ? '%23protractor' : ('@' + process.env.USERNAME);
-		var slack_message = https.request({
+		var destination = from_server ? '%23protractor' : ('@' + process.env.USERNAME),
+			slack_message = https.request({
 				hostname: 'forbesdev.slack.com',
 				path: '/services/hooks/slackbot?token=5z1O62OQb5pipH8Pz3LcVuXS&channel=' + destination,
 				method: 'POST'
-			}, function(req) {
-			// console.log(req);
-		});
+			});
+
 		slack_message.write('*' + environmentName.toUpperCase() + '* (' + currentConfig.logName + '):\n' + failedExpectationCount + ' out of ' + (passedExpectationCount + failedExpectationCount) + ' Expectations Failed.');
 		slack_message.end();
 	}
