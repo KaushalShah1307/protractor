@@ -1,19 +1,14 @@
 
 var Firebase = require('firebase'),
 	firebase = new Firebase('https://protractor-forbes.firebaseio.com/'),
-	nodemailer = require('nodemailer');
+	email = require('./email-processor.js');
 
 
 var date = new Date(), dateString = date.toDateString() + ' ' + date.toLocaleTimeString(),
 	environmentRef, environmentName, sessionRef, suiteRef,
 	failedExpectationCount = passedExpectationCount = suitesInProgress = suitesInProgress = 0,
 	currentConfig,
-	failedExpectations = [],
-	suites = [];
-
-var emailBody = '',
-	tab = '&nbsp;&nbsp;&nbsp;&nbsp;',
-	lb = '<br>';
+	failedExpectations = [];
 
 var FbsReporter = {
 
@@ -21,7 +16,7 @@ var FbsReporter = {
 		suiteInfo.time = date.getTime();
 		browser.getProcessedConfig().then(function(config) {
 			suiteInfo.browser = currentConfig = config.capabilities;
-			environmentName = config.baseUrl.replace("http://","").replace(".forbes.com","").replace("/","");
+			suiteInfo.environment = environmentName = config.baseUrl.replace("http://","").replace(".forbes.com","").replace("/","");
 		}).then(function() {
 			environmentRef = firebase.child(environmentName);
 			environmentRef.child('lastSession').once("value", function(lastSession) {
@@ -36,11 +31,12 @@ var FbsReporter = {
 				}
 				environmentRef.child('lastSession').set(nextKey);
 				sessionRef = environmentRef.child(nextKey);
+				suiteInfo.refUrl = sessionRef.toString();
 				sessionRef.set(suiteInfo);
 
-				console.log('Results from this session can be seen at', sessionRef.toString());
-				emailHead = '<p>Tests were run on '.concat(suiteInfo.browser.logName, ' for ', environmentName, ' at ', dateString, '.</p>');
-				emailFoot = '<a href='.concat(sessionRef.toString(), '>Full Results</a>');
+				email.create(suiteInfo);
+
+				console.log('Results from this session can be seen at', suiteInfo.refUrl);
 			});
 		});
 	},
@@ -49,22 +45,7 @@ var FbsReporter = {
 		if (sessionRef) {
 			suiteRef = sessionRef.child('suites').child(result.fullName);
 			suiteRef.update(result);
-			var indent = '';
-			if (suites.indexOf(result.fullName) < 0) {
-				suites.push(result.fullName);
-
-				if (suitesInProgress > 0) {
-					for (var j = 0; j <= suitesInProgress; j++) {
-						indent += tab;
-						if (j === suitesInProgress) {
-							emailBody += '<p>' + indent.concat(result.description) + '</p>';
-						}
-					}
-				} else {
-					emailBody += '<p>' + indent.concat(result.description) + '</p>';
-				}
-			}
-			suitesInProgress++;
+			email.suiteStarted(result);
 		} else {
 			setTimeout(function() {
 				return FbsReporter.suiteStarted(result)
@@ -72,37 +53,14 @@ var FbsReporter = {
 		}
 	},
 
-	specStarted: function(result) {
+	specStarted: function() {
 	},
 
 	specDone: function(result) {
 		if (suiteRef) {
 			specRef = suiteRef.child('specs').child(result.description);
 			specRef.update(result);
-
-			var indent = '',
-				color = result.failedExpectations.length === 0 ? '#afa' : '#faa';
-			if (suitesInProgress > 0) {
-				for (var j = 0; j <= suitesInProgress; j++) {
-					indent += tab;
-					if (j === suitesInProgress) {
-						emailBody += '<p style="background-color:' + color + ';">' + indent.concat(result.description) + '</p>';
-						result.failedExpectations.forEach(function(failedExpectation) {
-							failedExpectationCount++;
-							emailBody += '<p style="background-color:' + color + ';">' + indent.concat(tab, failedExpectation.message) + '</p>';
-						});
-						passedExpectationCount += result.passedExpectations.length;
-					}
-				}
-			} else {
-				emailBody += '<p style="background-color:' + color + ';">' + indent.concat(result.description) + '</p>';
-				result.failedExpectations.forEach(function(failedExpectation) {
-					failedExpectationCount++;
-					failedExpectations.push(failedExpectation);
-					emailBody += '<p style="background-color:' + color + ';">' + indent.concat(tab, failedExpectation.message) + '</p>';
-				});
-				passedExpectationCount += result.passedExpectations.length;
-			}
+			email.specDone(result);
 
 		} else {
 			setTimeout(function() {
@@ -112,30 +70,15 @@ var FbsReporter = {
 
 	},
 
-	suiteDone: function(result) {
-		suitesInProgress--;
+	suiteDone: function() {
+		email.suiteDone();
 	},
 
 	jasmineDone: function(suiteInfo) {
 		from_server = process.env.USERNAME === 'bpoon';
 
 		if (failedExpectationCount !== 0 || !from_server) {
-			var transporter = nodemailer.createTransport({
-				service: 'gmail',
-				auth: {
-					user: 'forbesqatest@gmail.com',
-					pass: 'forbes123'
-				}
-			});
-			
-			emailHead += '<p>' + passedExpectationCount + ' out of ' + (passedExpectationCount + failedExpectationCount) + ' Expectations Passed.</p>';
-
-			transporter.sendMail({
-				from: 'forbesqatest@forbes.com',
-				to: from_server ? ', jjean@forbes.com, kshah@forbes.com, vsupitskiy@forbes.com' : process.env.USERNAME + '@forbes.com, forbesjjean@gmail.com',
-				subject: '[' + dateString + '] [' + environmentName + '] Protractor Report',
-				html: '<div>' + emailHead + emailBody + emailFoot + '</div>'
-			});
+			email.send(from_server ? ', jjean@forbes.com, kshah@forbes.com, vsupitskiy@forbes.com' : process.env.USERNAME + '@forbes.com, forbesjjean@gmail.com');
 		}
 		var destination = from_server ? '%23protractor' : ('@' + process.env.USERNAME),
 			slack_message = https.request({
