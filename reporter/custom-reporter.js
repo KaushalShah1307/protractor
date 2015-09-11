@@ -28,8 +28,9 @@ var FbsReporter = {
 				var nextKey;
 				if (lastSession.val()) {
 					var lastKey = lastSession.val(),
-						nextNumber = parseInt(lastKey.replace("session-",""))+1,
-						nextKey = "session-" + nextNumber;
+						nextNumber = parseInt(lastKey.replace("session-",""))+1;
+						
+					nextKey = "session-" + nextNumber;
 				} else {
 					nextKey = "session-0"; //Start with session-0 key if there are none in the database
 				}
