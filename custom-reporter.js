@@ -135,7 +135,7 @@ var myReporter = {
 
 		emailHead += '<p>' + passedExpectationCount + ' out of ' + (passedExpectationCount + failedExpectationCount) + ' Expectations Passed.</p>';
 
-		if (failedExpectationCount === 0 || !from_server) {
+		if (failedExpectationCount !== 0 || !from_server) {
 			transporter.sendMail({
 				from: 'forbesqatest@forbes.com',
 				to: from_server ? ', jjean@forbes.com, kshah@forbes.com, vsupitskiy@forbes.com' : process.env.USERNAME + '@forbes.com, forbesjjean@gmail.com',
