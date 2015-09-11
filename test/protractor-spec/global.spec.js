@@ -92,3 +92,25 @@ globals.testAllLinks = function() {
 		});
 	});
 }
+
+globals.checkAds = function(adsService) {
+	describe('Ads', function() {
+
+		beforeEach(function() {
+			jasmine.addMatchers({
+				toNot404: globals.matchers.tohaveAd
+			});
+		});
+
+		it('should appear on the page', function() {
+			browser.executeAsyncScript(function() {
+				callback = arguments[1];
+				callback(Object.keys($('body').injector().get(arguments[0]).ad_slots));
+			}, adsService).then(function(result) {
+				result.forEach(function(key) {
+					expect(key).toHaveAd();
+				});
+			});
+		});
+	});
+}
