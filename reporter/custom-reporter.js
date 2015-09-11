@@ -1,9 +1,9 @@
 
-var Firebase = require('firebase');
-var nodemailer = require('nodemailer');
+var Firebase = require('firebase'),
+	firebase = new Firebase('https://protractor-forbes.firebaseio.com/'),
+	nodemailer = require('nodemailer');
 
-var firebase = new Firebase('https://protractor-forbes.firebaseio.com/');
-// console.log(firebase);
+
 var date = new Date(),
 	dateString = date.toDateString() + ' ' + date.toLocaleTimeString(),
 	environmentRef,
@@ -12,46 +12,37 @@ var date = new Date(),
 	suiteRef,
 	failedExpectationCount = 0,
 	passedExpectationCount = 0,
+	suitesInProgress = 0,
 	currentConfig,
 	suitesInProgress = 0,
+	failedExpectations = [],
 	suites = [];
-
-var transporter = nodemailer.createTransport({
-	service: 'gmail',
-	auth: {
-		user: 'forbesqatest@gmail.com',
-		pass: 'forbes123'
-	}
-});
 
 var emailBody = '',
 	tab = '&nbsp;&nbsp;&nbsp;&nbsp;',
 	lb = '<br>';
 
-var myReporter = {
+var FbsReporter = {
 
 	jasmineStarted: function(suiteInfo) {
 		suiteInfo.time = date.getTime();
-		suitesInProgress = 0;
 		browser.getProcessedConfig().then(function(config) {
 			suiteInfo.browser = currentConfig = config.capabilities;
 			environmentName = config.baseUrl.replace("http://","").replace(".forbes.com","").replace("/","");
+		}).then(function() {
 			environmentRef = firebase.child(environmentName);
 			environmentRef.child('lastSession').once("value", function(lastSession) {
-
-				//Start with session-0 key if there are none in the database
+				var nextKey;
 				if (lastSession.val()) {
-					lastKey = lastSession.val(),
-					nextNumber = parseInt(lastKey.replace("session-",""))+1,
-					nextKey = "session-" + nextNumber;
-					environmentRef.child('lastSession').set(nextKey);
-					sessionRef = environmentRef.child(nextKey);
-					sessionRef.set(suiteInfo);
+					var lastKey = lastSession.val(),
+						nextNumber = parseInt(lastKey.replace("session-",""))+1,
+						nextKey = "session-" + nextNumber;
 				} else {
-					sessionRef = environmentRef.child("session-0");
-					environmentRef.child('lastSession').set("session-0");
-					sessionRef.set(suiteInfo);
+					nextKey = "session-0"; //Start with session-0 key if there are none in the database
 				}
+				environmentRef.child('lastSession').set(nextKey);
+				sessionRef = environmentRef.child(nextKey);
+				sessionRef.set(suiteInfo);
 
 				console.log('Results from this session can be seen at', sessionRef.toString());
 				emailHead = '<p>Tests were run on '.concat(suiteInfo.browser.logName, ' for ', environmentName, ' at ', dateString, '.</p>');
@@ -82,7 +73,7 @@ var myReporter = {
 			suitesInProgress++;
 		} else {
 			setTimeout(function() {
-				return myReporter.suiteStarted(result)
+				return FbsReporter.suiteStarted(result)
 			}, 200);
 		}
 	},
@@ -113,6 +104,7 @@ var myReporter = {
 				emailBody += '<p style="background-color:' + color + ';">' + indent.concat(result.description) + '</p>';
 				result.failedExpectations.forEach(function(failedExpectation) {
 					failedExpectationCount++;
+					failedExpectations.push(failedExpectation);
 					emailBody += '<p style="background-color:' + color + ';">' + indent.concat(tab, failedExpectation.message) + '</p>';
 				});
 				passedExpectationCount += result.passedExpectations.length;
@@ -120,7 +112,7 @@ var myReporter = {
 
 		} else {
 			setTimeout(function() {
-				return myReporter.specDone(result)
+				return FbsReporter.specDone(result)
 			}, 200);
 		}
 
@@ -136,6 +128,15 @@ var myReporter = {
 		emailHead += '<p>' + passedExpectationCount + ' out of ' + (passedExpectationCount + failedExpectationCount) + ' Expectations Passed.</p>';
 
 		if (failedExpectationCount !== 0 || !from_server) {
+
+			var transporter = nodemailer.createTransport({
+				service: 'gmail',
+				auth: {
+					user: 'forbesqatest@gmail.com',
+					pass: 'forbes123'
+				}
+			});
+
 			transporter.sendMail({
 				from: 'forbesqatest@forbes.com',
 				to: from_server ? ', jjean@forbes.com, kshah@forbes.com, vsupitskiy@forbes.com' : process.env.USERNAME + '@forbes.com, forbesjjean@gmail.com',
@@ -143,16 +144,16 @@ var myReporter = {
 				html: '<div>' + emailHead + emailBody + emailFoot + '</div>'
 			});
 		}
-		var destination = from_server ? '%23protractor' : ('@'+process.env.USERNAME);
+		var destination = from_server ? '%23protractor' : ('@' + process.env.USERNAME);
 		var slack_message = https.request({
-			hostname: 'forbesdev.slack.com',
-			path: '/services/hooks/slackbot?token=5z1O62OQb5pipH8Pz3LcVuXS&channel=' + destination,
-			method: 'POST'
-		}, function(req) {
+				hostname: 'forbesdev.slack.com',
+				path: '/services/hooks/slackbot?token=5z1O62OQb5pipH8Pz3LcVuXS&channel=' + destination,
+				method: 'POST'
+			}, function(req) {
 			// console.log(req);
 		});
-		slack_message.write(environmentName + ' (' + currentConfig.logName + '):\n' + passedExpectationCount + ' out of ' + (passedExpectationCount + failedExpectationCount) + ' Expectations Passed.');
+		slack_message.write('*' + environmentName.toUpperCase() + '* (' + currentConfig.logName + '):\n' + failedExpectationCount + ' out of ' + (passedExpectationCount + failedExpectationCount) + ' Expectations Failed.');
 		slack_message.end();
 	}
 };
-jasmine.getEnv().addReporter(myReporter);
+module.exports = FbsReporter;

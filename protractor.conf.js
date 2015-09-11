@@ -68,7 +68,6 @@ exports.config = {
 		]
 	},
 	specs: [
-		'custom-reporter.js',
 		'test/protractor-spec/global.spec.js',
 		'test/protractor-spec/article/*pagecheck.spec.js',
 		'test/protractor-spec/article/**/*.spec.js',
@@ -78,11 +77,9 @@ exports.config = {
 		'test/protractor-spec/contrib/**/*.spec.js',
 	],
 	onPrepare: function() {
-		// var CustomReporter = require('custom-reporter');
-		// console.log(CustomReporter);
-		// jasmine.getEnv().addReporter(new CustomReporter());
+		var FbsReporter = require('./reporter/custom-reporter.js');
+		jasmine.getEnv().addReporter(FbsReporter);
 		var SpecReporter = require('jasmine-spec-reporter');
-		// // add jasmine spec reporter
 		jasmine.getEnv().addReporter(new SpecReporter({
 			displayStacktrace: 'summary',
 			displayFailuresSummary: true, // display summary of all failures after execution
