@@ -131,19 +131,19 @@ var myReporter = {
 	},
 
 	jasmineDone: function(suiteInfo) {
-		from_server = process.env.USER === 'bpoon';
+		from_server = process.env.USERNAME === 'bpoon';
 
 		emailHead += '<p>' + passedExpectationCount + ' out of ' + (passedExpectationCount + failedExpectationCount) + ' Expectations Passed.</p>';
 
 		if (failedExpectationCount === 0 || !from_server) {
 			transporter.sendMail({
 				from: 'forbesqatest@forbes.com',
-				to: from_server ? ', jjean@forbes.com, kshah@forbes.com, vsupitskiy@forbes.com' : process.env.USER + '@forbes.com, forbesjjean@gmail.com',
+				to: from_server ? ', jjean@forbes.com, kshah@forbes.com, vsupitskiy@forbes.com' : process.env.USERNAME + '@forbes.com, forbesjjean@gmail.com',
 				subject: '[' + dateString + '] [' + environmentName + '] Protractor Report',
 				html: '<div>' + emailHead + emailBody + emailFoot + '</div>'
 			});
 		}
-		var destination = from_server ? '%23protractor' : ('@'+process.env.USER);
+		var destination = from_server ? '%23protractor' : ('@'+process.env.USERNAME);
 		var slack_message = https.request({
 			hostname: 'forbesdev.slack.com',
 			path: '/services/hooks/slackbot?token=5z1O62OQb5pipH8Pz3LcVuXS&channel=' + destination,
