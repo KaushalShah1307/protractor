@@ -54,6 +54,8 @@ var Email = {
 
 		var color = spec.failedExpectations.length === 0 ? '#afa' : '#faa';
 		emailBody += '<p style="background-color:' + color + ';">' + currentIndent.concat(spec.description) + '</p>';
+		console.log(spec);
+		if (!spec.failedExpectations) return;
 
 		spec.failedExpectations.forEach(function(failedExpectation) {
 			failedExpectations.push(failedExpectation);

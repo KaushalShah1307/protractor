@@ -56,12 +56,14 @@ var FbsReporter = {
 	specStarted: function() {
 	},
 
-	specDone: function(result) {
+	specDone: function(spec) {
 		if (suiteRef) {
-			specRef = suiteRef.child('specs').child(result.description);
-			specRef.update(result);
-			email.specDone(result);
-
+			specRef = suiteRef.child('specs').child(spec.description);
+			specRef.update(spec);
+			email.specDone(spec);
+			failedExpectationCount += spec.failedExpectations.length;
+			passedExpectationCount += spec.passedExpectations.length;
+			totalExpectationCount = failedExpectationCount + passedExpectationCount;
 		} else {
 			setTimeout(function() {
 				return FbsReporter.specDone(result)
