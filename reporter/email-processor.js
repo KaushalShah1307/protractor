@@ -1,11 +1,12 @@
 var nodemailer = require('nodemailer'),
 	date = new Date(), dateString = date.toDateString() + ' ' + date.toLocaleTimeString(), environment,
+	failedExpectationCount = passedExpectationCount = 0,
 	emailHead, emailFoot,
 	emailBody = '';
 	currentIndent = '',
 	tab = '&nbsp;&nbsp;&nbsp;&nbsp;',
 
-	suites = [];
+	suites = failedExpectations = [];
 
 var Email = {
 	create : function(suiteInfo) {
@@ -54,13 +55,10 @@ var Email = {
 		var color = spec.failedExpectations.length === 0 ? '#afa' : '#faa';
 		emailBody += '<p style="background-color:' + color + ';">' + currentIndent.concat(spec.description) + '</p>';
 
-		if (!spec.failedExpectations) return;
-
 		spec.failedExpectations.forEach(function(failedExpectation) {
 			failedExpectations.push(failedExpectation);
 			emailBody += '<p style="background-color:' + color + ';">' + currentIndent.concat(tab, failedExpectation.message) + '</p>';
 		});
-
 	},
 
 	

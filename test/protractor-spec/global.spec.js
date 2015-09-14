@@ -42,7 +42,7 @@ var httpGetResponse = function(href) {
 	}
 
 	httpProtocol.get(href, function(response) {
-
+		console.log(href,response.statusCode);
 		defer.fulfill(response.statusCode);
 
 	}).on('error', function(e) {
@@ -63,9 +63,9 @@ globals.testAllLinks = function() {
 		});
 
 		it('should not 404', function(done) {
-			$$('a').filter(function(element) {
+			$$('a[href^="http"]').filter(function(element) {
 				return element.getAttribute('href').then(function(href) {
-					var flag = (href && !testedLinks[href] && href.indexOf('http') === 0) ? true : false;
+					var flag = (href && !testedLinks[href]) ? true : false;
 					if (flag) {
 						testedLinks[href] = true;
 					}
@@ -74,6 +74,88 @@ globals.testAllLinks = function() {
 			}).map(function(element, index) {
 				return {
 					href: element.getAttribute('href'),
+				}
+			}).then(function(links) {
+				var linksToBeChecked = links.length;
+
+				if(linksToBeChecked.length === 0) {
+					done();
+				}
+
+				links.forEach(function(link) {
+					expect(link).toNot404();
+					if (--linksToBeChecked === 0) {
+						done();
+					}
+				});
+			});
+		});
+	});
+}
+
+var testedScripts = {};
+globals.testAllScripts = function() {
+	describe('Scripts-', function() {
+
+		beforeEach(function() {
+			jasmine.addMatchers({
+				toNot404: globals.matchers.toNot404
+			});	
+		});
+
+		it('should not 404', function(done) {
+			$$('script[src^="http"]').filter(function(element) {
+				return element.getAttribute('src').then(function(href) {
+					var flag = (href && !testedLinks[href] && href.indexOf('http://wsc4.webspectator.com/init?') !== 0) ? true : false;
+					if (flag) {
+						testedLinks[href] = true;
+					}
+					return flag;
+				});
+			}).map(function(element, index) {
+				return {
+					href: element.getAttribute('src'),
+				}
+			}).then(function(links) {
+				var linksToBeChecked = links.length;
+
+				if(linksToBeChecked.length === 0) {
+					done();
+				}
+
+				links.forEach(function(link) {
+					expect(link).toNot404();
+					if (--linksToBeChecked === 0) {
+						done();
+					}
+				});
+			});
+		});
+	});
+}
+
+var testedScripts = {};
+globals.testAllImages = function() {
+	describe('Images-', function() {
+
+		beforeEach(function() {
+			jasmine.addMatchers({
+				toNot404: globals.matchers.toNot404
+			});	
+		});
+
+		it('should not be broken', function(done) {
+			$$('img[src^="http"]').filter(function(element) {
+				return element.getAttribute('src').then(function(href) {
+					var flag = (href && !testedLinks[href]) ? true : false;
+					if (flag) {
+						testedLinks[href] = true;
+					}
+					return flag;
+				});
+			}).map(function(element, index) {
+				return {
+					href: element.getAttribute('src'),
 				}
 			}).then(function(links) {
 				var linksToBeChecked = links.length;

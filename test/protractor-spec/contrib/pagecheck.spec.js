@@ -14,6 +14,10 @@ describe('ContribHP', function() {
 
 		globals.testAllLinks();
 
+		globals.testAllScripts();
+
+		globals.testAllImages();
+
 		globals.checkAds(contribPage.adsService);
 	});
 });

@@ -15,6 +15,10 @@ describe('Article', function() {
 
 		globals.testAllLinks();
 
+		globals.testAllScripts();
+
+		globals.testAllImages();
+
 		globals.checkAds(articlePage.adsService);
 	});
 });

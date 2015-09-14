@@ -14,6 +14,10 @@ describe('CSF', function() {
 
 		globals.testAllLinks();
 
+		globals.testAllScripts();
+
+		globals.testAllImages();
+
 		globals.checkAds(csfPage.adsService);
 	});
 });

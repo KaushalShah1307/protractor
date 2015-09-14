@@ -2,8 +2,6 @@
 var Firebase = require('firebase'),
 	firebase = new Firebase('https://protractor-forbes.firebaseio.com/'),
 	email = require('./email-processor.js');
-	metrics = require('./metrics-processor.js');
-
 
 var date = new Date(), dateString = date.toDateString() + ' ' + date.toLocaleTimeString(),
 	environmentRef, environmentName, sessionRef, suiteRef,
