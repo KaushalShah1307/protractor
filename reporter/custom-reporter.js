@@ -22,15 +22,6 @@ var FbsReporter = {
 		}).then(function() {
 			environmentRef = firebase.child(environmentName);
 			environmentRef.child('lastSession').once("value", function(lastSession) {
-				// var nextKey;
-				// if (lastSession.val()) {
-				// 	var lastKey = lastSession.val(),
-				// 		nextNumber = parseInt(lastKey.replace("session-",""))+1;
-						
-				// 	nextKey = "session-" + nextNumber;
-				// } else {
-				// 	nextKey = "session-0"; //Start with session-0 key if there are none in the database
-				// }
 				nextKey = lastSession.val() ? "session-" + (parseInt(lastSession.val().replace("session-","")) + 1) : "session-0";
 				environmentRef.child('lastSession').set(nextKey);
 				sessionRef = environmentRef.child(nextKey);
