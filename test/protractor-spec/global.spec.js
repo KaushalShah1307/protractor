@@ -42,7 +42,6 @@ var httpGetResponse = function(href) {
 	}
 
 	httpProtocol.get(href, function(response) {
-		console.log(href,response.statusCode);
 		defer.fulfill(response.statusCode);
 
 	}).on('error', function(e) {
