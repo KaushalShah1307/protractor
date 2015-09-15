@@ -17,11 +17,11 @@ exports.config = {
 			browserName: 'chrome',
 			logName: 'Desktop Chrome',
 			// count: 2,
-			// chromeOptions: {
-			// 	args: [
-			// 		'verbose'
-			// 	],
-			// },
+			chromeOptions: {
+				args: [
+					'start-maximized'
+				],
+			},
 			// loggingPrefs: {
 			// 	browser: 'ALL',
 			// 	driver: 'ALL',
@@ -51,7 +51,6 @@ exports.config = {
 	],
 	suites: {
 		article: [
-			'custom-reporter.js',
 			'test/protractor-spec/global.spec.js',
 			'test/protractor-spec/article/*pagecheck.spec.js',
 			'test/protractor-spec/article/**/*.spec.js'
@@ -81,7 +80,7 @@ exports.config = {
 		jasmine.getEnv().addReporter(FbsReporter);
 		var SpecReporter = require('jasmine-spec-reporter');
 		jasmine.getEnv().addReporter(new SpecReporter({
-			displayStacktrace: '',
+			displayStacktrace: 'summary',
 			displayFailuresSummary: true, // display summary of all failures after execution
 			displayPendingSummary: true,  // display summary of all pending specs after execution
 			displaySuccessfulSpec: true,  // display each successful spec
@@ -91,9 +90,9 @@ exports.config = {
 			displaySuiteNumber: true,
 		}));
 		browser.ignoreSynchronization = true;
-		browser.get('http://www-staging-2.forbes.com/welcome');
 		browser.get('/');
-		browser.manage().window().maximize();
+		browser.get('/');
+		// browser.manage().window().maximize();
 		browser.ignoreSynchronization = false;
 	}
 }

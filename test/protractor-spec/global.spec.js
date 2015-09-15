@@ -239,3 +239,10 @@ globals.checkAds = function(adsService) {
 		});
 	});
 }
+
+globals.generalCheck = function() {
+	globals.testAllLinks();
+	globals.testAllScripts();
+	globals.testAllImages();
+	globals.testAllBackgroundImages();
+}

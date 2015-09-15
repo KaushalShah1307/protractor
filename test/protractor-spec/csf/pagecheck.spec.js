@@ -12,13 +12,7 @@ describe('CSF', function() {
 			csfPage.get();
 		});
 
-		globals.testAllLinks();
-
-		globals.testAllScripts();
-
-		globals.testAllImages();
-
-		globals.testAllBackgroundImages();
+		globals.generalCheck();
 
 		globals.checkAds(csfPage.adsService);
 	});

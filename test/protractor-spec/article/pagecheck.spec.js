@@ -13,13 +13,7 @@ describe('Article', function() {
 			articlePage.get();
 		});
 
-		globals.testAllLinks();
-
-		globals.testAllScripts();
-
-		globals.testAllImages();
-
-		globals.testAllBackgroundImages();
+		globals.generalCheck();
 
 		globals.checkAds(articlePage.adsService);
 	});

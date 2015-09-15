@@ -2,7 +2,8 @@ describe('Article', function() {
 	describe('Sidebar-', function() {
 		var commentsPanel,
 			commentsTrigger;
-		beforeEach(function() {
+
+		beforeAll(function() {
 			commentsTrigger = $('.article-comments'),
 			commentsPanel = $('.article-sidebar-panel.article-comments-panel');
 		});
