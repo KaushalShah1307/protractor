@@ -42,11 +42,11 @@ var httpGetResponse = function(href) {
 	}
 
 	httpProtocol.get(href, function(response) {
-		console.log(href,response.statusCode);
+		// console.log(href)
 		defer.fulfill(response.statusCode);
 
 	}).on('error', function(e) {
-		defer.reject("Got http.get error: " + e.message);
+		defer.reject("Got http.get error when checking " + href + ": " + e.message);
 	});
 
 	return defer.promise;
@@ -106,9 +106,9 @@ globals.testAllScripts = function() {
 		it('should not 404', function(done) {
 			$$('script[src^="http"]').filter(function(element) {
 				return element.getAttribute('src').then(function(href) {
-					var flag = (href && !testedLinks[href] && href.indexOf('http://wsc4.webspectator.com/init?') !== 0) ? true : false;
+					var flag = (href && !testedScripts[href] && href.indexOf('http://wsc4.webspectator.com/init?') !== 0) ? true : false;
 					if (flag) {
-						testedLinks[href] = true;
+						testedScripts[href] = true;
 					}
 					return flag;
 				});
@@ -134,7 +134,7 @@ globals.testAllScripts = function() {
 	});
 }
 
-var testedScripts = {};
+var testedImages = {};
 globals.testAllImages = function() {
 	describe('Images-', function() {
 
@@ -147,9 +147,9 @@ globals.testAllImages = function() {
 		it('should not be broken', function(done) {
 			$$('img[src^="http"]').filter(function(element) {
 				return element.getAttribute('src').then(function(href) {
-					var flag = (href && !testedLinks[href]) ? true : false;
+					var flag = (href && !testedImages[href]) ? true : false;
 					if (flag) {
-						testedLinks[href] = true;
+						testedImages[href] = true;
 					}
 					return flag;
 				});
@@ -173,6 +173,49 @@ globals.testAllImages = function() {
 			});
 		});
 	});
+}
+
+var testedBackgroundImages = {};
+globals.testAllBackgroundImages = function() {
+	// describe('Background Images-', function() {
+
+	// 	beforeEach(function() {
+	// 		jasmine.addMatchers({
+	// 			toNot404: globals.matchers.toNot404
+	// 		});	
+	// 	});
+
+	// 	it('should not be broken', function(done) {
+	// 		$$('[style*="background"]').filter(function(element) {
+	// 			// console.log(element);
+	// 			return element.getCssValue('background-image').then(function(href) {
+	// 				var flag = (href && href !== 'none' && !testedBackgroundImages[href.replace('url(', '').replace(')', '')]) ? true : false;
+	// 				if (flag) {
+	// 					console.log(href);
+	// 					testedBackgroundImages[href.replace('url(', '').replace(')', '')] = true;
+	// 				}
+	// 				return flag;
+	// 			});
+	// 		}).map(function(element, index) {
+	// 			return {
+	// 				href: element.getCssValue('background-image').replace('url(', '').replace(')', ''),
+	// 			}
+	// 		}).then(function(links) {
+	// 			var linksToBeChecked = links.length;
+
+	// 			if(linksToBeChecked.length === 0) {
+	// 				done();
+	// 			}
+
+	// 			links.forEach(function(link) {
+	// 				expect(link).toNot404();
+	// 				if (--linksToBeChecked === 0) {
+	// 					done();
+	// 				}
+	// 			});
+	// 		});
+	// 	});
+	// });
 }
 
 globals.checkAds = function(adsService) {

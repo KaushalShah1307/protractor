@@ -19,6 +19,8 @@ describe('Article', function() {
 
 		globals.testAllImages();
 
+		globals.testAllBackgroundImages();
+
 		globals.checkAds(articlePage.adsService);
 	});
 });

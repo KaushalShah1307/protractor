@@ -18,6 +18,8 @@ describe('CSF', function() {
 
 		globals.testAllImages();
 
+		globals.testAllBackgroundImages();
+
 		globals.checkAds(csfPage.adsService);
 	});
 });

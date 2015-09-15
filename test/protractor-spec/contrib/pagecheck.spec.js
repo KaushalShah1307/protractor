@@ -18,6 +18,8 @@ describe('ContribHP', function() {
 
 		globals.testAllImages();
 
+		globals.testAllBackgroundImages();
+
 		globals.checkAds(contribPage.adsService);
 	});
 });
