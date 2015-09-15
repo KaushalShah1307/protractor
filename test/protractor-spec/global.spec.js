@@ -177,45 +177,46 @@ globals.testAllImages = function() {
 
 var testedBackgroundImages = {};
 globals.testAllBackgroundImages = function() {
-	// describe('Background Images-', function() {
+	describe('Background Images-', function() {
 
-	// 	beforeEach(function() {
-	// 		jasmine.addMatchers({
-	// 			toNot404: globals.matchers.toNot404
-	// 		});	
-	// 	});
+		beforeEach(function() {
+			jasmine.addMatchers({
+				toNot404: globals.matchers.toNot404
+			});	
+		});
 
-	// 	it('should not be broken', function(done) {
-	// 		$$('[style*="background"]').filter(function(element) {
-	// 			// console.log(element);
-	// 			return element.getCssValue('background-image').then(function(href) {
-	// 				var flag = (href && href !== 'none' && !testedBackgroundImages[href.replace('url(', '').replace(')', '')]) ? true : false;
-	// 				if (flag) {
-	// 					console.log(href);
-	// 					testedBackgroundImages[href.replace('url(', '').replace(')', '')] = true;
-	// 				}
-	// 				return flag;
-	// 			});
-	// 		}).map(function(element, index) {
-	// 			return {
-	// 				href: element.getCssValue('background-image').replace('url(', '').replace(')', ''),
-	// 			}
-	// 		}).then(function(links) {
-	// 			var linksToBeChecked = links.length;
+		it('should not be broken', function(done) {
+			$$('[style*="background"]').filter(function(element) {
+				// console.log(element);
+				return element.getCssValue('background-image').then(function(href) {
+					console.log(href);
+					flag = true;
+					// var flag = (href && href !== 'none' && !testedBackgroundImages[href.replace('url(', '').replace(')', '')]) ? true : false;
+					if (flag) {
+						// testedBackgroundImages[href.replace('url(', '').replace(')', '')] = true;
+					}
+					return flag;
+				});
+			}).map(function(element, index) {
+				return {
+					// href: element.getCssValue('background-image').replace('url(', '').replace(')', ''),
+				}
+			}).then(function(links) {
+				var linksToBeChecked = links.length;
 
-	// 			if(linksToBeChecked.length === 0) {
-	// 				done();
-	// 			}
+				if(linksToBeChecked.length === 0) {
+					done();
+				}
 
-	// 			links.forEach(function(link) {
-	// 				expect(link).toNot404();
-	// 				if (--linksToBeChecked === 0) {
-	// 					done();
-	// 				}
-	// 			});
-	// 		});
-	// 	});
-	// });
+				links.forEach(function(link) {
+					// expect(link).toNot404();
+					if (--linksToBeChecked === 0) {
+						done();
+					}
+				});
+			});
+		});
+	});
 }
 
 globals.checkAds = function(adsService) {
@@ -240,9 +241,18 @@ globals.checkAds = function(adsService) {
 	});
 }
 
+globals.getParam = function(url, param_name) {
+	var regex = new RegExp('(\\?|\\&)' + param_name + '=([^&]+)'),
+		match = url.match(regex);
+	if (match) {
+		return match[2];
+	} else {
+		return null;
+	}
+}
+
 globals.generalCheck = function() {
 	globals.testAllLinks();
 	globals.testAllScripts();
 	globals.testAllImages();
-	globals.testAllBackgroundImages();
 }

@@ -4,7 +4,7 @@ var nodemailer = require('nodemailer'),
 	emailHead, emailFoot,
 	emailBody = '';
 	currentIndent = '',
-	tab = '&nbsp;&nbsp;&nbsp;&nbsp;',
+	tab = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
 
 	suites = failedExpectations = [];
 
