@@ -14,6 +14,7 @@ var FbsReporter = {
 	jasmineStarted: function(suiteInfo) {
 		suiteInfo.time = date.getTime();
 		suiteInfo.user = process.env.USERNAME;
+		firebase.remove();
 		browser.getProcessedConfig().then(function(config) {
 			suiteInfo.browser = currentConfig = config.capabilities;
 			suiteInfo.environment = environmentName = config.baseUrl.replace("http://","").replace(".forbes.com","").replace("/","");

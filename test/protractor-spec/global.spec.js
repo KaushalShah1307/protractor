@@ -35,10 +35,12 @@ globals.matchers = {
 var httpGetResponse = function(href) {
 	var defer = protractor.promise.defer();
 
-	if (href.indexOf('https') === -1) {
+	if (href.indexOf('http:') === 0) {
 		httpProtocol = http;
-	} else {
+	} else if (href.indexOf('https:') === 0 ) {
 		httpProtocol = https;
+	} else {
+		return null;
 	}
 
 	httpProtocol.get(href, function(response) {
@@ -221,10 +223,9 @@ globals.testAllBackgroundImages = function() {
 
 globals.checkAds = function(adsService) {
 	describe('Ads', function() {
-
 		beforeEach(function() {
 			jasmine.addMatchers({
-				toNot404: globals.matchers.tohaveAd
+				toHaveAd: globals.matchers.toHaveAd
 			});
 		});
 
@@ -252,7 +253,15 @@ globals.getParam = function(url, param_name) {
 }
 
 globals.generalCheck = function() {
-	globals.testAllLinks();
-	globals.testAllScripts();
-	globals.testAllImages();
+	describe('General-', function() {
+		beforeAll(function() {
+			jasmine.addMatchers({
+				toNot404: globals.matchers.toNot404
+			});
+		});
+
+		globals.testAllLinks();
+		globals.testAllScripts();
+		globals.testAllImages();
+	});
 }
