@@ -8,7 +8,6 @@ var ArticlePage = function(url) {
 		this.page_data = result;
 	}).then(function() {
 		browser.current_page = this;
-		// console.log(browser.current_page);
 	});
   };
 

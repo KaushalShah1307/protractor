@@ -1,4 +1,4 @@
-describe('Article', function() {
+describe('ContribHP', function() {
 	var currentUrl;
 
 	beforeAll(function(done) {
@@ -21,12 +21,11 @@ describe('Article', function() {
 			});
 
 			it ('should have the correct parameters', function() {
-				expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl);
-				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual(browser.current_page.page_data.type);
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl.replace('www-staging','www'));
+				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual(browser.current_page.page_data.authorType);
 				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual(browser.current_page.page_data.naturalId);
-				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual(browser.current_page.page_data.blogType);
+				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual(browser.current_page.page_data.authorType);
 				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual(browser.current_page.page_data.displayChannel);
-				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual(browser.current_page.page_data.authors[0].naturalId);
 			});
 		});
 	});

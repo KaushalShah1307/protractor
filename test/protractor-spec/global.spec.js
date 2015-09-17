@@ -35,7 +35,7 @@ globals.matchers = {
 var httpGetResponse = function(href) {
 	var defer = protractor.promise.defer();
 
-	if (href.indexOf('https') < 0) {
+	if (href.indexOf('https') === -1) {
 		httpProtocol = http;
 	} else {
 		httpProtocol = https;
@@ -245,7 +245,7 @@ globals.getParam = function(url, param_name) {
 	var regex = new RegExp('(\\?|\\&)' + param_name + '=([^&]+)'),
 		match = url.match(regex);
 	if (match) {
-		return match[2];
+		return decodeURIComponent(match[2]);
 	} else {
 		return null;
 	}
