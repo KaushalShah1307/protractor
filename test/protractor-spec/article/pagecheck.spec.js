@@ -1,13 +1,21 @@
 var ArticlePage = require('./article.page.js'),
-	articlePage = new ArticlePage('/sites/gordonkelly/2015/08/08/windows-10-forced-updates-causing-endless-crash-loop/');
+	articlePage = new ArticlePage();
 
 describe('Article', function() {
+	beforeAll(function(done) {
+		var request = require('request');
+		request('http://192.168.16.24/forbesapi/content/all.json?retrievedfields=uri&types=blogslide,blog&limit=1', function(error,response,body) {
+			if (!error && response.statusCode == 200) {
+				articlePage.url = JSON.parse(body).contentList[0].uri.replace('http://www.forbes.com','');
+				done();
+			}
+		});
+	});
 
 	it('should get the page', function() {
 		articlePage.get();
 	});
 
-	globals.generalCheck();
-
+	globals.generalCheck();	
 	globals.checkAds(articlePage.adsService);
 });

@@ -1,5 +1,7 @@
 
-globals = {};
+globals = {
+	pagesChecked: []
+};
 
 http = require('http');
 https = require('https');

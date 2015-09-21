@@ -58,7 +58,7 @@ var FbsReporter = {
 			totalExpectationCount = failedExpectationCount + passedExpectationCount;
 		} else {
 			setTimeout(function() {
-				return FbsReporter.specDone(result)
+				return FbsReporter.specDone(spec)
 			}, 200);
 		}
 

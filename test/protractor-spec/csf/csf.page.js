@@ -9,6 +9,10 @@ var CSFPage = function() {
 	}).then(function() {
 		browser.current_page = this;
 	});
+	browser.getCurrentUrl().then(function(url) {
+		browser.current_url = url;
+		globals.pagesChecked.push(url);
+	});
   };
 
   this.adsService = 'CsfAdService';

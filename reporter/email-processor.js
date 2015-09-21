@@ -2,7 +2,7 @@ var nodemailer = require('nodemailer'),
 	date = new Date(), dateString = date.toDateString() + ' ' + date.toLocaleTimeString(), environment,
 	failedExpectationCount = passedExpectationCount = 0,
 	emailHead, emailFoot,
-	emailBody = '';
+	emailBody = '',
 	currentIndent = '',
 	tab = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
 
@@ -24,6 +24,16 @@ var Email = {
 		});
 		
 		emailHead += '<p>' + passedExpectationCount + ' out of ' + (passedExpectationCount + failedExpectationCount) + ' Expectations Passed.</p>';
+		
+		emailHead += '<p>Pages Checked</p><ul>[list]</li>';
+		var listString = '';
+		globals.pagesChecked.forEach(function(page, index, array) {
+			listString += '<li>' + page + '</li>';
+			if (index === (array.length-1)) {
+				emailHead = emailHead.replace('[list]', listString);
+			}
+		});
+
 
 		transporter.sendMail({
 			from: 'forbesqatest@forbes.com',
