@@ -1,6 +1,6 @@
 var CSFPage = function() {
   this.get = function() {
-    browser.get('/next-billion-dollar-startups/');
+    browser.get('/vinyl/');
 	browser.executeAsyncScript(function() {
 		callback = arguments[0];
 		callback($('body').injector().get('CsfAppState').page_data);

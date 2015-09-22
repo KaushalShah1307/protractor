@@ -11,7 +11,7 @@ globals.matchers = {
 		return {
 			compare: function(adPos) {
 				return {
-					pass: $$('#' + adPos + ' iframe').count().then(function(iframeCount) {
+					pass: $$('#' + adPos + ' div').count().then(function(iframeCount) {
 						return iframeCount > 0;
 					}),
 					message: 'pos=' + adPos + (this.pass ? ' has an ad' : ' does not have an ad')
