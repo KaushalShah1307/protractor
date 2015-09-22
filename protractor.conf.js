@@ -1,5 +1,5 @@
 exports.config = {
-  	baseUrl: 'http://www-staging.forbes.com',
+  	baseUrl: 'http://www-staging.forbes.com/',
 	getPageTimeout: 30000,
   	allScriptsTimeout: 30000,
   	resultJsonOutputFile: 'output.json',
