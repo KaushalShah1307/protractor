@@ -2,7 +2,6 @@ exports.config = {
   	baseUrl: 'http://www-staging.forbes.com/',
 	getPageTimeout: 30000,
   	allScriptsTimeout: 30000,
-  	resultJsonOutputFile: 'output.json',
   	framework: 'jasmine2',
 	jasmineNodeOpts: {
 		isVerbose: true,
@@ -16,21 +15,11 @@ exports.config = {
 		{
 			browserName: 'chrome',
 			logName: 'Desktop Chrome',
-			// count: 2,
 			chromeOptions: {
 				args: [
 					'start-maximized'
 				],
-			},
-			// loggingPrefs: {
-			// 	browser: 'ALL',
-			// 	driver: 'ALL',
-			// 	client: 'ALL',
-			// 	server: 'ALL'
-			// },
-			// perfLoggingPrefs: {
-			// 	enableNetwork: true
-			// }
+			}
 		},
 		{
 			browserName: 'chrome',
@@ -91,7 +80,6 @@ exports.config = {
 		}));
 		browser.ignoreSynchronization = true;
 		browser.get('/');
-		// browser.manage().window().maximize();
 		browser.ignoreSynchronization = false;
 	}
 }

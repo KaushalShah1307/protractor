@@ -133,6 +133,8 @@ globals.testAllScripts = function() {
 						done();
 					}
 				});
+			}, function(err) {
+				console.log(err);
 			});
 		});
 	});
@@ -191,7 +193,6 @@ globals.testAllBackgroundImages = function() {
 
 		it('should not be broken', function(done) {
 			$$('[style*="background"]').filter(function(element) {
-				// console.log(element);
 				return element.getCssValue('background-image').then(function(href) {
 					console.log(href);
 					flag = true;
