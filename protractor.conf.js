@@ -91,7 +91,6 @@ exports.config = {
 		}));
 		browser.ignoreSynchronization = true;
 		browser.get('/');
-		browser.get('/');
 		// browser.manage().window().maximize();
 		browser.ignoreSynchronization = false;
 	}
