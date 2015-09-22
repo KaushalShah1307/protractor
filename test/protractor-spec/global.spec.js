@@ -34,6 +34,10 @@ globals.matchers = {
 
 }
 
+/** httpGetResponse
+ * This function gets the response code of the url passed.
+ * param String href - The link to be checked
+ **/
 var httpGetResponse = function(href) {
 	var defer = protractor.promise.defer();
 
@@ -46,7 +50,6 @@ var httpGetResponse = function(href) {
 	}
 
 	httpProtocol.get(href, function(response) {
-		// console.log(href)
 		defer.fulfill(response.statusCode);
 
 	}).on('error', function(e) {
@@ -56,6 +59,9 @@ var httpGetResponse = function(href) {
 	return defer.promise;
 }
 
+/** testAllLinks
+ * This tests that there are no 404 links on the page
+ **/
 var testedLinks = {};
 globals.testAllLinks = function() {
 	describe('Links-', function() {
@@ -97,6 +103,9 @@ globals.testAllLinks = function() {
 	});
 }
 
+/** testAllScripts
+ * This tests that there are no scripts which 404 on the page.
+ **/
 var testedScripts = {};
 globals.testAllScripts = function() {
 	describe('Scripts-', function() {
@@ -140,6 +149,9 @@ globals.testAllScripts = function() {
 	});
 }
 
+/** testAllImages
+ * This tests that there are no broken images on the page.
+ **/
 var testedImages = {};
 globals.testAllImages = function() {
 	describe('Images-', function() {
@@ -181,6 +193,9 @@ globals.testAllImages = function() {
 	});
 }
 
+/** testAllBackgroundImages
+ * This tests that there are no broken background images on the page.
+ **/
 var testedBackgroundImages = {};
 globals.testAllBackgroundImages = function() {
 	describe('Background Images-', function() {
@@ -224,6 +239,10 @@ globals.testAllBackgroundImages = function() {
 	});
 }
 
+/** checkAds
+ * This tests that there is an inner div within each defined ad slot div.
+ * param String adsService - The Ad Service name of the page (Ask a Dev if there is a new page)
+ **/
 globals.checkAds = function(adsService) {
 	describe('Ads', function() {
 		beforeEach(function() {
@@ -245,6 +264,9 @@ globals.checkAds = function(adsService) {
 	});
 }
 
+/** getParam
+ * This gets a parameter from a URL.
+ **/
 globals.getParam = function(url, param_name) {
 	var regex = new RegExp('(\\?|\\&)' + param_name + '=([^&]+)'),
 		match = url.match(regex);
@@ -255,6 +277,9 @@ globals.getParam = function(url, param_name) {
 	}
 }
 
+/** generalCheck
+ * These are general checks which should be run on every page.
+ **/
 globals.generalCheck = function() {
 	describe('General-', function() {
 		beforeAll(function() {
