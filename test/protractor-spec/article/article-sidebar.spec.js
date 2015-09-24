@@ -1,7 +1,8 @@
 describe('Article', function() {
 	describe('Sidebar-', function() {
 		var commentsPanel,
-			commentsTrigger;
+			commentsTrigger,
+			loginButton;
 
 		beforeAll(function() {
 			commentsTrigger = $('.article-comments'),
