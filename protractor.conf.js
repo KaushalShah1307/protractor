@@ -80,6 +80,7 @@ exports.config = {
 		}));
 		browser.ignoreSynchronization = true;
 		browser.get('/');
+		browser.get('/');
 		browser.ignoreSynchronization = false;
 	}
 }

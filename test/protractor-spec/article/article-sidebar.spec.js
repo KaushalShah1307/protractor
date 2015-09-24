@@ -5,7 +5,7 @@ describe('Article', function() {
 			loginButton;
 
 		beforeAll(function() {
-			commentsTrigger = $('.article-comments'),
+			commentsTrigger = $('.article-comments');
 			commentsPanel = $('.article-sidebar-panel.article-comments-panel');
 			loginButton = $('.unireg_login_replacement');
 		});
