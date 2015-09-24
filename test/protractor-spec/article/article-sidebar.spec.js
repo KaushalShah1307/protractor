@@ -6,6 +6,12 @@ describe('Article', function() {
 		beforeAll(function() {
 			commentsTrigger = $('.article-comments'),
 			commentsPanel = $('.article-sidebar-panel.article-comments-panel');
+			loginButton = $('.unireg_login_replacement');
+		});
+
+		// (http://jira.forbes.com/browse/BUGREPORTING-1051)
+		it('should have a login button', function() {
+			expect(loginButton.isDisplayed()).toBe(true);
 		});
 
 		it('should open', function() {
