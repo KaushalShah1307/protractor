@@ -53,6 +53,11 @@ exports.config = {
 			'test/protractor-spec/global.spec.js',
 			'test/protractor-spec/csf/*pagecheck.spec.js',
 			'test/protractor-spec/csf/**/*.spec.js'
+		],
+		csr: [
+			'test/protractor-spec/global.spec.js',
+			'test/protractor-spec/channelsections/*pagecheck.spec.js',
+			'test/protractor-spec/channelsections/**/*.spec.js'
 		]
 	},
 	specs: [
@@ -63,6 +68,8 @@ exports.config = {
 		'test/protractor-spec/contrib/**/*.spec.js',
 		'test/protractor-spec/csf/*pagecheck.spec.js',
 		'test/protractor-spec/csf/**/*.spec.js',
+		'test/protractor-spec/channelsections/*pagecheck.spec.js',
+		'test/protractor-spec/channelsections/**/*.spec.js',
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
