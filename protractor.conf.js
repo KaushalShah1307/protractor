@@ -19,7 +19,10 @@ exports.config = {
 				args: [
 					'start-maximized'
 				],
-			}
+			},
+			exclude: [
+				'test/protractor-spec/article/article-trending.spec.js',
+			]
 		},
 		{
 			browserName: 'chrome',
