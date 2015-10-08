@@ -1,6 +1,6 @@
 var CSRPage = function() {
   this.get = function() {
-    browser.get('/business/?view=csr');
+    browser.get('/business/');
 	browser.executeAsyncScript(function() {
 		callback = arguments[0];
 		callback($('body').injector().get('CsfAppState').page_data);
