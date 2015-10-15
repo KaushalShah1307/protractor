@@ -22,8 +22,8 @@ describe('CSF', function() {
 
 			it ('should have the correct parameters', function() {
 				expect(globals.getParam(trackingPixel.srcString, 'su') + '/').toEqual(currentUrl.replace(browser.baseUrl,"http://www-staging.forbes.com/"));
-				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual(browser.current_page.page_data.channel.channelName.toLowerCase());
-				expect(globals.getParam(trackingPixel.srcString, 'se')).toEqual(browser.current_page.page_data.channel.sectionName.toLowerCase());
+				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual(browser.current_page.page_data.channel.omnitureChannel.toLowerCase());
+				expect(globals.getParam(trackingPixel.srcString, 'se')).toEqual(browser.current_page.page_data.channel.omnitureSection.toLowerCase());
 			});
 		});
 	});
