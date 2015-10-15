@@ -138,6 +138,7 @@ globals.testAllScripts = function() {
 
 				links.forEach(function(link) {
 					expect(link).toNot404();
+					
 					if (--linksToBeChecked === 0) {
 						done();
 					}
@@ -281,15 +282,15 @@ globals.getParam = function(url, param_name) {
  * These are general checks which should be run on every page.
  **/
 globals.generalCheck = function() {
-	describe('General-', function() {
-		beforeAll(function() {
-			jasmine.addMatchers({
-				toNot404: globals.matchers.toNot404
-			});
-		});
+	// xdescribe('General-', function() {
+	// 	beforeAll(function() {
+	// 		jasmine.addMatchers({
+	// 			toNot404: globals.matchers.toNot404
+	// 		});
+	// 	});
 
-		globals.testAllLinks();
-		globals.testAllScripts();
-		globals.testAllImages();
-	});
+	// 	globals.testAllLinks();
+	// 	globals.testAllScripts();
+	// 	globals.testAllImages();
+	// });
 }
