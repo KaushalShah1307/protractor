@@ -258,7 +258,9 @@ globals.checkAds = function(adsService) {
 				callback(Object.keys($('body').injector().get(arguments[0]).ad_slots));
 			}, adsService).then(function(result) {
 				result.forEach(function(key) {
-					expect(key).toHaveAd();
+					if (!key.match('spon-logo')) {
+						expect(key).toHaveAd();
+					}
 				});
 			});
 		});
@@ -274,7 +276,7 @@ globals.getParam = function(url, param_name) {
 	if (match) {
 		return decodeURIComponent(match[2]);
 	} else {
-		return null;
+		return '';
 	}
 }
 
