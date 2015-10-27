@@ -4,7 +4,6 @@ describe('Article', function() {
 
 		beforeAll(function() {
 			trending_section = $('.article-stream-padding');
-			console.log(trending_section);
 		});
 
 		it('should be present on the page', function() {
