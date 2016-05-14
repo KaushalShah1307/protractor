@@ -30,4 +30,26 @@ describe('Angular Gallery', function() {
 			});
 		});
 	});
+
+	describe('Google Analytics', function() {
+		var dataLayer;
+		beforeAll(function() {
+			browser.executeScript(function() {
+				return dataLayer[0];
+			}).then(function(result) {
+				dataLayer = result;
+			});
+		});
+
+		xit('should pass the right custom parameters', function() {
+			expect(dataLayer.DFPSite).toEqual('fdc.forbes');
+			expect(dataLayer.DFPZone).toEqual('pictures-rc-b');
+			expect(dataLayer.author).toBe('Kurt Badenhausen');
+			expect(dataLayer.channel).toEqual(browser.current_page.page_data.displayChannel);
+			expect(dataLayer.slot).toEqual(browser.current_page.page_data.specialSlot);
+			expect(dataLayer.site).toEqual('kurtbadenhausen');
+			expect(dataLayer.pageType).toEqual('slide');
+		});
+	});
+
 });
