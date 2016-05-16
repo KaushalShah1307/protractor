@@ -63,4 +63,12 @@ describe('Angular Gallery', function() {
 		})
 	});
 
+	describe('Moat', function() {
+
+		it('Moat JS should have loaded on the page', function () {
+			var sr = element(by.id('moat'));
+			expect(sr.getAttribute(src)).toEqual('http://s.moatads.com/forbes949SzQW17/moatcontent.js');
+		})
+	});
+
 });
