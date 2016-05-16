@@ -25,7 +25,6 @@ describe('Gallery Carousal', function () {
 	});
 
 	it('clicks should take user to the previous slide', function() {
-		next.click();
 		expect(activeImage.getAttribute('background-image: url')).toBe(afterImage );
 		prev.click();
 		expect(activeImage.getAttribute('background-image: url')).toBe(beforeImage);
