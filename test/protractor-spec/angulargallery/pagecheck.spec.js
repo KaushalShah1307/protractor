@@ -20,13 +20,13 @@ describe('Gallery Carousal', function () {
 
 	it('Click should take user to next slide', function() {
 		expect(activeImage.getAttribute('background-image: url')).toBe(beforeImage);
-		next.click();
+		element(by.css('.slick-next').click());
 		expect(activeImage.getAttribute('background-image: url')).toBe(afterImage);
 	});
 
 	it('clicks should take user to the previous slide', function() {
 		expect(activeImage.getAttribute('background-image: url')).toBe(afterImage );
-		prev.click();
+		element(by.css('.slick-prev').click());
 		expect(activeImage.getAttribute('background-image: url')).toBe(beforeImage);
 	})
 
