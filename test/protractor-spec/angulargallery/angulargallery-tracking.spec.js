@@ -44,7 +44,7 @@ describe('Angular Gallery', function() {
 			});
 		});
 
-		xit('should pass the right custom parameters', function() {
+		it('should pass the right custom parameters', function() {
 			expect(dataLayer.DFPSite).toEqual('fdc.forbes');
 			expect(dataLayer.DFPZone).toEqual('pictures-rc-b');
 			expect(dataLayer.author).toBe('Kurt Badenhausen');
@@ -56,24 +56,11 @@ describe('Angular Gallery', function() {
 	});
 
 	describe('SimpleReach', function() {
-		var trackingPixel;
 
-		beforeAll(function(done) {
-			trackingPixel = $('script[src*="http://d8rk54i4mohrb.cloudfront.net/js/reach.js"]');
-			trackingPixel.getAttribute('src').then(function(src) {
-				trackingPixel.srcString = src;
-				done();
-			});
-		});
-
-		it ('should have the correct parameters', function() {
-			expect(globals.getParam(trackingPixel.srcString, 'url') + '/').contains(currentUrl.replace(browser.baseUrl,"http://www.forbes.com/"));
-			expect(globals.getParam(trackingPixel.srcString, 'title')).toBe('The World's Highest-Paid Female Athletes 2015');
-			expect(globals.getParam(trackingPixel.srcString, 'authors')).toBe('Kurt Badenhausen');
-			expect(globals.getParam(trackingPixel.srcString, 'channels')).toBe('business');
-			expect(globals.getParam(trackingPixel.srcString, 'tags')).contains('site::kurtbadenhausen|slot::|type::slide|Business|Celebrity 100|Lifestyle|Lists|Sports  Leisure|SportsMoney|Celebrities|Sports &amp; Leisure|Sports and Liesure');
-			expect(globals.getParam(trackingPixel.srcString, 'uid')).toBe('76e44b6d-e62b-11e5-bc93-22000bdb8445');
-		});
+		it('SimpleReach JS should have loaded on the page', function () {
+			var sr = element(by.id('simplereach'));
+			expect(sr.getAttribute(src)).toEqual('http://d8rk54i4mohrb.cloudfront.net/js/reach.js');
+		})
 	});
 
 });
