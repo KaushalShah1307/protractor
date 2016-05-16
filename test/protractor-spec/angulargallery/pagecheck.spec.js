@@ -33,3 +33,12 @@ describe('Gallery Carousal', function () {
 
 });
 
+describe('Parent article for the gallery', function(){
+
+	it('should redirect to the article page', function(){
+		element(by.id('gallery-link').click());
+		browser.waitForAngular();
+		expect(browser.driver.getCurrentUrl()).toEqual("http://www.forbes.com/sites/kurtbadenhausen/2015/08/12/the-worlds-highest-paid-female-athletes-2015/");
+	});
+
+});
