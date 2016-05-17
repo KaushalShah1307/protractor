@@ -1,5 +1,5 @@
 var ArticlePage = require('./article.page.js'),
-	articlePage = new ArticlePage('/sites/gordonkelly/2015/09/19/apple-ios-9-secrets/?view=beta-a');
+	articlePage = new ArticlePage('/sites/gordonkelly/2015/09/19/apple-ios-9-secrets/');
 
 describe('Article', function() {
 	// beforeAll(function(done) {
