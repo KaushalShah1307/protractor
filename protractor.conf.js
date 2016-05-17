@@ -34,6 +34,7 @@ exports.config = {
 			},
 			exclude: [
 				'test/protractor-spec/article/article-sidebar.spec.js',
+				'test/protractor-spec/angulargallery/pagecheck.spec.js',
 			]
 		},
 		// {
@@ -61,6 +62,11 @@ exports.config = {
 			'test/protractor-spec/global.spec.js',
 			'test/protractor-spec/channelsections/*pagecheck.spec.js',
 			'test/protractor-spec/channelsections/**/*.spec.js'
+		],
+		galleries: [
+			'test/protractor-spec/globas.spec.js',
+			'test/protractor-spec/angualargallery/*pagecheck.spec.js',
+			'test/protractor-spec/angulargallery/**/*.spec.js'
 		]
 	},
 	specs: [
@@ -73,6 +79,8 @@ exports.config = {
 		'test/protractor-spec/csf/**/*.spec.js',
 		'test/protractor-spec/channelsections/*pagecheck.spec.js',
 		'test/protractor-spec/channelsections/**/*.spec.js',
+		'test/protractor-spec/angualargallery/*pagecheck.spec.js',
+		'test/protractor-spec/angulargallery/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
