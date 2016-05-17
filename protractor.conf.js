@@ -64,7 +64,7 @@ exports.config = {
 			'test/protractor-spec/channelsections/**/*.spec.js'
 		],
 		angulargallery: [
-			'test/protractor-spec/globas.spec.js',
+			'test/protractor-spec/global.spec.js',
 			'test/protractor-spec/angualargallery/*pagecheck.spec.js',
 			'test/protractor-spec/angulargallery/**/*.spec.js'
 		]
