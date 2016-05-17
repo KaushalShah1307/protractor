@@ -30,7 +30,6 @@ describe('Article', function() {
 			});
 		});
 
-
 		describe('Google Analytics', function() {
 			var dataLayer;
 			beforeAll(function() {
@@ -41,7 +40,7 @@ describe('Article', function() {
 				});
 			});
 
-			xit('should pass the right custom parameters', function() {
+			it('should pass the right custom parameters', function() {
 				// expect(dataLayer.brandvoice).toBe(null);
 				expect(dataLayer.author).toBe('Gordon Kelly');
 				expect(dataLayer.channel).toEqual(browser.current_page.page_data.displayChannel);
