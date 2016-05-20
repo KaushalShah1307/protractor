@@ -79,7 +79,7 @@ exports.config = {
 		'test/protractor-spec/csf/**/*.spec.js',
 		'test/protractor-spec/channelsections/*pagecheck.spec.js',
 		'test/protractor-spec/channelsections/**/*.spec.js',
-		'test/protractor-spec/angualargallery/*pagecheck.spec.js',
+		'test/protractor-spec/angulargallery/*pagecheck.spec.js',
 		'test/protractor-spec/angulargallery/**/*.spec.js'
 	],
 	onPrepare: function() {
