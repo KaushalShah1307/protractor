@@ -42,7 +42,7 @@ describe('Article', function() {
 
 			it('should pass the right custom parameters', function() {
 				// expect(dataLayer.brandvoice).toBe(null);
-				expect(dataLayer.author).toBe('Gordon Kelly');
+				expect(dataLayer.author).toEqual('Gordon Kelly');
 				expect(dataLayer.channel).toEqual(browser.current_page.page_data.displayChannel);
 				expect(dataLayer.slot).toEqual(browser.current_page.page_data.specialSlot);
 				// expect(dataLayer.DFPSite).toEqual('fdc\.forbes');
