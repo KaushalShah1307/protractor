@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "firebase": "^2.2.9",
+    "firebase": "^3.0.2",
     "nodemailer": "^1.4.0",
     "protractor": "^2.1.0"
   },
