@@ -9,11 +9,11 @@ describe('Article', function() {
 				.run(function ($httpBackend, $cookies) {
 					$cookies.fobesbeta = 'A';
 				});
+			articlePage.addMockModule('httpBackendMock', mock_code);
 		}
 		});
 
 	it('should get the page', function() {
-		articlePage.addMockModule('httpBackendMock', mock_code);
 		articlePage.get();
 	});
 
