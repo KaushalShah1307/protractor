@@ -29,7 +29,7 @@ describe('Article', function() {
 				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual(browser.current_page.page_data.authors[0].naturalId);
 			});
 		});
-
+/*
 		describe('Google Analytics', function() {
 			var dataLayer;
 			beforeAll(function() {
@@ -53,6 +53,6 @@ describe('Article', function() {
 				expect(dataLayer.DFPZone).toEqual('article-d');
 
 			});
-		});
+		});*/
 	});
 });
