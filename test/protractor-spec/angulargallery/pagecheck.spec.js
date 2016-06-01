@@ -5,7 +5,7 @@ var angularGalleryPage = require('./angulargallery.page.js'),
 	galleryPage = new angularGalleryPage();
 describe('Angular Gallery', function() {
 
-	it('should mock the cookie for forbesgallery = B', function() {
+/*	it('should mock the cookie for forbesgallery = B', function() {
 		var mock_code = function () {
 			angular.module('httpBackendMock', ['ngMockE2E', 'ngCookies'])
 				.run(function ($httpBackend, $cookies) {
@@ -13,7 +13,7 @@ describe('Angular Gallery', function() {
 				});
 			galleryPage.addMockModule('httpBackendMock', mock_code);
 		}
-	});
+	});*/
 
 	it('should get the page', function() {
 		galleryPage.get();

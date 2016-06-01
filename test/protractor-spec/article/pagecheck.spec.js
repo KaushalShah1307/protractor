@@ -3,7 +3,7 @@ var ArticlePage = require('./article.page.js'),
 
 describe('Article', function() {
 
-	it('should mock the cookie for forbesbeta = A', function() {
+/*	it('should mock the cookie for forbesbeta = A', function() {
 		var mock_code = function () {
 			angular.module('httpBackendMock', ['ngMockE2E', 'ngCookies'])
 				.run(function ($httpBackend, $cookies) {
@@ -11,7 +11,7 @@ describe('Article', function() {
 				});
 			articlePage.addMockModule('httpBackendMock', mock_code);
 		}
-		});
+		});*/
 
 	it('should get the page', function() {
 		articlePage.get();
