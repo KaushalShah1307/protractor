@@ -8,5 +8,6 @@
     <file url="file://$PROJECT_DIR$/test/protractor-spec/angulargallery/pagecheck.spec.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/protractor-spec/article/article-tracking.spec.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/protractor-spec/article/pagecheck.spec.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/protractor-spec/search/search.page.js" charset="UTF-8" />
   </component>
 </project>
