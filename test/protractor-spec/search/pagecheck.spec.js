@@ -11,4 +11,9 @@ describe('Search', function() {
 	globals.generalCheck();
 
 	globals.checkAds(searchPage.adsService);
+
+	it('should search for the input text', function(){
+		element(by.class('search-box')).sendKeys('GoSoccer');
+		$('[type="submit"]').click();
+	});
 });
