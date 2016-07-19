@@ -67,6 +67,10 @@ exports.config = {
 			'test/protractor-spec/global.spec.js',
 			'test/protractor-spec/angulargallery/*pagecheck.spec.js',
 			'test/protractor-spec/angulargallery/**/*.spec.js'
+		],
+		search: [
+			'test/protractor-spec/global.spec.js',
+			'test/protractor-spec/search/*pagecheck.spec.js'
 		]
 	},
 	specs: [
