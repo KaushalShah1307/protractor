@@ -3,15 +3,20 @@ var ArticlePage = require('./article.page.js'),
 
 describe('Article', function() {
 
-/*	it('should mock the cookie for forbesbeta = A', function() {
-		var mock_code = function () {
-			angular.module('httpBackendMock', ['ngMockE2E', 'ngCookies'])
-				.run(function ($httpBackend, $cookies) {
-					$cookies.fobesbeta = 'A';
-				});
-			articlePage.addMockModule('httpBackendMock', mock_code);
-		}
-		});*/
+	var ptor;
+
+	beforeEach(function () {
+		ptor = protractor.getInstance();
+		browser.get('/');
+		ptor.manage().addCookie("forbesbeta", "A");
+	});
+
+
+	it('check if the cookie is set', function () {
+		cookies = ptor.manage().getCookie("forbesbeta").then(function(data){
+			console.log(data);
+		});
+	});
 
 	it('should get the page', function() {
 		articlePage.get();
