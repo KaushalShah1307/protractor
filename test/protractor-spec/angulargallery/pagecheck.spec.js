@@ -18,6 +18,7 @@ describe('Gallery Carousal', function () {
 
 	var beforeImage = "http://specials-images.forbesimg.com/imageserve/479783114/1200x0.jpg?fit=scale&background=000000";
 	var afterImage = "http://specials-images.forbesimg.com/imageserve/480371870/1200x0.jpg?fit=scale&background=000000";
+	var activeImage = element.by.css('background-image');
 
 	it('Click should take user to next slide', function() {
 		expect(activeImage.getAttribute('background-image: url')).toBe(beforeImage);
