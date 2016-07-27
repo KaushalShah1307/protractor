@@ -6,7 +6,7 @@ describe('Article', function() {
 	var ptor;
 
 	beforeEach(function () {
-		ptor = protractor.getInstance();
+//		ptor = protractor.getInstance();
 		browser.get('/');
 		ptor.manage().addCookie("forbesbeta", "A");
 	});
