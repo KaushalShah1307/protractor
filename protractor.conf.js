@@ -32,6 +32,7 @@ exports.config = {
 			exclude: [
 				'test/protractor-spec/article/article-sidebar.spec.js',
 				'test/protractor-spec/angulargallery/pagecheck.spec.js',
+				'test/protractor-spec/search/*pagecheck.spec.js'
 			]
 		},
 		// {
