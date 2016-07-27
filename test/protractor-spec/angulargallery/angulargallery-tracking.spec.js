@@ -46,7 +46,7 @@ describe('Angular Gallery', function() {
 
 		it('should pass the right custom parameters', function() {
 			expect(dataLayer.DFPSite).toEqual('fdc.forbes');
-			expect(dataLayer.DFPZone).toEqual('pictures-rc-b');
+			expect(dataLayer.DFPZone).toEqual('pictures');
 			expect(dataLayer.author).toBe('Kurt Badenhausen');
 			expect(dataLayer.channel).toEqual(browser.current_page.page_data.displayChannel);
 			expect(dataLayer.slot).toEqual(browser.current_page.page_data.specialSlot);
