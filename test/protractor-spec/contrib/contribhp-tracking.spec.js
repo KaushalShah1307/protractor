@@ -21,7 +21,7 @@ describe('ContribHP', function() {
 			});
 
 			it ('should have the correct parameters', function() {
-				expect(globals.getParam(trackingPixel.srcString, 'su')).contains(currentUrl.replace(browser.baseUrl,'http://www-staging.forbes.com/'));
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toContain(currentUrl.replace(browser.baseUrl,'http://www-staging.forbes.com/'));
 				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual(browser.current_page.page_data.authorType);
 				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual(browser.current_page.page_data.naturalId);
 				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual(browser.current_page.page_data.authorType);
