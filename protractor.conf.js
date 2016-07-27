@@ -40,11 +40,6 @@ exports.config = {
 		// }
 	],
 	suites: {
-		article: [
-			'test/protractor-spec/global.spec.js',
-			'test/protractor-spec/article/*pagecheck.spec.js',
-			'test/protractor-spec/article/**/*.spec.js'
-		],
 		contrib: [
 			'test/protractor-spec/global.spec.js',
 			'test/protractor-spec/contrib/*pagecheck.spec.js',
