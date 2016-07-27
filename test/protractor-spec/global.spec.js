@@ -270,7 +270,7 @@ globals.checkAds = function(adsService) {
 /** getParam
  * This gets a parameter from a URL.
  **/
-/*globals.getParam = function(url, param_name) {
+globals.getParam = function(url, param_name) {
 	var regex = new RegExp('(\\?|\\&)' + param_name + '=([^&]+)'),
 		match = url.match(regex);
 	if (match) {
@@ -278,7 +278,7 @@ globals.checkAds = function(adsService) {
 	} else {
 		return '';
 	}
-}*/
+}
 
 /** generalCheck
  * These are general checks which should be run on every page.

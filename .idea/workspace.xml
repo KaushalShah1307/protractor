@@ -21,21 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="contribhp-tracking.spec.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="contribhp-tracking.spec.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/protractor-spec/contrib/contribhp-tracking.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.12934783">
               <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global.spec.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="global.spec.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/protractor-spec/global.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.575">
-              <caret line="280" column="3" selection-start-line="280" selection-start-column="3" selection-end-line="280" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="272" column="0" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -683,18 +683,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/protractor-spec/contrib/contribhp-tracking.spec.js">
+    <entry file="file://$PROJECT_DIR$/test/protractor-spec/global.spec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <caret line="272" column="0" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/protractor-spec/global.spec.js">
+    <entry file="file://$PROJECT_DIR$/test/protractor-spec/contrib/contribhp-tracking.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.575">
-          <caret line="280" column="3" selection-start-line="280" selection-start-column="3" selection-end-line="280" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.12934783">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
           <folding />
         </state>
       </provider>
