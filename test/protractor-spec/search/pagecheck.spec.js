@@ -13,7 +13,7 @@ describe('Search', function() {
 	globals.checkAds(searchPage.adsService);
 
 	it('should search for the input text', function(){
-		element(by.class('search-box')).sendKeys('GoSoccer');
+		element(by.id('search-form')).sendKeys('GoSoccer');
 		$('[type="submit"]').click();
 	});
 });
