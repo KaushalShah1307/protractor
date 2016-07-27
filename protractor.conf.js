@@ -40,6 +40,11 @@ exports.config = {
 		// }
 	],
 	suites: {
+		article: [
+			'test/protractor-spec/global.spec.js',
+			'test/protractor-spec/article/*pagecheck.spec.js',
+			'test/protractor-spec/article/**/*.spec.js'
+		],
 		contrib: [
 			'test/protractor-spec/global.spec.js',
 			'test/protractor-spec/contrib/*pagecheck.spec.js',
@@ -67,8 +72,8 @@ exports.config = {
 	},
 	specs: [
 		'test/protractor-spec/global.spec.js',
-		'test/protractor-spec/article/*pagecheck.spec.js',
-		'test/protractor-spec/article/**/*.spec.js',
+//		'test/protractor-spec/article/*pagecheck.spec.js',
+//		'test/protractor-spec/article/**/*.spec.js',
 		'test/protractor-spec/contrib/*pagecheck.spec.js',
 		'test/protractor-spec/contrib/**/*.spec.js',
 		'test/protractor-spec/csf/*pagecheck.spec.js',
@@ -76,7 +81,8 @@ exports.config = {
 		'test/protractor-spec/channelsections/*pagecheck.spec.js',
 		'test/protractor-spec/channelsections/**/*.spec.js',
 		'test/protractor-spec/angulargallery/*pagecheck.spec.js',
-		'test/protractor-spec/angulargallery/**/*.spec.js'
+		'test/protractor-spec/angulargallery/**/*.spec.js',
+		'test/protractor-spec/search/*pagecheck.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
