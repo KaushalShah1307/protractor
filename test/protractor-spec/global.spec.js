@@ -69,7 +69,7 @@ globals.testAllLinks = function() {
 		beforeEach(function() {
 			jasmine.addMatchers({
 				toNot404: globals.matchers.toNot404
-			});	
+			});
 		});
 
 		it('should not 404', function(done) {
@@ -113,7 +113,7 @@ globals.testAllScripts = function() {
 		beforeEach(function() {
 			jasmine.addMatchers({
 				toNot404: globals.matchers.toNot404
-			});	
+			});
 		});
 
 		it('should not 404', function(done) {
@@ -138,7 +138,7 @@ globals.testAllScripts = function() {
 
 				links.forEach(function(link) {
 					expect(link).toNot404();
-					
+
 					if (--linksToBeChecked === 0) {
 						done();
 					}
@@ -160,7 +160,7 @@ globals.testAllImages = function() {
 		beforeEach(function() {
 			jasmine.addMatchers({
 				toNot404: globals.matchers.toNot404
-			});	
+			});
 		});
 
 		it('should not be broken', function(done) {
@@ -204,7 +204,7 @@ globals.testAllBackgroundImages = function() {
 		beforeEach(function() {
 			jasmine.addMatchers({
 				toNot404: globals.matchers.toNot404
-			});	
+			});
 		});
 
 		it('should not be broken', function(done) {
@@ -270,7 +270,7 @@ globals.checkAds = function(adsService) {
 /** getParam
  * This gets a parameter from a URL.
  **/
-globals.getParam = function(url, param_name) {
+/*globals.getParam = function(url, param_name) {
 	var regex = new RegExp('(\\?|\\&)' + param_name + '=([^&]+)'),
 		match = url.match(regex);
 	if (match) {
@@ -278,7 +278,7 @@ globals.getParam = function(url, param_name) {
 	} else {
 		return '';
 	}
-}
+}*/
 
 /** generalCheck
  * These are general checks which should be run on every page.
