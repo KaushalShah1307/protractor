@@ -25,8 +25,8 @@ describe('Angular Gallery', function() {
 
 			it ('should have the correct parameters', function() {
 				expect(globals.getParam(trackingPixel.srcString, 'su') + '/').toMatch(currentUrl.replace(browser.baseUrl,"http://www.forbes.com/"));
-				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual(browser.current_page.page_data.gallery.displayChannel.toLowerCase());
-				expect(globals.getParam(trackingPixel.srcString, 'se')).toEqual(browser.current_page.page_data.gallery.displaySection.toLowerCase());
+				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual(browser.current_page.page_data.displayChannel.toLowerCase());
+				expect(globals.getParam(trackingPixel.srcString, 'se')).toEqual(browser.current_page.page_data.displaySection.toLowerCase());
 				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('slide');
 				expect(globals.getParam(trackingPixel.srcString, 'i')).toContain('blogAndSlideId/blog/slide/');
 				expect(globals.getParam(trackingPixel.srcString, 'au')).toContain('blogAuthorId/blog/author/');
