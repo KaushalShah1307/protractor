@@ -58,6 +58,7 @@ describe('Angular Gallery', function() {
 	describe('SimpleReach', function() {
 
 		it('SimpleReach JS should have loaded on the page', function () {
+			browser.sleep(1000);
 			var sr = element(by.id('simplereach'));
 			expect(sr.getAttribute(src)).toEqual('http://d8rk54i4mohrb.cloudfront.net/js/reach.js');
 		})
@@ -66,6 +67,7 @@ describe('Angular Gallery', function() {
 	describe('Moat', function() {
 
 		it('Moat JS should have loaded on the page', function () {
+			browser.sleep(1000);
 			var sr = element(by.id('moat'));
 			expect(sr.getAttribute(src)).toEqual('http://s.moatads.com/forbes949SzQW17/moatcontent.js');
 		})
