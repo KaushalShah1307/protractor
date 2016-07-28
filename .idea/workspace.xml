@@ -21,22 +21,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="protractor.conf.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protractor.conf.js">
+      <file leaf-file-name="angulargallery-tracking.spec.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/protractor-spec/angulargallery/angulargallery-tracking.spec.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="2" selection-start-line="78" selection-start-column="2" selection-end-line="78" selection-end-column="2" />
+              <caret line="28" column="110" selection-start-line="28" selection-start-column="110" selection-end-line="28" selection-end-column="110" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="angulargallery-tracking.spec.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/protractor-spec/angulargallery/angulargallery-tracking.spec.js">
+      <file leaf-file-name="pagecheck.spec.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/protractor-spec/search/pagecheck.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4271739">
-              <caret line="28" column="110" selection-start-line="28" selection-start-column="110" selection-end-line="28" selection-end-column="110" />
-              <folding />
+            <state vertical-scroll-proportion="0.25869566">
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#41#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,9 +66,9 @@
         <option value="$PROJECT_DIR$/test/protractor-spec/article/pagecheck.spec.js" />
         <option value="$PROJECT_DIR$/test/protractor-spec/global.spec.js" />
         <option value="$PROJECT_DIR$/test/protractor-spec/contrib/contribhp-tracking.spec.js" />
-        <option value="$PROJECT_DIR$/test/protractor-spec/search/pagecheck.spec.js" />
         <option value="$PROJECT_DIR$/protractor.conf.js" />
         <option value="$PROJECT_DIR$/test/protractor-spec/angulargallery/angulargallery-tracking.spec.js" />
+        <option value="$PROJECT_DIR$/test/protractor-spec/search/pagecheck.spec.js" />
       </list>
     </option>
   </component>
@@ -157,7 +159,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reporter" />
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protractor-spec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protractor-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protractor-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protractor-spec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="article" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -556,20 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reporter/email-processor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reporter/custom-reporter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.036956523">
-          <caret line="2" column="42" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20917226">
@@ -594,16 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/protractor-spec/search/search.page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36956522">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/protractor-spec/channelsections/csr.page.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -625,16 +633,6 @@
         <state vertical-scroll-proportion="0.4271739">
           <caret line="272" column="0" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/protractor-spec/search/pagecheck.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24021739">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -688,17 +686,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protractor.conf.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.40869564">
           <caret line="78" column="2" selection-start-line="78" selection-start-column="2" selection-end-line="78" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/reporter/email-processor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reporter/custom-reporter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.20108695">
+          <caret line="2" column="42" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/protractor-spec/search/search.page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36956522">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/protractor-spec/angulargallery/angulargallery-tracking.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4271739">
+        <state vertical-scroll-proportion="0.0">
           <caret line="28" column="110" selection-start-line="28" selection-start-column="110" selection-end-line="28" selection-end-column="110" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/protractor-spec/search/pagecheck.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25869566">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
