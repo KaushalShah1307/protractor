@@ -81,9 +81,9 @@ exports.config = {
 //		'test/protractor-spec/csf/**/*.spec.js',
 //		'test/protractor-spec/channelsections/*pagecheck.spec.js',
 //		'test/protractor-spec/channelsections/**/*.spec.js',
-		'test/protractor-spec/angulargallery/*pagecheck.spec.js',
-		'test/protractor-spec/angulargallery/**/*.spec.js',
-//		'test/protractor-spec/search/*pagecheck.spec.js'
+//		'test/protractor-spec/angulargallery/*pagecheck.spec.js',
+//		'test/protractor-spec/angulargallery/**/*.spec.js',
+		'test/protractor-spec/search/*pagecheck.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
