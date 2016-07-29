@@ -72,7 +72,7 @@ var FbsReporter = {
 		var from_server = process.env.USERNAME === 'bpoon',
 			destination = {
 				slack: from_server ? '%23protractor' : ('@' + process.env.USERNAME),
-				email: from_server ? ',kshah@forbes.com' : process.env.USERNAME + '@forbes.com, kshah@forbes.com'
+				email: from_server ? 'kshah@forbes.com' : process.env.USERNAME + '@forbes.com, kshah@forbes.com'
 			};
 
 		if (failedExpectationCount !== 0 || !from_server) {
