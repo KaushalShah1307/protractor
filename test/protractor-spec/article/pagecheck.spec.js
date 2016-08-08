@@ -1,9 +1,9 @@
 var ArticlePage = require('./article.page.js'),
-	articlePage = new ArticlePage('/sites/gordonkelly/2015/09/19/apple-ios-9-secrets/');
+	articlePage = new ArticlePage('/sites/gordonkelly/2015/09/19/apple-ios-9-secrets/?view=beta-a');
 
 describe('Article', function() {
 
-	var ptor;
+/*	var ptor;
 
 	beforeEach(function () {
 //		ptor = protractor.getInstance();
@@ -17,7 +17,7 @@ describe('Article', function() {
 			console.log(data);
 		});
 	});
-
+*/
 	it('should get the page', function() {
 		articlePage.get();
 	});
