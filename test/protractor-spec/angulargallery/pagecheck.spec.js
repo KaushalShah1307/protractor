@@ -18,18 +18,18 @@ describe('Gallery Carousal', function () {
 
 	var beforeImage = "http://specials-images.forbesimg.com/imageserve/479783114/1200x0.jpg?fit=scale&background=000000";
 	var afterImage = "http://specials-images.forbesimg.com/imageserve/480371870/1200x0.jpg?fit=scale&background=000000";
-	var activeImage = element.by.css('background-image');
+//	var activeImage = element.by.css('background-image');
 
 	it('Click should take user to next slide', function() {
-		expect(activeImage.getAttribute('background-image: url')).toBe(beforeImage);
+		expect(beforeImage).toEqual(browser.current_page.page_data.gallery.slide[1]);
 		element(by.css('.slick-next').click());
-		expect(activeImage.getAttribute('background-image: url')).toBe(afterImage);
+		expect(afterImage).toEqual(browser.current_page.page_data.gallery.slide[2]);
 	});
 
 	it('Click should take user to the previous slide', function() {
-		expect(activeImage.getAttribute('background-image: url')).toBe(afterImage );
+		expect(afterImage).toEqual(browser.current_page.page_data.gallery.slide[2]);
 		element(by.css('.slick-prev').click());
-		expect(activeImage.getAttribute('background-image: url')).toBe(beforeImage);
+		expect(beforeImage).toEqual(browser.current_page.page_data.gallery.slide[1]);
 	})
 
 });
