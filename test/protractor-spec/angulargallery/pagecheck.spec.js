@@ -21,15 +21,15 @@ describe('Gallery Carousal', function () {
 //	var activeImage = element.by.css('background-image');
 
 	it('Click should take user to next slide', function() {
-		expect(beforeImage).toEqual(browser.current_page.page_data.gallery.slides[1]);
+		expect(beforeImage).toEqual(browser.current_page.page_data.slides[1]);
 		element(by.css('.slick-next').click());
-		expect(afterImage).toEqual(browser.current_page.page_data.gallery.slides[2]);
+		expect(afterImage).toEqual(browser.current_page.page_data.slides[2]);
 	});
 
 	it('Click should take user to the previous slide', function() {
-		expect(afterImage).toEqual(browser.current_page.page_data.gallery.slides[2]);
+		expect(afterImage).toEqual(browser.current_page.page_data.slides[2]);
 		element(by.css('.slick-prev').click());
-		expect(beforeImage).toEqual(browser.current_page.page_data.gallery.slides[1]);
+		expect(beforeImage).toEqual(browser.current_page.page_data.slides[1]);
 	})
 
 });
