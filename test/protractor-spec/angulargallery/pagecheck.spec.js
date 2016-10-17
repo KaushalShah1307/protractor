@@ -13,7 +13,7 @@ describe('Angular Gallery', function() {
 
 	globals.checkAds(galleryPage.adsService);
 });
-
+/*
 describe('Gallery Carousal', function () {
 
 	var beforeImage = "http://specials-images.forbesimg.com/imageserve/479783114/1200x0.jpg?fit=scale&background=000000";
@@ -32,7 +32,7 @@ describe('Gallery Carousal', function () {
 		expect(beforeImage).toEqual(browser.current_page.page_data.slides[1].image_url);
 	})
 
-});
+});*/
 
 describe('Parent article for the gallery', function(){
 
