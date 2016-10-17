@@ -24,7 +24,7 @@ describe('Angular Gallery', function() {
 			});
 
 			it ('should have the correct parameters', function() {
-				expect(globals.getParam(trackingPixel.srcString, 'su') + '/').toMatch(currentUrl.replace(browser.baseUrl,"http://www.forbes.com/"));
+				expect(globals.getParam(trackingPixel.srcString, 'su') + '/').toContain(currentUrl.replace(browser.baseUrl,"http://www-staging.forbes.com/"));
 				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual(browser.current_page.page_data.displayChannel.toLowerCase());
 				expect(globals.getParam(trackingPixel.srcString, 'se')).toEqual(browser.current_page.page_data.displaySection.toLowerCase());
 				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('slide');
@@ -45,7 +45,7 @@ describe('Angular Gallery', function() {
 		});
 
 		it('should pass the right custom parameters', function() {
-			expect(dataLayer.DFPSite).toEqual('fdc.forbes');
+			expect(dataLayer.DFPSite).toEqual('fdc.forbes' || 'fdcmobile');
 			expect(dataLayer.DFPZone).toEqual('pictures');
 			expect(dataLayer.author).toBe('Kurt Badenhausen');
 			expect(dataLayer.channel).toEqual(browser.current_page.page_data.displayChannel);
