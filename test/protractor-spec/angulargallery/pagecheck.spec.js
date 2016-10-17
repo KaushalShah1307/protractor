@@ -32,7 +32,7 @@ describe('Gallery Carousal', function () {
 		expect(beforeImage).toEqual(browser.current_page.page_data.slides[1].image_url);
 	})
 
-});*/
+});
 
 describe('Parent article for the gallery', function(){
 
@@ -43,3 +43,4 @@ describe('Parent article for the gallery', function(){
 	});
 
 });
+*/
