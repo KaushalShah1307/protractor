@@ -18,4 +18,13 @@ describe('Search', function() {
 		element(by.id('search-form')).sendKeys('GoSoccer');
 		$('[type="submit"]').click();
 	});
+
+	describe('SimpleReach', function() {
+
+		it('SimpleReach JS should have loaded on the page', function () {
+			browser.sleep(1500);
+			var sr = element(by.id('simplereach'));
+			expect(sr.getAttribute(src)).toEqual('http://d8rk54i4mohrb.cloudfront.net/js/reach.js');
+		})
+	});
 });
