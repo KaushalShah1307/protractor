@@ -1,29 +1,200 @@
 0 info it worked if it ends with ok
 1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
 1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'version',
-1 verbose cli   'patch' ]
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'protractor' ]
 2 info using npm@2.15.1
 3 info using node@v4.4.4
-4 info git [ 'status', '--porcelain' ]
-5 verbose stack Error: Git working directory not clean.
-5 verbose stack M .idea/workspace.xml
-5 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\version.js:171:21
-5 verbose stack     at ChildProcess.exithandler (child_process.js:204:7)
-5 verbose stack     at emitTwo (events.js:87:13)
-5 verbose stack     at ChildProcess.emit (events.js:172:7)
-5 verbose stack     at maybeClose (internal/child_process.js:827:16)
-5 verbose stack     at Socket.<anonymous> (internal/child_process.js:319:11)
-5 verbose stack     at emitOne (events.js:77:13)
-5 verbose stack     at Socket.emit (events.js:169:7)
-5 verbose stack     at Pipe._onclose (net.js:477:12)
-6 verbose cwd C:\Users\kshah\Development\projects\protractor-tests
-7 error Windows_NT 6.1.7601
-8 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "version" "patch"
-9 error node v4.4.4
-10 error npm  v2.15.1
-11 error Git working directory not clean.
-11 error M .idea/workspace.xml
-12 error If you need help, you may report this error at:
-12 error     <https://github.com/npm/npm/issues>
-13 verbose exit [ 1, true ]
+4 verbose install initial load of C:\Users\kshah\AppData\Roaming\npm\package.json
+5 verbose readDependencies loading dependencies from C:\Users\kshah\AppData\Roaming\npm\package.json
+6 silly cache add args [ 'protractor', null ]
+7 verbose cache add spec protractor
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'protractor',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'protractor',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: 'latest',
+8 silly cache add   type: 'tag' }
+9 silly addNamed protractor@latest
+10 verbose addNamed "latest" is being treated as a dist-tag for protractor
+11 info addNameTag [ 'protractor', 'latest' ]
+12 silly mapToRegistry name protractor
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry data Result {
+15 silly mapToRegistry   raw: 'protractor',
+15 silly mapToRegistry   scope: null,
+15 silly mapToRegistry   name: 'protractor',
+15 silly mapToRegistry   rawSpec: '',
+15 silly mapToRegistry   spec: 'latest',
+15 silly mapToRegistry   type: 'tag' }
+16 silly mapToRegistry uri https://registry.npmjs.org/protractor
+17 verbose addNameTag registry:https://registry.npmjs.org/protractor not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/protractor
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 3:35:35 PM
+21 verbose request id 2cbe825b78cf8e85
+22 verbose etag "3UHQVW83YWR9OVNN03HHC786Z"
+23 http request GET https://registry.npmjs.org/protractor
+24 http 304 https://registry.npmjs.org/protractor
+25 verbose headers { date: 'Tue, 08 Nov 2016 20:35:36 GMT',
+25 verbose headers   via: '1.1 varnish',
+25 verbose headers   'cache-control': 'max-age=300',
+25 verbose headers   etag: '"3UHQVW83YWR9OVNN03HHC786Z"',
+25 verbose headers   age: '44',
+25 verbose headers   connection: 'keep-alive',
+25 verbose headers   'x-served-by': 'cache-iad2626-IAD',
+25 verbose headers   'x-cache': 'HIT',
+25 verbose headers   'x-cache-hits': '1',
+25 verbose headers   'x-timer': 'S1478637336.014260,VS0,VE0',
+25 verbose headers   vary: 'Accept-Encoding' }
+26 silly get cb [ 304,
+26 silly get   { date: 'Tue, 08 Nov 2016 20:35:36 GMT',
+26 silly get     via: '1.1 varnish',
+26 silly get     'cache-control': 'max-age=300',
+26 silly get     etag: '"3UHQVW83YWR9OVNN03HHC786Z"',
+26 silly get     age: '44',
+26 silly get     connection: 'keep-alive',
+26 silly get     'x-served-by': 'cache-iad2626-IAD',
+26 silly get     'x-cache': 'HIT',
+26 silly get     'x-cache-hits': '1',
+26 silly get     'x-timer': 'S1478637336.014260,VS0,VE0',
+26 silly get     vary: 'Accept-Encoding' } ]
+27 verbose etag https://registry.npmjs.org/protractor from cache
+28 verbose get saving protractor to C:\Users\kshah\AppData\Roaming\npm-cache\registry.npmjs.org\protractor\.cache.json
+29 verbose correctMkdir C:\Users\kshah\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+30 silly addNameTag next cb for protractor with tag latest
+31 silly addNamed protractor@4.0.10
+32 verbose addNamed "4.0.10" is a plain semver version for protractor
+33 silly cache afterAdd protractor@4.0.10
+34 verbose afterAdd C:\Users\kshah\AppData\Roaming\npm-cache\protractor\4.0.10\package\package.json not in flight; writing
+35 verbose correctMkdir C:\Users\kshah\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+36 verbose afterAdd C:\Users\kshah\AppData\Roaming\npm-cache\protractor\4.0.10\package\package.json written
+37 silly install resolved [ { name: 'protractor',
+37 silly install resolved     description: 'Webdriver E2E test wrapper for Angular.',
+37 silly install resolved     homepage: 'https://github.com/angular/protractor',
+37 silly install resolved     keywords:
+37 silly install resolved      [ 'angular',
+37 silly install resolved        'test',
+37 silly install resolved        'testing',
+37 silly install resolved        'webdriver',
+37 silly install resolved        'webdriverjs',
+37 silly install resolved        'selenium' ],
+37 silly install resolved     author: { name: 'Julie Ralph', email: 'ju.ralph@gmail.com' },
+37 silly install resolved     dependencies:
+37 silly install resolved      { '@types/jasmine': '^2.5.36',
+37 silly install resolved        '@types/node': '^6.0.46',
+37 silly install resolved        '@types/q': '^0.0.32',
+37 silly install resolved        '@types/selenium-webdriver': '~2.53.31',
+37 silly install resolved        'adm-zip': '0.4.7',
+37 silly install resolved        chalk: '^1.1.3',
+37 silly install resolved        glob: '^7.0.3',
+37 silly install resolved        jasmine: '2.5.2',
+37 silly install resolved        jasminewd2: '0.0.10',
+37 silly install resolved        optimist: '~0.6.0',
+37 silly install resolved        q: '1.4.1',
+37 silly install resolved        saucelabs: '~1.3.0',
+37 silly install resolved        'selenium-webdriver': '2.53.3',
+37 silly install resolved        'source-map-support': '~0.4.0',
+37 silly install resolved        'webdriver-manager': '^10.2.6' },
+37 silly install resolved     devDependencies:
+37 silly install resolved      { '@types/chalk': '^0.4.28',
+37 silly install resolved        '@types/glob': '^5.0.29',
+37 silly install resolved        '@types/minimatch': '^2.0.28',
+37 silly install resolved        '@types/minimist': '^1.1.28',
+37 silly install resolved        '@types/optimist': '^0.0.29',
+37 silly install resolved        'body-parser': '~1.15.2',
+37 silly install resolved        chai: '~3.5.0',
+37 silly install resolved        'chai-as-promised': '~5.3.0',
+37 silly install resolved        'clang-format': '^1.0.34',
+37 silly install resolved        'expect.js': '~0.3.1',
+37 silly install resolved        express: '~4.14.0',
+37 silly install resolved        gulp: '^3.9.1',
+37 silly install resolved        'gulp-clang-format': '^1.0.23',
+37 silly install resolved        jshint: '^2.9.2',
+37 silly install resolved        lodash: '^4.5.1',
+37 silly install resolved        marked: '^0.3.3',
+37 silly install resolved        mocha: '2.5.3',
+37 silly install resolved        rimraf: '~2.5.3',
+37 silly install resolved        'run-sequence': '^1.1.5',
+37 silly install resolved        semver: '^5.3.0',
+37 silly install resolved        typescript: '^2.0.0' },
+37 silly install resolved     repository: { type: 'git', url: 'git://github.com/angular/protractor.git' },
+37 silly install resolved     bin:
+37 silly install resolved      { protractor: 'bin/protractor',
+37 silly install resolved        'webdriver-manager': 'bin/webdriver-manager' },
+37 silly install resolved     main: 'built/index.js',
+37 silly install resolved     typings: 'built/index.d.ts',
+37 silly install resolved     scripts:
+37 silly install resolved      { prepublish: 'gulp prepublish',
+37 silly install resolved        pretest: 'gulp pretest',
+37 silly install resolved        start: 'node testapp/scripts/web-server.js',
+37 silly install resolved        test: 'node scripts/test.js',
+37 silly install resolved        install_testapp: 'cd testapp && npm install',
+37 silly install resolved        tsc: './node_modules/typescript/bin/tsc',
+37 silly install resolved        'tsc:w': './node_modules/typescript/bin/tsc -w' },
+37 silly install resolved     license: 'MIT',
+37 silly install resolved     engines: { node: '>=4.2.x' },
+37 silly install resolved     version: '4.0.10',
+37 silly install resolved     gitHead: '99518ce3fe499e88a9ed5d2a07898aa493f92af8',
+37 silly install resolved     bugs: { url: 'https://github.com/angular/protractor/issues' },
+37 silly install resolved     _id: 'protractor@4.0.10',
+37 silly install resolved     _shasum: '12a3cd542c0f44d784f3b43368bc37ea5fb0e350',
+37 silly install resolved     _from: 'protractor@latest',
+37 silly install resolved     _npmVersion: '3.10.3',
+37 silly install resolved     _nodeVersion: '6.6.0',
+37 silly install resolved     _npmUser: { name: 'angularcore', email: 'angular-core+npm@google.com' },
+37 silly install resolved     dist:
+37 silly install resolved      { shasum: '12a3cd542c0f44d784f3b43368bc37ea5fb0e350',
+37 silly install resolved        tarball: 'https://registry.npmjs.org/protractor/-/protractor-4.0.10.tgz' },
+37 silly install resolved     maintainers: [ [Object], [Object] ],
+37 silly install resolved     _npmOperationalInternal:
+37 silly install resolved      { host: 'packages-18-east.internal.npmjs.com',
+37 silly install resolved        tmp: 'tmp/protractor-4.0.10.tgz_1477514654334_0.11987509205937386' },
+37 silly install resolved     directories: {},
+37 silly install resolved     _resolved: 'https://registry.npmjs.org/protractor/-/protractor-4.0.10.tgz',
+37 silly install resolved     readme: 'ERROR: No README data found!' } ]
+38 info install protractor@4.0.10 into C:\Users\kshah\AppData\Roaming\npm
+39 info installOne protractor@4.0.10
+40 verbose installOne of protractor to C:\Users\kshah\AppData\Roaming\npm not in flight; installing
+41 verbose correctMkdir C:\Users\kshah\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+42 verbose lock using C:\Users\kshah\AppData\Roaming\npm-cache\_locks\protractor-75a6dd013544ae4d.lock for C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor
+43 silly install write writing protractor 4.0.10 to C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor
+44 verbose unbuild node_modules\protractor
+45 silly gentlyRm C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor is being purged from base C:\Users\kshah\AppData\Roaming\npm
+46 verbose gentlyRm don't care about contents; nuking C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor
+47 silly vacuum-fs purging C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor
+48 verbose unlock done using C:\Users\kshah\AppData\Roaming\npm-cache\_locks\protractor-75a6dd013544ae4d.lock for C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor
+49 verbose stack Error: EPERM: operation not permitted, unlink 'C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor\selenium\chromedriver_2.21.exe'
+49 verbose stack     at Error (native)
+50 verbose cwd C:\Users\kshah\Development\projects\protractor-tests
+51 error Windows_NT 6.1.7601
+52 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "protractor"
+53 error node v4.4.4
+54 error npm  v2.15.1
+55 error path C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor\selenium\chromedriver_2.21.exe
+56 error code EPERM
+57 error errno -4048
+58 error syscall unlink
+59 error Error: EPERM: operation not permitted, unlink 'C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor\selenium\chromedriver_2.21.exe'
+59 error     at Error (native)
+59 error  { [Error: EPERM: operation not permitted, unlink 'C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor\selenium\chromedriver_2.21.exe']
+59 error   errno: -4048,
+59 error   code: 'EPERM',
+59 error   syscall: 'unlink',
+59 error   path: 'C:\\Users\\kshah\\AppData\\Roaming\\npm\\node_modules\\protractor\\selenium\\chromedriver_2.21.exe' }
+60 error Please try running this command again as root/Administrator.
+61 verbose exit [ -4048, true ]
+62 verbose unbuild node_modules\protractor
+63 silly gentlyRm C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor is being purged from base C:\Users\kshah\AppData\Roaming\npm
+64 verbose gentlyRm don't care about contents; nuking C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor
+65 silly vacuum-fs purging C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor
+66 error error rolling back Error: EPERM: operation not permitted, unlink 'C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor\selenium\chromedriver_2.21.exe'
+66 error error rolling back     at Error (native)
+66 error error rolling back  { [Error: EPERM: operation not permitted, unlink 'C:\Users\kshah\AppData\Roaming\npm\node_modules\protractor\selenium\chromedriver_2.21.exe']
+66 error error rolling back   errno: -4048,
+66 error error rolling back   code: 'EPERM',
+66 error error rolling back   syscall: 'unlink',
+66 error error rolling back   path: 'C:\\Users\\kshah\\AppData\\Roaming\\npm\\node_modules\\protractor\\selenium\\chromedriver_2.21.exe' }
