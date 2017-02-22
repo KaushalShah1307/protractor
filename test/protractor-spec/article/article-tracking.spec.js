@@ -42,7 +42,7 @@ describe('Article', function() {
 
 			it('should pass the right custom parameters', function() {
 				// expect(dataLayer.brandvoice).toBe(null);
-                //expect(dataLayer.DFPSite).toEqual('fdc.forbes') || expect(dataLayer.DFPSite).toEqual('fdcmobile');
+                //(expect(dataLayer.DFPSite).toMatch('fdc.forbes' || 'fdcmobile'));
                 expect(dataLayer.DFPZone).toEqual('article-d');
 				expect(dataLayer.author).toEqual('Lewis DVorkin');
 				expect(dataLayer.channel).toEqual('business');
