@@ -1,5 +1,5 @@
 var ArticlePage = require('./article.page.js'),
-	articlePage = new ArticlePage('/sites/gordonkelly/2015/09/19/apple-ios-9-secrets/?view=beta-a');
+	articlePage = new ArticlePage('/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?view=beta-a');
 
 describe('Article', function() {
 
