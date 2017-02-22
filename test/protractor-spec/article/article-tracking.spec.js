@@ -42,14 +42,15 @@ describe('Article', function() {
 
 			it('should pass the right custom parameters', function() {
 				// expect(dataLayer.brandvoice).toBe(null);
-                expect(dataLayer.DFPSite).toEqual('fdc.forbes' || 'fdcmobile');
+                //expect(dataLayer.DFPSite).toEqual('fdc.forbes') || expect(dataLayer.DFPSite).toEqual('fdcmobile');
                 expect(dataLayer.DFPZone).toEqual('article-d');
 				expect(dataLayer.author).toEqual('Lewis DVorkin');
 				expect(dataLayer.channel).toEqual('business');
                 expect(dataLayer.section).toEqual('lewisdvorkinblog');
-                expect(dataLayer.hashtags).toEqual('none');
+                expect(dataLayer.hashtags).toEqual('boxoffice');
 				expect(dataLayer.slot).toEqual('none');
 				expect(dataLayer.site).toEqual('lewisdvorkin');
+                //expect(dataLayer.doNotPaginate).toEqual('donotpaginate');
 				
 
 			});
