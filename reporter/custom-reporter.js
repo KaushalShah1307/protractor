@@ -1,6 +1,6 @@
 
 var Firebase = require('firebase'),
-	firebase = new Firebase('https://protractor-forbes.firebaseio.com/'),
+	firebase = new Firebase('https://protractor-f1caa.firebaseio.com'),
 	email = require('./email-processor.js');
 
 var date = new Date(), dateString = date.toDateString() + ' ' + date.toLocaleTimeString(),
