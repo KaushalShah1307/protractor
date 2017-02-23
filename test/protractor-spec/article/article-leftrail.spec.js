@@ -1,5 +1,5 @@
 describe('Article', function() {
-	describe('LeftRail-', function() {
+	describe('LeftRail', function() {
 		var commentsPanel,
 			commentsTrigger,
 			loginButton;

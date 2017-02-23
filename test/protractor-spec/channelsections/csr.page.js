@@ -12,7 +12,7 @@ var CSRPage = function() {
 	browser.getCurrentUrl().then(function(url) {
 		browser.current_url = url;
 		globals.pagesChecked.push(url);
-	});
+	}, 5000);
   };
 
   this.adsService = 'CsfAdService';

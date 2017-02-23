@@ -21,7 +21,11 @@ describe('Article', function() {
 	it('should get the page', function() {
 		articlePage.get();
 	});
-
+/*    
+    it('should have the title', function() {
+        expect(browser.current_page.page_data.articles.article_0.article.title).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
+    });
+*/
 	globals.generalCheck();
 	globals.checkAds(articlePage.adsService);
 });

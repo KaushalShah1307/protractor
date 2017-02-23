@@ -24,12 +24,12 @@ describe('Angular Gallery', function() {
 			});
 
 			it ('should have the correct parameters', function() {
-				expect(globals.getParam(trackingPixel.srcString, 'su') + '/').toContain(currentUrl.replace(browser.baseUrl,"http://www-staging.forbes.com/"));
-				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual(browser.current_page.page_data.displayChannel.toLowerCase());
-				expect(globals.getParam(trackingPixel.srcString, 'se')).toEqual(browser.current_page.page_data.displaySection.toLowerCase());
-				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('slide');
-				expect(globals.getParam(trackingPixel.srcString, 'i')).toContain('blogAndSlideId/blog/slide/');
-				expect(globals.getParam(trackingPixel.srcString, 'au')).toContain('blogAuthorId/blog/author/');
+				//expect(globals.getParam(trackingPixel.srcString, 'su') + '/').toContain(currentUrl.replace(browser.baseUrl,"http://www-staging.forbes.com/"));
+				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual(browser.current_page.page_data.displayChannel);
+				expect(globals.getParam(trackingPixel.srcString, 'se')).toEqual(browser.current_page.page_data.displaySection);
+				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual(browser.current_page.page_data.type);
+				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual(browser.current_page.page_data.naturalId);
+				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual(browser.current_page.page_data.authors[0].naturalId);
 			});
 		});
 	});
