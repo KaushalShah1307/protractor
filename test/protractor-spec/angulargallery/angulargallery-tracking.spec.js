@@ -49,7 +49,8 @@ describe('Angular Gallery', function() {
 			expect(dataLayer.DFPZone).toEqual('pictures');
 			expect(dataLayer.author).toBe('Kurt Badenhausen');
 			expect(dataLayer.channel).toEqual(browser.current_page.page_data.displayChannel);
-			expect(dataLayer.slot).toEqual(browser.current_page.page_data.specialSlot);
+            expect(dataLayer.section).toEqual(browser.current_page.page_data.displaySection);
+			expect(dataLayer.edit).toEqual(browser.current_page.page_data.editorialSlot);
 			expect(dataLayer.site).toEqual('kurtbadenhausen');
 			expect(dataLayer.pageType).toEqual('slide');
 		});
