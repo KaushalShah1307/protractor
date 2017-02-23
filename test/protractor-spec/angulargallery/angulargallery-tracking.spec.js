@@ -57,21 +57,35 @@ describe('Angular Gallery', function() {
 	});
 
 	describe('SimpleReach', function() {
-
-		it('SimpleReach JS should have loaded on the page', function () {
-			browser.sleep(1000);
-			var sr = element(by.id('simplereach'));
-			expect(sr.getAttribute(src)).toEqual('http://d8rk54i4mohrb.cloudfront.net/js/reach.js');
-		})
-	});
-
-	describe('Moat', function() {
-
-		it('Moat JS should have loaded on the page', function () {
-			browser.sleep(1000);
-			var sr = element(by.id('moat'));
-			expect(sr.getAttribute(src)).toEqual('http://s.moatads.com/forbes949SzQW17/moatcontent.js');
-		})
-	});
+            var reachpixel;
+            
+            beforeAll(function(done) {
+                reachpixel = $('script#simplereach-script[src*="d8rk54i4mohrb.cloudfront.net"]');
+                reachpixel.getAttribute('src').then(function(src) {
+                    reachpixel.srcString = src;
+                    done();
+                });      
+            });
+            
+            it('should load the SimpleReach script', function() {
+                expect(reachpixel.length > 1);
+            });
+        });
+        
+        describe('Comscore', function() {
+            var comscorepixel;
+            
+            beforeAll(function(done) {
+                comscorepixel = $('script[src*="b.scorecardresearch.com/beacon.js"]');
+                comscorepixel.getAttribute('src').then(function(src) {
+                    comscorepixel.srcString = src;
+                    done();
+                });      
+            });
+            
+            it('should load the ComScore script', function() {
+                expect(comscorepixel.length > 1);
+            });
+        });     
 
 });
