@@ -72,5 +72,21 @@ describe('Article', function() {
             });
         });
         
+        describe('Comscore', function() {
+            var comscorepixel;
+            
+            beforeAll(function(done) {
+                comscorepixel = $('script[src*="b.scorecardresearch.com/beacon.js"]');
+                comscorepixel.getAttribute('src').then(function(src) {
+                    comscorepixel.srcString = src;
+                    done();
+                });      
+            });
+            
+            it('should load the ComScore script', function() {
+                expect(comscorepixel.length > 1);
+            });
+        });        
+        
 	});
 });
