@@ -8,7 +8,7 @@ describe('Article', function() {
 		});
 	});
 
-	describe('Tracking', function() {
+	describe('Article Tracking:', function() {
 		describe('Fast Pixel', function() {
 			var trackingPixel;
 
@@ -55,5 +55,22 @@ describe('Article', function() {
 
 			});
 		});
+        
+        describe('SimpleReach', function() {
+            var reachpixel;
+            
+            beforeAll(function(done) {
+                reachpixel = $('script#simplereach-script[src*="d8rk54i4mohrb.cloudfront.net"]');
+                reachpixel.getAttribute('src').then(function(src) {
+                    reachpixel.srcString = src;
+                    done();
+                });      
+            });
+            
+            it('should load the SimpleReach script', function() {
+                expect(reachpixel.length > 1);
+            });
+        });
+        
 	});
 });
