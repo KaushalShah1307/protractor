@@ -68,7 +68,8 @@ exports.config = {
 		],
 		search: [
 			'test/protractor-spec/global.spec.js',
-			'test/protractor-spec/search/*pagecheck.spec.js'
+			'test/protractor-spec/search/*pagecheck.spec.js',
+            'test/protractor-spec/search/**/*.spec.js'
 		]
 	},
 	specs: [
