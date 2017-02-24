@@ -32,8 +32,7 @@ exports.config = {
 			exclude: [
 				'test/protractor-spec/article/article-leftrail.spec.js',
 				'test/protractor-spec/angulargallery/pagecheck.spec.js',
-                'test/protractor-spec/angulargallery/**/*.spec.js',
-				'test/protractor-spec/search/*pagecheck.spec.js'
+                'test/protractor-spec/angulargallery/**/*.spec.js'
 			]
 		},
 		// {
@@ -84,7 +83,8 @@ exports.config = {
 //		'test/protractor-spec/channelsections/**/*.spec.js',
 //		'test/protractor-spec/angulargallery/*pagecheck.spec.js',
 //		'test/protractor-spec/angulargallery/**/*.spec.js',
-		'test/protractor-spec/search/*pagecheck.spec.js'
+		'test/protractor-spec/search/*pagecheck.spec.js',
+        'test/protractor-spec/search/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');

@@ -26,8 +26,8 @@ describe('Search', function() {
 
 			it ('should have the correct parameters', function() {
 				//expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl.replace(browser.baseUrl, "http://www-staging.forbes.com/"));
-				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual(browser.current_page.page_data.displayChannel);
-                expect(globals.getParam(trackingPixel.srcString, 'se')).toEqual(browser.current_page.page_data.displaySection);
+				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual('home');
+                expect(globals.getParam(trackingPixel.srcString, 'se')).toEqual('searchhome');
 			});
 		});
 
@@ -42,36 +42,13 @@ describe('Search', function() {
 			});
 
 			it('should pass the right custom parameters', function() {
-				// expect(dataLayer.brandvoice).toBe(null);
                 //(expect(dataLayer.DFPSite).toMatch('fdc.forbes' || 'fdcmobile'));
-                expect(dataLayer.DFPZone).toEqual('article-d');
-				expect(dataLayer.author).toEqual('Lewis DVorkin');
-				expect(dataLayer.channel).toEqual('business');
-                expect(dataLayer.section).toEqual('lewisdvorkinblog');
-                expect(dataLayer.hashtags).toEqual('boxoffice');
-				expect(dataLayer.slot).toEqual('none');
-				expect(dataLayer.site).toEqual('lewisdvorkin');
-                //expect(dataLayer.doNotPaginate).toEqual('donotpaginate');
-				
+                expect(dataLayer.DFPZone).toEqual('search');
+				expect(dataLayer.channel).toEqual('home');
+                expect(dataLayer.section).toEqual('searchhome');
 
 			});
-		});
-        
-        describe('SimpleReach', function() {
-            var reachpixel;
-            
-            beforeAll(function(done) {
-                reachpixel = $('script#simplereach-script[src*="d8rk54i4mohrb.cloudfront.net"]');
-                reachpixel.getAttribute('src').then(function(src) {
-                    reachpixel.srcString = src;
-                    done();
-                });      
-            });
-            
-            it('should load the SimpleReach script', function() {
-                expect(reachpixel.length > 1);
-            });
-        });
+		});    
         
         describe('Comscore', function() {
             var comscorepixel;
