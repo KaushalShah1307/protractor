@@ -1,4 +1,4 @@
-var nodemailer = require('nodemailer'),
+var nodemailer = require('nodemailer'),    
 	date = new Date(), dateString = date.toDateString() + ' ' + date.toLocaleTimeString(), environment,
 	failedExpectationCount = passedExpectationCount = 0,
 	emailHead, emailFoot,
