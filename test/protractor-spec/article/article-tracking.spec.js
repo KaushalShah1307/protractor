@@ -8,7 +8,7 @@ describe('Article', function() {
 		});
 	});
 
-	describe('Article Tracking:', function() {
+	describe('Tracking on Articles:', function() {
 		describe('Fast Pixel', function() {
 			var trackingPixel;
 

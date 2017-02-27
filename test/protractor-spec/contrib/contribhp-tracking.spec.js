@@ -8,7 +8,7 @@ describe('ContribHP', function() {
 		});
 	});
 
-	describe('Tracking', function() {
+	describe('Tracking on Contributor Homepage:', function() {
 		describe('Fast Pixel', function() {
 			var trackingPixel;
 

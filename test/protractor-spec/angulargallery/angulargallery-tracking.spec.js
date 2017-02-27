@@ -11,7 +11,7 @@ describe('Angular Gallery', function() {
 		});
 	});
 
-	describe('Tracking', function() {
+	describe('Tracking on Galleries:', function() {
 		describe('Fast Pixel', function() {
 			var trackingPixel;
 

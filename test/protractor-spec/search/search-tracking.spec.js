@@ -12,7 +12,7 @@ describe('Search', function() {
 		});
 	});
 
-	describe('Search Tracking:', function() {
+	describe('Tracking on Search Page:', function() {
 		describe('Fast Pixel', function() {
 			var trackingPixel;
 
