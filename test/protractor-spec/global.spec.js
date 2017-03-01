@@ -284,15 +284,15 @@ globals.getParam = function(url, param_name) {
  * These are general checks which should be run on every page.
  **/
 globals.generalCheck = function() {
-	// xdescribe('General-', function() {
-	// 	beforeAll(function() {
-	// 		jasmine.addMatchers({
-	// 			toNot404: globals.matchers.toNot404
-	// 		});
-	// 	});
+	 describe('General Page Check', function() {
+	 	beforeAll(function() {
+	 		jasmine.addMatchers({
+	 			toNot404: globals.matchers.toNot404
+	 		});
+	 	});
 
-	// 	globals.testAllLinks();
-	// 	globals.testAllScripts();
-	// 	globals.testAllImages();
-	// });
+	 	globals.testAllLinks();
+	 	globals.testAllScripts();
+	 	globals.testAllImages();
+	 });
 }
