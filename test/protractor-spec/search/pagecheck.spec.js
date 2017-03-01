@@ -7,6 +7,10 @@ describe('Search', function() {
 	it('should get the page', function() {
 		searchPage.get();
 	});
+    
+    it('Should locate the search query input box', function() {
+        this.searchBox = element(by.model('search_query'));
+    });
 
 	globals.generalCheck();
 
