@@ -9,7 +9,7 @@ describe('Angular Gallery', function() {
 		galleryPage.get();
 	});
 
-	globals.generalCheck();
+//	globals.generalCheck();
 
 	globals.checkAds(galleryPage.adsService);
 });
