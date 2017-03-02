@@ -12,8 +12,11 @@ describe('Search', function() {
         this.searchBox = element(by.model('search_query'));
     });
     
-    it('input text should be searched', function() {
+    it('input text should be searchable', function() {
         element(by.model('search_query')).sendKeys('Lewis Dvorkin\n');
+        //var item = element(by.repeater('search_results'));
+        expect(element(by.className('fs-h2 entity-name')).getText()).toEqual('Lewis DVorkin');
+    });
 
 	globals.generalCheck();
 
