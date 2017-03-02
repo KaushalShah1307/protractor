@@ -12,12 +12,8 @@ describe('Search', function() {
         this.searchBox = element(by.model('search_query'));
     });
     
-/*    it('input text should be searched', function() {
-        this.searchBox.click();
-        this.searchBox.clear();
-        this.searchBox.sendKeys('Lewis Dvorkin');
-        //expect(browser.getCurrentUrl).toEqual('https://www.forbes.com/search/?q=Lewis%20Dvorkin');
-    });*/
+    it('input text should be searched', function() {
+        element(by.model('search_query')).sendKeys('Lewis Dvorkin\n');
 
 	globals.generalCheck();
 
