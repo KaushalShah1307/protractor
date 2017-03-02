@@ -14,8 +14,13 @@ describe('Search', function() {
     
     it('input text should be searchable', function() {
         element(by.model('search_query')).sendKeys('Lewis Dvorkin\n');
-        //var item = element(by.repeater('search_results'));
         expect(element(by.className('fs-h2 entity-name')).getText()).toEqual('Lewis DVorkin');
+    });
+    
+    it('hashtag should be there', function() {
+       element(by.model('search_query')).clear();
+       element(by.model('search_query')).sendKeys('sap\n');
+       expect(element(by.className('search-hashtag')).getText()).toEqual('#BigBusiness');
     });
 
 	globals.generalCheck();
