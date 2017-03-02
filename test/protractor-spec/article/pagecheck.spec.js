@@ -21,11 +21,15 @@ describe('Article', function() {
 	it('should get the page', function() {
 		articlePage.get();
 	});
-/*    
-    it('should have the title', function() {
-        expect(browser.current_page.page_data.articles.article_0.article.title).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
+    
+    it('should have the title of the article', function() {
+        expect(element(by.className('article-headline')).getText()).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
     });
-*/
+
+    it('should have page views on the article', function(){
+        expect(element(by.className('view-count')).getText().length > 0); 
+    });
+    
 	globals.generalCheck();
 	globals.checkAds(articlePage.adsService);
 });

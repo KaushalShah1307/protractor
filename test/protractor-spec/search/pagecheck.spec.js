@@ -19,8 +19,8 @@ describe('Search', function() {
     
     it('hashtag should be there', function() {
        element(by.model('search_query')).clear();
-       element(by.model('search_query')).sendKeys('sap\n');
-       expect(element(by.className('search-hashtag')).getText()).toEqual('#BigBusiness');
+       element(by.model('search_query')).sendKeys('#TrumpsAmerica\n');
+       expect(element(by.className('search-hashtag')).getText()).toEqual('#TrumpsAmerica');
     });
 
 	globals.generalCheck();
