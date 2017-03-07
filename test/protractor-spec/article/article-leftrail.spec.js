@@ -15,24 +15,16 @@ describe('Article', function() {
 			expect(loginButton.isDisplayed()).toBe(true);
 		});
 
-/*		it('should open', function() {
-			expect(commentsPanel.isDisplayed()).toBe(false);
+        it('should login', function() {
+            element(by.className('utility-item-login')).click();
+            element(by.name('user')).sendKeys('testguy');
+            element(by.name('pass')).sendKeys('Forbes123\n');
+            
+            element(by.className('modal-close')).click();
+            element(by.className('utility-item-login')).click();
+            expect(element(by.className('user-links-item')).getText()).toEqual('My Guy');
 
-			commentsTrigger.click();
-
-			browser.sleep(2000);
-
-			expect(commentsPanel.isDisplayed()).toBe(true);
-		});
-
-		it('should close', function() {
-			expect(commentsPanel.isDisplayed()).toBe(true);
-
-			commentsTrigger.click();
-
-			browser.sleep(2000);
-
-			expect(commentsPanel.isDisplayed()).toBe(false);
-		}); */
+            //expect(element(by.className('login-success')).getText().toEqual('Logged In'));
+        });        
 	});
 });

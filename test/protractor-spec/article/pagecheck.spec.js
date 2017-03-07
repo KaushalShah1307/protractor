@@ -30,7 +30,7 @@ describe('Article', function() {
         expect(element(by.className('view-count')).getText().length > 0); 
     });
     
-    it('should have the body content', function(){
+    it('should have the body content', function() {
         expect(element(by.className('article-injected-body')).length > 0); 
     });
     
