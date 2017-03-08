@@ -1,9 +1,10 @@
 var HomePage = function() {
   this.get = function() {
-    browser.get('/home_usa/', 5000);
+    browser.get('/', 10000);
 	browser.executeAsyncScript(function() {
 		callback = arguments[0];
 		callback($('body').injector().get('CsfAppState').page_data.channel);
+        callback($('body').injector().get('CsfAdService').slots_to_render);
 	}).then(function(result) {
 		this.page_data = result;
 	}).then(function() {

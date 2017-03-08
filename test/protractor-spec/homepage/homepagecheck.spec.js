@@ -1,11 +1,11 @@
 var HomePage = require('./home.page.js'),
 	homePage = new HomePage();
-describe('Home Page', function() {
+describe('Home Page Redesign', function() {
 	it('should get the page', function() {
 		homePage.get();
 	});
 
-	globals.generalCheck();
+//	globals.generalCheck();
 
-	globals.checkAds(csfPage.adsService);
+	globals.checkAds(homePage.adsService);
 });
