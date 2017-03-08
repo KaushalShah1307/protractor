@@ -1,9 +1,9 @@
 var CSFPage = function() {
   this.get = function() {
-    browser.get('/vinyl/');
+    browser.get('/vinyl/', 5000);
 	browser.executeAsyncScript(function() {
 		callback = arguments[0];
-		callback($('body').injector().get('CsfAppState').page_data);
+		callback($('body').injector().get('CsfAppState').page_data.channel);
 	}).then(function(result) {
 		this.page_data = result;
 	}).then(function() {
