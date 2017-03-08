@@ -16,6 +16,11 @@ describe('CSR', function() {
     it('should have the load-more button on the steam', function() {
        var loadMore = element(by.className('load-more-bg')); 
     });
+    
+    it('should load more stories after the load-more button is clicked', function() {
+       var loadmoreItems = element.all(by.css('ul.edittools-stream li'));
+       expect(loadmoreItems.count()) > 11;
+    });
 
 	globals.generalCheck();
 
