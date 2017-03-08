@@ -13,6 +13,18 @@ describe('ContribHP', function() {
         expect(element(by.className('author-description')).getText().length > 0); 
     });
 
+    it('should have the Our Contributors section', function() {
+        expect(element(by.className('writers clearfix')).getText().length > 0); 
+    }); 
+    
+    it('should have the most popular section', function() {
+        expect(element(by.className('head-popular')).getText()).toEqual('MOST POPULAR'); 
+    });
+    
+    it('should have the page views on the most popular cards', function() {
+        expect(element(by.className('trending-reason')).getText().length > 0); 
+    });
+    
 	globals.generalCheck();
 
 	globals.checkAds(contribPage.adsService);
