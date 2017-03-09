@@ -26,7 +26,11 @@ describe('Article', function() {
     });
 
     it('should have page views on the article', function(){
-        expect(element(by.className('view-count')).getText().length > 0); 
+        expect(element(by.className('view-count')).getText().length >= 9,404); 
+    });
+    
+    it('should have the circ link', function() {
+        expect(element(by.className('circ-link'))).toBeTruthy(); 
     });
     
     it('should have the body content', function() {
@@ -35,6 +39,10 @@ describe('Article', function() {
     
     it('should have the tweet quotes module', function() {
         expect(element(by.className('tweet-this'))).toBeTruthy(); 
+    });
+    
+    it('should have the Forbes Staff icon next to the author type', function() {
+        expect(element(by.className('icon icon-staff-verified'))).toBeTruthy(); 
     });
     
 	globals.generalCheck();
