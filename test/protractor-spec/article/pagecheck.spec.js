@@ -33,6 +33,10 @@ describe('Article', function() {
         expect(element(by.className('article-injected-body')).length > 0); 
     });
     
+    it('should have the tweet quotes module', function() {
+        expect(element(by.className('tweet-this'))).toBeTruthy(); 
+    });
+    
 	globals.generalCheck();
 	globals.checkAds(articlePage.adsService);
 });

@@ -36,7 +36,7 @@ describe('ContribHP', function() {
         archiveMenu.click();
         expect(archiveMenu.getText()).toEqual('LATEST');  
     });
- */   
+*/    
     it('should have the what-is-this blurb for Brandvoice', function() {
         var bvBlurb = element(by.className('what-is-this'));
         expect(bvBlurb).toBeTruthy();
