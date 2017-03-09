@@ -25,6 +25,13 @@ describe('ContribHP', function() {
         expect(element(by.className('trending-reason')).getText().length > 0); 
     });
     
+    it('should have the what-is-this blurb for Brandvoice', function() {
+        var bvBlurb = element(by.className('what-is-this'));
+        expect(bvBlurb).toBeTruthy();
+        bvBlurb.click();
+        expect(element(by.className('brandvoice-explained'))).toBeTruthy();
+    });
+    
 	globals.generalCheck();
 
 	globals.checkAds(contribPage.adsService);
