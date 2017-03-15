@@ -8,6 +8,14 @@ describe('ForbesPress', function() {
     it('should have the ForbesPress logo', function() {
         expect(element(by.className('logo')).getText().length > 0); 
     });
+    
+    it('should have the copyright module', function() {
+        expect(element(by.className('copyright')).getText().length > 0); 
+    });
+    
+    it('should land on the dashboard page', function() {
+        expect(browser.getCurrentUrl()).toEqual('https://www-staging.forbes.com/forbespress/#/dashboard'); 
+    });
 
 	//globals.generalCheck();
 });
