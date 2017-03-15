@@ -26,14 +26,22 @@ describe('ForbesPress Dashboard', function() {
         var dashbaordArticleTitle = element(by.className('title truncate')).getText();
         expect(dashbaordArticleTitle) > 0;
         headLine.click();
+        expect(browser.getCurrentUrl()).toContain('compose?id=');
+        expect(element(by.className('title fs-headline headline-input'))).toBeTruthy();
     });
 
 	//globals.generalCheck();
 });
 
 describe('ForbesPress Article Page', function() {
+    
+    it('should load the dashboard page', function() {
+        forbesPress.get('https://www-staging.forbes.com/forbespress/');
+        element(by.className('fp-button button-new')).click();
+    });
+    
     it('should load the article page', function() {
-        expect(browser.getCurrentUrl()).toContain('compose?id=');
+        expect(browser.getCurrentUrl()).toContain('compose');
         expect(element(by.className('title fs-headline headline-input'))).toBeTruthy(); 
     });
 });
