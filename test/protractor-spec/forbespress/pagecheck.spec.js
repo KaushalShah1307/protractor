@@ -1,6 +1,6 @@
 var ForbesPress = require('./forbespress.page.js'),
 	forbesPress = new ForbesPress();
-describe('ForbesPress', function() {
+describe('ForbesPress Dashboard', function() {
 	it('should get the page', function() {
 		forbesPress.get();
 	});
@@ -27,11 +27,13 @@ describe('ForbesPress', function() {
         expect(dashbaordArticleTitle) > 0;
         headLine.click();
     });
-    
+
+	//globals.generalCheck();
+});
+
+describe('ForbesPress Article Page', function() {
     it('should load the article page', function() {
         expect(browser.getCurrentUrl()).toContain('compose?id=');
         expect(element(by.className('title fs-headline headline-input'))).toBeTruthy(); 
     });
-
-	//globals.generalCheck();
 });
