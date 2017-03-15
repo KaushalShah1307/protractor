@@ -20,6 +20,18 @@ describe('ForbesPress', function() {
     it('should have the create story button', function() {
         expect(element(by.className('fp-button button-new'))).toBeTruthy();
     });
+    
+    it('should click on the first headline', function() {
+        var headLine = element(by.className('headline'));
+        var dashbaordArticleTitle = element(by.className('title truncate')).getText();
+        expect(dashbaordArticleTitle) > 0;
+        headLine.click();
+    });
+    
+    it('should load the article page', function() {
+        expect(browser.getCurrentUrl()).toContain('compose?id=');
+        expect(element(by.className('title fs-headline headline-input'))).toBeTruthy(); 
+    });
 
 	//globals.generalCheck();
 });
