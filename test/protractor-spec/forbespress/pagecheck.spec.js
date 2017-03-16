@@ -63,3 +63,30 @@ describe('ForbesPress Article Page', function() {
     });
     
 });
+
+describe('Compose a ForbesPress Article Page', function() {
+    
+    it('should add headline on the new article', function() {
+        element(by.className('title fs-headline headline-input')).sendKeys('This is a test headline');
+    });
+    
+    it('should add text to the article body', function() {
+        element(by.className('ql-editor ql-blank')).click().sendKeys('This is the article body');
+    });
+    
+/*    it('should add title on the new article', function() {
+        element(by.className('title')).sendKeys('This is the title of the article');
+    });
+*/    
+    it('should click the save and the publish button', function() {
+        element(by.className('fp-button button-save')).click();
+        element(by.className('fp-button button-publish')).click();
+    });
+    
+    it('should get the published confirmation in a modal', function() {
+        expect(element(by.className('fbs-modal')).isDisplayed()).toBeTruthy();
+        expect(element(by.className('message')).getText()).toEqual('Your Story Published');
+        expect(element(by.className('link')).getText() > 0);
+    });
+    
+});
