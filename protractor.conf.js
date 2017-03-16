@@ -45,9 +45,7 @@ exports.config = {
 				}
 			},
 			exclude: [
-				'test/protractor-spec/article/article-leftrail.spec.js',
-				'test/protractor-spec/angulargallery/pagecheck.spec.js',
-                'test/protractor-spec/angulargallery/**/*.spec.js'
+				'test/protractor-spec/article/article-leftrail.spec.js'
 			]
 		}
 		// {
