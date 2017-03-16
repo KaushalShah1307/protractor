@@ -87,8 +87,8 @@ describe('Compose a ForbesPress Article Page', function() {
     });
 */    
     it('should have the published article on the top of the recent articles on dashboard', function() {
-        forbesPress.get('https://www-staging.forbes.com/forbespress/#/dashboard');  
-        expect(element(by.className('headline')).getText()).toEqual(articleHeadline);
+        forbesPress.get('https://www-staging.forbes.com/forbespress/#/dashboard', 5000);  
+        expect(element(by.className('title truncate')).getText()).toEqual(articleHeadline);
     });
     
 });
