@@ -46,10 +46,20 @@ describe('ForbesPress Article Page', function() {
     });
     
     it('should check for empty headlines on a new article', function() {
-        expect(element(by.className('title')).getText().length > 0);
+        expect(element(by.className('title fs-headline headline-input')).getText().length > 0);
     });
     
     it('should check for empty article body on a new article', function() {
         expect(element(by.className('ql-editor ql-blank')).getText().length > 0);
     });
+    
+    it('should check for empty title on a new article', function() {
+        expect(element(by.className('title')).getText().length > 0);
+    });
+    
+    it('should have the save and the publish button', function() {
+        expect(element(by.className('fp-button button-save')).getText()).toEqual('SAVE');
+        expect(element(by.className('fp-button button-publish')).getText()).toEqual('PUBLISH');       
+    });
+    
 });
