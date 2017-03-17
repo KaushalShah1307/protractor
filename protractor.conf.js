@@ -108,10 +108,8 @@ exports.config = {
 //		'test/protractor-spec/csf/**/*.spec.js',
 //		'test/protractor-spec/channelsections/*pagecheck.spec.js',
 //		'test/protractor-spec/channelsections/**/*.spec.js',
-//		'test/protractor-spec/angulargallery/*pagecheck.spec.js',
-//		'test/protractor-spec/angulargallery/**/*.spec.js',
 //		'test/protractor-spec/search/*pagecheck.spec.js',
-//        'test/protractor-spec/search/**/*.spec.js', 
+  //      'test/protractor-spec/search/**/*.spec.js', 
 //      'test/protractor-spec/homepage/*pagecheck.spec.js',
 //      'test/protractor-spec/homepage/**/*.spec.js'.
         'test/protractor-spec/forbespress/*pagecheck.spec.js',
