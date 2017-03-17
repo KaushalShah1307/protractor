@@ -9,6 +9,10 @@ describe('ForbesPress Dashboard', function() {
         expect(element(by.className('logo')).getText().length > 0); 
     });
     
+    it('should have the author name', function() {
+        expect(element(by.css('.author')).getText()).toEqual('My Guy'); 
+    });
+    
     it('should have the copyright module', function() {
         expect(element(by.className('copyright')).getText().length > 0); 
     });
@@ -65,7 +69,7 @@ describe('ForbesPress Article Page', function() {
 });
 
 describe('Compose a ForbesPress Article Page', function() {
-    var articleHeadline = 'This is a test headline from protractor';
+    var articleHeadline = 'This is the automated test headline from protractor';
     
     it('should add headline on the new article', function() {
         element(by.className('title fs-headline headline-input')).sendKeys(articleHeadline);
@@ -78,6 +82,7 @@ describe('Compose a ForbesPress Article Page', function() {
     it('should click the save and the publish button', function() {
         element(by.className('fp-button button-save')).click();
         element(by.className('fp-button button-publish')).click();
+        forbesPress.get(browser.getCurrentUrl());
     });
     
 /*    it('should get the published confirmation in a modal', function() {
@@ -88,7 +93,11 @@ describe('Compose a ForbesPress Article Page', function() {
 */    
     it('should have the published article on the top of the recent articles on dashboard', function() {
         forbesPress.get('https://www-staging.forbes.com/forbespress/#/dashboard', 5000);  
-        expect(element(by.className('title truncate')).getText()).toEqual(articleHeadline);
+        expect(element(by.css('.headline')).getText()).toEqual(articleHeadline);
+    });
+    
+    it('should have the published status', function() {
+        expect(element(by.css('.published')).getText()).toEqual('PUBLISHED'); 
     });
     
 });
