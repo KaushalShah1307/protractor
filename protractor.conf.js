@@ -29,7 +29,10 @@ exports.config = {
 			chromeOptions: {
 				mobileEmulation: {
 					deviceName: 'Apple iPhone 6 Plus'
-				}
+				},
+                args: [
+                    'incognito'
+                ]
 			},
 			exclude: [
 				'test/protractor-spec/article/article-leftrail.spec.js',
