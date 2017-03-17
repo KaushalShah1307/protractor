@@ -69,7 +69,7 @@ describe('ForbesPress Article Page', function() {
     
 });
 
-describe('Compose a ForbesPress Article Page', function() {
+describe('Publish a ForbesPress Article Page', function() {
     var articleHeadline = 'This is the automated test headline from protractor';
     
     it('should add headline on the new article', function() {
@@ -99,6 +99,45 @@ describe('Compose a ForbesPress Article Page', function() {
     
     it('should have the published status', function() {
         expect(element(by.css('.published')).getText()).toEqual('PUBLISHED'); 
+    });
+    
+    it('should show the last modified date', function() {
+        expect(element(by.css('.last-published.truncate')).getText()).toContain('/'); 
+    });
+    
+});
+
+describe('Draft a ForbesPress Article Page', function() {
+    var articleHeadline = 'This is the automated test article from protractor - DRAFT';
+    
+    it('should click on create to componse a new article', function() {
+        forbesPress.get('https://www-staging.forbes.com/forbespress/#/dashboard');
+        element(by.className('fp-button button-new')).click();
+    });
+    
+    it('should add headline on the new article', function() {
+        element(by.className('title fs-headline headline-input')).sendKeys(articleHeadline);
+    });
+    
+    it('should add text to the article body', function() {
+        element(by.className('ql-editor ql-blank')).click().sendKeys('This is the article body');
+    });
+    
+    it('should click the save button', function() {
+        element(by.className('fp-button button-save')).click();
+    });
+    
+    it('should have the DRAFT article on the top of the recent articles on dashboard', function() { 
+        element(by.className('logo')).click();
+        expect(element(by.css('.headline')).getText()).toEqual(articleHeadline);
+    });
+    
+    it('should have the DRAFT status', function() {
+        expect(element(by.css('.not-published')).getText()).toEqual('DRAFT'); 
+    });
+    
+    it('should show the last modified date', function() {
+        expect(element(by.css('.last-published.truncate')).getText()).toContain('/'); 
     });
     
 });
