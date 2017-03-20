@@ -21,7 +21,11 @@ exports.config = {
 					'start-maximized',
                     'incognito'
 				],
-			}
+			},
+            exclude: [
+                'test/protractor-spec/amparticle/*pagecheck.spec.js',
+                'test/protractor-spec/amparticle/**/*.spec.js'
+            ]
 		},
 		{
 			browserName: 'chrome',
@@ -96,6 +100,10 @@ exports.config = {
         forbespress: [
             'test/protractor-spec/forbespress/*pagecheck.spec.js',
             'test/protractor-spec/forbespress/**/*.spec.js'
+        ],
+        amparticle: [
+            'test/protractor-spec/amparticle/*pagecheck.spec.js',
+            'test/protractor-spec/amparticle/**/*.spec.js'
         ]
 	},
 	specs: [
@@ -109,11 +117,13 @@ exports.config = {
 //		'test/protractor-spec/channelsections/*pagecheck.spec.js',
 //		'test/protractor-spec/channelsections/**/*.spec.js',
 //		'test/protractor-spec/search/*pagecheck.spec.js',
-  //      'test/protractor-spec/search/**/*.spec.js', 
+//      'test/protractor-spec/search/**/*.spec.js', 
 //      'test/protractor-spec/homepage/*pagecheck.spec.js',
 //      'test/protractor-spec/homepage/**/*.spec.js'.
-        'test/protractor-spec/forbespress/*pagecheck.spec.js',
-        'test/protractor-spec/forbespress/**/*.spec.js'
+//      'test/protractor-spec/forbespress/*pagecheck.spec.js',
+//      'test/protractor-spec/forbespress/**/*.spec.js',
+        'test/protractor-spec/amparticle/*pagecheck.spec.js',
+        'test/protractor-spec/amparticle/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
