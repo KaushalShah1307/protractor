@@ -148,7 +148,7 @@ globals.testAllScripts = function() {
 			});
 		});
 	});
-}
+} 
 
 /** testAllImages
  * This tests that there are no broken images on the page.

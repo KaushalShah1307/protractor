@@ -6,6 +6,7 @@ beforeEach(function(){
 });
 
 describe('AMP Article Page', function() {
+    
 	it('should get the page', function() {
 		ampArticle.get();
 	});
@@ -54,7 +55,7 @@ describe('AMP Article Page', function() {
         expect(element(by.className('lightbox'))).toBeTruthy();
         //closeButton.click();
     });
-
+    
 //	globals.generalCheck();
 
 //	globals.checkAds(ampArticle.adsService);

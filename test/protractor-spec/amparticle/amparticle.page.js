@@ -9,4 +9,5 @@ var AMPArticle = function() {
     });
   };
 };
+
 module.exports = AMPArticle;
