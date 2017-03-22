@@ -24,7 +24,9 @@ exports.config = {
 			},
             exclude: [
                 'test/protractor-spec/amparticle/*pagecheck.spec.js',
-                'test/protractor-spec/amparticle/**/*.spec.js'
+                'test/protractor-spec/amparticle/**/*.spec.js',
+                'test/protractor-spec/ampgallery/**/*.spec.js',
+                'test/protractor-spec/ampgallery/**/*.spec.js'
             ]
 		},
 		{
@@ -104,6 +106,10 @@ exports.config = {
         amparticle: [
             'test/protractor-spec/amparticle/*pagecheck.spec.js',
             'test/protractor-spec/amparticle/**/*.spec.js'
+        ],
+        ampgallery: [
+            'test/protractor-spec/ampgallery/**/*.spec.js',
+            'test/protractor-spec/ampgallery/**/*.spec.js'
         ]
 	},
 	specs: [
@@ -122,8 +128,10 @@ exports.config = {
 //      'test/protractor-spec/homepage/**/*.spec.js'.
 //      'test/protractor-spec/forbespress/*pagecheck.spec.js',
 //      'test/protractor-spec/forbespress/**/*.spec.js',
-        'test/protractor-spec/amparticle/*pagecheck.spec.js',
-        'test/protractor-spec/amparticle/**/*.spec.js'
+//      'test/protractor-spec/amparticle/*pagecheck.spec.js',
+//      'test/protractor-spec/amparticle/**/*.spec.js',
+        'test/protractor-spec/ampgallery/**/*.spec.js',
+        'test/protractor-spec/ampgallery/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
