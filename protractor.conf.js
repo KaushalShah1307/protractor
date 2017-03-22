@@ -1,5 +1,5 @@
 exports.config = {
-  	baseUrl: 'http://www-staging.forbes.com/',
+  	baseUrl: 'http://www-staging-3.forbes.com/',
 	getPageTimeout: 30000,
   	allScriptsTimeout: 30000,
   	framework: 'jasmine2',
@@ -124,14 +124,14 @@ exports.config = {
 //		'test/protractor-spec/channelsections/**/*.spec.js',
 //		'test/protractor-spec/search/*pagecheck.spec.js',
 //      'test/protractor-spec/search/**/*.spec.js', 
-//      'test/protractor-spec/homepage/*pagecheck.spec.js',
-//      'test/protractor-spec/homepage/**/*.spec.js'.
+      'test/protractor-spec/homepage/*pagecheck.spec.js',
+      'test/protractor-spec/homepage/**/*.spec.js',
 //      'test/protractor-spec/forbespress/*pagecheck.spec.js',
 //      'test/protractor-spec/forbespress/**/*.spec.js',
 //      'test/protractor-spec/amparticle/*pagecheck.spec.js',
 //      'test/protractor-spec/amparticle/**/*.spec.js',
-        'test/protractor-spec/ampgallery/**/*.spec.js',
-        'test/protractor-spec/ampgallery/**/*.spec.js'
+//      'test/protractor-spec/ampgallery/**/*.spec.js',
+//      'test/protractor-spec/ampgallery/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
