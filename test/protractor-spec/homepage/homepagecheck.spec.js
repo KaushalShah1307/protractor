@@ -38,6 +38,14 @@ describe('Home Page Redesign', function() {
         element(by.css('.icon.icon-add-person.ng-scope')).click();
         expect(element(by.css('.csr-header-sharing.csf-sharing')).isDisplayed()).toBeTruthy();
     });
+    
+    it('should play the video', function() {
+        var videoModule = element(by.id('row-6'));
+        expect((videoModule).isDisplayed()).toBeTruthy();
+        browser.executeScript("arguments[0].scrollIntoView();", videoModule.getWebElement());
+        var player = element(by.css('.vjs-big-play-button'));
+        player.click();
+    });
 
 //	globals.generalCheck();
 
