@@ -19,7 +19,7 @@ exports.config = {
 			chromeOptions: {
 				args: [
 					'start-maximized',
-                    'incognito'
+                    //'incognito'
 				],
 			},
             exclude: [
@@ -46,7 +46,16 @@ exports.config = {
                 'test/protractor-spec/angulargallery/**/*.spec.js'
 			]
 		},
- /*       {
+/*        {
+            'capabilities': {
+                'browserstack.user': 'kaushalshah3',
+                'browserstack.key': 'aZuM2X6UL573W77rkbmJ',
+                'browserName': 'iPhone',
+                'platform': 'MAC',
+                'device': 'iPhone 6S Plus'
+            }
+        },
+        {
 			browserName: 'chrome',
 			logName: 'iPad Chrome',
 			chromeOptions: {
@@ -58,10 +67,10 @@ exports.config = {
 				'test/protractor-spec/article/article-leftrail.spec.js'
 			]
 		}*/
-		// {
-		// 	browserName: 'firefox',
-		// 	logName: 'Desktop Firefox'
-		// }
+//		 {
+//		 	browserName: 'firefox',
+//		 	logName: 'Desktop Firefox'
+//		 }
 	],
 	suites: {
 		article: [
@@ -114,24 +123,24 @@ exports.config = {
 	},
 	specs: [
 		'test/protractor-spec/global.spec.js',
-//		'test/protractor-spec/article/*pagecheck.spec.js',
-//		'test/protractor-spec/article/**/*.spec.js',
-//		'test/protractor-spec/contrib/*pagecheck.spec.js',
-//		'test/protractor-spec/contrib/**/*.spec.js',
-//		'test/protractor-spec/csf/*pagecheck.spec.js',
-//		'test/protractor-spec/csf/**/*.spec.js',
-//		'test/protractor-spec/channelsections/*pagecheck.spec.js',
-//		'test/protractor-spec/channelsections/**/*.spec.js',
-//		'test/protractor-spec/search/*pagecheck.spec.js',
-//      'test/protractor-spec/search/**/*.spec.js', 
+		'test/protractor-spec/article/*pagecheck.spec.js',
+		'test/protractor-spec/article/**/*.spec.js',
+		'test/protractor-spec/contrib/*pagecheck.spec.js',
+		'test/protractor-spec/contrib/**/*.spec.js',
+		'test/protractor-spec/csf/*pagecheck.spec.js',
+		'test/protractor-spec/csf/**/*.spec.js',
+		'test/protractor-spec/channelsections/*pagecheck.spec.js',
+		'test/protractor-spec/channelsections/**/*.spec.js',
+		'test/protractor-spec/search/*pagecheck.spec.js',
+      'test/protractor-spec/search/**/*.spec.js', 
       'test/protractor-spec/homepage/*pagecheck.spec.js',
       'test/protractor-spec/homepage/**/*.spec.js',
-//      'test/protractor-spec/forbespress/*pagecheck.spec.js',
-//      'test/protractor-spec/forbespress/**/*.spec.js',
-//      'test/protractor-spec/amparticle/*pagecheck.spec.js',
-//      'test/protractor-spec/amparticle/**/*.spec.js',
-//      'test/protractor-spec/ampgallery/**/*.spec.js',
-//      'test/protractor-spec/ampgallery/**/*.spec.js'
+      'test/protractor-spec/forbespress/*pagecheck.spec.js',
+      'test/protractor-spec/forbespress/**/*.spec.js',
+      'test/protractor-spec/amparticle/*pagecheck.spec.js',
+      'test/protractor-spec/amparticle/**/*.spec.js',
+      'test/protractor-spec/ampgallery/**/*.spec.js',
+      'test/protractor-spec/ampgallery/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');

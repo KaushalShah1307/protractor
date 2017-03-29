@@ -1,6 +1,6 @@
 var HomePage = function() {
   this.get = function() {
-    browser.get('/?view=secret_home', 10000);
+    browser.get('/', 10000);
 	browser.executeAsyncScript(function() {
 		callback = arguments[0];
 		callback($('body').injector().get('CsfAppState').page_data.channel);
