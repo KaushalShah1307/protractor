@@ -140,8 +140,10 @@ exports.config = {
 //      'test/protractor-spec/forbespress/**/*.spec.js',
 //      'test/protractor-spec/amparticle/*pagecheck.spec.js',
 //      'test/protractor-spec/amparticle/**/*.spec.js',
+//      'test/protractor-spec/ampgallery/*pagecheck.spec.js',
 //      'test/protractor-spec/ampgallery/**/*.spec.js',
-//      'test/protractor-spec/ampgallery/**/*.spec.js'
+        'test/protractor-spec/newsletters/*pagecheck.spec.js',
+        'test/protractor-spec/newsletters/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
