@@ -29,6 +29,10 @@ describe('Article', function() {
         expect(element(by.className('view-count')).getText().length >= 9,404); 
     });
     
+    it('should have the eye icon next to page views', function() {
+        expect(element(by.css('.icon.icon-preview-eye')).isDisplayed()).toBeTruthy(); 
+    });
+    
     it('should have the circ link', function() {
         expect(element(by.className('circ-link'))).toBeTruthy(); 
     });

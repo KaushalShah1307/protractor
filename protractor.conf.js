@@ -66,11 +66,12 @@ exports.config = {
 			exclude: [
 				'test/protractor-spec/article/article-leftrail.spec.js'
 			]
-		}*/
-//		 {
-//		 	browserName: 'firefox',
-//		 	logName: 'Desktop Firefox'
-//		 }
+		}
+		 {
+		 	browserName: 'firefox',
+		 	logName: 'Desktop Firefox',
+            marionette: true
+		 },*/
 	],
 	suites: {
 		article: [
@@ -125,22 +126,22 @@ exports.config = {
 		'test/protractor-spec/global.spec.js',
 		'test/protractor-spec/article/*pagecheck.spec.js',
 		'test/protractor-spec/article/**/*.spec.js',
-		'test/protractor-spec/contrib/*pagecheck.spec.js',
-		'test/protractor-spec/contrib/**/*.spec.js',
-		'test/protractor-spec/csf/*pagecheck.spec.js',
-		'test/protractor-spec/csf/**/*.spec.js',
-		'test/protractor-spec/channelsections/*pagecheck.spec.js',
-		'test/protractor-spec/channelsections/**/*.spec.js',
-		'test/protractor-spec/search/*pagecheck.spec.js',
-      'test/protractor-spec/search/**/*.spec.js', 
-      'test/protractor-spec/homepage/*pagecheck.spec.js',
-      'test/protractor-spec/homepage/**/*.spec.js',
-      'test/protractor-spec/forbespress/*pagecheck.spec.js',
-      'test/protractor-spec/forbespress/**/*.spec.js',
-      'test/protractor-spec/amparticle/*pagecheck.spec.js',
-      'test/protractor-spec/amparticle/**/*.spec.js',
-      'test/protractor-spec/ampgallery/**/*.spec.js',
-      'test/protractor-spec/ampgallery/**/*.spec.js'
+//		'test/protractor-spec/contrib/*pagecheck.spec.js',
+//		'test/protractor-spec/contrib/**/*.spec.js',
+//		'test/protractor-spec/csf/*pagecheck.spec.js',
+//		'test/protractor-spec/csf/**/*.spec.js',
+//		'test/protractor-spec/channelsections/*pagecheck.spec.js',
+//		'test/protractor-spec/channelsections/**/*.spec.js',
+//		'test/protractor-spec/search/*pagecheck.spec.js',
+//      'test/protractor-spec/search/**/*.spec.js', 
+//      'test/protractor-spec/homepage/*pagecheck.spec.js',
+//      'test/protractor-spec/homepage/**/*.spec.js',
+//      'test/protractor-spec/forbespress/*pagecheck.spec.js',
+//      'test/protractor-spec/forbespress/**/*.spec.js',
+//      'test/protractor-spec/amparticle/*pagecheck.spec.js',
+//      'test/protractor-spec/amparticle/**/*.spec.js',
+//      'test/protractor-spec/ampgallery/**/*.spec.js',
+//      'test/protractor-spec/ampgallery/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
