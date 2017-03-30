@@ -40,6 +40,10 @@ describe('Newsletters Blog', function() {
         expect(element(by.css('.title-text>h1')).getText()).toEqual('Forbes Investor Edge'); 
     });
     
+    it('should have the slug', function() {
+        expect(element(by.className('slug')).getText()).toEqual('Investment ideas you can profit from'); 
+    });
+    
 });
 
 describe('Newsletters Article', function() {

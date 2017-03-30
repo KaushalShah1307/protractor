@@ -40,6 +40,11 @@ describe('Newsletters Blog', function() {
         expect(element(by.css('.author-header>h1')).getText()).toEqual('Forbes Investor Edge'); 
     });
     
+    it('should have the slug', function() {
+        element(by.className('bio-link')).click();
+        expect(element(by.className('slug')).getText()).toEqual('Investment ideas you can profit from'); 
+    });
+    
 });
 
 describe('Newsletters Article', function() {
