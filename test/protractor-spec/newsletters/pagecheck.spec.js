@@ -29,7 +29,11 @@ describe('Newsletters Home Page', function() {
         expect(element(by.className('newsletter-nav')).isDisplayed()).toBeTruthy();
         element(by.linkText('All Star Investor')).click();
         expect(browser.getCurrentUrl()).toContain('all-star-investor');
-    })
+    });
+    
+    it('should have the Subscribe button', function() {
+        expect(element(by.className('esp-subscribe')).getText()).toEqual('Subscribe Now'); 
+    });
     
 });
 
