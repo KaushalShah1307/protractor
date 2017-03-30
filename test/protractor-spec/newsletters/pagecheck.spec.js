@@ -24,7 +24,7 @@ describe('Newsletters Home Page', function() {
         expect(element(by.className('gurus')).isDisplayed()).toBeTruthy(); 
     });
     
-    it('should click on the ALL Newsletters tab', function() {
+    it('should click on an article from the ALL Newsletters tab', function() {
         element(by.css('#filter>li>a')).click();
         expect(element(by.className('newsletter-nav')).isDisplayed()).toBeTruthy();
         element(by.linkText('All Star Investor')).click();
@@ -33,6 +33,11 @@ describe('Newsletters Home Page', function() {
     
     it('should have the Subscribe button', function() {
         expect(element(by.className('esp-subscribe')).getText()).toEqual('Subscribe Now'); 
+    });
+    
+    it('should have the paywall for unscubscribed articles', function() {
+        element(by.css('.edittools-contentitem>h3>a')).click();
+        expect(element(by.className('report')).getText()).toEqual('Read the Full Report');
     });
     
 });

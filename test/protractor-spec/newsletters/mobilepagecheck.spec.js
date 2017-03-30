@@ -24,6 +24,21 @@ describe('Newsletters Home Page', function() {
         expect(element(by.className('gurus')).isDisplayed()).toBeTruthy(); 
     });
     
+    it('should click on an article from the ALL Newsletters tab', function() {
+        browser.get('/newsletters/all/');
+        element(by.className('title-dek')).click();
+        expect(browser.getCurrentUrl()).toContain('all-star-investor');
+    });
+    
+    it('should have the Subscribe button', function() {
+        expect(element(by.className('Subscribe')).isDisplayed()).toBeTruthy(); 
+    });
+    
+    it('should have the paywall for unscubscribed articles', function() {
+        element(by.css('.edittools-contentitem>h3>a')).click();
+        expect(element(by.className('report')).getText()).toEqual('Read the Full Report');
+    });
+    
 });
 
 describe('Newsletters Blog', function() {
