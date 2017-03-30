@@ -44,6 +44,19 @@ describe('Newsletters Blog', function() {
         expect(element(by.className('slug')).getText()).toEqual('Investment ideas you can profit from'); 
     });
     
+    it('should have the follow on social icons', function() {
+        expect(element(by.className('social')).isDisplayed()).toBeTruthy(); 
+    });
+    
+    it('should have the month in the stream', function() {
+        expect(element(by.className('month')).getText().length > 0); 
+    });
+    
+    it('should click on the first newsletter', function() {
+        element(by.css('.edittools-contentitem>h3>a')).click();
+        expect(browser.getCurrentUrl()).toContain('forbes-investor-edge');
+    });
+    
 });
 
 describe('Newsletters Article', function() {
