@@ -24,6 +24,13 @@ describe('Newsletters Home Page', function() {
         expect(element(by.className('gurus')).isDisplayed()).toBeTruthy(); 
     });
     
+    it('should click on the ALL Newsletters tab', function() {
+        element(by.css('#filter>li>a')).click();
+        expect(element(by.className('newsletter-nav')).isDisplayed()).toBeTruthy();
+        element(by.linkText('All Star Investor')).click();
+        expect(browser.getCurrentUrl()).toContain('all-star-investor');
+    })
+    
 });
 
 describe('Newsletters Blog', function() {
@@ -50,6 +57,10 @@ describe('Newsletters Blog', function() {
     
     it('should have the month in the stream', function() {
         expect(element(by.className('month')).getText().length > 0); 
+    });
+    
+    it('should have the footer', function() {
+        expect(element(by.css('#letter-home>footer')).isDisplayed()).toBeTruthy(); 
     });
     
     it('should click on the first newsletter', function() {

@@ -49,6 +49,10 @@ describe('Newsletters Blog', function() {
         expect(element(by.className('month')).getText().length > 0); 
     });
     
+    it('should have the footer', function() {
+        expect(element(by.className('footer-mobile')).isDisplayed()).toBeTruthy(); 
+    });
+    
     it('should click on the first newsletter', function() {
         element(by.css('.edittools-contentitem>h3>a')).click();
         expect(browser.getCurrentUrl()).toContain('forbes-investor-edge');
