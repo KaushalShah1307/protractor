@@ -26,7 +26,8 @@ exports.config = {
                 'test/protractor-spec/amparticle/*pagecheck.spec.js',
                 'test/protractor-spec/amparticle/**/*.spec.js',
                 'test/protractor-spec/ampgallery/**/*.spec.js',
-                'test/protractor-spec/ampgallery/**/*.spec.js'
+                'test/protractor-spec/ampgallery/**/*.spec.js',
+                'test/protractor-spec/newsletters/mobilepagecheck.spec.js'
             ]
 		},
 		{
@@ -43,7 +44,8 @@ exports.config = {
 			exclude: [
 				'test/protractor-spec/article/article-leftrail.spec.js',
 				'test/protractor-spec/angulargallery/pagecheck.spec.js',
-                'test/protractor-spec/angulargallery/**/*.spec.js'
+                'test/protractor-spec/angulargallery/**/*.spec.js',
+                'test/protractor-spec/newsletters/pagecheck.spec.js'
 			]
 		},
 /*        {
@@ -118,8 +120,11 @@ exports.config = {
             'test/protractor-spec/amparticle/**/*.spec.js'
         ],
         ampgallery: [
-            'test/protractor-spec/ampgallery/**/*.spec.js',
+            'test/protractor-spec/ampgallery/**/*pagecheck.spec.js',
             'test/protractor-spec/ampgallery/**/*.spec.js'
+        ],
+        newsletters: [
+            'test/protractor-spec/newsletters/*pagecheck.spec.js'
         ]
 	},
 	specs: [
@@ -142,8 +147,7 @@ exports.config = {
 //      'test/protractor-spec/amparticle/**/*.spec.js',
 //      'test/protractor-spec/ampgallery/*pagecheck.spec.js',
 //      'test/protractor-spec/ampgallery/**/*.spec.js',
-        'test/protractor-spec/newsletters/*pagecheck.spec.js',
-        'test/protractor-spec/newsletters/**/*.spec.js'
+        'test/protractor-spec/newsletters/*pagecheck.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');

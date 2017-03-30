@@ -37,7 +37,7 @@ describe('Newsletters Blog', function() {
     });
     
     it('should have the title', function() {
-        expect(element(by.css('.title-text>h1')).getText()).toEqual('Forbes Investor Edge'); 
+        expect(element(by.css('.author-header>h1')).getText()).toEqual('Forbes Investor Edge'); 
     });
     
 });
