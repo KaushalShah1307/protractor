@@ -31,7 +31,7 @@ describe('Newsletters Home Page', function() {
     });
     
     it('should have the Subscribe button', function() {
-        expect(element(by.className('Subscribe')).isDisplayed()).toBeTruthy(); 
+        expect(element(by.className('subscribe')).isDisplayed()).toBeTruthy(); 
     });
     
     it('should have the paywall for unscubscribed articles', function() {
