@@ -89,4 +89,8 @@ describe('Newsletters Article', function() {
         expect(element(by.className('date')).getText()).toEqual('9/30/2015 @ 1:45PM'); 
     });
     
+    it('should have the article body', function() {
+        expect(element(by.className('body-text')).getText().length > 0); 
+    });
+    
 });

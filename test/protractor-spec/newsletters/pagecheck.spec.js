@@ -97,4 +97,17 @@ describe('Newsletters Article', function() {
         expect(element(by.className('slug')).getText()).toEqual('I cover fiscal policy, macro, banking, healthcare, etc.'); 
     });
     
+    it('should have the article body', function() {
+        expect(element(by.className('body-text')).getText().length > 0); 
+    });
+    
+    it('should have the share tab', function() {
+        expect(element(by.className('share_tab')).isDisplayed()).toBeTruthy(); 
+    });
+    
+    it('should have the print option', function() {
+        var printButton = element(by.className('print'));
+        expect((printButton).isDisplayed()).toBeTruthy();
+    });
+    
 });
