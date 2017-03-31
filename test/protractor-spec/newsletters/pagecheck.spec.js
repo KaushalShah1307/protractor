@@ -85,4 +85,16 @@ describe('Newsletters Article', function() {
         browser.get('/newsletters/forbes-investor-edge/2015/09/30/21-secrets-to-maxing-out-your-social-security/'); 
     });
     
+    it('should have the title of the article', function() {
+        expect(element(by.css('#right-rail>h1')).getText()).toEqual('21 Secrets To Maxing Out Your Social Security'); 
+    });
+    
+    it('should have the published timestamp', function() {
+        expect(element(by.className('date')).getText()).toEqual('9/30/2015 @ 1:45PM'); 
+    });
+    
+    it('should have the slug', function() {
+        expect(element(by.className('slug')).getText()).toEqual('I cover fiscal policy, macro, banking, healthcare, etc.'); 
+    });
+    
 });
