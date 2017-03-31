@@ -1,4 +1,4 @@
-describe('Article', function() {
+describe('BrandVoice Article', function() {
 	var currentUrl;
 
 	beforeAll(function(done) {
@@ -41,18 +41,30 @@ describe('Article', function() {
 			});
 
 			it('should pass the right custom parameters', function() {
-				// expect(dataLayer.brandvoice).toBe(null);
                 //expect((dataLayer.DFPSite).toEqual('fdc.forbes') || (dataLayer.DFPSite).toEqual('fdcmobile'));
                 expect(dataLayer.DFPZone).toEqual('article-d');
-				expect(dataLayer.author).toEqual('Lewis DVorkin');
-				expect(dataLayer.channel).toEqual('business');
-                expect(dataLayer.section).toEqual('lewisdvorkinblog');
-                expect(dataLayer.hashtags).toEqual('boxoffice');
-				expect(dataLayer.slot).toEqual('none');
-				expect(dataLayer.site).toEqual('lewisdvorkin');
-                //expect(dataLayer.doNotPaginate).toEqual('donotpaginate');
-				
-
+				expect(dataLayer.author).toEqual('IBM Contributor');
+				expect(dataLayer.channel).toEqual('leadership');
+                expect(dataLayer.section).toEqual('ibmblog');
+                expect(dataLayer.hashtags).toEqual('LikeABoss');
+				expect(dataLayer.slot).toEqual('ibm');
+				expect(dataLayer.site).toEqual('ibm');
+				expect(dataLayer.blogType).toEqual('ad');
+				expect(dataLayer.brandVoiceLive).toEqual('true');
+				expect(dataLayer.bvContentSource).toEqual('none');
+				expect(dataLayer.bvProgramType).toEqual('elite');
+				expect(dataLayer.categories).toEqual('Leadership');
+				expect(dataLayer.contribActive).toEqual('true');
+				expect(dataLayer.contribDivision).toEqual('none');
+				expect(dataLayer.contribType).toEqual('AdVoice');
+                expect(dataLayer.doNotPaginate).toEqual('none');
+                expect(dataLayer.naturalID).toEqual('blogAndPostId/blog/post/2729-3427');
+                expect(dataLayer.paragraphs).toEqual('17');
+                expect(dataLayer.primaryChannel).toEqual('Leadership');
+                expect(dataLayer.primarySection).toEqual('none');
+                expect(dataLayer.publishHour).toEqual('09');
+                expect(dataLayer.published).toEqual('2017-03-30');
+                expect(dataLayer.trendingHashtags).toEqual('none'); 
 			});
 		});
         

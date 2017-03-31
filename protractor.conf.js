@@ -43,6 +43,7 @@ exports.config = {
 			},
 			exclude: [
 				'test/protractor-spec/article/article-leftrail.spec.js',
+				'test/protractor-spec/bvarticle/article-leftrail.spec.js',
 				'test/protractor-spec/angulargallery/pagecheck.spec.js',
                 'test/protractor-spec/angulargallery/**/*.spec.js',
                 'test/protractor-spec/newsletters/pagecheck.spec.js'
@@ -80,6 +81,11 @@ exports.config = {
 			'test/protractor-spec/global.spec.js',
 			'test/protractor-spec/article/*pagecheck.spec.js',
 			'test/protractor-spec/article/**/*.spec.js'
+		],
+        bvarticle: [
+			'test/protractor-spec/global.spec.js',
+			'test/protractor-spec/bvarticle/*pagecheck.spec.js',
+			'test/protractor-spec/bvarticle/**/*.spec.js'
 		],
 		contrib: [
 			'test/protractor-spec/global.spec.js',
@@ -129,8 +135,10 @@ exports.config = {
 	},
 	specs: [
 		'test/protractor-spec/global.spec.js',
-		'test/protractor-spec/article/*pagecheck.spec.js',
-		'test/protractor-spec/article/**/*.spec.js',
+//		'test/protractor-spec/article/*pagecheck.spec.js',
+//		'test/protractor-spec/article/**/*.spec.js',
+        'test/protractor-spec/bvarticle/*pagecheck.spec.js',
+		'test/protractor-spec/bvarticle/**/*.spec.js',
 //		'test/protractor-spec/contrib/*pagecheck.spec.js',
 //		'test/protractor-spec/contrib/**/*.spec.js',
 //		'test/protractor-spec/csf/*pagecheck.spec.js',
