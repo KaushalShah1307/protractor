@@ -4,7 +4,7 @@ var HomePage = function() {
 	browser.executeAsyncScript(function() {
 		callback = arguments[0];
 		callback($('body').injector().get('CsfAppState').page_data.channel);
-        callback($('body').injector().get('CsfAdService').slots_to_render);
+        //callback($('body').injector().get('CsfAdService').slots_to_render);
 	}).then(function(result) {
 		this.page_data = result;
 	}).then(function() {

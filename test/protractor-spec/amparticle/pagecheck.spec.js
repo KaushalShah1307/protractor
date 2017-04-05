@@ -47,6 +47,10 @@ describe('AMP Article Page', function() {
         expect(element(by.className('article-footer'))).toBeTruthy(); 
     });
     
+    it('should have all the ads', function() {
+        expect(browser.executeScript('return window.window.ampAdSlotIdCounter;')).toEqual(9);
+    });
+    
     it('should have the share icon in the header', function() {
         var shareIcon = element(by.className('share-icon'));
         var closeButton = element(by.css('.close-button-wrapper'));

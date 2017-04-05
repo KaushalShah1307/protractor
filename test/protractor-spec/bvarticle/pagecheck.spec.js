@@ -1,5 +1,9 @@
 var ArticlePage = require('./article.page.js'),
-	articlePage = new ArticlePage('/sites/ibm/2017/03/30/how-cdos-can-use-cognitive-computing-to-transform-their-businesses-qa/?view=beta-a');
+	articlePage = new ArticlePage('/sites/ibm/2017/03/30/how-cdos-can-use-cognitive-computing-to-transform-their-businesses-qa/');
+
+beforeAll(function() {
+   browser.manage().addCookie({name: 'forbesbeta', value: 'A'}, {name: 'forbes_article', value: 'A'});
+});
 
 describe('BrandVoice Article', function() {
 

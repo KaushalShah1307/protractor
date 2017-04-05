@@ -7,6 +7,7 @@ var ArticlePage = function(url) {
 		browser.executeAsyncScript(function() {
 			callback = arguments[0];
 			callback($('body').injector().get('ArticleAppState').page_data.articles.article_0.article);
+//			callback($('body').injector().get('fbsTrackingService').reach.params().title);
 		}).then(function(result) {
 			that.page_data = result;
 		}).then(function() {

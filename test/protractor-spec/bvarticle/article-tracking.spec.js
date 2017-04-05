@@ -83,6 +83,7 @@ describe('BrandVoice Article', function() {
             it('should load the SimpleReach script', function() {
                 expect(reachpixel.length > 1);
             });
+            
         });
         
         describe('Comscore', function() {

@@ -3,20 +3,6 @@ var ArticlePage = require('./article.page.js'),
 
 describe('Article', function() {
 
-/*	beforeEach(function () {
-//        var ptor;
-//		ptor = protractor.getInstance();
-//		browser.get('/');
-		articlePage.get().manage().addCookie("forbesbeta", "A");
-	});
-
-
-	it('check if the cookie is set', function () {
-		cookies = articlePage.get().manage().getCookie("forbesbeta").then(function(data){
-			console.log(data);
-		});
-	});*/
-
 	it('should get the page', function() {
 		articlePage.get();
 	});
