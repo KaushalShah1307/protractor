@@ -151,10 +151,10 @@ exports.config = {
 //      'test/protractor-spec/homepage/**/*.spec.js',
 //      'test/protractor-spec/forbespress/*pagecheck.spec.js',
 //      'test/protractor-spec/forbespress/**/*.spec.js',
-      'test/protractor-spec/amparticle/*pagecheck.spec.js',
-      'test/protractor-spec/amparticle/**/*.spec.js',
-//      'test/protractor-spec/ampgallery/*pagecheck.spec.js',
-//      'test/protractor-spec/ampgallery/**/*.spec.js',
+//      'test/protractor-spec/amparticle/*pagecheck.spec.js',
+//      'test/protractor-spec/amparticle/**/*.spec.js',
+      'test/protractor-spec/ampgallery/*pagecheck.spec.js',
+      'test/protractor-spec/ampgallery/**/*.spec.js',
 //        'test/protractor-spec/newsletters/*pagecheck.spec.js'
 	],
 	onPrepare: function() {
