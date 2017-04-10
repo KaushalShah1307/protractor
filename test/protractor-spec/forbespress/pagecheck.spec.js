@@ -67,6 +67,10 @@ describe('ForbesPress Article Page', function() {
         expect(element(by.className('fp-button button-publish')).getText()).toEqual('PUBLISH');       
     });
     
+    it('should have the excerpt toggle', function() {
+        expect(element(by.className('toggle')).isDisplayed()).toBeTruthy();
+    });
+    
 });
 
 describe('Publish a ForbesPress Article Page', function() {

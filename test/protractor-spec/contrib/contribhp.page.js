@@ -3,7 +3,7 @@ var ContribPage = function() {
     browser.get('/sites/northwesternmutual/',5000);
 	browser.executeAsyncScript(function() {
 		callback = arguments[0];
-		callback($('body').injector().get('CsfAppState').page_data.author);
+		callback($('body').injector().get('CsfAppState').page_data.channel);
 	}).then(function(result) {
 		this.page_data = result;
 	}).then(function() {
