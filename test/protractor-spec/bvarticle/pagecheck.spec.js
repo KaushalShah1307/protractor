@@ -35,10 +35,11 @@ describe('BrandVoice Article', function() {
         expect(element(by.className('brandvoice-logo')).isDisplayed()).toBeTruthy(); 
     });
     
-    it('should have the BV Contrib name', function() {
+    // this case checks for the author name on BV.
+/*    it('should have the BV Contrib name', function() {
         expect(element(by.className('name-desc')).getText()).toEqual('IBM Contributor, IBM'); 
     });
-    
+*/    
 	globals.generalCheck();
 	globals.checkAds(articlePage.adsService);
 });

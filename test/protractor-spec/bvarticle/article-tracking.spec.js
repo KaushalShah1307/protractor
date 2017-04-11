@@ -53,7 +53,7 @@ describe('BrandVoice Article', function() {
 				expect(dataLayer.blogType).toEqual('ad');
 				expect(dataLayer.brandVoiceLive).toEqual('true');
 				expect(dataLayer.bvContentSource).toEqual('none');
-				expect(dataLayer.bvProgramType).toEqual('pro_bono');
+				expect(dataLayer.bvProgramType).toEqual('elite');
 				expect(dataLayer.categories).toEqual('Leadership');
 				expect(dataLayer.contribActive).toEqual('true');
 				expect(dataLayer.contribDivision).toEqual('none');
