@@ -20,7 +20,7 @@ describe('Home Page Redesign', function() {
         expect(element(by.className('footer-center'))).toBeTruthy();
     })
     
-    it('should login', function() {
+ /*   it('should login', function() {
         element(by.css('.icon.icon-user')).click();
         element(by.css('.log-in.ajaxify.unireg_login.ng-scope')).click();
         element(by.css('#login_form_user_email')).sendKeys('testguy');
@@ -33,7 +33,7 @@ describe('Home Page Redesign', function() {
         element(by.css('.user-thumbnail-image')).click();
         expect(element(by.css('.user-thumbnail-image'))).toBeTruthy();
     });
-    
+*/    
     it('should have social module', function() {
         element(by.css('.icon.icon-add-person.ng-scope')).click();
         expect(element(by.css('.csr-header-sharing.csf-sharing')).isDisplayed()).toBeTruthy();
