@@ -22,11 +22,11 @@ describe('AMP Article Page', function() {
     it('should have the contributors name and type', function() {
         expect(element(by.className('user')).getText()).toEqual('Lewis DVorkin , FORBES STAFF'); 
     });
-    
+/* // Make sure to enable the check when running against an article with hashtag   
     it('should have the hashtag', function() {
         expect(element(by.className('hashtag')).getText()).toEqual('#boxoffice'); 
     });
-    
+*/    
     it('should have the channel/section assigned', function() {
         expect(element(by.className('crumb')).getText()).toEqual('Business'); 
     });

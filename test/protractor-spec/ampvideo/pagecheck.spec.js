@@ -32,7 +32,7 @@ describe('AMP Video Page', function() {
     });
     
     it('should have all the ads', function() {
-        expect(browser.executeScript('return window.window.ampAdSlotIdCounter;')).toEqual(1);
+        expect(browser.executeScript('return window.window.ampAdSlotIdCounter;')).toEqual(2);
     });
     
     it('should have the share icon in the header', function() {

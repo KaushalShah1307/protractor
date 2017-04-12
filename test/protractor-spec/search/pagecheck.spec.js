@@ -14,13 +14,13 @@ describe('Search', function() {
     
     it('input text should be searchable', function() {
         element(by.model('search_query')).sendKeys('Lewis Dvorkin\n');
-        expect(element(by.className('fs-h2 entity-name')).getText()).toEqual('Lewis DVorkin');
+        expect(element(by.css('.fs-h2.entity-name.ng-binding')).getText()).toEqual('Lewis DVorkin');
     });
     
     it('hashtag should be there', function() {
        element(by.model('search_query')).clear();
        element(by.model('search_query')).sendKeys('#TrumpsAmerica\n');
-       expect(element(by.className('search-hashtag')).getText()).toEqual('#TrumpsAmerica');
+       expect(element(by.css('.search-hashtag.ng-binding.ng-scope')).getText()).toEqual('#TrumpsAmerica');
     });
 
 	globals.generalCheck();

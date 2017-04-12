@@ -47,7 +47,7 @@ describe('Article', function() {
 				expect(dataLayer.author).toEqual('Lewis DVorkin');
 				expect(dataLayer.channel).toEqual('business');
                 expect(dataLayer.section).toEqual('lewisdvorkinblog');
-                expect(dataLayer.hashtags).toEqual('boxoffice');
+                expect(dataLayer.hashtags).toEqual('none');
 				expect(dataLayer.slot).toEqual('none');
 				expect(dataLayer.site).toEqual('lewisdvorkin');
                 //expect(dataLayer.doNotPaginate).toEqual('donotpaginate');

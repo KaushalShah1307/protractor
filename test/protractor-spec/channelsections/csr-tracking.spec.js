@@ -43,7 +43,7 @@ describe('CSR', function() {
 			it('should pass the right custom parameters', function() {
                 //(expect(dataLayer.DFPSite).toMatch('fdc.forbes' || 'fdcmobile'));
                 expect(dataLayer.DFPZone).toEqual('channel');
-				expect(dataLayer.channel).toEqual('leadership');
+				expect(dataLayer.channel).toEqual('none');
                 expect(dataLayer.section).toEqual('none');
                 expect(dataLayer.brandVoice).toEqual('none');
                 expect(dataLayer.brandVoiceLive).toEqual('none');
