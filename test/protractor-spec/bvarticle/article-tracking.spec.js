@@ -84,6 +84,14 @@ describe('BrandVoice Article', function() {
                 expect(reachpixel.length > 1);
             });
             
+            it('should pass the right custom parameters', function() {
+                expect(browser.executeScript('return window.__reach_config.authors;')).toEqual('IBM Contributor'); 
+                expect(browser.executeScript('return window.__reach_config.channels;')).toEqual('leadership'); 
+                expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-03-30T13:30:00.000Z'); 
+                expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
+                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('How CDOs Can Use Cognitive Computing To Transform Their Businesses {Q&A}'); 
+            });
+            
         });
         
         describe('Comscore', function() {
