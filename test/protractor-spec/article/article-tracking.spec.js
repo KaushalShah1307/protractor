@@ -72,7 +72,7 @@ describe('Article', function() {
             });
             
             it('should pass the right custom parameters', function() {
-                expect(browser.executeScript('return window.__reach_config.authors;')).toEqual('Lewis Dvorkin'); 
+                expect(browser.executeScript('return window.__reach_config.authors;')).toEqual('Lewis DVorkin'); 
                 expect(browser.executeScript('return window.__reach_config.channels;')).toEqual('business'); 
                 expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2015-06-10T14:00:00.000Z'); 
                 expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
