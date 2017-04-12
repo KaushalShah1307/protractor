@@ -1,5 +1,5 @@
-var ArticlePage = require('./article.page.js'),
-	articlePage = new ArticlePage('/sites/ibm/2017/03/30/how-cdos-can-use-cognitive-computing-to-transform-their-businesses-qa/');
+var BVArticlePage = require('./article.page.js'),
+	bvArticlePage = new BVArticlePage('/sites/ibm/2017/03/30/how-cdos-can-use-cognitive-computing-to-transform-their-businesses-qa/');
 
 beforeAll(function() {
    browser.manage().addCookie({name: 'forbesbeta', value: 'A'}, {name: 'forbes_article', value: 'A'});
@@ -8,7 +8,7 @@ beforeAll(function() {
 describe('BrandVoice Article', function() {
 
 	it('should get the page', function() {
-		articlePage.get();
+		bvArticlePage.get();
 	});
     
     it('should have the title of the article', function() {
@@ -41,5 +41,5 @@ describe('BrandVoice Article', function() {
     });
 */    
 	globals.generalCheck();
-	globals.checkAds(articlePage.adsService);
+	globals.checkAds(bvArticlePage.adsService);
 });

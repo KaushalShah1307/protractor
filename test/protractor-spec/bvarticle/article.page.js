@@ -1,4 +1,4 @@
-var ArticlePage = function(url) {
+var BVArticlePage = function(url) {
 	that = this;
 	that.url = url;
 	that.adsService = 'ArticleAdsService';
@@ -20,4 +20,4 @@ var ArticlePage = function(url) {
 	};
 	return that;
 };
-module.exports = ArticlePage;
+module.exports = BVArticlePage;
