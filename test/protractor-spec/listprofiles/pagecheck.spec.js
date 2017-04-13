@@ -59,4 +59,10 @@ describe('List Profile Page', function() {
         expect(element(by.className('quote-name')).getText()).toEqual('Bill Gates'); 
     });
     
+    it('should have the connection module and its properties', function() {
+        expect(element(by.className('connection')).isPresent()).toBe(true);
+        expect(element(by.xpath('/html/body/div[3]/div[6]/div/div/ul/li[1]/div[1]')).getText()).toEqual('Melinda Gates');
+        expect(element(by.xpath('/html/body/div[3]/div[6]/div/div/ul/li[1]/div[2]')).getText()).toEqual('Spouse');
+    });
+    
 });
