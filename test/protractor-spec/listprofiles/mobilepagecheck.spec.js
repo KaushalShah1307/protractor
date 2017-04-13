@@ -47,4 +47,10 @@ describe('List Profile Page', function() {
         expect(element(by.className('net-worth-chart')).isPresent()).toBe(true); 
     });
     
+    it('should have the tweet-quote module', function() {
+        expect(element(by.className('quote')).isPresent()).toBe(true); 
+        expect(element(by.className('quote-text')).getText().length > 0); 
+        expect(element(by.className('quote-name')).getText()).toEqual('Bill Gates'); 
+    });
+    
 });
