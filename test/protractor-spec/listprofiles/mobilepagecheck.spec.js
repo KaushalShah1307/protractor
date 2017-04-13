@@ -10,9 +10,21 @@ describe('List Profile Page', function() {
 	it('should get the page', function() {
 		listProfiles.get();
 	});
+    
+    it('should have the profile header', function() {
+        expect(element(by.tagName('header')).isPresent()).toBe(true); 
+    });
+    
+    it('should have the profile person name', function() {
+        expect(element(by.className('name')).getText()).toEqual('Bill Gates'); 
+    });
 
     it('should have the profile image', function() {
         expect(element(by.css('.featured-image>img')).isPresent()).toBe(true);
+    });
+    
+    it('should have the profile rank on the profile image', function() {
+        expect(element(by.className('rank')).getText()).toEqual('#1'); 
     });
     
     it('should have the profile info', function() {
@@ -51,6 +63,22 @@ describe('List Profile Page', function() {
         expect(element(by.className('quote')).isPresent()).toBe(true); 
         expect(element(by.className('quote-text')).getText().length > 0); 
         expect(element(by.className('quote-name')).getText()).toEqual('Bill Gates'); 
+    });
+    
+    it('should have the lists module', function() {
+        expect(element(by.className('lists')).isPresent()).toBe(true); 
+    });
+    
+    it('should have the newsworthy module', function() {
+        expect(element(by.className('newsworthy')).isPresent()).toBe(true); 
+    });
+    
+    it('should have the stats module', function() {
+        expect(element(by.className('stats')).isPresent()).toBe(true); 
+    });
+    
+    it('should have the global footer', function() {
+        expect(element(by.className('row clearfix csf-footer')).isPresent()).toBe(true); 
     });
     
 });
