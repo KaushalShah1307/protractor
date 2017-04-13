@@ -140,6 +140,9 @@ exports.config = {
         ],
         legacyarticle: [
             'test/protractor-spec/legacyarticle/*pagecheck.spec.js'
+        ],
+        listprofiles: [
+            'test/protractor-spec/listprofiles/*pagecheck.spec.js'
         ]
 	},
 	specs: [
@@ -156,8 +159,8 @@ exports.config = {
 //		'test/protractor-spec/channelsections/**/*.spec.js',
 //		'test/protractor-spec/search/*pagecheck.spec.js',
 //      'test/protractor-spec/search/**/*.spec.js', 
-      'test/protractor-spec/homepage/*pagecheck.spec.js',
-      'test/protractor-spec/homepage/**/*.spec.js',
+//      'test/protractor-spec/homepage/*pagecheck.spec.js',
+//      'test/protractor-spec/homepage/**/*.spec.js',
 //      'test/protractor-spec/forbespress/*pagecheck.spec.js',
 //      'test/protractor-spec/forbespress/**/*.spec.js',
 //      'test/protractor-spec/amparticle/*pagecheck.spec.js',
@@ -168,6 +171,7 @@ exports.config = {
 //        'test/protractor-spec/ampvideo/**/*.spec.js',
 //        'test/protractor-spec/newsletters/*pagecheck.spec.js',
 //        'test/protractor-spec/legacyarticle/*pagecheck.spec.js'
+        'test/protractor-spec/listprofiles/*pagecheck.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
