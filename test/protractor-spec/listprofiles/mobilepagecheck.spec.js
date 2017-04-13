@@ -39,4 +39,12 @@ describe('List Profile Page', function() {
         expect(element(by.className('did-you-know')).isPresent()).toBe(true); 
     });
     
+    it('should have content in the did-you-know section', function() {
+        expect(element(by.className('centered-div')).getText().length > 0); 
+    });
+    
+    it('should have the networth chart', function() {
+        expect(element(by.className('net-worth-chart')).isPresent()).toBe(true); 
+    });
+    
 });
