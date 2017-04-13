@@ -34,13 +34,14 @@ describe('List Profile Page', function() {
     it('should have current year networth value', function() {
         expect(element(by.className('secondary-amount')).getText().length > 0); 
     });
-/*    
-    it('should have the profile name', function() {
-        expect(element(by.className('name-wrapper>h2')).getText()).toEqual('Bill Gates'); 
+    
+    it('should expand the bio/dek', function() {
+        element(by.css('.more-less.more')).click();
+        expect(element(by.className('biography canfade more-less-border')).getText().length > 0);
     });
     
-    it('should have the profile title', function() {
-        expect(element(by.css('.name-wrapper>h3')).getText()).toEqual('Cofounder, Bill & Melinda Gates Foundation'); 
+    it('should have the did-you-know section', function() {
+        expect(element(by.className('did-you-know')).isPresent()).toBe(true); 
     });
-*/    
+    
 });

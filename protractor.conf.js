@@ -28,7 +28,8 @@ exports.config = {
                 'test/protractor-spec/ampgallery/**/*.spec.js',
                 'test/protractor-spec/ampgallery/**/*.spec.js',
                 'test/protractor-spec/ampvideo/**/*.spec.js',
-                'test/protractor-spec/newsletters/mobilepagecheck.spec.js'
+                'test/protractor-spec/newsletters/mobilepagecheck.spec.js',
+                'test/protractor-spec/listprofiles/mobilepagecheck.spec.js'
             ]
 		},
 		{
@@ -48,7 +49,8 @@ exports.config = {
 				'test/protractor-spec/angulargallery/pagecheck.spec.js',
                 'test/protractor-spec/angulargallery/**/*.spec.js',
                 'test/protractor-spec/newsletters/pagecheck.spec.js',
-                'test/protractor-spec/forbespress/**/*.spec.js'
+                'test/protractor-spec/forbespress/**/*.spec.js',
+                'test/protractor-spec/listprofiles/pagecheck.spec.js'
 			]
 		},
 /*        {
