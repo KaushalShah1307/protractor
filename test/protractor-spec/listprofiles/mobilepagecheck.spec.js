@@ -2,7 +2,7 @@ var ListProfiles = require('./profiles.page.js'),
 	listProfiles  = new ListProfiles();
 
 beforeEach(function(){
-    browser.ignoreSynchronization = true;
+    browser.ignoreSynchronization = true; 
 });
 
 describe('List Profile Page', function() {
@@ -36,11 +36,11 @@ describe('List Profile Page', function() {
     });
 /*    
     it('should have the profile name', function() {
-        expect(element(by.className('name-wrapper>h2')).getText()).toEqual('Bill Gates'); 
+        expect(element(by.css('.name-wrapper>h2')).getText()).toEqual('Bill Gates'); 
     });
     
     it('should have the profile title', function() {
         expect(element(by.css('.name-wrapper>h3')).getText()).toEqual('Cofounder, Bill & Melinda Gates Foundation'); 
     });
-*/    
+*/   
 });
