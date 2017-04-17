@@ -25,21 +25,7 @@ describe('AMP Gallery', function() {
     });
     
     it('should swipe thru the slides', function() {
-       function swipe() {
-           element(by.className('-amp-slides-container')).click(); 
-           element(by.className('-amp-slides-container')).getLocation().then(function(data) {
-                var startPoint = {
-                x: data.x,
-                y: data.y
-                };
-                var endPoint = {
-                x: startPoint.x - 535,
-                y: startPoint.y
-                };
-                browser.actions().dragAndDrop(startPoint, endPoint).perform();  
-           }); 
-        };
-        swipe();
+        browser.actions().mouseMove({x: 20, y: 0}).mouseMove({x: 20, y: 500}).perform();
     });
     
 });
