@@ -39,7 +39,7 @@ describe('List Profile Page', function() {
     });
     
     it('should have real-time networth date stamp', function() {
-        expect(element(by.className('primary-networth')).getText()).toEqual('REAL TIME NET WORTH — as of 4/13/17'); 
+        expect(element(by.className('primary-networth')).getText()).toContain('REAL TIME NET WORTH — as of '); 
     });
     
     it('should have real-time networth value', function() {
@@ -47,7 +47,7 @@ describe('List Profile Page', function() {
     });
     
     it('should have current year networth date stamp', function() {
-        expect(element(by.className('secondary-networth')).getText()).toEqual('2017 BILLIONAIRES NET WORTH — as of 4/11/17'); 
+        expect(element(by.className('secondary-networth')).getText()).toContain('2017 BILLIONAIRES NET WORTH — as of '); 
     });
     
     it('should have current year networth value', function() {
