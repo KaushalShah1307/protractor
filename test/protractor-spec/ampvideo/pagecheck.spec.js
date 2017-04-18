@@ -24,7 +24,8 @@ describe('AMP Video Page', function() {
     });
     
     it('should have the recommended carousal', function() {
-        expect(element(by.className('-amp-scrollable-carousel-container')).isDisplayed()).toBeTruthy(); 
+        //expect(element(by.className('-amp-scrollable-carousel-container')).isDisplayed()).toBeTruthy(); 
+        expect(element(by.tagName('amp-carousel')).isDisplayed()).toBeTruthy(); 
     });
     
     it('should have the footer', function() {
