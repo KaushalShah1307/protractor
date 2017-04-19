@@ -119,3 +119,35 @@ describe('All Playlist Page:', function() {
     });
     
 });
+
+describe('Video Playlist Page:', function() {
+   
+    it('should get the page', function() {
+        browser.get('/playlist/infinitivoice/'); 
+    });
+    
+	it('should have the standalone video', function() {
+		expect(element(by.id('brightcove_perform_0_html5_api')).isPresent()).toBe(true);
+	});
+    
+	it('should have the featured video title', function() {
+		expect(element(by.className('video_title')).getText().length > 0);
+	});
+    
+    it('should have the BrandVoice prepend to the video title', function() {
+        expect(element(by.className('advoice')).getText()).toEqual('InfinitiVoice'); 
+    });
+    
+	it('should have the featured video dek', function() {
+		expect(element(by.css('.video_info>p')).getText().length > 0);
+	});
+    
+    it('should have the BrandVoice name and blurb', function() {
+        var blurb = element.all(by.className('description')).first();
+        var blurbDek = element.all(by.className('description_expanded')).first();
+        expect(element.all(by.className('advoice')).first().isDisplayed()).toBe(true);
+        expect(element.all(by.className('brandvoice')).first().getText()).toEqual('Infiniti');
+        expect(element(by.className('advoice_desc')).isDisplayed()).toBe(true);
+    });
+    
+});
