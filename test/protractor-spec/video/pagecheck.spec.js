@@ -108,18 +108,18 @@ describe('Individual Video Page:', function() {
 		expect(element(by.css('.video_info>p')).getText().length > 0);
 	});
     
-});
+        describe('Video Left Rail:', function() {
 
-describe('Video Left Rail:', function() {
-   
-    it('should have the left rail', function() {
-        expect(element(by.className('video-sidebar')).isDisplayed()).toBe(true); 
-    });
+        it('should have the left rail', function() {
+            expect(element(by.className('video-sidebar')).isDisplayed()).toBe(true); 
+        });
+
+        it('should match the video to the first left rail item', function() {
+            var firstVideo = element.all(by.css('.related-video-title.exit_trigger_set.ga_tracked')).first();
+            var videoTitle = element(by.className('video_title')).getText();
+            expect(firstVideo.getText()).toEqual(videoTitle);
+        });
     
-    it('should match the video to the first left rail item', function() {
-        var firstVideo = element.all(by.css('.related-video-title.exit_trigger_set.ga_tracked')).first();
-        var videoTitle = element(by.className('video_title')).getText();
-        expect(firstVideo.getText()).toEqual(videoTitle);
-    });
+});
     
 });
