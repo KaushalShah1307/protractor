@@ -120,6 +120,26 @@ describe('Individual Video Page:', function() {
             expect(firstVideo.getText()).toEqual(videoTitle);
         });
     
+    });
+    
 });
+
+describe('All Playlist Page:', function() {
+   
+    it('should get the page', function() {
+        browser.get('/all-playlists/'); 
+    });
+    
+    it('should have the playlists list', function() {
+        expect(element(by.className('playlist_guide col-sm-12 row')).isDisplayed()).toBe(true); 
+    });
+    
+	it('should have the latest-video section', function() {
+		expect(element(by.className('latest_video col-sm-8 stream row load_more_container')).isPresent()).toBe(true);
+	});
+    
+    it('should have 29 latest videos in the stream', function() {
+        expect(element.all(by.css('.latest_video.col-sm-8.stream.row.load_more_container')).all(by.css('.latest_video.col-sm-8.stream.row.load_more_container>ul>li')).count()).toBe(29); 
+    });
     
 });
