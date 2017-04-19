@@ -20,7 +20,7 @@ describe('Search', function() {
     it('hashtag should be there', function() {
        element(by.model('search_query')).clear();
        element(by.model('search_query')).sendKeys('#TrumpsAmerica\n');
-       expect(element(by.css('.search-hashtag.ng-binding.ng-scope')).getText()).toEqual('#TrumpsAmerica');
+       expect(element.all(by.css('.search-hashtag.ng-binding.ng-scope')).first().getText()).toEqual('#TrumpsAmerica');
     });
 
 	globals.generalCheck();
