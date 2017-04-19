@@ -44,6 +44,10 @@ describe('Video Home Page', function() {
 		expect(element(by.className('more_videos row flexslider-container')).isPresent()).toBe(true);
 	});
     
+    it('should have 100 recommended videos in the carousal', function() {
+        expect(element.all(by.css('.slides.clearfix')).all(by.css('.slides.clearfix>li')).count()).toBe(100); 
+    });
+    
 	it('should have the featured section', function() {
 		expect(element(by.className('clearfix rule row')).isPresent()).toBe(true);
 	});
@@ -63,7 +67,7 @@ describe('Video Home Page', function() {
 	it('should have the featured-playlists section', function() {
 		expect(element(by.className('featured_playlists rule')).isPresent()).toBe(true);
 	});
-    
+        
 	it('should click on the load-more button to expand the video drawer', function() {
         var loadMore = element.all(by.css('.load_more_label')).first();
 		expect(loadMore.isPresent()).toBe(true);
