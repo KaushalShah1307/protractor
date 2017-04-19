@@ -64,4 +64,10 @@ describe('Video Home Page', function() {
 		expect(element(by.className('featured_playlists rule')).isPresent()).toBe(true);
 	});
     
+	it('should click on the load-more button to expand the video drawer', function() {
+        var loadMore = element.all(by.css('.load_more_label')).first();
+		expect(loadMore.isPresent()).toBe(true);
+        loadMore.click();
+	});
+    
 });
