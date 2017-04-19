@@ -130,15 +130,15 @@ describe('Video Playlist Page:', function() {
 		expect(element(by.id('brightcove_perform_0_html5_api')).isPresent()).toBe(true);
 	});
     
-	it('should have the featured video title', function() {
-		expect(element(by.className('video_title')).getText().length > 0);
+	it('should have the video title', function() {
+		expect(element.all(by.className('video_title')).first().getText().length > 0);
 	});
     
     it('should have the BrandVoice prepend to the video title', function() {
-        expect(element(by.className('advoice')).getText()).toEqual('InfinitiVoice'); 
+        expect(element.all(by.className('advoice')).first().getText()).toEqual('InfinitiVoice'); 
     });
     
-	it('should have the featured video dek', function() {
+	it('should have the video dek', function() {
 		expect(element(by.css('.video_info>p')).getText().length > 0);
 	});
     
