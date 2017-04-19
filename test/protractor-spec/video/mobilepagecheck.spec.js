@@ -6,7 +6,7 @@ beforeEach(function(){
     // add the cookies here
 });
 
-describe('Video Home Page', function() {
+describe('Video Home Page:', function() {
     
 	it('should get the page', function() {
 		video.get();
@@ -66,6 +66,36 @@ describe('Video Home Page', function() {
     
 	it('should have the most-read section', function() {
 		expect(element(by.className('most_popular resp_hide')).isPresent()).toBe(true);
+	});
+    
+});
+
+describe('Individual Video Page:', function() {
+    
+    var individualVideo = '/video/5194688673001/';
+    
+    it('should get the page', function() {
+        browser.get(individualVideo); 
+    });
+    
+	it('should have the page header', function() {
+		expect(element(by.tagName('header')).isPresent()).toBe(true);
+	});
+    
+	it('should have the page footer', function() {
+		expect(element(by.id('footer_links')).isPresent()).toBe(true);
+	});
+    
+	it('should have the standalone video', function() {
+		expect(element(by.id('brightcove_perform_0_html5_api')).isPresent()).toBe(true);
+	});
+    
+	it('should have the featured video title', function() {
+		expect(element(by.className('video_title')).getText().length > 0);
+	});
+    
+	it('should have the featured video dek', function() {
+		expect(element(by.css('.video_info>p')).getText().length > 0);
 	});
     
 });
