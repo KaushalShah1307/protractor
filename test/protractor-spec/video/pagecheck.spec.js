@@ -60,6 +60,10 @@ describe('Video Home Page', function() {
 		expect(element(by.className('latest_video col-sm-8 stream row load_more_container')).isPresent()).toBe(true);
 	});
     
+    it('should have 29 latest videos in the stream', function() {
+        expect(element.all(by.css('.latest_video.col-sm-8.stream.row.load_more_container')).all(by.css('.latest_video.col-sm-8.stream.row.load_more_container>ul>li')).count()).toBe(29); 
+    });
+    
 	it('should have the video search section', function() {
 		expect(element(by.className('search video_search_control clearfix')).isPresent()).toBe(true);
 	});
