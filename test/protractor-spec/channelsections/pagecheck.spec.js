@@ -5,6 +5,14 @@ describe('CSR:', function() {
 		csrPage.get();
 	});
     
+    it('should have the header on the page', function() {
+        expect(element(by.className('header-wrapper')).isPresent()).toBe(true); 
+    });
+    
+    it('should have the footer on the page', function() {
+        expect(element(by.tagName('footer')).isPresent()).toBe(true); 
+    });
+    
     it('should have the channel/section name', function() {
        expect(element(by.className('channel-name')).getText()).toEqual('LEADERSHIP'); 
     });
