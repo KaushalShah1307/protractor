@@ -1,6 +1,6 @@
 var ForbesPress = require('./forbespress.page.js'),
 	forbesPress = new ForbesPress();
-describe('ForbesPress Dashboard', function() {
+describe('ForbesPress Dashboard:', function() {
 	it('should get the page', function() {
 		forbesPress.get();
 	});
@@ -38,7 +38,7 @@ describe('ForbesPress Dashboard', function() {
 	//globals.generalCheck();
 }); 
 
-describe('ForbesPress Article Page', function() {
+describe('ForbesPress Article Page:', function() {
     
     it('should load the dashboard page', function() {
         forbesPress.get('https://www-staging.forbes.com/forbespress/');
@@ -73,7 +73,7 @@ describe('ForbesPress Article Page', function() {
     
 });
 
-describe('Publish a ForbesPress Article Page', function() {
+describe('Publish a ForbesPress Article Page:', function() {
     var articleHeadline = 'This is the automated test headline from protractor';
     
     it('should add headline on the new article', function() {
@@ -111,7 +111,7 @@ describe('Publish a ForbesPress Article Page', function() {
     
 });
 
-describe('Draft a ForbesPress Article Page', function() {
+describe('Draft a ForbesPress Article Page:', function() {
     var articleHeadline = 'This is the automated test article from protractor - DRAFT';
     
     it('should click on create to componse a new article', function() {

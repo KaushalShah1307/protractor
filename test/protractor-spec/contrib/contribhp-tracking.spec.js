@@ -1,4 +1,4 @@
-describe('ContribHP', function() {
+describe('ContribHP:', function() {
 	var currentUrl;
 
 	beforeAll(function(done) {

@@ -6,7 +6,7 @@ beforeEach(function(){
     // add the cookies here
 });
 
-describe('Legacy Article Pages', function() {
+describe('Legacy Article Pages:', function() {
     
 	it('should get the page', function() {
 		legacyArticle.get();

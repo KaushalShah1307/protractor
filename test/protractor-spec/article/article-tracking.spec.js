@@ -1,4 +1,4 @@
-describe('Article', function() {
+describe('Article:', function() {
 	var currentUrl;
 
 	beforeAll(function(done) {
@@ -95,7 +95,7 @@ describe('Article', function() {
             it('should load the ComScore script', function() {
                 expect(comscorepixel.length > 1);
             });
-        });        
+        });
         
 	});
 });

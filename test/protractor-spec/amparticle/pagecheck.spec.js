@@ -5,7 +5,7 @@ beforeEach(function(){
     browser.ignoreSynchronization = true;
 });
 
-describe('AMP Article Page', function() {
+describe('AMP Article Page:', function() {
     
 	it('should get the page', function() {
 		ampArticle.get();

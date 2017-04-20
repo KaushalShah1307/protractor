@@ -5,7 +5,7 @@ beforeEach(function(){
     browser.ignoreSynchronization = true;
 });
 
-describe('List Profile Page', function() {
+describe('List Profile Page:', function() {
     
     var next = element(by.className('next'));
     var prev = element(by.className('prev'));

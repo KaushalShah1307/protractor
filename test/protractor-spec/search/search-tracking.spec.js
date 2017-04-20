@@ -2,7 +2,7 @@
  * Created by kshah on 2/24/2017.
  */
 
-describe('Search', function() {
+describe('Search:', function() {
 	var currentUrl;
 
 	beforeAll(function(done) {

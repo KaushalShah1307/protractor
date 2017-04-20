@@ -1,7 +1,7 @@
 /**
  * Created by kshah on 5/13/2016.
  */
-describe('Angular Gallery', function() {
+describe('Angular Gallery:', function() {
 	var currentUrl;
 
 	beforeAll(function(done) {

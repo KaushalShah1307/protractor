@@ -1,4 +1,4 @@
-describe('Homepage', function() {
+describe('Homepage:', function() {
 	var currentUrl;
 
 	beforeAll(function(done) {

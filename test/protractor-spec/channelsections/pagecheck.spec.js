@@ -1,6 +1,6 @@
 var CSRPage = require('./csr.page.js'),
 	csrPage = new CSRPage();
-describe('CSR', function() {
+describe('CSR:', function() {
 	it('should get the page', function() {
 		csrPage.get();
 	});

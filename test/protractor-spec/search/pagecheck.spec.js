@@ -3,7 +3,7 @@
  */
 var SearchPage = require('./search.page.js'),
 	searchPage = new SearchPage();
-describe('Search', function() {
+describe('Search:', function() {
 	it('should get the page', function() {
 		searchPage.get();
 	});
@@ -12,12 +12,12 @@ describe('Search', function() {
         this.searchBox = element(by.model('search_query'));
     });
     
-    it('input text should be searchable', function() {
+    xit('input text should be searchable', function() {
         element(by.model('search_query')).sendKeys('Lewis Dvorkin\n');
         expect(element(by.css('.fs-h2.entity-name.ng-binding')).getText()).toEqual('Lewis DVorkin');
     });
     
-    it('hashtag should be there', function() {
+    xit('hashtag should be there', function() {
        element(by.model('search_query')).clear();
        element(by.model('search_query')).sendKeys('#TrumpsAmerica\n');
        expect(element.all(by.css('.search-hashtag.ng-binding.ng-scope')).first().getText()).toEqual('#TrumpsAmerica');

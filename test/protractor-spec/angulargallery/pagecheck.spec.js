@@ -3,7 +3,7 @@
  */
 var angularGalleryPage = require('./angulargallery.page.js'),
 	galleryPage = new angularGalleryPage();
-describe('Angular Gallery', function() {
+describe('Angular Gallery:', function() {
 
 	it('should get the page', function() {
 		galleryPage.get();

@@ -1,4 +1,4 @@
-describe('Article', function() {
+describe('Article:', function() {
 	describe('LeftRail', function() {
 		var commentsPanel,
 			commentsTrigger,

@@ -5,7 +5,7 @@ beforeEach(function() {
    browser.ignoreSynchronization = true; 
 });
 
-describe('AMP Gallery', function() {
+describe('AMP Gallery:', function() {
    
     it('should get the page', function() {
        ampGallery.get(); 

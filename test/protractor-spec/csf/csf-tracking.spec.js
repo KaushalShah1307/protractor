@@ -1,4 +1,4 @@
-describe('CSF', function() {
+describe('CSF:', function() {
 	var currentUrl;
 
 	beforeAll(function(done) {

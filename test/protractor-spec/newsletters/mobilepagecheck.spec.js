@@ -6,7 +6,7 @@ beforeEach(function(){
     // add the cookies here
 });
 
-describe('Newsletters Home Page', function() {
+describe('Newsletters Home Page:', function() {
     
 	it('should get the page', function() {
 		newsletters.get();
@@ -41,7 +41,7 @@ describe('Newsletters Home Page', function() {
     
 });
 
-describe('Newsletters Blog', function() {
+describe('Newsletters Blog:', function() {
    
     it('should get the page', function() {
         browser.get('/newsletters/forbes-investor-edge/'); 
@@ -75,7 +75,7 @@ describe('Newsletters Blog', function() {
     
 });
 
-describe('Newsletters Article', function() {
+describe('Newsletters Article:', function() {
    
     it('should get the FREE newsletters article', function() {
         browser.get('/newsletters/forbes-investor-edge/2015/09/30/21-secrets-to-maxing-out-your-social-security/'); 
