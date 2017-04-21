@@ -51,8 +51,14 @@ describe('Angular Gallery:', function() {
 			expect(dataLayer.channel).toEqual(browser.current_page.page_data.displayChannel);
             expect(dataLayer.section).toEqual(browser.current_page.page_data.displaySection);
 			expect(dataLayer.edit).toEqual(browser.current_page.page_data.editorialSlot);
+			expect(dataLayer.blogType).toEqual(browser.current_page.page_data.blogType);
+			expect(dataLayer.contribType).toEqual(browser.current_page.page_data.authorType);
+			expect(dataLayer.naturalID).toEqual('blogAndSlideId/blog/slide/985-20884');
+			expect(dataLayer.pageTotal).toEqual('11');
 			expect(dataLayer.site).toEqual('kurtbadenhausen');
+			expect(dataLayer.hashtags).toEqual('none');
 			expect(dataLayer.pageType).toEqual('slide');
+			expect(dataLayer.primaryChannel).toEqual('Business');
 		});
 	});
 
