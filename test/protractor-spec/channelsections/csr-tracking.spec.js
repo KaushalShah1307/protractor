@@ -21,12 +21,7 @@ describe('CSR:', function() {
 			});
 
 			it ('should have the correct parameters', function() {
-				//expect(globals.getParam(trackingPixel.srcString, 'su')).toMatch(currentUrl.replace(browser.baseUrl,'http://www-staging.forbes.com/'));
-				//expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual(browser.current_page.page_data.type);
-				//expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual(browser.current_page.page_data.naturalId);
-				//expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual(browser.current_page.page_data.authorType);
-				//expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual(browser.current_page.page_data.displayChannel);3
-                //expect(globals.getParam(trackingPixel.srcString, 'se')).toEqual(browser.current_page.page_data.displaySection);
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toContain('http://www.forbes.com/leadership/');
 			});
 		});
         
