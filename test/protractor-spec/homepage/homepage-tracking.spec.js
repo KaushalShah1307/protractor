@@ -21,11 +21,7 @@ describe('Homepage:', function() {
 			});
 
 			it ('should have the correct parameters', function() {
-				//expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl.replace(browser.baseUrl, "http://www-staging.forbes.com/"));
-				//expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual(browser.current_page.page_data.naturalId);
-				//expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual(browser.current_page.page_data.blogType);
-				//expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual(browser.current_page.page_data.displayChannel);
-				//expect(globals.getParam(trackingPixel.srcString, 'ci')).toEqual(browser.current_page.page_data.authors[0].naturalId);
+				//expect(globals.getParam(trackingPixel.srcString, 'su')).toContain('http://www.forbes.com/');
 			});
 		});
 
@@ -41,6 +37,7 @@ describe('Homepage:', function() {
 
 			it('should pass the right custom parameters', function() {
                 //expect((dataLayer.DFPSite).toEqual('fdc.forbes') || (dataLayer.DFPSite).toEqual('fdcmobile'));
+                //expect(dataLayer.DFPSite).toBe('fdc.forbes' || 'fdcmobile');
                 expect(dataLayer.DFPZone).toEqual('home');
 				expect(dataLayer.channel).toEqual('home');
 				expect(dataLayer.pageType).toEqual('csf');
