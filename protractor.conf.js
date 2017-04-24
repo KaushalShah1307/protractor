@@ -166,8 +166,8 @@ exports.config = {
 //		'test/protractor-spec/channelsections/**/*.spec.js',
 //		'test/protractor-spec/search/*pagecheck.spec.js',
 //      'test/protractor-spec/search/**/*.spec.js', 
-      'test/protractor-spec/homepage/*pagecheck.spec.js',
-      'test/protractor-spec/homepage/**/*.spec.js',
+//      'test/protractor-spec/homepage/*pagecheck.spec.js',
+//      'test/protractor-spec/homepage/**/*.spec.js',
 //        'test/protractor-spec/angulargallery/*pagecheck.spec.js',
 //        'test/protractor-spec/angulargallery/**/*.spec.js',
 //      'test/protractor-spec/forbespress/*pagecheck.spec.js',
@@ -180,7 +180,7 @@ exports.config = {
 //        'test/protractor-spec/ampvideo/**/*.spec.js',
 //        'test/protractor-spec/newsletters/*pagecheck.spec.js',
 //        'test/protractor-spec/legacyarticle/*pagecheck.spec.js',
-//        'test/protractor-spec/listprofiles/*pagecheck.spec.js',
+        'test/protractor-spec/listprofiles/*pagecheck.spec.js',
 //        'test/protractor-spec/video/*pagecheck.spec.js'
 	],
 	onPrepare: function() {

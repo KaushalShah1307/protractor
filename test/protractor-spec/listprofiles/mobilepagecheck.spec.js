@@ -16,7 +16,7 @@ describe('List Profile Page:', function() {
     });
     
     it('should have the profile person name', function() {
-        expect(element(by.className('name')).getText()).toEqual('Bill Gates'); 
+        expect(element.all(by.className('name')).first().getText()).toEqual('Bill Gates'); 
     });
 
     it('should have the profile image', function() {
@@ -24,7 +24,7 @@ describe('List Profile Page:', function() {
     });
     
     it('should have the profile rank on the profile image', function() {
-        expect(element(by.className('rank')).getText()).toEqual('#1'); 
+        expect(element.all(by.className('rank')).first().getText()).toEqual('#1'); 
     });
     
     it('should have the profile info', function() {
@@ -52,7 +52,7 @@ describe('List Profile Page:', function() {
     });
     
     it('should have content in the did-you-know section', function() {
-        expect(element(by.className('centered-div')).getText().length > 0); 
+        expect(element.all(by.className('centered-div')).first().getText().length > 0); 
     });
     
     it('should have the networth chart', function() {
