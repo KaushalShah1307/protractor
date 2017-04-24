@@ -180,6 +180,7 @@ exports.config = {
 //        'test/protractor-spec/ampvideo/**/*.spec.js',
 //        'test/protractor-spec/newsletters/*pagecheck.spec.js',
 //        'test/protractor-spec/legacyarticle/*pagecheck.spec.js',
+        'test/protractor-spec/listprofiles/**/*.spec.js',
         'test/protractor-spec/listprofiles/*pagecheck.spec.js',
 //        'test/protractor-spec/video/*pagecheck.spec.js'
 	],
