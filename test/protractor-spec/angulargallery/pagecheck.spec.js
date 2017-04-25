@@ -18,7 +18,7 @@ describe('Angular Gallery:', function() {
     });
     
     it('should click on the nav and load the next slide', function(){
-        element(by.className('slick-next')).click();
+        element(by.css('.slick-next.slick-arrow')).click();
         expect(element(by.className('gallery-progress-numbers')).getText()).toEqual('3 of 11');
     });
 
