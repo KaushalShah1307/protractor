@@ -1,5 +1,5 @@
 var ArticlePageScroll = require('./articlescroll.page.js'),
-	articlePageScroll = new ArticlePageScroll('/sites/davidshaywitz/2017/04/25/three-key-investment-challenges-at-the-interface-of-health-and-technology/?view=prod');
+	articlePageScroll = new ArticlePageScroll('/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?view=prod');
 
 describe('Article:', function() {
 
@@ -8,11 +8,11 @@ describe('Article:', function() {
 	});
     
     it('should have the title of the article', function() {
-        expect(element.all(by.className('article-headline')).first().getText()).toEqual('Three Key Investment Challenges At The Intersection Of Health And Technology'); 
+        expect(element.all(by.className('article-headline')).first().getText()).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
     });
 
     it('should have page views on the article', function(){
-        expect(element.all(by.className('view-count')).first().getText()).toBeGreaterThan('1,564'); 
+        expect(element.all(by.className('view-count')).first().getText()).toBeLessThanOrEqual('9,403'); 
     });
     
     it('should have the eye icon next to page views', function() {
@@ -31,11 +31,11 @@ describe('Article:', function() {
         expect(element(by.className('tweet-this'))).toBeTruthy(); 
     });
     
-    it('should not have the Forbes Staff icon next to the author type', function() {
-        expect(element(by.className('icon icon-staff-verified')).isPresent()).toBe(false); 
+    it('should have the Forbes Staff icon next to the author type', function() {
+        expect(element(by.className('icon icon-staff-verified')).isPresent()).toBe(true); 
     });
     
-	globals.generalCheck();
+	//globals.generalCheck();
 	globals.checkAds(articlePageScroll.adsService);
 });
  

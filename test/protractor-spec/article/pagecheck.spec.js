@@ -12,7 +12,7 @@ describe('Article:', function() {
     });
 
     it('should have page views on the article', function(){
-        expect(element.all(by.className('view-count')).first().getText().length >= 9,404); 
+        expect(element.all(by.className('view-count')).first().getText()).toBeLessThanOrEqual('9,403'); 
     });
     
     it('should have the eye icon next to page views', function() {
