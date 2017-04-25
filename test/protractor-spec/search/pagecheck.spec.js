@@ -12,12 +12,12 @@ describe('Search:', function() {
         this.searchBox = element(by.model('search_query'));
     });
     
-    xit('input text should be searchable', function() {
+    it('input text should be searchable', function() {
         element(by.model('search_query')).sendKeys('Lewis Dvorkin\n');
         expect(element(by.css('.fs-h2.entity-name.ng-binding')).getText()).toEqual('Lewis DVorkin');
     });
     
-    xit('hashtag should be there', function() {
+    it('hashtag should be there', function() {
        element(by.model('search_query')).clear();
        element(by.model('search_query')).sendKeys('#TrumpsAmerica\n');
        expect(element.all(by.css('.search-hashtag.ng-binding.ng-scope')).first().getText()).toEqual('#TrumpsAmerica');
