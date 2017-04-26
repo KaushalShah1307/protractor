@@ -48,9 +48,9 @@ describe('Article Page Scroll:', function() {
         }); 
     });
     
-    xit('should have the title of the 2nd article in the stream', function() {
+    it('should have the title of the 2nd article in the stream', function() {
         var firstArticleTitle = 'Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever';
-        expect(element.all(by.className('article-headline')).getText()).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever');
+        expect(element.all(by.css('.article-headline.ng-binding')).get(1).getText()).not.toEqual(firstArticleTitle);
     });
 
 });
