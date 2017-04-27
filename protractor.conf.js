@@ -30,7 +30,8 @@ exports.config = {
                 'test/protractor-spec/ampvideo/**/*.spec.js',
                 'test/protractor-spec/newsletters/mobilepagecheck.spec.js',
                 'test/protractor-spec/listprofiles/mobilepagecheck.spec.js',
-                'test/protractor-spec/video/mobilepagecheck.spec.js'
+                'test/protractor-spec/video/mobilepagecheck.spec.js',
+                'test/protractor-spec/mdotarticle/*.spec.js'
             ]
 		},
 		{
@@ -52,7 +53,8 @@ exports.config = {
                 'test/protractor-spec/newsletters/pagecheck.spec.js',
                 'test/protractor-spec/forbespress/**/*.spec.js',
                 'test/protractor-spec/listprofiles/pagecheck.spec.js',
-                'test/protractor-spec/video/pagecheck.spec.js'
+                'test/protractor-spec/video/pagecheck.spec.js',
+                'test/protractor-spec/mdotarticle/mdotarticle-tracking.spec.js'
 			]
 		},
 /*        {
@@ -154,12 +156,16 @@ exports.config = {
         articlescroll: [
             'test/protractor-spec/articlescroll/**/*.spec.js',
             'test/protractor-spec/articlescroll/*pagecheck.spec.js'
+        ],
+        mdotarticle: [
+            'test/protractor-spec/mdotarticle/**/*.spec.js',
+            'test/protractor-spec/mdotarticle/*pagecheck.spec.js'
         ]
 	},
 	specs: [
 		'test/protractor-spec/global.spec.js',
-		'test/protractor-spec/article/*pagecheck.spec.js',
-		'test/protractor-spec/article/**/*.spec.js',
+//		'test/protractor-spec/article/*pagecheck.spec.js',
+//		'test/protractor-spec/article/**/*.spec.js',
 //		'test/protractor-spec/contrib/*pagecheck.spec.js',
 //		'test/protractor-spec/contrib/**/*.spec.js',
 //		'test/protractor-spec/csf/*pagecheck.spec.js',
@@ -169,8 +175,8 @@ exports.config = {
 //		'test/protractor-spec/channelsections/*pagecheck.spec.js',
 //		'test/protractor-spec/channelsections/**/*.spec.js',
 //		'test/protractor-spec/search/*pagecheck.spec.js',
-//      'test/protractor-spec/search/**/*.spec.js', 
-//      'test/protractor-spec/homepage/*pagecheck.spec.js',
+//        'test/protractor-spec/search/**/*.spec.js', 
+//        'test/protractor-spec/homepage/*pagecheck.spec.js',
 //      'test/protractor-spec/homepage/**/*.spec.js',
 //        'test/protractor-spec/angulargallery/*pagecheck.spec.js',
 //        'test/protractor-spec/angulargallery/**/*.spec.js',
@@ -187,7 +193,8 @@ exports.config = {
 //        'test/protractor-spec/listprofiles/**/*.spec.js',
 //        'test/protractor-spec/listprofiles/*pagecheck.spec.js',
 //        'test/protractor-spec/video/*pagecheck.spec.js',
-        'test/protractor-spec/articlescroll/**/*.spec.js'
+//        'test/protractor-spec/articlescroll/**/*.spec.js',
+        'test/protractor-spec/mdotarticle/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
