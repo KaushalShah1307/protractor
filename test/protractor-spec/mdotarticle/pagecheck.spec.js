@@ -112,6 +112,42 @@ describe('BrandVoice Mobile Article (MDot):', function() {
         browser.get('https://m-dev.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending'); 
     });
     
+    it('should have the forbes logo', function() {
+        expect(element(by.className('inlineicon inlineicon-forbes-logo')).isPresent()).toBe(true); 
+    });
+    
+    it('should have the stream name', function() {
+        expect(element(by.className('stream__name')).getText()).toEqual('#Trending'); 
+    });
+    
+    it('should have the BrandVoice flag', function() {
+        expect(element(by.className('cover__bv-flag')).getText()).toEqual('Quality Assurance'); 
+    });
+    
+    it('should have the article headline', function() {
+        expect(element(by.className('cover__preview__title')).getText()).toEqual('Testing Angular JS apps with Protractor'); 
+    });
+    
+    it('should have the author byline', function() {
+        expect(element(by.className('cover__byline__contrib')).getText()).toEqual('qualityassuranceguest, Quality Assurance'); 
+    });
+    
+    xit('should have the page views', function() {
+        expect(element(by.className('cover__meta__page__views')).getText()).toEqual('sdafgsdfg');
+        pending('still need to find an optimal solution to grab the pageviews');
+    });
+    
+    it('should have the page views iconography', function() {
+        expect(element(by.className('inlineicon inlineicon-preview-eye')).isPresent()).toBe(true);
+    });
+    
+    it('should click and expand the cover card', function() {
+        element(by.className('cover__footer-scrim')).click();
+        browser.sleep(1000).then(function() {
+            expect(browser.getCurrentUrl()).toContain('?c=0');
+        });
+    });
+    
 });
 
 describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
