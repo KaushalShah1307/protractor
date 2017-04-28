@@ -163,8 +163,8 @@ exports.config = {
 	},
 	specs: [
 		'test/protractor-spec/global.spec.js',
-		'test/protractor-spec/article/*pagecheck.spec.js',
-		'test/protractor-spec/article/**/*.spec.js',
+//		'test/protractor-spec/article/*pagecheck.spec.js',
+//		'test/protractor-spec/article/**/*.spec.js',
 //		'test/protractor-spec/contrib/*pagecheck.spec.js',
 //		'test/protractor-spec/contrib/**/*.spec.js',
 //		'test/protractor-spec/csf/*pagecheck.spec.js',

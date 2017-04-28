@@ -11,6 +11,14 @@ describe('Mobile Article (MDot):', function() {
 		mobileDotArticle.get();
 	});
     
+    it('should have the forbes logo', function() {
+        expect(element(by.className('inlineicon inlineicon-forbes-logo')).isPresent()).toBe(true); 
+    });
+    
+    it('should have the stream name', function() {
+        expect(element(by.className('stream__name')).getText()).toEqual('#Under30'); 
+    });
+    
     it('should have the article headline', function() {
         expect(element(by.className('cover__preview__title')).getText()).toEqual('A Day In The Life Of A FORBES Under 30: How Young Innovators Stay Balanced, Focused And Connected'); 
     });
@@ -22,6 +30,10 @@ describe('Mobile Article (MDot):', function() {
     xit('should have the page views', function() {
         expect(element(by.className('cover__meta__page__views')).getText()).toEqual('sdafgsdfg');
         pending('still need to find an optimal solution to grab the pageviews');
+    });
+    
+    it('should have the page views iconography', function() {
+        expect(element(by.className('inlineicon inlineicon-preview-eye')).isPresent()).toBe(true);
     });
     
     it('should click and expand the cover card', function() {
@@ -47,6 +59,8 @@ describe('Mobile Article (MDot):', function() {
           .mouseUp()
           .perform(); 
     });
+    
+    globals.generalCheck();
     
 });
 
