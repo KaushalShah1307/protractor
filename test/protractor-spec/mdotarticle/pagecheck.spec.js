@@ -13,9 +13,10 @@ describe('Mobile Article (MDot):', function() {
     
     it('should click and expand the cover card', function() {
         element(by.className('cover__footer-scrim')).click();
-        browser.sleep(1000);
-        expect(element(by.className('footer__progress')).getText()).toEqual('1 of 15');
-        expect(browser.getCurrentUrl()).toContain('?c=0');
+        browser.sleep(1000).then(function() {
+            expect(element(by.className('footer__progress')).getText()).toEqual('1 of 15');
+            expect(browser.getCurrentUrl()).toContain('?c=0');
+        });
     });
     
     xit('should swipe to show next card', function() {
