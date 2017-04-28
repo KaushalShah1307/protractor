@@ -53,8 +53,7 @@ exports.config = {
                 'test/protractor-spec/newsletters/pagecheck.spec.js',
                 'test/protractor-spec/forbespress/**/*.spec.js',
                 'test/protractor-spec/listprofiles/pagecheck.spec.js',
-                'test/protractor-spec/video/pagecheck.spec.js',
-                'test/protractor-spec/mdotarticle/mdotarticle-tracking.spec.js'
+                'test/protractor-spec/video/pagecheck.spec.js'
 			]
 		},
 /*        {
@@ -164,8 +163,8 @@ exports.config = {
 	},
 	specs: [
 		'test/protractor-spec/global.spec.js',
-//		'test/protractor-spec/article/*pagecheck.spec.js',
-//		'test/protractor-spec/article/**/*.spec.js',
+		'test/protractor-spec/article/*pagecheck.spec.js',
+		'test/protractor-spec/article/**/*.spec.js',
 //		'test/protractor-spec/contrib/*pagecheck.spec.js',
 //		'test/protractor-spec/contrib/**/*.spec.js',
 //		'test/protractor-spec/csf/*pagecheck.spec.js',
