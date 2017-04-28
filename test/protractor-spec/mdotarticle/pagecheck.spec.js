@@ -105,3 +105,57 @@ describe('Tracking on Mobile Article (MDot):', function() {
     });
     
 });
+
+describe('BrandVoice Mobile Article (MDot):', function() {
+   
+    it('should get the page', function() {
+        browser.get('https://m-dev.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending'); 
+    });
+    
+});
+
+describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
+
+    describe('Google Analytics:', function() {
+       
+        it('should pass the right custom parameters', function() {
+            expect(browser.executeScript('return window.dataLayer[0].cd1_title;')).toEqual('Testing Angular JS apps with Protractor');
+            expect(browser.executeScript('return window.dataLayer[0].cd2_author;')).toEqual('qualityassuranceguest');
+            expect(browser.executeScript('return window.dataLayer[0].cd2_stream;')).toEqual('trending');
+            expect(browser.executeScript('return window.dataLayer[0].cd5_specialSlot;')).toEqual('qualityassuranceslot');
+            expect(browser.executeScript('return window.dataLayer[0].cd3_cardPosition;')).toEqual('Cover');
+            expect(browser.executeScript('return window.dataLayer[0].cd5_coversConsumed;')).toEqual('1');
+            expect(browser.executeScript('return window.dataLayer[0].cd9_contribType;')).toEqual('AdVoice');
+            expect(browser.executeScript('return window.dataLayer[0].cd11_blogType;')).toEqual('ad');
+            expect(browser.executeScript('return window.dataLayer[0].cd12_brandVoice;')).toEqual('qualityassurance');
+            expect(browser.executeScript('return window.dataLayer[0].cd13_pageType;')).toEqual('blog:standard');
+            expect(browser.executeScript('return window.dataLayer[0].cd15_DFPSite;')).toEqual('fdcmdot');
+            expect(browser.executeScript('return window.dataLayer[0].cd16_DFPZone;')).toEqual('cover');
+            expect(browser.executeScript('return window.dataLayer[0].cd19_categories;')).toEqual('Tech,The Tech Life');
+            expect(browser.executeScript('return window.dataLayer[0].cd20_editSlot;')).toEqual('none');
+            expect(browser.executeScript('return window.dataLayer[0].cd21_hashtags;')).toEqual('trending');
+            expect(browser.executeScript('return window.dataLayer[0].cd24_naturalID;')).toEqual('blogAndPostId/blog/post/4248-455');
+            expect(browser.executeScript('return window.dataLayer[0].cd47_hashtagsTrending;')).toEqual('none');
+            expect(browser.executeScript('return window.dataLayer[0].cd59_primaryChannel;')).toEqual('Tech');
+            expect(browser.executeScript('return window.dataLayer[0].cd60_primarySection;')).toEqual('The Tech Life');
+            expect(browser.executeScript('return window.dataLayer[0].cd68_bvProgramType;')).toEqual('elite');
+            expect(browser.executeScript('return window.dataLayer[0].cd71_cardType;')).toEqual('Cover');
+            expect(browser.executeScript('return window.dataLayer[0].event;')).toEqual('initialPageView');
+            expect(browser.executeScript('return window.dataLayer[0].pageTitle;')).toEqual('Testing Angular JS apps with Protractor');
+        });
+    });
+    
+    describe('Simple Reach:', function() {
+       
+        it('should pass the right custom parameters', function() {
+            expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('qualityassuranceguest');
+            expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/4248-455');
+            expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('Tech');
+            expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-04-24T20:01:10.515Z');
+            expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m-dev.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending');
+            expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
+            expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Testing Angular JS apps with Protractor');
+        }); 
+    });
+    
+});
