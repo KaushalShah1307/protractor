@@ -44,6 +44,13 @@ describe('Mobile Article (MDot):', function() {
         });
     });
     
+    it('should have the sharing module', function() {
+        var shareIcons = element(by.className('sharrow__button'));
+        expect(shareIcons.isPresent()).toBe(true);
+        shareIcons.click();
+        expect(element(by.className('share__buttons')).isPresent()).toBe(true);
+    });
+    
     xit('should swipe to show next card', function() {
         var card = element(by.className('pan__container '));
 
@@ -167,6 +174,13 @@ describe('BrandVoice Mobile Article (MDot):', function() {
         var disclaimer = 'Forbes allows marketers to connect directly with the Forbes audience by enabling them to create content – and participate in the conversation – on the Forbes digital publishing platform. Each is produced by the marketer. More on here, or contact us at brandvoice.com.'
         expect(element(by.className('bv-explainer__modal')).getText()).toContain(disclaimer);
         element(by.className('modal__close')).click();
+    });
+    
+    it('should have the sharing module', function() {
+        var shareIcons = element(by.className('sharrow__button'));
+        expect(shareIcons.isPresent()).toBe(true);
+        shareIcons.click();
+        expect(element(by.className('share__buttons')).isPresent()).toBe(true);
     });
     
 });
