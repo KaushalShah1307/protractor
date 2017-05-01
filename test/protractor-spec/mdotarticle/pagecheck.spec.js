@@ -121,7 +121,7 @@ describe('Tracking on Mobile Article (MDot):', function() {
         }); 
     });
     
-	describe('Fast Pixel', function() {
+	describe('Fast Pixel:', function() {
 			var trackingPixel;
 
 			beforeAll(function(done) {
@@ -206,6 +206,11 @@ describe('BrandVoice Mobile Article (MDot):', function() {
         shareIcons.click();
     });
     
+    it('should have captions and credits for the images', function() {
+        expect(element(by.className('article-photo-credit')).getText()).toEqual('Protractor'); 
+        expect(element(by.className('wp-caption-text')).getText()).toEqual('"Protractor" with Angular JS'); 
+    });
+    
 });
 
 describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
@@ -263,7 +268,7 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
         }); 
     });
     
-	describe('Fast Pixel', function() {
+	describe('Fast Pixel:', function() {
 			var trackingPixel;
 
 			beforeAll(function(done) {
