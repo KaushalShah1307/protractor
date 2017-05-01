@@ -49,6 +49,7 @@ describe('Mobile Article (MDot):', function() {
         expect(shareIcons.isPresent()).toBe(true);
         shareIcons.click();
         expect(element(by.className('share__buttons')).isPresent()).toBe(true);
+        shareIcons.click();
     });
     
     xit('should swipe to show next card', function() {
@@ -181,6 +182,7 @@ describe('BrandVoice Mobile Article (MDot):', function() {
         expect(shareIcons.isPresent()).toBe(true);
         shareIcons.click();
         expect(element(by.className('share__buttons')).isPresent()).toBe(true);
+        shareIcons.click();
     });
     
 });
