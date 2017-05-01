@@ -76,6 +76,8 @@ describe('Tracking on Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.dataLayer[0].cd3_cardPosition;')).toEqual('Cover');
             expect(browser.executeScript('return window.dataLayer[0].cd9_contribType;')).toEqual('Forbes Staff');
             expect(browser.executeScript('return window.dataLayer[0].cd11_blogType;')).toEqual('individual');
+            expect(browser.executeScript('return window.dataLayer[0].cd12_brandVoice;')).toEqual('none');
+            expect(browser.executeScript('return window.dataLayer[0].cd13_pageType;')).toEqual('blog:standard');
             expect(browser.executeScript('return window.dataLayer[0].cd15_DFPSite;')).toEqual('fdcmdot');
             expect(browser.executeScript('return window.dataLayer[0].cd16_DFPZone;')).toEqual('cover');
             expect(browser.executeScript('return window.dataLayer[0].cd19_categories;')).toEqual('Under 30');
@@ -85,9 +87,16 @@ describe('Tracking on Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.dataLayer[0].cd47_hashtagsTrending;')).toEqual('none');
             expect(browser.executeScript('return window.dataLayer[0].cd59_primaryChannel;')).toEqual('Business');
             expect(browser.executeScript('return window.dataLayer[0].cd60_primarySection;')).toEqual('none');
+            expect(browser.executeScript('return window.dataLayer[0].cd69_forbesOnTrump;')).toEqual('false');
             expect(browser.executeScript('return window.dataLayer[0].cd71_cardType;')).toEqual('Cover');
             expect(browser.executeScript('return window.dataLayer[0].event;')).toEqual('initialPageView');
             expect(browser.executeScript('return window.dataLayer[0].pageTitle;')).toEqual('A Day In The Life Of A FORBES Under 30: How Young Innovators Stay Balanced, Focused And Connected');
+            expect(browser.executeScript('return window.dataLayer[0].cm3_coversViewed;')).toBe(1);
+            expect(browser.executeScript('return window.dataLayer[0].cm4_cardsConsumed;')).toBe(1);
+            expect(browser.executeScript('return window.dataLayer[0].cm6_coversViewedTotal;')).toBe(1);
+            expect(browser.executeScript('return window.dataLayer[0].tags[0];')).toEqual('site::datadesign');
+            expect(browser.executeScript('return window.dataLayer[0].tags[1];')).toEqual('slot::');
+            expect(browser.executeScript('return window.dataLayer[0].tags[2];')).toEqual('type::blog');
         });
     });
     
@@ -171,13 +180,24 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.dataLayer[0].cd20_editSlot;')).toEqual('none');
             expect(browser.executeScript('return window.dataLayer[0].cd21_hashtags;')).toEqual('trending');
             expect(browser.executeScript('return window.dataLayer[0].cd24_naturalID;')).toEqual('blogAndPostId/blog/post/4248-455');
+            expect(browser.executeScript('return window.dataLayer[0].cd45_brandVoiceLive;')).toEqual('false');
             expect(browser.executeScript('return window.dataLayer[0].cd47_hashtagsTrending;')).toEqual('none');
+            expect(browser.executeScript('return window.dataLayer[0].cd56_contribActive;')).toEqual('false');
             expect(browser.executeScript('return window.dataLayer[0].cd59_primaryChannel;')).toEqual('Tech');
             expect(browser.executeScript('return window.dataLayer[0].cd60_primarySection;')).toEqual('The Tech Life');
+            expect(browser.executeScript('return window.dataLayer[0].cd61_bvContentSource;')).toEqual('none');
             expect(browser.executeScript('return window.dataLayer[0].cd68_bvProgramType;')).toEqual('elite');
+            expect(browser.executeScript('return window.dataLayer[0].cd69_forbesOnTrump;')).toEqual('false');
             expect(browser.executeScript('return window.dataLayer[0].cd71_cardType;')).toEqual('Cover');
             expect(browser.executeScript('return window.dataLayer[0].event;')).toEqual('initialPageView');
             expect(browser.executeScript('return window.dataLayer[0].pageTitle;')).toEqual('Testing Angular JS apps with Protractor');
+            expect(browser.executeScript('return window.dataLayer[0].cm3_coversViewed;')).toBe(1);
+            expect(browser.executeScript('return window.dataLayer[0].cm4_cardsConsumed;')).toBe(1);
+            expect(browser.executeScript('return window.dataLayer[0].cm6_coversViewedTotal;')).toBe(1);
+            expect(browser.executeScript('return window.dataLayer[0].tags[0];')).toEqual('brandvoice');
+            expect(browser.executeScript('return window.dataLayer[0].tags[1];')).toEqual('site::qualityassurance');
+            expect(browser.executeScript('return window.dataLayer[0].tags[2];')).toEqual('slot::qualityassuranceslot');
+            expect(browser.executeScript('return window.dataLayer[0].tags[3];')).toEqual('type::blog');
         });
     });
     
