@@ -121,6 +121,27 @@ describe('Tracking on Mobile Article (MDot):', function() {
         }); 
     });
     
+	describe('Fast Pixel', function() {
+			var trackingPixel;
+
+			beforeAll(function(done) {
+				trackingPixel = $('img[src*="fast.forbes.com"]');
+				trackingPixel.getAttribute('src').then(function(src) {
+					trackingPixel.srcString = src;
+					done();
+				});
+			});
+
+			it ('should have the correct parameters', function() {
+				//expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl.replace(browser.baseUrl, "http://www-staging.forbes.com/"));
+				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('Cards');
+				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual('blogAndPostId/blog/post/4724-165');
+				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual('Forbes Staff');
+				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual('business');
+				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/2479402');
+			});
+        });    
+    
 });
 
 describe('BrandVoice Mobile Article (MDot):', function() {
@@ -241,5 +262,26 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Testing Angular JS apps with Protractor');
         }); 
     });
+    
+	describe('Fast Pixel', function() {
+			var trackingPixel;
+
+			beforeAll(function(done) {
+				trackingPixel = $('img[src*="fast.forbes.com"]');
+				trackingPixel.getAttribute('src').then(function(src) {
+					trackingPixel.srcString = src;
+					done();
+				});
+			});
+
+			it ('should have the correct parameters', function() {
+				//expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl.replace(browser.baseUrl, "http://www-staging.forbes.com/"));
+				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('Long Scroll');
+				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual('blogAndPostId/blog/post/4248-455');
+				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual('AdVoice');
+				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual('business');
+				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/1965859');
+			});
+        });    
     
 });
