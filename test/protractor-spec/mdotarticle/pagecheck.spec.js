@@ -157,6 +157,18 @@ describe('BrandVoice Mobile Article (MDot):', function() {
         });
     });
     
+    it('should have the BrandVoice branding in the header', function() {
+        expect(element(by.className('bv-explainer__bar')).isPresent()).toBe(true); 
+    });
+    
+    it('should click on the BrandVoice what-is-this link to expand the blurb', function() {
+        element(by.className('bv-explainer__what')).click();
+        expect(element(by.className('bv-explainer__modal')).isPresent()).toBe(true);
+        var disclaimer = 'Forbes allows marketers to connect directly with the Forbes audience by enabling them to create content – and participate in the conversation – on the Forbes digital publishing platform. Each is produced by the marketer. More on here, or contact us at brandvoice.com.'
+        expect(element(by.className('bv-explainer__modal')).getText()).toContain(disclaimer);
+        element(by.className('modal__close')).click();
+    });
+    
 });
 
 describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
