@@ -47,7 +47,7 @@ describe('List Profile Page:', function() {
 				expect(dataLayer.edit).toContain('billionaires-');
 				expect(dataLayer.channel).toEqual('lists');
                 expect(dataLayer.section).toEqual('billionaires');
-                expect(dataLayer.slot).toEqual('billionaires');			
+                expect(dataLayer.slot).toEqual('none');			
 			});
 		});
         
