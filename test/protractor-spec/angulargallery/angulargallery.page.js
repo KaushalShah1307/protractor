@@ -3,7 +3,7 @@
  */
 var angularGalleryPage = function() {
 	this.get = function() {
-		browser.get('/pictures/mli45fdllh/1-maria-sharapova/?view=beta-a');
+		browser.get('/pictures/mli45fdllh/1-maria-sharapova/?view=prod');
 		browser.executeAsyncScript(function() {
 			callback = arguments[0];
 			callback($('body').injector().get('GalleryAppState').page_data.gallery);

@@ -94,7 +94,7 @@ describe('Newsletters Article:', function() {
     });
     
     it('should have the slug', function() {
-        expect(element(by.className('slug')).getText()).toEqual('I cover economics, personal, national, and international.'); 
+        expect(element(by.className('slug')).getText()).toEqual(''); 
     });
     
     it('should have the article body', function() {
