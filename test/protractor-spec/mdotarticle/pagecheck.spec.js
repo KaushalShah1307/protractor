@@ -207,9 +207,11 @@ describe('BrandVoice Mobile Article (MDot):', function() {
     });
     
     it('should have captions and credits for the images', function() {
-        expect(element(by.className('article-photo-credit')).getText()).toEqual('Protractor'); 
-        expect(element(by.className('wp-caption-text')).getText()).toEqual('"Protractor" with Angular JS'); 
+        expect(element.all(by.className('article-photo-credit')).first().getText()).toEqual('Protractor'); 
+        expect(element.all(by.className('wp-caption-text')).first().getText()).toEqual('"Protractor" with Angular JS'); 
     });
+    
+    globals.generalCheck();
     
 });
 
@@ -287,6 +289,6 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
 				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual('business');
 				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/1965859');
 			});
-        });    
+        });
     
 });
