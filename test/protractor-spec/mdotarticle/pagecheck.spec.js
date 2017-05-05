@@ -115,7 +115,7 @@ describe('Tracking on Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/4724-165');
             expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('Business');
             expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-01-03T13:40:07.138Z');
-            expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m-dev.forbes.com/sites/datadesign/2017/01/03/a-day-in-the-life-of-a-forbes-under-30-how-young-innovators-stay-balanced-focused-and-connected/?s=Under30');
+            expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/datadesign/2017/01/03/a-day-in-the-life-of-a-forbes-under-30-how-young-innovators-stay-balanced-focused-and-connected/?s=Under30');
             expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
             expect(browser.executeScript('return window.__reach_config.title;')).toEqual('A Day In The Life Of A FORBES Under 30: How Young Innovators Stay Balanced, Focused And Connected');
         }); 

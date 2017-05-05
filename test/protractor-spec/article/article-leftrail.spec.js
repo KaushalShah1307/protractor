@@ -9,6 +9,10 @@ describe('Article:', function() {
 			commentsPanel = $('.article-sidebar-panel.article-comments-panel');
 			loginButton = $('.unireg_login_replacement');
 		});
+    
+        it('should have the medianet unit', function() {
+            expect(element(by.id('_mN_dy_688196485')).isPresent()).toBe(true);      
+        });
 
 		// (http://jira.forbes.com/browse/BUGREPORTING-1051)
 		it('should have a login button', function() {
