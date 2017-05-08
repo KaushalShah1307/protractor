@@ -14,6 +14,10 @@ describe('Templates Gallery:', function() {
 		templatesGallery.get();
 	});
     
+    it('should have the share icon', function() {
+        expect(element(by.className('share-icon')).isPresent()).toBe(true); 
+    });
+    
     it('should have the correct slide progress numbers', function(){
         expect(element.all(by.className('image-number')).get(1).getText()).toEqual('2 of 11'); 
     });
@@ -24,6 +28,10 @@ describe('Templates Gallery:', function() {
     
     it('should have the image caption', function() {
         expect(element.all(by.className('image-caption')).get(1).getText().length > 0); 
+    });
+    
+    it('should have the mobile ad', function() {
+        expect(browser.executeScript('return gpt_ad_slots.mobile.Z;')).toContain('scp=pos%3Dmobile'); 
     });
     
 });
