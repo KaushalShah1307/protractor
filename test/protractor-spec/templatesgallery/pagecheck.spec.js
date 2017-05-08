@@ -36,6 +36,35 @@ describe('Templates Gallery:', function() {
     
     describe('Tracking:', function() {
        
+        describe('Google Analytics:', function() {
+           
+            it('should pass the right custom parameters', function() {
+                expect(browser.executeScript('return window.dataLayer[0].BrandVoiceLive;')).toEqual('false'); 
+                expect(browser.executeScript('return window.dataLayer[0].DFPSite;')).toEqual('fdcmobile'); 
+                expect(browser.executeScript('return window.dataLayer[0].DFPZone;')).toEqual('pictures'); 
+                expect(browser.executeScript('return window.dataLayer[0].author;')).toEqual('Kurt Badenhausen'); 
+                expect(browser.executeScript('return window.dataLayer[0].blogType;')).toEqual('individual'); 
+                expect(browser.executeScript('return window.dataLayer[0].brandVoice;')).toEqual('none'); 
+                //expect(browser.executeScript('return window.dataLayer[0].categories;')).toEqual("[ 'Business', 'Lifestyle', 'Lists', 'Sports & Leisure', 'SportsMoney' ]"); 
+                expect(browser.executeScript('return window.dataLayer[0].channel;')).toEqual('business'); 
+                expect(browser.executeScript('return window.dataLayer[0].contribActive;')).toEqual('false'); 
+                expect(browser.executeScript('return window.dataLayer[0].contribType;')).toEqual('Forbes Staff'); 
+                expect(browser.executeScript('return window.dataLayer[0].customPage;')).toEqual('//www.forbes.com/pictures/mli45fdllh/1-maria-sharapova/'); 
+                expect(browser.executeScript('return window.dataLayer[0].edit;')).toEqual('forbeslife'); 
+                expect(browser.executeScript('return window.dataLayer[0].naturalID;')).toEqual('blogAndSlideId/blog/slide/985-20884'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageNumber;')).toEqual('2'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageTotal;')).toEqual('11'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageType;')).toEqual('slide'); 
+                expect(browser.executeScript('return window.dataLayer[0].primaryChannel;')).toEqual('Business'); 
+                expect(browser.executeScript('return window.dataLayer[0].primarySection;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].published;')).toEqual('2015-8-12'); 
+                expect(browser.executeScript('return window.dataLayer[0].section;')).toEqual('kurtbadenhausenblog'); 
+                expect(browser.executeScript('return window.dataLayer[0].site;')).toEqual('kurtbadenhausen'); 
+                expect(browser.executeScript('return window.dataLayer[0].slot;')).toEqual('none'); 
+            });
+            
+        });
+        
         describe('Simple Reach:', function() {
            
             it('should pass the right custom parameters', function() {
@@ -87,6 +116,35 @@ describe('Next Gallery Slide:', function() {
     
     describe('Tracking:', function() {
        
+        describe('Google Analytics:', function() {
+           
+            it('should pass the right custom parameters', function() {
+                expect(browser.executeScript('return window.dataLayer[0].BrandVoiceLive;')).toEqual('false'); 
+                expect(browser.executeScript('return window.dataLayer[0].DFPSite;')).toEqual('fdcmobile'); 
+                expect(browser.executeScript('return window.dataLayer[0].DFPZone;')).toEqual('pictures'); 
+                expect(browser.executeScript('return window.dataLayer[0].author;')).toEqual('Kurt Badenhausen'); 
+                expect(browser.executeScript('return window.dataLayer[0].blogType;')).toEqual('individual'); 
+                expect(browser.executeScript('return window.dataLayer[0].brandVoice;')).toEqual('none'); 
+                //expect(browser.executeScript('return window.dataLayer[0].categories;')).toEqual("[ 'Business', 'Lifestyle', 'Lists', 'Sports & Leisure', 'SportsMoney' ]"); 
+                expect(browser.executeScript('return window.dataLayer[0].channel;')).toEqual('business'); 
+                expect(browser.executeScript('return window.dataLayer[0].contribActive;')).toEqual('false'); 
+                expect(browser.executeScript('return window.dataLayer[0].contribType;')).toEqual('Forbes Staff'); 
+                expect(browser.executeScript('return window.dataLayer[0].customPage;')).toEqual('//www.forbes.com/pictures/mli45fdllh/2-serena-williams/'); 
+                expect(browser.executeScript('return window.dataLayer[0].edit;')).toEqual('forbeslife'); 
+                expect(browser.executeScript('return window.dataLayer[0].naturalID;')).toEqual('blogAndSlideId/blog/slide/985-20884'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageNumber;')).toEqual('3'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageTotal;')).toEqual('11'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageType;')).toEqual('slide'); 
+                expect(browser.executeScript('return window.dataLayer[0].primaryChannel;')).toEqual('Business'); 
+                expect(browser.executeScript('return window.dataLayer[0].primarySection;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].published;')).toEqual('2015-8-12'); 
+                expect(browser.executeScript('return window.dataLayer[0].section;')).toEqual('kurtbadenhausenblog'); 
+                expect(browser.executeScript('return window.dataLayer[0].site;')).toEqual('kurtbadenhausen'); 
+                expect(browser.executeScript('return window.dataLayer[0].slot;')).toEqual('none'); 
+            });
+            
+        });
+        
         describe('Simple Reach:', function() {
            
             it('should pass the right custom parameters', function() {
