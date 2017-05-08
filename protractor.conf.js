@@ -1,7 +1,7 @@
 exports.config = {
   	baseUrl: 'http://www.forbes.com/',
 	getPageTimeout: 30000,
-  	allScriptsTimeout: 30000,
+  	allScriptsTimeout: 60000,
   	framework: 'jasmine2',
 	jasmineNodeOpts: {
 		isVerbose: true,
@@ -168,8 +168,8 @@ exports.config = {
 	},
 	specs: [
 		'test/protractor-spec/global.spec.js',
-		'test/protractor-spec/article/*pagecheck.spec.js',
-		'test/protractor-spec/article/**/*.spec.js',
+//		'test/protractor-spec/article/*pagecheck.spec.js',
+//		'test/protractor-spec/article/**/*.spec.js',
 //		'test/protractor-spec/contrib/*pagecheck.spec.js',
 //		'test/protractor-spec/contrib/**/*.spec.js',
 //		'test/protractor-spec/csf/*pagecheck.spec.js',
@@ -199,7 +199,7 @@ exports.config = {
 //        'test/protractor-spec/video/*pagecheck.spec.js',
 //        'test/protractor-spec/articlescroll/**/*.spec.js',
 //        'test/protractor-spec/mdotarticle/**/*.spec.js',
-//        'test/protractor-spec/templatesgallery/**/*.spec.js'
+        'test/protractor-spec/templatesgallery/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
