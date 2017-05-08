@@ -236,7 +236,7 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.dataLayer[0].cd20_editSlot;')).toEqual('none');
             expect(browser.executeScript('return window.dataLayer[0].cd21_hashtags;')).toEqual('trending');
             expect(browser.executeScript('return window.dataLayer[0].cd24_naturalID;')).toEqual('blogAndPostId/blog/post/4248-455');
-            expect(browser.executeScript('return window.dataLayer[0].cd45_brandVoiceLive;')).toEqual('false');
+            expect(browser.executeScript('return window.dataLayer[0].cd45_brandVoiceLive;')).toEqual('true');
             expect(browser.executeScript('return window.dataLayer[0].cd47_hashtagsTrending;')).toEqual('none');
             expect(browser.executeScript('return window.dataLayer[0].cd56_contribActive;')).toEqual('false');
             expect(browser.executeScript('return window.dataLayer[0].cd59_primaryChannel;')).toEqual('Tech');
