@@ -48,7 +48,7 @@ describe('AMP Article Page:', function() {
     });
     
     it('should have all the ads', function() {
-        expect(browser.executeScript('return window.window.ampAdSlotIdCounter;')).toEqual(9);
+        expect(browser.executeScript('return window.window.ampAdSlotIdCounter;')).toEqual(10); //there should be 10 ads as we added 1 ntv-ad on 05.09.17 
     });
     
     it('should have the share icon in the header', function() {
