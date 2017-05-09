@@ -232,7 +232,7 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.dataLayer[0].cd13_pageType;')).toEqual('blog:standard');
             expect(browser.executeScript('return window.dataLayer[0].cd15_DFPSite;')).toEqual('fdcmdot');
             expect(browser.executeScript('return window.dataLayer[0].cd16_DFPZone;')).toEqual('cover');
-            expect(browser.executeScript('return window.dataLayer[0].cd19_categories;')).toEqual('Tech,The Tech Life');
+            expect(browser.executeScript('return window.dataLayer[0].cd19_categories;')).toEqual('Change Agents,The Tech Life');
             expect(browser.executeScript('return window.dataLayer[0].cd20_editSlot;')).toEqual('none');
             expect(browser.executeScript('return window.dataLayer[0].cd21_hashtags;')).toEqual('trending');
             expect(browser.executeScript('return window.dataLayer[0].cd24_naturalID;')).toEqual('blogAndPostId/blog/post/4248-455');
