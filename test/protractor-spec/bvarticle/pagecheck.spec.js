@@ -12,15 +12,15 @@ describe('BrandVoice Article', function() {
 	});
     
     it('should have the title of the article', function() {
-        expect(element(by.className('article-headline')).getText()).toEqual('How CDOs Can Use Cognitive Computing To Transform Their Businesses {Q&A}'); 
+        expect(element.all(by.className('article-headline')).first().getText()).toEqual('How CDOs Can Use Cognitive Computing To Transform Their Businesses {Q&A}'); 
     });
 
     it('should have page views on the article', function(){
-        expect(element(by.className('view-count')).getText().length >= 186); 
+        expect(element.all(by.className('view-count')).first().getText().length >= 186); 
     });
     
     it('should have the eye icon next to page views', function() {
-        expect(element(by.css('.icon.icon-preview-eye')).isDisplayed()).toBeTruthy(); 
+        expect(element.all(by.css('.icon.icon-preview-eye')).first().isDisplayed()).toBeTruthy(); 
     });
     
     it('should have the body content', function() {
