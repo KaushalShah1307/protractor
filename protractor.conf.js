@@ -49,6 +49,8 @@ exports.config = {
 			exclude: [
 				'test/protractor-spec/article/article-leftrail.spec.js',
 				'test/protractor-spec/bvarticle/article-leftrail.spec.js',
+                'test/protractor-spec/ng2article/**/*.spec.js',
+				'test/protractor-spec/ng2article/article-leftrail.spec.js',
 				'test/protractor-spec/angulargallery/pagecheck.spec.js',
                 'test/protractor-spec/angulargallery/**/*.spec.js',
                 'test/protractor-spec/newsletters/pagecheck.spec.js',
@@ -164,7 +166,12 @@ exports.config = {
         templatesgallery: [
             'test/protractor-spec/templatesgallery/**/*.spec.js',
             'test/protractor-spec/templatesgallery/*pagecheck.spec.js'
-        ]
+        ],
+        ng2article: [
+			//'test/protractor-spec/global.spec.js',
+			'test/protractor-spec/ng2article/*pagecheck.spec.js',
+			'test/protractor-spec/ng2article/**/*.spec.js'
+		]
 	},
 	specs: [
 		'test/protractor-spec/global.spec.js',
@@ -186,8 +193,8 @@ exports.config = {
 //        'test/protractor-spec/angulargallery/**/*.spec.js',
 //      'test/protractor-spec/forbespress/*pagecheck.spec.js',
 //      'test/protractor-spec/forbespress/**/*.spec.js',
-      'test/protractor-spec/amparticle/*pagecheck.spec.js',
-      'test/protractor-spec/amparticle/**/*.spec.js',
+//      'test/protractor-spec/amparticle/*pagecheck.spec.js',
+//      'test/protractor-spec/amparticle/**/*.spec.js',
 //      'test/protractor-spec/ampgallery/*pagecheck.spec.js',
 //      'test/protractor-spec/ampgallery/**/*.spec.js',
 //        'test/protractor-spec/ampvideo/*pagecheck.spec.js',
@@ -199,7 +206,9 @@ exports.config = {
 //        'test/protractor-spec/video/*pagecheck.spec.js',
 //        'test/protractor-spec/articlescroll/**/*.spec.js',
 //        'test/protractor-spec/mdotarticle/**/*.spec.js',
-//        'test/protractor-spec/templatesgallery/**/*.spec.js'
+//        'test/protractor-spec/templatesgallery/**/*.spec.js',
+        'test/protractor-spec/ng2article/*pagecheck.spec.js',
+        'test/protractor-spec/ng2article/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
