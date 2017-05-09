@@ -42,17 +42,25 @@ describe('Article:', function() {
 
 			it('should pass the right custom parameters', function() {
 				// expect(dataLayer.brandvoice).toBe(null);
-                //expect((dataLayer.DFPSite).toEqual('fdc.forbes') || (dataLayer.DFPSite).toEqual('fdcmobile'));
+                expect(dataLayer.DFPSite).toEqual('fdc.forbes');
                 expect(dataLayer.DFPZone).toEqual('article-d');
 				expect(dataLayer.author).toEqual('Lewis DVorkin');
+				expect(dataLayer.blogType).toEqual('individual');
+				expect(dataLayer.categories).toEqual('Business,Media & Entertainment,Tech,Social Media,Entrepreneurs,Management,Leadership');
 				expect(dataLayer.channel).toEqual('business');
+				expect(dataLayer.contribActive).toEqual('false');
+				expect(dataLayer.contribType).toEqual('Forbes Staff');
+				expect(dataLayer.edit).toEqual('none');
+				expect(dataLayer.forbesOnTrump).toEqual('false');
+				expect(dataLayer.leftRail).toEqual('true');
+				expect(dataLayer.naturalId).toEqual('blogAndPostId/blog/post/50-13891');
                 expect(dataLayer.section).toEqual('lewisdvorkinblog');
                 expect(dataLayer.hashtags).toEqual('none');
 				expect(dataLayer.slot).toEqual('none');
 				expect(dataLayer.site).toEqual('lewisdvorkin');
-                //expect(dataLayer.doNotPaginate).toEqual('donotpaginate');
-				
-
+				expect(dataLayer.primaryChannel).toEqual('Business');
+				expect(dataLayer.primnarySection).toEqual('none');
+                //expect(dataLayer.doNotPaginate).toEqual('donotpaginate');	
 			});
 		});
         
@@ -67,13 +75,13 @@ describe('Article:', function() {
                 });      
             });
             
-            it('should load the SimpleReach script', function() {
+            xit('should load the SimpleReach script', function() {
                 expect(reachpixel.length > 1);
             });
             
             it('should pass the right custom parameters', function() {
-                expect(browser.executeScript('return window.__reach_config.authors;')).toEqual('Lewis DVorkin'); 
-                expect(browser.executeScript('return window.__reach_config.channels;')).toEqual('business'); 
+                expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Lewis DVorkin'); 
+                expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business'); 
                 expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2015-06-10T14:00:00.000Z'); 
                 expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
                 expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
