@@ -20,7 +20,7 @@ describe('List Profile Page:', function() {
 				});
 			});
 
-			it ('should have the correct parameters', function() {
+			xit ('should have the correct parameters', function() {
 				expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual('https://www-staging.forbes.com/profile/bill-gates/');
 				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('undefined');
 				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual('lists');

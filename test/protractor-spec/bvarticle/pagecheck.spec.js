@@ -35,6 +35,11 @@ describe('BrandVoice Article', function() {
         expect(element(by.className('brandvoice-logo')).isDisplayed()).toBeTruthy(); 
     });
     
+    it('should have left rail with contents', function() {
+        var leftRailContent = element(by.className('item post'));
+        expect(leftRailContent.isPresent()).toBe(true);
+    });
+    
     // this case checks for the author name on BV.
 /*    it('should have the BV Contrib name', function() {
         expect(element(by.className('name-desc')).getText()).toEqual('IBM Contributor, IBM'); 

@@ -51,8 +51,8 @@ describe('BrandVoice Article', function() {
 				expect(dataLayer.slot).toEqual('ibm');
 				expect(dataLayer.site).toEqual('ibm');
 				expect(dataLayer.blogType).toEqual('ad');
-				expect(dataLayer.brandVoiceLive).toEqual('true');
-				expect(dataLayer.bvContentSource).toEqual('none');
+				expect(dataLayer.brandVoiceLive).toEqual('false');
+				expect(dataLayer.bvContentSource).toEqual('client');
 				expect(dataLayer.bvProgramType).toEqual('elite');
 				expect(dataLayer.categories).toEqual('Leadership');
 				expect(dataLayer.contribActive).toEqual('true');
