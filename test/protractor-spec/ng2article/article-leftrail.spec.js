@@ -1,4 +1,4 @@
-describe('Article:', function() {
+describe('NG2 Article:', function() {
 	describe('LeftRail', function() {
 		var commentsPanel,
 			commentsTrigger,
@@ -7,7 +7,7 @@ describe('Article:', function() {
 		beforeAll(function() {
 			commentsTrigger = $('.article-comments');
 			commentsPanel = $('.article-sidebar-panel.article-comments-panel');
-			loginButton = $('.unireg_login_replacement');
+			loginButton = element(by.className('login right'));
 		});
     
         it('should have the medianet unit', function() {
@@ -19,7 +19,7 @@ describe('Article:', function() {
 			expect(loginButton.isDisplayed()).toBe(true);
 		});
 
-        it('should login', function() {
+        xit('should login', function() {
             element(by.className('utility-item-login')).click();
             element(by.name('user')).sendKeys('testguy');
             element(by.name('pass')).sendKeys('Forbes123\n');

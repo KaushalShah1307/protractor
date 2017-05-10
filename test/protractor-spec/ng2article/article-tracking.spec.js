@@ -1,4 +1,4 @@
-describe('Article:', function() {
+describe('NG2 Article:', function() {
 	var currentUrl;
 
 	beforeAll(function(done) {
@@ -20,7 +20,7 @@ describe('Article:', function() {
 				});
 			});
 
-			it ('should have the correct parameters', function() {
+			xit('should have the correct parameters', function() {
 				//expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl.replace(browser.baseUrl, "http://www-staging.forbes.com/"));
 				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual(browser.current_page.page_data.type);
 				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual(browser.current_page.page_data.naturalId);
@@ -41,7 +41,6 @@ describe('Article:', function() {
 			});
 
 			it('should pass the right custom parameters', function() {
-				// expect(dataLayer.brandvoice).toBe(null);
                 expect(dataLayer.DFPSite).toEqual('fdc.forbes');
                 expect(dataLayer.DFPZone).toEqual('article-d');
 				expect(dataLayer.author).toEqual('Lewis DVorkin');
@@ -53,31 +52,18 @@ describe('Article:', function() {
 				expect(dataLayer.edit).toEqual('none');
 				expect(dataLayer.forbesOnTrump).toEqual('false');
 				expect(dataLayer.leftRail).toEqual('true');
-				expect(dataLayer.naturalId).toEqual('blogAndPostId/blog/post/50-13891');
+				expect(dataLayer.naturalID).toEqual('blogAndPostId/blog/post/50-13891');
                 expect(dataLayer.section).toEqual('lewisdvorkinblog');
                 expect(dataLayer.hashtags).toEqual('none');
 				expect(dataLayer.slot).toEqual('none');
 				expect(dataLayer.site).toEqual('lewisdvorkin');
 				expect(dataLayer.primaryChannel).toEqual('Business');
-				expect(dataLayer.primnarySection).toEqual('none');
-                //expect(dataLayer.doNotPaginate).toEqual('donotpaginate');	
+				expect(dataLayer.primarySection).toEqual('none');
+                expect(dataLayer.doNotPaginate).toEqual('donotpaginate');	
 			});
 		});
         
         describe('SimpleReach', function() {
-            var reachpixel;
-            
-            beforeAll(function(done) {
-                reachpixel = $('script#simplereach-script[src*="d8rk54i4mohrb.cloudfront.net"]');
-                reachpixel.getAttribute('src').then(function(src) {
-                    reachpixel.srcString = src;
-                    done();
-                });      
-            });
-            
-            xit('should load the SimpleReach script', function() {
-                expect(reachpixel.length > 1);
-            });
             
             it('should pass the right custom parameters', function() {
                 expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Lewis DVorkin'); 

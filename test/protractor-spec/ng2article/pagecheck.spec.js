@@ -1,14 +1,14 @@
 var ArticlePage = require('./article.page.js'),
-	articlePage = new ArticlePage('/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?backend=ng');
+	articlePage = new ArticlePage();
 
-describe('Article:', function() {
+describe('NG2 Article:', function() {
 
 	it('should get the page', function() {
 		articlePage.get();
 	});
     
     it('should have the title of the article', function() {
-        expect(element.all(by.className('article-headline')).first().getText()).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
+        expect(element.all(by.className('fs-headline')).first().getText()).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
     });
 
     it('should have page views on the article', function(){
@@ -36,5 +36,5 @@ describe('Article:', function() {
     });
     
 	globals.generalCheck();
-	globals.checkAds(articlePage.adsService);
+	//globals.checkAds(articlePage.adsService);
 });
