@@ -7,6 +7,10 @@ describe('NG2 Article:', function() {
 		articlePage.get();
 	});
     
+    it('should have the beta flag', function() {
+        expect(element.all(by.className('beta fs-text-s')).isPresent()).toBe(true); 
+    });
+    
     it('should have the title of the article', function() {
         expect(element.all(by.className('fs-headline')).first().getText()).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
     });

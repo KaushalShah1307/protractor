@@ -11,7 +11,7 @@ describe('NG2 Article:', function() {
 		});
     
         it('should have the medianet unit', function() {
-            expect(element(by.id('_mN_dy_114441758')).isPresent()).toBe(true);      
+            expect(element(by.id('_mN_dy_289199738')).isPresent()).toBe(true);      
         });
 
 		// (http://jira.forbes.com/browse/BUGREPORTING-1051)

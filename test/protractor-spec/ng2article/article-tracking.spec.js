@@ -42,7 +42,7 @@ describe('NG2 Article:', function() {
 
 			it('should pass the right custom parameters', function() {
                 expect(dataLayer.DFPSite).toEqual('fdc.forbes');
-                expect(dataLayer.DFPZone).toEqual('article-d');
+                expect(dataLayer.DFPZone).toEqual('article-d-delta-u');
 				expect(dataLayer.author).toEqual('Lewis DVorkin');
 				expect(dataLayer.blogType).toEqual('individual');
 				expect(dataLayer.categories).toEqual('Business,Media & Entertainment,Tech,Social Media,Entrepreneurs,Management,Leadership');
