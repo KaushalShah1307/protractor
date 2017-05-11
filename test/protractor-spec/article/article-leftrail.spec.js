@@ -13,6 +13,10 @@ describe('Article:', function() {
         it('should have the medianet unit', function() {
             expect(element(by.id('_mN_dy_688196485')).isPresent()).toBe(true);      
         });
+    
+        it('should have the revcontent unit', function() {
+            expect(element.all(by.className('rc-w-16285 rc-p rc-p-pt')).first().isPresent()).toBe(true); 
+        });
 
 		// (http://jira.forbes.com/browse/BUGREPORTING-1051)
 		it('should have a login button', function() {
