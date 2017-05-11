@@ -1,4 +1,4 @@
-describe('NG2 Article:', function() {
+describe('NG2 BrandVoice Article:', function() {
 	describe('LeftRail', function() {
 		var commentsPanel,
 			commentsTrigger,

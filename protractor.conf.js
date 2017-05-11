@@ -51,6 +51,8 @@ exports.config = {
 				'test/protractor-spec/bvarticle/article-leftrail.spec.js',
                 'test/protractor-spec/ng2article/**/*.spec.js',
 				'test/protractor-spec/ng2article/article-leftrail.spec.js',
+                'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
+				'test/protractor-spec/ng2brandvoicearticle/article-leftrail.spec.js',
 				'test/protractor-spec/angulargallery/pagecheck.spec.js',
                 'test/protractor-spec/angulargallery/**/*.spec.js',
                 'test/protractor-spec/newsletters/pagecheck.spec.js',
@@ -171,6 +173,11 @@ exports.config = {
 			//'test/protractor-spec/global.spec.js',
 			'test/protractor-spec/ng2article/*pagecheck.spec.js',
 			'test/protractor-spec/ng2article/**/*.spec.js'
+		],
+        ng2brandvoicearticle: [
+			//'test/protractor-spec/global.spec.js',
+			'test/protractor-spec/ng2article/*pagecheck.spec.js',
+			'test/protractor-spec/ng2article/**/*.spec.js'
 		]
 	},
 	specs: [
@@ -208,7 +215,9 @@ exports.config = {
 //        'test/protractor-spec/mdotarticle/**/*.spec.js',
 //        'test/protractor-spec/templatesgallery/**/*.spec.js',
         'test/protractor-spec/ng2article/*pagecheck.spec.js',
-        'test/protractor-spec/ng2article/**/*.spec.js'
+        'test/protractor-spec/ng2article/**/*.spec.js',
+        'test/protractor-spec/ng2brandvoicearticle/*pagecheck.spec.js',
+        'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
