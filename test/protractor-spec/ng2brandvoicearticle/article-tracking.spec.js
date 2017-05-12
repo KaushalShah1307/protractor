@@ -74,19 +74,21 @@ describe('NG2 BrandVoiceArticle:', function() {
 				expect(dataLayer.primaryChannel).toEqual('Tech');
 				expect(dataLayer.primarySection).toEqual('The Tech Life');
                 expect(dataLayer.doNotPaginate).toEqual('none');	
-                expect(dataLayer.login).toEqual('false'); //re-enable this when the bug to add the param has been pushed out
+                expect(dataLayer.login).toEqual('false');
 			});
 		});
         
         describe('SimpleReach', function() {
             
             it('should pass the right custom parameters', function() {
-                expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Lewis DVorkin'); 
-                expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business'); 
-                expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2015-06-10T14:00:00.000Z'); 
+                expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('qualityassuranceguest'); 
+                expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('Business'); 
+                expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/4248-455'); 
+                expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2008-03-09T22:28:00.000Z'); 
                 expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
-                expect(browser.executeScript('return window.__reach_config.tags.length;')).toEqual(13); 
-                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
+                expect(browser.executeScript('return window.__reach_config.tags.length;')).toEqual(4); 
+                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Testing Angular JS apps with Protractor'); 
+                expect(browser.executeScript('return window.__reach_config.url;')).toEqual('https://www.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/'); 
             });
             
         });
