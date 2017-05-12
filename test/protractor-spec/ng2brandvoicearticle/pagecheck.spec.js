@@ -44,8 +44,9 @@ describe('NG2 BrandVoice Article:', function() {
         expect(bvBlurb.isPresent()).toBe(true);       
     });
     
-    it('should have the sharing module', function() {
-        expect(element(by.className('fs-text-m')).isPresent()).toBe(true); 
+    it('should have the sharing module on top and bottom of the page', function() {
+        expect(element.all(by.className('fs-text-m')).get(0).isPresent()).toBe(true); 
+        expect(element.all(by.className('fs-text-m')).get(1).isPresent()).toBe(true); 
     });
     
     it('should have the contrib byline', function() {
@@ -88,6 +89,10 @@ describe('NG2 BrandVoice Article:', function() {
         // Check Photocredit and captions for the second image in the body
         expect(element.all(by.className('article-photo-credit')).get(1).getText()).toEqual('iStock'); 
         expect(element.all(by.className('wp-caption-text')).get(1).getText()).toEqual('This is the caption'); 
+    });
+    
+    it('should have the comment bubble', function() {
+        expect(element(by.className('fs-text-s fs-responsive-text')).isPresent()).toBe(true); 
     });
     
     it('should have the medianet unit', function() {
