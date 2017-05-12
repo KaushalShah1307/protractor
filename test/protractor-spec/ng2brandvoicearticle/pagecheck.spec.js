@@ -38,6 +38,10 @@ describe('NG2 BrandVoice Article:', function() {
     it('should have the BrandVoice logo', function() {
         expect(element(by.className('logo')).isPresent()).toBe(true); 
     });
+        
+    it('should have brandvoice styling', function() {
+        expect(element.all(by.css('.brand')).first().getCssValue('color')).toEqual('rgba(196, 26, 35, 1)'); 
+    });
     
     it('should have the BrandVoice blurb', function() {
         var bvBlurb = element(by.className('tag'));
@@ -92,7 +96,8 @@ describe('NG2 BrandVoice Article:', function() {
     });
     
     it('should have the comment bubble', function() {
-        expect(element(by.className('fs-text-s fs-responsive-text')).isPresent()).toBe(true); 
+        var commentBubble = element.all(by.className('fs-text-s fs-responsive-text')).get(1);
+        expect(commentBubble.isPresent()).toBe(true);
     });
     
     it('should have print bar and reprints links', function() {

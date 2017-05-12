@@ -14,6 +14,10 @@ describe('NG2 BrandVoice Article:', function() {
 		it('should have a login button', function() {
 			expect(loginButton.isDisplayed()).toBe(true);
 		});
+        
+        xit('should have brandvoice styling on the title', function() {
+            expect(element.all(by.css('.fs-headline.fs-responsive-text>span', ':after')).first().getCssValue('color')).toEqual('#c41a23'); 
+        });
 
         xit('should login', function() {
             element(by.className('utility-item-login')).click();
