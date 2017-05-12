@@ -95,6 +95,10 @@ describe('NG2 BrandVoice Article:', function() {
         expect(element(by.className('fs-text-s fs-responsive-text')).isPresent()).toBe(true); 
     });
     
+    it('should have print bar and reprints links', function() {
+        expect(element.all(by.css('.article-footer>printbar')).all(by.css('.article-footer>printbar>ul>li')).count()).toBe(5); 
+    });
+    
     it('should have the medianet unit', function() {
         expect(element(by.id('_mN_dy_289199738')).isPresent()).toBe(false);      
     });
