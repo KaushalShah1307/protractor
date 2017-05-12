@@ -16,7 +16,7 @@ describe('NG2 BrandVoice Article:', function() {
     });
 
     it('should have page views on the article', function(){
-        expect(element.all(by.className('view-count')).first().getText()).toBeLessThanOrEqual('9,403'); 
+        expect(element.all(by.className('view-count')).first().getText()).toBeGreaterThanOrEqual('57'); 
     });
     
     it('should have the eye icon next to page views', function() {
@@ -32,11 +32,20 @@ describe('NG2 BrandVoice Article:', function() {
     });
     
     it('should have the tweet quotes module', function() {
-        expect(element(by.className('tweet-this'))).toBeTruthy(); 
+        expect(element(by.className('tweet_quote')).isPresent()).toBe(false); 
     });
     
-    it('should have the Forbes Staff icon next to the author type', function() {
-        expect(element(by.className('icon icon-staff-verified'))).toBeTruthy(); 
+    it('should have the BrandVoice logo', function() {
+        expect(element(by.className('logo')).isPresent()).toBe(true); 
+    });
+    
+    it('should have the BrandVoice blurb', function() {
+        var bvBlurb = element(by.className('tag'));
+        expect(bvBlurb.isPresent()).toBe(true);       
+    });
+    
+    it('should have the sharing module', function() {
+        expect(element(by.className('fs-text-m')).isPresent()).toBe(true); 
     });
     
     it('should have the medianet unit', function() {
