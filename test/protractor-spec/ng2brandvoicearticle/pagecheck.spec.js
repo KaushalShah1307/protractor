@@ -75,6 +75,11 @@ describe('NG2 BrandVoice Article:', function() {
         element(by.className('icon icon-chevron-down')).click();
     });
     
+    it('should not have the dupe author byline', function() {
+        // This is currently a bug in prod and should be fixed after fix has been released.
+        expect(element(by.tagName('group-blog')).isPresent()).toBe(false); 
+    });
+    
     it('should have the medianet unit', function() {
         expect(element(by.id('_mN_dy_289199738')).isPresent()).toBe(false);      
     });
