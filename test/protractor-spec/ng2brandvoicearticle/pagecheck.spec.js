@@ -48,6 +48,26 @@ describe('NG2 BrandVoice Article:', function() {
         expect(element(by.className('fs-text-m')).isPresent()).toBe(true); 
     });
     
+    it('should have the contrib byline', function() {
+        var contribByline = element(by.className('contrib-byline'));
+        expect(contribByline.isPresent()).toBe(true);
+        expect(contribByline.getText()).toEqual('Quality Assurance Voice');
+    });
+    
+    it('should have the contrib tagline', function() {
+        var contribTagline = element(by.className('contrib-tagline fs-text-xs fs-responsive-text'));
+        expect(contribTagline.isPresent()).toBe(true);
+        expect(contribTagline.getText()).toEqual('Quality Assurance - Forbes');
+    });
+    
+    it('should have the full bio info', function() {
+        var bio = element(by.className('full-bio fs-text-xs fs-responsive-text'));
+        expect(bio.isPresent()).toBe(true);
+        bio.click();
+        var avatar = element(by.className('fs-author-image'));
+        expect(avatar.getAttribute('src')).toEqual('https://blogs-images.forbes.com/assets/images/avatars/blog-4248_62_b08717085d3d02065c803f4c8d3ceb8d.jpg');
+    });
+    
     it('should have the medianet unit', function() {
         expect(element(by.id('_mN_dy_289199738')).isPresent()).toBe(false);      
     });
