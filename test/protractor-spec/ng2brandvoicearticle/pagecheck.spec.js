@@ -80,6 +80,16 @@ describe('NG2 BrandVoice Article:', function() {
         expect(element(by.tagName('group-blog')).isPresent()).toBe(false); 
     });
     
+    it('should have the photocredit and caption for the image', function() {
+        // Check Photocredit and captions for the first image in the body
+        expect(element.all(by.className('article-photo-credit')).get(0).getText()).toEqual('Protractor'); 
+        expect(element.all(by.className('wp-caption-text')).get(0).getText()).toEqual('"Protractor" with Angular JS');
+        
+        // Check Photocredit and captions for the second image in the body
+        expect(element.all(by.className('article-photo-credit')).get(1).getText()).toEqual('iStock'); 
+        expect(element.all(by.className('wp-caption-text')).get(1).getText()).toEqual('This is the caption'); 
+    });
+    
     it('should have the medianet unit', function() {
         expect(element(by.id('_mN_dy_289199738')).isPresent()).toBe(false);      
     });
