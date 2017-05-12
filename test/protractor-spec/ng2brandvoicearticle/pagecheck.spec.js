@@ -48,6 +48,10 @@ describe('NG2 BrandVoice Article:', function() {
         expect(bvBlurb.isPresent()).toBe(true);       
     });
     
+    it('should have correct color for the brandvoice blurb', function() {
+        expect(element.all(by.css('.what-is-this.fs-text-xxs.fs-text-link')).first().getCssValue('color')).toEqual('rgba(146, 10, 18, 1)');
+    });
+    
     it('should have the sharing module on top and bottom of the page', function() {
         expect(element.all(by.className('fs-text-m')).get(0).isPresent()).toBe(true); 
         expect(element.all(by.className('fs-text-m')).get(1).isPresent()).toBe(true); 
@@ -104,6 +108,18 @@ describe('NG2 BrandVoice Article:', function() {
         expect(element.all(by.css('.article-footer>printbar')).all(by.css('.article-footer>printbar>ul>li')).count()).toBe(5); 
     });
     
+    xit('should scroll to the next article', function() {
+        browser.executeScript('window.scrollTo(0,document.body.scrollHeight)').then(function(){
+        expect(browser.getCurrentUrl()).not.toEqual('https://www.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/');
+        }); 
+    });
+    
+	globals.generalCheck();
+	//globals.checkAds(articlePage);
+});
+
+describe('NG2 BrandVoice Article Ads:', function() {
+   
     it('should have the medianet unit', function() {
         expect(element(by.id('_mN_dy_289199738')).isPresent()).toBe(false);      
     });
@@ -112,6 +128,8 @@ describe('NG2 BrandVoice Article:', function() {
         expect(element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first().isPresent()).toBe(true); 
     });
     
-	globals.generalCheck();
-	//globals.checkAds(articlePage.adsService);
+    it('should have all the ads', function() {
+        expect(browser.executeScript('return window.Object.keys(external_services.ad_slots).length')).toBe(6); 
+    });
+    
 });
