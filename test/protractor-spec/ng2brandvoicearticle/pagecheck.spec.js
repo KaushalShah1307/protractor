@@ -66,6 +66,13 @@ describe('NG2 BrandVoice Article:', function() {
         bio.click();
         var avatar = element(by.className('fs-author-image'));
         expect(avatar.getAttribute('src')).toEqual('https://blogs-images.forbes.com/assets/images/avatars/blog-4248_62_b08717085d3d02065c803f4c8d3ceb8d.jpg');
+        expect(element(by.className('fs-text-m icon icon-facebook')).isPresent()).toBe(true);
+        expect(element(by.className('fs-text-m icon icon-rss-feed')).isPresent()).toBe(true);
+        //click on the recent stories to expand the view
+        element(by.className('recent-post')).click();
+        expect(element(by.className('fs-text-xs')).isPresent()).toBe(true);
+        //close the author full bio module
+        element(by.className('icon icon-chevron-down')).click();
     });
     
     it('should have the medianet unit', function() {
