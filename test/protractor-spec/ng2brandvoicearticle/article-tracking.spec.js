@@ -43,24 +43,38 @@ describe('NG2 BrandVoiceArticle:', function() {
 			it('should pass the right custom parameters', function() {
                 expect(dataLayer.DFPSite).toEqual('fdc.forbes');
                 expect(dataLayer.DFPZone).toEqual('article-d-delta-u');
-				expect(dataLayer.author).toEqual('Lewis DVorkin');
-				expect(dataLayer.blogType).toEqual('individual');
-				expect(dataLayer.categories).toEqual('Business,Media & Entertainment,Tech,Social Media,Entrepreneurs,Management,Leadership');
-				expect(dataLayer.channel).toEqual('business');
+				expect(dataLayer.author).toEqual('qualityassuranceguest');
+				expect(dataLayer.blogType).toEqual('ad');
+				expect(dataLayer.brandVoice).toEqual('qualityassurance');
+				expect(dataLayer.brandVoiceLive).toEqual('true');
+				expect(dataLayer.bvContentSource).toEqual('forbes');
+				expect(dataLayer.bvLeftRailHeadline).toEqual('recommend');
+				expect(dataLayer.bvProgramType).toEqual('elite');
+				expect(dataLayer.categories).toEqual('Tech,The Tech Life');
+				expect(dataLayer.channel).toEqual('Business');
 				expect(dataLayer.contribActive).toEqual('false');
-				expect(dataLayer.contribType).toEqual('Forbes Staff');
+				expect(dataLayer.contribDivision).toEqual('none');
+				expect(dataLayer.contribType).toEqual('AdVoice');
 				expect(dataLayer.edit).toEqual('none');
 				expect(dataLayer.forbesOnTrump).toEqual('false');
+				expect(dataLayer.heroImage).toEqual('false');
+				expect(dataLayer.imageCount).toEqual('2');
 				expect(dataLayer.leftRail).toEqual('true');
-				expect(dataLayer.naturalID).toEqual('blogAndPostId/blog/post/50-13891');
-                expect(dataLayer.section).toEqual('lewisdvorkinblog');
+				expect(dataLayer.naturalID).toEqual('blogAndPostId/blog/post/4248-455');
+				expect(dataLayer.pageNumber).toEqual('1');
+				expect(dataLayer.pageTotal).toEqual('1');
+				expect(dataLayer.pageType).toEqual('blog:standard');
+				expect(dataLayer.paragraphs).toEqual('16');
+                expect(dataLayer.section).toEqual('none');
                 expect(dataLayer.hashtags).toEqual('none');
-				expect(dataLayer.slot).toEqual('none');
-				expect(dataLayer.site).toEqual('lewisdvorkin');
-				expect(dataLayer.primaryChannel).toEqual('Business');
-				expect(dataLayer.primarySection).toEqual('none');
-                expect(dataLayer.doNotPaginate).toEqual('donotpaginate');	
-                //expect(dataLayer.login).toEqual('false');	//re-enable this when the bug to add the param has been pushed out
+                expect(dataLayer.trendingHashtags).toEqual('none');
+                expect(dataLayer.videoPlacement).toEqual('none');
+				expect(dataLayer.slot).toEqual('qualityassuranceslot');
+				expect(dataLayer.site).toEqual('qualityassurance');
+				expect(dataLayer.primaryChannel).toEqual('Tech');
+				expect(dataLayer.primarySection).toEqual('The Tech Life');
+                expect(dataLayer.doNotPaginate).toEqual('none');	
+                expect(dataLayer.login).toEqual('false'); //re-enable this when the bug to add the param has been pushed out
 			});
 		});
         
