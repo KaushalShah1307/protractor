@@ -16,17 +16,17 @@ describe('AMP Article Page:', function() {
     });
     
     it('should have the article headline', function() {
-        expect(element(by.css('.article-header.inner-contain>h1')).getText()).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
+        expect(element(by.css('.article-header>h1')).getText()).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
     });
     
     it('should have the contributors name and type', function() {
         expect(element.all(by.className('user')).first().getText()).toEqual('Lewis DVorkin , FORBES STAFF'); 
     });
-/* // Make sure to enable the check when running against an article with hashtag   
+   
     it('should have the hashtag', function() {
-        expect(element(by.className('hashtag')).getText()).toEqual('#boxoffice'); 
+        expect(element(by.className('hashtag')).getText()).toEqual('#Some Kind Of Super Long Hash Tag, You Know What I Mean?'); 
     });
-*/  
+ 
     it('should have the channel/section assigned', function() {
         expect(element(by.className('crumb')).getText()).toEqual('Business'); 
     });
