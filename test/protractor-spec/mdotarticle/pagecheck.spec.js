@@ -134,20 +134,22 @@ describe('Tracking on Mobile Article (MDot):', function() {
 
 			it ('should have the correct parameters', function() {
 				//expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl.replace(browser.baseUrl, "http://www-staging.forbes.com/"));
-				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('Cards');
+				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('blog');
 				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual('blogAndPostId/blog/post/4724-165');
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual('https://m.forbes.com/sites/datadesign/2017/01/03/a-day-in-the-life-of-a-forbes-under-30-how-young-innovators-stay-balanced-focused-and-connected/');
+				expect(globals.getParam(trackingPixel.srcString, 're')).toEqual('m.forbes.com');
 				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual('Forbes Staff');
 				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual('business');
 				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/2479402');
+				expect(globals.getParam(trackingPixel.srcString, 'mb')).toEqual('t');
 			});
-        });    
-    
+        });        
 });
 
 describe('BrandVoice Mobile Article (MDot):', function() {
    
     it('should get the page', function() {
-        browser.get('https://m-dev.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending'); 
+        browser.get('https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending'); 
     });
     
     it('should have the forbes logo', function() {
@@ -232,7 +234,7 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.dataLayer[0].cd13_pageType;')).toEqual('blog:standard');
             expect(browser.executeScript('return window.dataLayer[0].cd15_DFPSite;')).toEqual('fdcmdot');
             expect(browser.executeScript('return window.dataLayer[0].cd16_DFPZone;')).toEqual('cover');
-            expect(browser.executeScript('return window.dataLayer[0].cd19_categories;')).toEqual('Change Agents,The Tech Life');
+            expect(browser.executeScript('return window.dataLayer[0].cd19_categories;')).toEqual('Tech,The Tech Life');
             expect(browser.executeScript('return window.dataLayer[0].cd20_editSlot;')).toEqual('none');
             expect(browser.executeScript('return window.dataLayer[0].cd21_hashtags;')).toEqual('trending');
             expect(browser.executeScript('return window.dataLayer[0].cd24_naturalID;')).toEqual('blogAndPostId/blog/post/4248-455');
@@ -241,7 +243,7 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.dataLayer[0].cd56_contribActive;')).toEqual('false');
             expect(browser.executeScript('return window.dataLayer[0].cd59_primaryChannel;')).toEqual('Tech');
             expect(browser.executeScript('return window.dataLayer[0].cd60_primarySection;')).toEqual('The Tech Life');
-            expect(browser.executeScript('return window.dataLayer[0].cd61_bvContentSource;')).toEqual('none');
+            expect(browser.executeScript('return window.dataLayer[0].cd61_bvContentSource;')).toEqual('forbes');
             expect(browser.executeScript('return window.dataLayer[0].cd68_bvProgramType;')).toEqual('elite');
             expect(browser.executeScript('return window.dataLayer[0].cd69_forbesOnTrump;')).toEqual('false');
             expect(browser.executeScript('return window.dataLayer[0].cd71_cardType;')).toEqual('Cover');
@@ -263,8 +265,8 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('qualityassuranceguest');
             expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/4248-455');
             expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('Tech');
-            expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-04-24T20:01:10.515Z');
-            expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m-dev.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending');
+            expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-05-11T23:11:57.609Z');
+            expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending');
             expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
             expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Testing Angular JS apps with Protractor');
         }); 
@@ -283,11 +285,14 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
 
 			it ('should have the correct parameters', function() {
 				//expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl.replace(browser.baseUrl, "http://www-staging.forbes.com/"));
-				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('Long Scroll');
+				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('blog');
 				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual('blogAndPostId/blog/post/4248-455');
 				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual('AdVoice');
 				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual('business');
 				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/1965859');
+				expect(globals.getParam(trackingPixel.srcString, 're')).toEqual('m.forbes.com');
+				expect(globals.getParam(trackingPixel.srcString, 'mb')).toEqual('t');
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual('https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/');
 			});
         });
     
