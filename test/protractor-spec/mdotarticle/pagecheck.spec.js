@@ -133,7 +133,6 @@ describe('Tracking on Mobile Article (MDot):', function() {
 			});
 
 			it ('should have the correct parameters', function() {
-				//expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl.replace(browser.baseUrl, "http://www-staging.forbes.com/"));
 				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('blog');
 				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual('blogAndPostId/blog/post/4724-165');
 				expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual('https://m.forbes.com/sites/datadesign/2017/01/03/a-day-in-the-life-of-a-forbes-under-30-how-young-innovators-stay-balanced-focused-and-connected/');
@@ -284,7 +283,6 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
 			});
 
 			it ('should have the correct parameters', function() {
-				//expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl.replace(browser.baseUrl, "http://www-staging.forbes.com/"));
 				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('blog');
 				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual('blogAndPostId/blog/post/4248-455');
 				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual('AdVoice');
