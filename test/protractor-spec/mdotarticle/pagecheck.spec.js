@@ -212,6 +212,14 @@ describe('BrandVoice Mobile Article (MDot):', function() {
         expect(element.all(by.className('wp-caption-text')).first().getText()).toEqual('"Protractor" with Angular JS'); 
     });
     
+    it('should have ads', function() {
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga).length')).toBe(4); 
+    });
+    
+    it('should have the mobile ad', function() {
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('scp=pos%3Dmobile');
+    });
+    
     globals.generalCheck();
     
 });
