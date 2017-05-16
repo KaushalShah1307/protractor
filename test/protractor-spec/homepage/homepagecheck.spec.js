@@ -21,8 +21,7 @@ describe('Home Page Redesign:', function() {
     });
     
     it('should have social module', function() {
-        //element(by.css('.icon.icon-add-person.ng-scope')).click();
-        expect(element(by.css('.csr-following.csf-sharing.clearfix.ng-scope')).isDisplayed()).toBeTruthy();
+        expect(element(by.css('.csf-sharing-list.homepage-sharing')).isPresent()).toBe(true);
     });
     
     it('should play the video', function() {

@@ -31,7 +31,7 @@ describe('Templates Gallery:', function() {
     });
     
     it('should have the mobile ad', function() {
-        expect(browser.executeScript('return gpt_ad_slots.mobile.Z;')).toContain('scp=pos%3Dmobile'); 
+        expect(browser.executeScript('return gpt_ad_slots.mobile.V;')).toContain('scp=pos%3Dmobile'); 
     });
     
     describe('Tracking:', function() {
@@ -111,7 +111,7 @@ describe('Next Gallery Slide:', function() {
     });
     
     it('should have the mobile ad', function() {
-        expect(browser.executeScript('return gpt_ad_slots.mobile.Z;')).toContain('scp=pos%3Dmobile'); 
+        expect(browser.executeScript('return gpt_ad_slots.mobile.V;')).toContain('scp=pos%3Dmobile'); 
     });
     
     describe('Tracking:', function() {
