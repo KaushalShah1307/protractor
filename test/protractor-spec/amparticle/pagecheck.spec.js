@@ -26,6 +26,11 @@ describe('AMP Article Page:', function() {
     it('should have the contributors name and type', function() {
         expect(element.all(by.className('user')).first().getText()).toEqual('Lewis DVorkin , FORBES STAFF'); 
     });
+    
+    it('should have the publish time and date', function() {
+        expect(element.all(by.tagName('time')).first().getText()).toEqual('Jun 10, 2015'); 
+        expect(element.all(by.tagName('time')).get(1).getText()).toEqual('10:00 AM'); 
+    });
    
     it('should have the hashtag', function() {
         expect(element(by.className('hashtag')).getText()).toBeUndefined(); 
