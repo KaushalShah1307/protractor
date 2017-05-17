@@ -237,6 +237,11 @@ describe('BrandVoice Mobile Article (MDot):', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('sz=320x50%7C320x50%7C300x50%7C360x180%7C1x1&fluid=height');
     });
     
+    it('should have the mobilex ad', function() {
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('scp=pos%3Dmobilex');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
+    });
+    
     globals.generalCheck();
     
 });
