@@ -19,12 +19,16 @@ describe('AMP Article Page:', function() {
         expect(element(by.css('.article-header>h1')).getText()).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
     });
     
+    it('should have correct styles', function() {
+        expect(element.all(by.css('.author')).first().getCssValue('background')).toContain('rgb(51, 51, 51)'); 
+    });
+    
     it('should have the contributors name and type', function() {
         expect(element.all(by.className('user')).first().getText()).toEqual('Lewis DVorkin , FORBES STAFF'); 
     });
    
     it('should have the hashtag', function() {
-        expect(element(by.className('hashtag')).getText()).toEqual('#Some Kind Of Super Long Hash Tag, You Know What I Mean?'); 
+        expect(element(by.className('hashtag')).getText()).toBeUndefined(); 
     });
  
     it('should have the channel/section assigned', function() {
