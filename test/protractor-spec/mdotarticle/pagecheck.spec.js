@@ -5,7 +5,7 @@ beforeEach(function(){
     browser.ignoreSynchronization = true;
 });
 
-describe('Mobile Article (MDot):', function() {
+describe('Mobile Article - Card View (MDot):', function() {
 
 	it('should get the page', function() {
 		mobileDotArticle.get();
@@ -80,7 +80,7 @@ describe('Mobile Article (MDot):', function() {
     
 });
 
-describe('Tracking on Mobile Article (MDot):', function() {
+describe('Tracking on Mobile Article - Card View (MDot):', function() {
 
     describe('Google Analytics:', function() {
        
@@ -228,18 +228,37 @@ describe('BrandVoice Mobile Article (MDot):', function() {
         expect(element.all(by.className('wp-caption-text')).first().getText()).toEqual('"Protractor" with Angular JS'); 
     });
     
-    it('should have ads', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga).length')).toBe(2); 
+    it('should scroll on the page', function() {
+        browser.executeScript("return window.document.getElementsByClassName('card__text')[0].scrollTop=2000");
+        browser.executeScript("return window.document.getElementsByClassName('card__text')[0].scrollTop=4133");
     });
     
-    it('should have the mobile ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('scp=pos%3Dmobile');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('sz=320x50%7C320x50%7C300x50%7C360x180%7C1x1&fluid=height');
-    });
+    describe('Ads:', function() {
+       
+        it('should have ads', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga).length')).toBe(4); 
+        });
     
-    it('should have the mobilex ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('scp=pos%3Dmobilex');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
+        it('should have the mobile ad', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('scp=pos%3Dmobile');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('sz=320x50%7C320x50%7C300x50%7C360x180%7C1x1&fluid=height');
+        });
+
+        it('should have the mobilex-1 ad', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('scp=pos%3Dmobilex%26mobilex%3D1');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
+        });
+
+        it('should have the mobilex-2 ad', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('scp=pos%3Dmobilex%26mobilex%3D2');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
+        });
+
+        it('should have the mobstream ad', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('cp=pos%3Dmob-stream');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
+        });
+
     });
     
     globals.generalCheck();
@@ -247,6 +266,183 @@ describe('BrandVoice Mobile Article (MDot):', function() {
 });
 
 describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
+
+    describe('Google Analytics:', function() {
+       
+        it('should pass the right custom parameters', function() {
+            expect(browser.executeScript('return window.dataLayer[0].cd1_title;')).toEqual('Testing Angular JS apps with Protractor');
+            expect(browser.executeScript('return window.dataLayer[0].cd2_author;')).toEqual('qualityassuranceguest');
+            expect(browser.executeScript('return window.dataLayer[0].cd2_stream;')).toEqual('trending');
+            expect(browser.executeScript('return window.dataLayer[0].cd5_specialSlot;')).toEqual('qualityassuranceslot');
+            expect(browser.executeScript('return window.dataLayer[0].cd3_cardPosition;')).toEqual('Cover');
+            expect(browser.executeScript('return window.dataLayer[0].cd5_coversConsumed;')).toEqual('1');
+            expect(browser.executeScript('return window.dataLayer[0].cd9_contribType;')).toEqual('AdVoice');
+            expect(browser.executeScript('return window.dataLayer[0].cd11_blogType;')).toEqual('ad');
+            expect(browser.executeScript('return window.dataLayer[0].cd12_brandVoice;')).toEqual('qualityassurance');
+            expect(browser.executeScript('return window.dataLayer[0].cd13_pageType;')).toEqual('blog:standard');
+            expect(browser.executeScript('return window.dataLayer[0].cd15_DFPSite;')).toEqual('fdcmdot');
+            expect(browser.executeScript('return window.dataLayer[0].cd16_DFPZone;')).toEqual('cover');
+            expect(browser.executeScript('return window.dataLayer[0].cd19_categories;')).toEqual('Tech,The Tech Life');
+            expect(browser.executeScript('return window.dataLayer[0].cd20_editSlot;')).toEqual('none');
+            expect(browser.executeScript('return window.dataLayer[0].cd21_hashtags;')).toEqual('trending');
+            expect(browser.executeScript('return window.dataLayer[0].cd24_naturalID;')).toEqual('blogAndPostId/blog/post/4248-455');
+            expect(browser.executeScript('return window.dataLayer[0].cd45_brandVoiceLive;')).toEqual('true');
+            expect(browser.executeScript('return window.dataLayer[0].cd47_hashtagsTrending;')).toEqual('none');
+            expect(browser.executeScript('return window.dataLayer[0].cd56_contribActive;')).toEqual('false');
+            expect(browser.executeScript('return window.dataLayer[0].cd59_primaryChannel;')).toEqual('Tech');
+            expect(browser.executeScript('return window.dataLayer[0].cd60_primarySection;')).toEqual('The Tech Life');
+            expect(browser.executeScript('return window.dataLayer[0].cd61_bvContentSource;')).toEqual('forbes');
+            expect(browser.executeScript('return window.dataLayer[0].cd68_bvProgramType;')).toEqual('elite');
+            expect(browser.executeScript('return window.dataLayer[0].cd69_forbesOnTrump;')).toEqual('false');
+            expect(browser.executeScript('return window.dataLayer[0].cd71_cardType;')).toEqual('Cover');
+            expect(browser.executeScript('return window.dataLayer[0].event;')).toEqual('initialPageView');
+            expect(browser.executeScript('return window.dataLayer[0].pageTitle;')).toEqual('Testing Angular JS apps with Protractor');
+            expect(browser.executeScript('return window.dataLayer[0].cm3_coversViewed;')).toBe(1);
+            expect(browser.executeScript('return window.dataLayer[0].cm4_cardsConsumed;')).toBe(1);
+            expect(browser.executeScript('return window.dataLayer[0].cm6_coversViewedTotal;')).toBe(1);
+            expect(browser.executeScript('return window.dataLayer[0].tags[0];')).toEqual('brandvoice');
+            expect(browser.executeScript('return window.dataLayer[0].tags[1];')).toEqual('site::qualityassurance');
+            expect(browser.executeScript('return window.dataLayer[0].tags[2];')).toEqual('slot::qualityassuranceslot');
+            expect(browser.executeScript('return window.dataLayer[0].tags[3];')).toEqual('type::blog');
+        });
+    });
+    
+    describe('Simple Reach:', function() {
+       
+        it('should pass the right custom parameters', function() {
+            expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('qualityassuranceguest');
+            expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/4248-455');
+            expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('Tech');
+            expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-05-11T23:11:57.609Z');
+            expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending');
+            expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
+            expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Testing Angular JS apps with Protractor');
+        }); 
+    });
+    
+	describe('Fast Pixel:', function() {
+			var trackingPixel;
+
+			beforeAll(function(done) {
+				trackingPixel = $('img[src*="fast.forbes.com"]');
+				trackingPixel.getAttribute('src').then(function(src) {
+					trackingPixel.srcString = src;
+					done();
+				});
+			});
+
+			it ('should have the correct parameters', function() {
+				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('blog');
+				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual('blogAndPostId/blog/post/4248-455');
+				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual('AdVoice');
+				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual('business');
+				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/1965859');
+				expect(globals.getParam(trackingPixel.srcString, 're')).toEqual('m.forbes.com');
+				expect(globals.getParam(trackingPixel.srcString, 'mb')).toEqual('t');
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual('https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/');
+			});
+        });
+    
+});
+
+describe('Long-Scroll Mobile Article (MDot):', function() {
+   
+    it('should get the page', function() {
+        browser.get('https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/?s=trending'); 
+    });
+    
+    it('should have the forbes logo', function() {
+        expect(element(by.className('inlineicon inlineicon-forbes-logo')).isPresent()).toBe(true); 
+    });
+    
+    it('should have the stream name', function() {
+        expect(element(by.className('stream__name')).getText()).toEqual('#Trending'); 
+    });
+    
+    it('should have the hashtag modal', function() {
+        var hashtagModal = element(by.className('stream__name'));
+        expect(hashtagModal.getText()).toEqual('#Trending');
+        hashtagModal.click();
+        expect(element(by.className('fbs-r-modal__content')).isPresent()).toBe(true);
+        hashtagModal.click();
+    });
+    
+    it('should have the article headline', function() {
+        expect(element(by.className('cover__preview__title')).getText()).toEqual('Link: How To Predict Managerial Success: 4 Key Qualities To Consider - Victor Lipman'); 
+    });
+    
+    it('should have the author byline', function() {
+        expect(element(by.className('cover__byline__contrib')).getText()).toEqual('Kaushal Shah, Forbes Staff'); 
+    });
+    
+    xit('should have the page views', function() {
+        expect(element(by.className('cover__meta__page__views')).getText()).toEqual('sdafgsdfg');
+        pending('still need to find an optimal solution to grab the pageviews');
+    });
+    
+    it('should have the page views iconography', function() {
+        expect(element(by.className('inlineicon inlineicon-preview-eye')).isPresent()).toBe(true);
+    });
+    
+    it('should click and expand the cover card', function() {
+        element(by.className('cover__footer-scrim')).click();
+        browser.sleep(1000).then(function() {
+            expect(browser.getCurrentUrl()).toContain('?c=0');
+        });
+    });
+    
+    it('should have the sharing module', function() {
+        var shareIcons = element(by.className('sharrow__button'));
+        expect(shareIcons.isPresent()).toBe(true);
+        shareIcons.click();
+        expect(element(by.className('share__buttons')).isPresent()).toBe(true);
+        shareIcons.click();
+    });
+    
+    it('should have captions and credits for the images', function() {
+        expect(element.all(by.className('article-photo-credit')).first().getText()).toEqual('Photo credit is mandatory'); 
+        //expect(element.all(by.className('wp-caption-text')).first().getText()).toEqual('"Protractor" with Angular JS'); 
+    });
+    
+    it('should scroll on the page', function() {
+        browser.executeScript("return window.document.getElementsByClassName('card__text')[0].scrollTop=10000");
+        //browser.executeScript("return window.document.getElementsByClassName('card__text')[0].scrollTop=10000");
+    })
+    
+    it('should have ads', function() {
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga).length')).toBe(5); 
+    });
+    
+    it('should have the NTV MDot ad', function() {
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('scp=pos%3Dntv-mdot');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('sz=2x3%7C1x1');
+    });
+    
+    it('should have the mobilerec ad', function() {
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('scp=pos%3Dmobilerec');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('sz=320x50%7C300x250%7C360x180%7C320x50%7C300x50%7C320x180%7C1x1&fluid=height');
+    });
+    
+    it('should have the mobile ad', function() {
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('scp=pos%3Dmobile');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('sz=320x50%7C320x50%7C300x50%7C360x180%7C1x1&fluid=height');
+    });
+    
+    it('should have the mobilex-1 ad', function() {
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('scp=pos%3Dmobilex%26mobilex%3D1');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
+    });
+    
+    it('should have the mobilestream ad', function() {
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('scp=pos%3Dmob-stream');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
+    });
+    
+    globals.generalCheck();
+    
+});
+
+xdescribe('Tracking on Long-Scroll Mobile Article (MDot):', function() {
 
     describe('Google Analytics:', function() {
        
