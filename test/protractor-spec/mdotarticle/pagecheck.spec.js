@@ -19,6 +19,14 @@ describe('Mobile Article (MDot):', function() {
         expect(element(by.className('stream__name')).getText()).toEqual('#Under30'); 
     });
     
+    it('should have the hashtag modal', function() {
+        var hashtagModal = element(by.className('stream__name'));
+        expect(hashtagModal.getText()).toEqual('#Under30');
+        hashtagModal.click();
+        expect(element(by.className('fbs-r-modal__content')).isPresent()).toBe(true);
+        hashtagModal.click();
+    });
+    
     it('should have the article headline', function() {
         expect(element(by.className('cover__preview__title')).getText()).toEqual('A Day In The Life Of A FORBES Under 30: How Young Innovators Stay Balanced, Focused And Connected'); 
     });
@@ -159,6 +167,14 @@ describe('BrandVoice Mobile Article (MDot):', function() {
         expect(element(by.className('stream__name')).getText()).toEqual('#Trending'); 
     });
     
+    it('should have the hashtag modal', function() {
+        var hashtagModal = element(by.className('stream__name'));
+        expect(hashtagModal.getText()).toEqual('#Trending');
+        hashtagModal.click();
+        expect(element(by.className('fbs-r-modal__content')).isPresent()).toBe(true);
+        hashtagModal.click();
+    });
+    
     it('should have the BrandVoice flag', function() {
         expect(element(by.className('cover__bv-flag')).getText()).toEqual('Quality Assurance'); 
     });
@@ -213,7 +229,7 @@ describe('BrandVoice Mobile Article (MDot):', function() {
     });
     
     it('should have ads', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga).length')).toBe(4); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga).length')).toBe(2); 
     });
     
     it('should have the mobile ad', function() {
