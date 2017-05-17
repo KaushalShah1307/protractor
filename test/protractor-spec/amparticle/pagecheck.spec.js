@@ -31,11 +31,11 @@ describe('AMP Article Page:', function() {
         expect(element.all(by.tagName('time')).first().getText()).toEqual('Jun 10, 2015'); 
         expect(element.all(by.tagName('time')).get(1).getText()).toEqual('10:00 AM'); 
     });
-   
+/*   
     it('should have the hashtag', function() {
         expect(element(by.className('hashtag')).getText()).toBeUndefined(); 
     });
- 
+*/ 
     it('should have the channel/section assigned', function() {
         expect(element(by.className('crumb')).getText()).toEqual('Business'); 
     });

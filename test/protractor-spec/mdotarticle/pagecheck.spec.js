@@ -234,6 +234,7 @@ describe('BrandVoice Mobile Article (MDot):', function() {
     
     it('should have the mobile ad', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('scp=pos%3Dmobile');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('sz=320x50%7C320x50%7C300x50%7C360x180%7C1x1&fluid=height');
     });
     
     globals.generalCheck();
