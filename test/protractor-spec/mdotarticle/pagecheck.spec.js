@@ -406,45 +406,54 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
     
     it('should scroll on the page', function() {
         browser.executeScript("return window.document.getElementsByClassName('card__text')[0].scrollTop=15000");
-        //browser.executeScript("return window.document.getElementsByClassName('card__text')[0].scrollTop=10000");
-    })
-    
-    it('should have ads', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga).length')).toBe(5); 
     });
     
-    it('should have the NTV MDot ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('scp=pos%3Dntv-mdot');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('sz=2x3%7C1x1');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('strnativekey%3DpxJ5tFGEXnANFtbFTPgK82f7');
+    it('should have the next article module', function() {
+        expect(element(by.className('up-next visible')).isPresent()).toBe(true);
+        expect(element(by.className('image')).getAttribute('src').isPresent()).toBe(true);
+        expect(element(by.className('headline')).isPresent()).toBe(true);
     });
     
-    it('should have the mobilerec ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('scp=pos%3Dmobilerec');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('sz=320x50%7C300x250%7C360x180%7C320x50%7C300x50%7C320x180%7C1x1&fluid=height');
-    });
+    describe('should have ads:', function() {
+       
+        it('should have ads', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga).length')).toBe(5); 
+        });
     
-    it('should have the mobile ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('scp=pos%3Dmobile');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('sz=320x50%7C320x50%7C300x50%7C360x180%7C1x1&fluid=height');
-    });
-    
-    it('should have the mobilex-1 ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('scp=pos%3Dmobilex%26mobilex%3D1');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
-    });
-    
-    it('should have the mobilestream ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('scp=pos%3Dmob-stream');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
-    });
-    
-    it('should have the revcontent unit', function() {
-        expect(element(by.className('rc-wc rc-bp rc-uid-64417 rc-g-p ')).isPresent()).toBe(true); 
-    });
-    
-    it('should have the mnet unit', function() {
-        expect(element(by.id('_mN_dy_465034825')).isPresent()).toBe(true); 
+        it('should have the NTV MDot ad', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('scp=pos%3Dntv-mdot');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('sz=2x3%7C1x1');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('strnativekey%3DpxJ5tFGEXnANFtbFTPgK82f7');
+        });
+
+        it('should have the mobilerec ad', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('scp=pos%3Dmobilerec');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('sz=320x50%7C300x250%7C360x180%7C320x50%7C300x50%7C320x180%7C1x1&fluid=height');
+        });
+
+        it('should have the mobile ad', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('scp=pos%3Dmobile');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('sz=320x50%7C320x50%7C300x50%7C360x180%7C1x1&fluid=height');
+        });
+
+        it('should have the mobilex-1 ad', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('scp=pos%3Dmobilex%26mobilex%3D1');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
+        });
+
+        it('should have the mobilestream ad', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('scp=pos%3Dmob-stream');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
+        });
+
+        it('should have the revcontent unit', function() {
+            expect(element(by.className('rc-wc rc-bp rc-uid-64417 rc-g-p ')).isPresent()).toBe(true); 
+        });
+
+        it('should have the mnet unit', function() {
+            expect(element(by.id('_mN_dy_465034825')).isPresent()).toBe(true); 
+        });
+        
     });
     
     globals.generalCheck();
