@@ -451,58 +451,58 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
     
 });
 
-xdescribe('Tracking on Long-Scroll Mobile Article (MDot):', function() {
+describe('Tracking on Long-Scroll Mobile Article (MDot):', function() {
 
     describe('Google Analytics:', function() {
        
         it('should pass the right custom parameters', function() {
-            expect(browser.executeScript('return window.dataLayer[0].cd1_title;')).toEqual('Testing Angular JS apps with Protractor');
-            expect(browser.executeScript('return window.dataLayer[0].cd2_author;')).toEqual('qualityassuranceguest');
+            expect(browser.executeScript('return window.dataLayer[0].cd1_title;')).toEqual('Link: How To Predict Managerial Success: 4 Key Qualities To Consider - Victor Lipman');
+            expect(browser.executeScript('return window.dataLayer[0].cd2_author;')).toEqual('Kaushal Shah');
             expect(browser.executeScript('return window.dataLayer[0].cd2_stream;')).toEqual('trending');
-            expect(browser.executeScript('return window.dataLayer[0].cd5_specialSlot;')).toEqual('qualityassuranceslot');
+            expect(browser.executeScript('return window.dataLayer[0].cd5_specialSlot;')).toEqual('none');
             expect(browser.executeScript('return window.dataLayer[0].cd3_cardPosition;')).toEqual('Cover');
             expect(browser.executeScript('return window.dataLayer[0].cd5_coversConsumed;')).toEqual('1');
-            expect(browser.executeScript('return window.dataLayer[0].cd9_contribType;')).toEqual('AdVoice');
-            expect(browser.executeScript('return window.dataLayer[0].cd11_blogType;')).toEqual('ad');
-            expect(browser.executeScript('return window.dataLayer[0].cd12_brandVoice;')).toEqual('qualityassurance');
-            expect(browser.executeScript('return window.dataLayer[0].cd13_pageType;')).toEqual('blog:standard');
+            expect(browser.executeScript('return window.dataLayer[0].cd9_contribType;')).toEqual('Forbes Staff');
+            expect(browser.executeScript('return window.dataLayer[0].cd11_blogType;')).toEqual('group');
+            expect(browser.executeScript('return window.dataLayer[0].cd12_brandVoice;')).toEqual('none');
+            expect(browser.executeScript('return window.dataLayer[0].cd13_pageType;')).toEqual('blogslide:standard');
             expect(browser.executeScript('return window.dataLayer[0].cd15_DFPSite;')).toEqual('fdcmdot');
             expect(browser.executeScript('return window.dataLayer[0].cd16_DFPZone;')).toEqual('cover');
-            expect(browser.executeScript('return window.dataLayer[0].cd19_categories;')).toEqual('Tech,The Tech Life');
+            expect(browser.executeScript('return window.dataLayer[0].cd19_categories;')).toEqual('Business');
             expect(browser.executeScript('return window.dataLayer[0].cd20_editSlot;')).toEqual('none');
             expect(browser.executeScript('return window.dataLayer[0].cd21_hashtags;')).toEqual('trending');
-            expect(browser.executeScript('return window.dataLayer[0].cd24_naturalID;')).toEqual('blogAndPostId/blog/post/4248-455');
-            expect(browser.executeScript('return window.dataLayer[0].cd45_brandVoiceLive;')).toEqual('true');
+            expect(browser.executeScript('return window.dataLayer[0].cd24_naturalID;')).toEqual('blogAndPostId/blog/post/1553-1533');
+            expect(browser.executeScript('return window.dataLayer[0].cd45_brandVoiceLive;')).toEqual('none');
             expect(browser.executeScript('return window.dataLayer[0].cd47_hashtagsTrending;')).toEqual('none');
             expect(browser.executeScript('return window.dataLayer[0].cd56_contribActive;')).toEqual('false');
             expect(browser.executeScript('return window.dataLayer[0].cd59_primaryChannel;')).toEqual('Tech');
-            expect(browser.executeScript('return window.dataLayer[0].cd60_primarySection;')).toEqual('The Tech Life');
-            expect(browser.executeScript('return window.dataLayer[0].cd61_bvContentSource;')).toEqual('forbes');
-            expect(browser.executeScript('return window.dataLayer[0].cd68_bvProgramType;')).toEqual('elite');
+            expect(browser.executeScript('return window.dataLayer[0].cd60_primarySection;')).toEqual('Transformational Tech');
+            expect(browser.executeScript('return window.dataLayer[0].cd61_bvContentSource;')).toEqual('none');
+            expect(browser.executeScript('return window.dataLayer[0].cd68_bvProgramType;')).toEqual('none');
             expect(browser.executeScript('return window.dataLayer[0].cd69_forbesOnTrump;')).toEqual('false');
+            expect(browser.executeScript('return window.dataLayer[0].cd70_contribDivision;')).toEqual('none');
             expect(browser.executeScript('return window.dataLayer[0].cd71_cardType;')).toEqual('Cover');
             expect(browser.executeScript('return window.dataLayer[0].event;')).toEqual('initialPageView');
-            expect(browser.executeScript('return window.dataLayer[0].pageTitle;')).toEqual('Testing Angular JS apps with Protractor');
+            expect(browser.executeScript('return window.dataLayer[0].pageTitle;')).toEqual('Link: How To Predict Managerial Success: 4 Key Qualities To Consider - Victor Lipman');
             expect(browser.executeScript('return window.dataLayer[0].cm3_coversViewed;')).toBe(1);
             expect(browser.executeScript('return window.dataLayer[0].cm4_cardsConsumed;')).toBe(1);
             expect(browser.executeScript('return window.dataLayer[0].cm6_coversViewedTotal;')).toBe(1);
-            expect(browser.executeScript('return window.dataLayer[0].tags[0];')).toEqual('brandvoice');
-            expect(browser.executeScript('return window.dataLayer[0].tags[1];')).toEqual('site::qualityassurance');
-            expect(browser.executeScript('return window.dataLayer[0].tags[2];')).toEqual('slot::qualityassuranceslot');
-            expect(browser.executeScript('return window.dataLayer[0].tags[3];')).toEqual('type::blog');
+            expect(browser.executeScript('return window.dataLayer[0].tags[0];')).toEqual('site::qa');
+            expect(browser.executeScript('return window.dataLayer[0].tags[1];')).toEqual('slot::');
+            expect(browser.executeScript('return window.dataLayer[0].tags[2];')).toEqual('type::blogslide');
         });
     });
     
     describe('Simple Reach:', function() {
        
         it('should pass the right custom parameters', function() {
-            expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('qualityassuranceguest');
-            expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/4248-455');
+            expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Kaushal Shah');
+            expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/1553-1533');
             expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('Tech');
-            expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-05-11T23:11:57.609Z');
-            expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending');
+            expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-05-11T17:52:26.362Z');
+            expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/?s=trending');
             expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
-            expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Testing Angular JS apps with Protractor');
+            expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Link: How To Predict Managerial Success: 4 Key Qualities To Consider - Victor Lipman');
         }); 
     });
     
@@ -518,14 +518,14 @@ xdescribe('Tracking on Long-Scroll Mobile Article (MDot):', function() {
 			});
 
 			it ('should have the correct parameters', function() {
-				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('blog');
-				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual('blogAndPostId/blog/post/4248-455');
-				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual('AdVoice');
-				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual('business');
-				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/1965859');
+				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('blogslide');
+				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual('blogAndPostId/blog/post/1553-1533');
+				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual('Forbes Staff');
+				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual('technology');
+				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/958141');
 				expect(globals.getParam(trackingPixel.srcString, 're')).toEqual('m.forbes.com');
 				expect(globals.getParam(trackingPixel.srcString, 'mb')).toEqual('t');
-				expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual('https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/');
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual('https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/');
 			});
         });
     
