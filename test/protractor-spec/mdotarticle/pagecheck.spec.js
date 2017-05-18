@@ -36,8 +36,8 @@ describe('Mobile Article - Card View (MDot):', function() {
     });
     
     xit('should have the page views', function() {
-        expect(element(by.className('cover__meta__page__views')).getText()).toEqual('sdafgsdfg');
-        pending('still need to find an optimal solution to grab the pageviews');
+        expect(element(by.className('cover__meta__page__views')).isPresent()).toBe(true);
+        expect(browser.executeScript('return window.Object.values(__INITIAL_STATE__.pageViewsByUri)[0].count')).toBeGreaterThan(0);
     });
     
     it('should have the page views iconography', function() {
@@ -187,9 +187,9 @@ describe('BrandVoice Mobile Article (MDot):', function() {
         expect(element(by.className('cover__byline__contrib')).getText()).toEqual('qualityassuranceguest, Quality Assurance'); 
     });
     
-    xit('should have the page views', function() {
-        expect(element(by.className('cover__meta__page__views')).getText()).toEqual('sdafgsdfg');
-        pending('still need to find an optimal solution to grab the pageviews');
+    it('should have the page views', function() {
+        expect(element(by.className('cover__meta__page__views')).isPresent()).toBe(true);
+        expect(browser.executeScript('return window.Object.values(__INITIAL_STATE__.pageViewsByUri)[0].count')).toBeGreaterThan(0);
     });
     
     it('should have the page views iconography', function() {
@@ -371,9 +371,9 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         expect(element(by.className('cover__byline__contrib')).getText()).toEqual('Kaushal Shah, Forbes Staff'); 
     });
     
-    xit('should have the page views', function() {
-        expect(element(by.className('cover__meta__page__views')).getText()).toEqual('sdafgsdfg');
-        pending('still need to find an optimal solution to grab the pageviews');
+    it('should have the page views', function() {
+        expect(element(by.className('cover__meta__page__views')).isPresent()).toBe(true);
+        expect(browser.executeScript('return window.Object.values(__INITIAL_STATE__.pageViewsByUri)[0].count')).toBeGreaterThan(0);
     });
     
     it('should have the page views iconography', function() {
