@@ -416,6 +416,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
     it('should have the NTV MDot ad', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('scp=pos%3Dntv-mdot');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('sz=2x3%7C1x1');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('strnativekey%3DpxJ5tFGEXnANFtbFTPgK82f7');
     });
     
     it('should have the mobilerec ad', function() {
