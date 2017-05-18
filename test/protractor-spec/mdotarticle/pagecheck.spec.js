@@ -60,6 +60,10 @@ describe('Mobile Article - Card View (MDot):', function() {
         shareIcons.click();
     });
     
+    it('should have the medianet card', function() {
+        expect(browser.executeScript('return window.Object.values(window.Object.values(__INITIAL_STATE__.cards)[14])[0]')).toEqual('blogAndPostId/blog/post/4724-165-MEDIANETADCARD-14'); 
+    });
+    
     xit('should swipe to show next card', function() {
         var card = element(by.className('pan__container '));
 
