@@ -235,10 +235,6 @@ describe('BrandVoice Mobile Article (MDot):', function() {
     
     describe('Ads:', function() {
        
-        it('should have ads', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga).length')).toBe(4); 
-        });
-    
         it('should have the mobile ad', function() {
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('scp=pos%3Dmobile');
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('sz=320x50%7C320x50%7C300x50%7C360x180%7C1x1&fluid=height');
@@ -416,10 +412,6 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
     
     describe('should have ads:', function() {
        
-        it('should have ads', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga).length')).toBe(5); 
-        });
-    
         it('should have the NTV MDot ad', function() {
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('scp=pos%3Dntv-mdot');
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('sz=2x3%7C1x1');
@@ -454,6 +446,34 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
             expect(element(by.id('_mN_dy_465034825')).isPresent()).toBe(true); 
         });
         
+    });
+    
+    describe('should have Facebook Placement IDs for ads:', function() {
+       
+        it('should have it for mobile ad', function() {
+            expect(browser.executeScript('return window.Object.values(fbsads._config.fbSlots.mobile)[0]')).toEqual('489260474596970_656643941191955'); 
+            expect(browser.executeScript('return window.Object.values(fbsads._config.fbSlots.mobile)[1]')).toEqual('320x50'); 
+        });
+        
+        it('should have it for mobileint ad', function() {
+            expect(browser.executeScript('return window.Object.values(fbsads._config.fbSlots.mobileint)[0]')).toEqual('489260474596970_656644734525209'); 
+            expect(browser.executeScript('return window.Object.values(fbsads._config.fbSlots.mobileint)[1]')).toEqual('300x250'); 
+        });
+        
+        it('should have it for mobileint-cov ad', function() {
+            expect(browser.executeScript('return window.Object.values(fbsads._config.fbSlots)[4].placement_id')).toEqual('489260474596970_656644897858526'); 
+            expect(browser.executeScript('return window.Object.values(fbsads._config.fbSlots)[4].size')).toEqual('300x250'); 
+        });
+        
+        it('should have it for mobilerec ad', function() {
+            expect(browser.executeScript('return window.Object.values(fbsads._config.fbSlots.mobilerec)[0]')).toEqual('489260474596970_656644617858554'); 
+            expect(browser.executeScript('return window.Object.values(fbsads._config.fbSlots.mobilerec)[1]')).toEqual('300x250'); 
+        });
+        
+        it('should have it for mobilex ad', function() {
+            expect(browser.executeScript('return window.Object.values(fbsads._config.fbSlots.mobilex)[0]')).toEqual('489260474596970_656644411191908'); 
+            expect(browser.executeScript('return window.Object.values(fbsads._config.fbSlots.mobilex)[1]')).toEqual('300x250'); 
+        });
     });
     
     globals.generalCheck();
