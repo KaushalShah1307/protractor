@@ -254,7 +254,7 @@ describe('BrandVoice Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
         });
 
-        it('should have the mobstream ad', function() {
+        it('should have the mob-stream ad', function() {
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('cp=pos%3Dmob-stream');
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
         });
@@ -437,7 +437,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
         });
 
-        it('should have the mobilestream ad', function() {
+        it('should have the mob-stream ad', function() {
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('scp=pos%3Dmob-stream');
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
         });
