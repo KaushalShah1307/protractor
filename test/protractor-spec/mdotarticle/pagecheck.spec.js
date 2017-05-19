@@ -360,7 +360,7 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
 describe('Long-Scroll Mobile Article (MDot):', function() {
    
     it('should get the page', function() {
-        browser.get('https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/?s=trending'); 
+        browser.get('https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/?s=trending&ss=thisisswimlane'); 
     });
     
     it('should have the forbes logo', function() {
@@ -433,30 +433,40 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('sz=2x3%7C1x1');
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('strnativekey%3DpxJ5tFGEXnANFtbFTPgK82f7');
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('swimlane%3Dthisisswimlane');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[1].V')).toContain('channel%3D%26section%3D');
         });
 
         it('should have the mobilerec ad', function() {
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('scp=pos%3Dmobilerec');
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('sz=320x50%7C300x250%7C360x180%7C320x50%7C300x50%7C320x180%7C1x1&fluid=height');
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('swimlane%3Dthisisswimlane');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[0].V')).toContain('channel%3D%26section%3D');
         });
 
         it('should have the mobile ad', function() {
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('scp=pos%3Dmobile');
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('sz=320x50%7C320x50%7C300x50%7C360x180%7C1x1&fluid=height');
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('swimlane%3Dthisisswimlane');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('channel%3D%26section%3D');
         });
 
         it('should have the mobilex-1 ad', function() {
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('scp=pos%3Dmobilex%26mobilex%3D1');
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('swimlane%3Dthisisswimlane');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('channel%3D%26section%3D');
         });
 
         it('should have the mob-stream ad', function() {
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('scp=pos%3Dmob-stream');
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
             expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('swimlane%3Dthisisswimlane');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('channel%3D%26section%3D');
         });
 
         it('should have the revcontent unit', function() {
@@ -550,7 +560,7 @@ describe('Tracking on Long-Scroll Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/1553-1533');
             expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('Tech');
             expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-05-11T17:52:26.362Z');
-            expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/?s=trending');
+            expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/?s=trending&ss=thisisswimlane');
             expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
             expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Link: How To Predict Managerial Success: 4 Key Qualities To Consider - Victor Lipman');
         }); 
