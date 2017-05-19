@@ -51,7 +51,7 @@ describe('NG2 BrandVoiceArticle:', function() {
 				expect(dataLayer.bvLeftRailHeadline).toEqual('recommend');
 				expect(dataLayer.bvProgramType).toEqual('elite');
 				expect(dataLayer.categories).toEqual('Tech,The Tech Life');
-				expect(dataLayer.channel).toEqual('Business');
+				expect(dataLayer.channel).toEqual('business');
 				expect(dataLayer.contribActive).toEqual('false');
 				expect(dataLayer.contribDivision).toEqual('none');
 				expect(dataLayer.contribType).toEqual('AdVoice');
@@ -82,7 +82,7 @@ describe('NG2 BrandVoiceArticle:', function() {
             
             it('should pass the right custom parameters', function() {
                 expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('qualityassuranceguest'); 
-                expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('Business'); 
+                expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business'); 
                 expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/4248-455'); 
                 expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2008-03-09T22:28:00.000Z'); 
                 expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 

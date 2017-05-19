@@ -7,7 +7,7 @@ describe('NG2 BrandVoice Article:', function() {
 		beforeAll(function() {
 			commentsTrigger = $('.article-comments');
 			commentsPanel = $('.article-sidebar-panel.article-comments-panel');
-			loginButton = element(by.className('login right'));
+			loginButton = element(by.css('.login-text.fs-text-s'));
 		});
 
 		// (http://jira.forbes.com/browse/BUGREPORTING-1051)

@@ -160,7 +160,9 @@ describe('Tracking on Mobile Article - Card View (MDot):', function() {
 describe('BrandVoice Mobile Article (MDot):', function() {
    
     it('should get the page', function() {
-        browser.get('https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending'); 
+        var url = 'https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending';
+        browser.get(url);
+        globals.pagesChecked.push(url);
     });
     
     it('should have the forbes logo', function() {
@@ -360,7 +362,9 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
 describe('Long-Scroll Mobile Article (MDot):', function() {
    
     it('should get the page', function() {
-        browser.get('https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/?s=trending&ss=thisisswimlane'); 
+        var url = 'https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/?s=trending&ss=thisisswimlane';
+        browser.get(url);
+        globals.pagesChecked.push(url);
     });
     
     it('should have the forbes logo', function() {
