@@ -27,6 +27,24 @@ describe('NG2 Article Checks:', function() {
             });
         });
         
+        describe('Women at Forbes:', function() {
+            
+            it('should get the page', function() {
+                var url = '/sites/katepierce/2015/05/26/taylor-swift-beyonce-and-the-most-powerful-women-in-entertainment/?view=beta-u';
+                browser.get(url);
+                globals.pagesChecked.push(url);
+            });
+
+            it('should have the Women at Forbes badge', function() {
+                var womenAtForbes = element(by.css('.women-at-forbes'));
+                var womenAtForbesImg = element(by.css('.women-at-forbes>img'));
+                expect(womenAtForbes.isPresent()).toBe(true);
+                expect(womenAtForbes.getAttribute('href')).toEqual('https://www.forbes.com/women-at-forbes/'); 
+                expect(womenAtForbesImg.getAttribute('src')).toEqual('https://i.forbesimg.com/special-report/2016/women-at-forbes/img/women-at-forbes_logo.svg');
+                expect(element(by.css('.icon.icon-womenforbes-logo')).isPresent()).toBe(true);
+            });
+        });
+        
     });
 
     globals.generalCheck();
