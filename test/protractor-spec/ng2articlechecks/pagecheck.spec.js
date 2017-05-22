@@ -54,6 +54,23 @@ describe('NG2 Article Checks:', function() {
                 expect(element(by.css('.icon.icon-womenforbes-logo')).isPresent()).toBe(true);
             });
         });
+        
+        describe('Most Popular:', function() {
+            
+            it('should get the page', function() {
+                var url = 'https://www.forbes.com/sites/gordonkelly/2017/05/21/apple-leak-iphone-8-price-increase/?view=beta-u';
+                browser.get(url);
+                globals.pagesChecked.push(url);
+            });
+
+            it('should have the Most Popular badge', function() {
+                var mostPopularBadge = element(by.css('.most-popular-icon.fs-author-badge'));
+                var mostPopularBadgeIcon = element(by.css('.icon.icon-flame.fs-text-xs'));
+                expect(mostPopularBadge.isPresent()).toBe(true);
+                expect(mostPopularBadge.getAttribute('href')).toEqual('https://www.forbes.com/most-popular/');
+                expect(mostPopularBadgeIcon.isPresent()).toBe(true);
+            });
+        });
     });
         
     describe('Article Pagination:', function() {
