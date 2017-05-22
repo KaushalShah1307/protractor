@@ -44,8 +44,22 @@ describe('NG2 Article Checks:', function() {
                 expect(element(by.css('.icon.icon-womenforbes-logo')).isPresent()).toBe(true);
             });
         });
-        
     });
+        
+    describe('Article Pagination:', function() {
+      
+        it('should get the page', function() {
+            var url = '/sites/qa/2014/03/26/link-building-mobile-apps-with-angular-and-trigger-io/?view=beta-u';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should load the paginated page', function() {
+            var nextPage = element.all(by.className('next')).first();
+            nextPage.click();
+            expect(browser.getCurrentUrl()).toContain('/2/');
+        });
+    });   
 
     globals.generalCheck();
 });
