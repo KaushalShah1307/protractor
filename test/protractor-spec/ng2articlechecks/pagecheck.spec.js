@@ -27,10 +27,20 @@ describe('NG2 Article Checks:', function() {
             });
         });
         
+        describe('Forbes at 100:', function() {
+
+            it('should have the Forbes at 100 badge', function() {
+                var forbesAt100 = element.all(by.css('.forbes-100')).get(1);
+                var forbesAt100Img = element.all(by.css('.forbes-100>img'));
+                expect(forbesAt100.isPresent()).toBe(true);
+                expect(forbesAt100Img.getAttribute('src')).toEqual('https://i.forbesimg.com/assets/img/forbes-at-100.svg'); 
+            });
+        });
+        
         describe('Women at Forbes:', function() {
             
             it('should get the page', function() {
-                var url = '/sites/katepierce/2015/05/26/taylor-swift-beyonce-and-the-most-powerful-women-in-entertainment/?view=beta-u';
+                var url = 'https://www.forbes.com/sites/katepierce/2015/05/26/taylor-swift-beyonce-and-the-most-powerful-women-in-entertainment/?view=beta-u';
                 browser.get(url);
                 globals.pagesChecked.push(url);
             });
@@ -49,7 +59,7 @@ describe('NG2 Article Checks:', function() {
     describe('Article Pagination:', function() {
       
         it('should get the page', function() {
-            var url = '/sites/qa/2014/03/26/link-building-mobile-apps-with-angular-and-trigger-io/?view=beta-u';
+            var url = 'https://www.forbes.com/sites/qa/2014/03/26/link-building-mobile-apps-with-angular-and-trigger-io/?view=beta-u';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -120,7 +130,7 @@ describe('NG2 Article Checks:', function() {
     describe('Swimlane=NoStream-one/two Article:', function() {
         
         it('should get the page', function() {
-            var url = '/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?ss=nostream-one';
+            var url = 'https://www.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?ss=nostream-one';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -128,6 +138,10 @@ describe('NG2 Article Checks:', function() {
         it('should not have left rail stream', function() {
             var leftRailItems = $('.item.active');
             expect(leftRailItems.length > 1).toBe(false);
+        });
+        
+        it('should have the sig file', function() {
+            expect(element(by.tagName('sig-file')).isPresent()).toBe(true); 
         });
     });   
 

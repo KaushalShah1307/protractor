@@ -39,6 +39,12 @@ describe('NG2 Article:', function() {
         expect(element(by.className('icon icon-staff-verified')).isPresent()).toBe(true); 
     });
     
+	globals.generalCheck();
+	//globals.checkAds(articlePage.adsService);
+});
+
+describe('NG2 Article Ads:', function() {
+   
     it('should have the medianet unit', function() {
         expect(element(by.id('_mN_dy_289199738')).isPresent()).toBe(true);      
     });
@@ -47,6 +53,8 @@ describe('NG2 Article:', function() {
         expect(element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first().isPresent()).toBe(true); 
     });
     
-	globals.generalCheck();
-	//globals.checkAds(articlePage.adsService);
+    it('should have all the ads', function() {
+        expect(browser.executeScript('return window.Object.keys(external_services.ad_slots).length')).toBe(5); 
+    });
+    
 });
