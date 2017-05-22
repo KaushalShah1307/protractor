@@ -3,26 +3,31 @@ var ArticlePage = require('./article.page.js'),
 
 describe('NG2 Article Checks:', function() {
     
-    describe('Editors Pick:', function() {
+    describe('Article Badges:', function() {
+    
+        describe('Editors Pick:', function() {
 
-        it('should get the page', function() {
-            articlePage.get();
+            it('should get the page', function() {
+                articlePage.get();
+            });
+
+            it('should have the editors pick badge', function() {
+                var editorsPickBadge = element(by.css('.editors-pick'));
+                expect(editorsPickBadge.isPresent()).toBe(true);
+                expect(editorsPickBadge.getAttribute('href')).toEqual('https://www.forbes.com/editors-picks/');
+            });
         });
         
-        it('should have the editors pick badge', function() {
-            expect(element(by.css('.editors-pick')).isPresent()).toBe(false); 
-        });
+        describe('Forbes on Trump:', function() {
 
-        it('should have the medianet unit', function() {
-            expect(element(by.id('_mN_dy_289199738')).isPresent()).toBe(true);      
+            it('should have the Forbes on Trump badge', function() {
+                var forbesOnTrump = element.all(by.css('.forbes-on-trump.fs-text-xxs')).get(1);
+                expect(forbesOnTrump.isPresent()).toBe(true);
+                expect(forbesOnTrump.getAttribute('href')).toEqual('https://www.forbes.com/forbes-on-trump/'); 
+            });
         });
-
-        it('should have the revcontent unit', function() {
-            expect(element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first().isPresent()).toBe(true); 
-        });
-
-        globals.generalCheck();
-        //globals.checkAds(articlePage.adsService);
         
     });
+
+    globals.generalCheck();
 });
