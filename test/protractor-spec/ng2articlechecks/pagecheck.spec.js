@@ -95,7 +95,8 @@ describe('NG2 Article Checks:', function() {
                     expect(dataLayer.site).toEqual('lewisdvorkin');
                     expect(dataLayer.primaryChannel).toEqual('Business');
                     expect(dataLayer.primarySection).toEqual('none');
-                    expect(dataLayer.doNotPaginate).toEqual('donotpaginate');	
+                    expect(dataLayer.doNotPaginate).toEqual('donotpaginate');
+                    expect(dataLayer.pageNumber).toEqual('2');
                     //expect(dataLayer.login).toEqual('false');	//re-enable this when the bug to add the param has been pushed out
                 });
 		      });
@@ -113,6 +114,20 @@ describe('NG2 Article Checks:', function() {
 
             });
             
+         });
+     });
+    
+    describe('Swimlane=NoStream-one/two Article:', function() {
+        
+        it('should get the page', function() {
+            var url = '/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?ss=nostream-one';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should not have left rail stream', function() {
+            var leftRailItems = $('.item.active');
+            expect(leftRailItems.length > 1).toBe(false);
         });
     });   
 
