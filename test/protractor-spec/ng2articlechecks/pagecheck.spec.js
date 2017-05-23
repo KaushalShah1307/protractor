@@ -31,7 +31,7 @@ describe('NG2 Article Checks:', function() {
 
             it('should have the Forbes at 100 badge', function() {
                 var forbesAt100 = element.all(by.css('.forbes-100')).get(1);
-                var forbesAt100Img = element.all(by.css('.forbes-100>img'));
+                var forbesAt100Img = element.all(by.css('.forbes-100>img')).get(1);
                 expect(forbesAt100.isPresent()).toBe(true);
                 expect(forbesAt100Img.getAttribute('src')).toEqual('https://i.forbesimg.com/assets/img/forbes-at-100.svg'); 
             });
@@ -91,20 +91,20 @@ describe('NG2 Article Checks:', function() {
             expect(element(by.css('.fs-article>p')).isPresent()).toBe(true); 
         });
         
-        xdescribe('Paginated Page Tracking:', function() {
+        describe('Paginated Page Tracking:', function() {
            
-            describe('Google Analytics', function() {
+            xdescribe('Google Analytics', function() {
                 var dataLayer;
                 beforeAll(function() {
                     browser.executeScript(function() {
-                        return dataLayer[0];
+                        return dataLayer[20];
                     }).then(function(result) {
                         dataLayer = result;
                     });
                 });
 
                 it('should pass the right custom parameters', function() {
-                    expect(dataLayer.DFPSite).toEqual('fdc.forbes');
+ /*                   expect(dataLayer.DFPSite).toEqual('fdc.forbes');
                     expect(dataLayer.DFPZone).toEqual('article-d-delta-u');
                     expect(dataLayer.author).toEqual('Lewis DVorkin');
                     expect(dataLayer.blogType).toEqual('individual');
@@ -122,8 +122,8 @@ describe('NG2 Article Checks:', function() {
                     expect(dataLayer.site).toEqual('lewisdvorkin');
                     expect(dataLayer.primaryChannel).toEqual('Business');
                     expect(dataLayer.primarySection).toEqual('none');
-                    expect(dataLayer.doNotPaginate).toEqual('donotpaginate');
-                    expect(dataLayer.pageNumber).toEqual('2');
+                    expect(dataLayer.doNotPaginate).toEqual('donotpaginate'); */
+                    //expect(dataLayer.pageNumber).toEqual('2');
                     //expect(dataLayer.login).toEqual('false');	//re-enable this when the bug to add the param has been pushed out
                 });
 		      });
@@ -131,12 +131,14 @@ describe('NG2 Article Checks:', function() {
             describe('SimpleReach', function() {
 
                 it('should pass the right custom parameters', function() {
-                    expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Lewis DVorkin'); 
-                    expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business'); 
-                    expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2015-06-10T14:00:00.000Z'); 
+                    expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Kaushal Shah'); 
+                    expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('Technology'); 
+                    expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2014-03-26T21:30:00.000Z'); 
                     expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
-                    expect(browser.executeScript('return window.__reach_config.tags.length;')).toEqual(13); 
-                    expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
+                    expect(browser.executeScript('return window.__reach_config.tags.length;')).toEqual(3); 
+                    expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Link: Building mobile & apps with Angular & Trigger.IO'); 
+                    expect(browser.executeScript('return window.__reach_config.ref_url;')).toEqual('value should be passed here once issue has been fixed'); 
+                    expect(browser.executeScript('return window.__reach_config.referrer;')).toEqual('value should be passed here once issue has been fixed'); 
                 });
 
             });

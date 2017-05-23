@@ -48,8 +48,6 @@ exports.config = {
 			},
 			exclude: [
 				'test/protractor-spec/article/article-leftrail.spec.js',
-				'test/protractor-spec/article/*.spec.js',
-				'test/protractor-spec/articlescroll/*.spec.js',
 				'test/protractor-spec/bvarticle/article-leftrail.spec.js',
                 'test/protractor-spec/ng2article/**/*.spec.js',
 				'test/protractor-spec/ng2article/article-leftrail.spec.js',
@@ -224,7 +222,7 @@ exports.config = {
 //        'test/protractor-spec/ng2article/**/*.spec.js',
 //        'test/protractor-spec/ng2brandvoicearticle/*pagecheck.spec.js',
 //        'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
-//        'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
+        'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
         'test/protractor-spec/ng2articlechecks/**/*.spec.js'
 	],
 	onPrepare: function() {
