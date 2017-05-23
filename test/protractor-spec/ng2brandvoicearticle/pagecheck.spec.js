@@ -56,7 +56,7 @@ describe('NG2 BrandVoice Article:', function() {
     it('should have the contrib byline', function() {
         var contribByline = element(by.className('contrib-byline'));
         expect(contribByline.isPresent()).toBe(true);
-        expect(contribByline.getText()).toEqual('Quality Assurance Voice');
+        expect(contribByline.getText()).toEqual('Quality AssuranceVoice');
     });
     
     it('should have the contrib tagline', function() {

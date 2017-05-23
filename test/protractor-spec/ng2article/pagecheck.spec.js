@@ -54,7 +54,40 @@ describe('NG2 Article Ads:', function() {
     });
     
     it('should have all the ads', function() {
-        expect(browser.executeScript('return window.Object.keys(external_services.ad_slots).length')).toBe(5); 
+        expect(browser.executeScript('return window.Object.keys(external_services.ad_slots).length')).toBe(10); 
+    });
+    
+    it('should have ntv-rail-1 ad', function() {
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-1"])[0]')).not.toBeNull(); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-1"])[1]')).not.toBeNull(); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-1"])[2]')).toBe(2); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-1"])[3]')).toBe(3); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-1"])[4]')).toEqual('ntv-rail-1');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('scp=pos%3Dntv-rail');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('sz=320x50%7C2x3%7C1x1&fluid=height');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[2].V')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
+    });
+    
+    it('should have ntv-rail-2 ad', function() {
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-5"])[0]')).not.toBeNull(); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-5"])[1]')).not.toBeNull(); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-5"])[2]')).toBe(2); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-5"])[3]')).toBe(3); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-5"])[4]')).toEqual('ntv-rail-5');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('scp=pos%3Dntv-rail-2');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('sz=320x50%7C2x3%7C1x1&fluid=height');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[3].V')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
+    });
+    
+    it('should have ntv-rail-3 ad', function() {
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-8"])[0]')).not.toBeNull(); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-8"])[1]')).not.toBeNull(); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-8"])[2]')).toBe(2); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-8"])[3]')).toBe(3); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-rail-8"])[4]')).toEqual('ntv-rail-8');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('scp=pos%3Dntv-rail-2');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('sz=320x50%7C2x3%7C1x1&fluid=height');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[4].V')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
     });
     
 });
