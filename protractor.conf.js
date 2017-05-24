@@ -1,12 +1,12 @@
 exports.config = {
   	baseUrl: 'http://www.forbes.com/',
 	getPageTimeout: 30000,
-  	allScriptsTimeout: 60000,
+  	allScriptsTimeout: 100000,
   	framework: 'jasmine2',
 	jasmineNodeOpts: {
 		isVerbose: true,
 		showColors: true, // Use colors in the command line report.
-		defaultTimeoutInterval: 60000,
+		defaultTimeoutInterval: 100000,
 		includeStackTrace: true,
 		realtimeFailure: true,
         useAllAngular2AppRoots: true,
@@ -220,8 +220,8 @@ exports.config = {
 //        'test/protractor-spec/templatesgallery/**/*.spec.js',
         'test/protractor-spec/ng2article/*pagecheck.spec.js',
         'test/protractor-spec/ng2article/**/*.spec.js',
-//        'test/protractor-spec/ng2brandvoicearticle/*pagecheck.spec.js',
-//        'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
+        'test/protractor-spec/ng2brandvoicearticle/*pagecheck.spec.js',
+        'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
 //        'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
 //        'test/protractor-spec/ng2articlechecks/**/*.spec.js'
 	],

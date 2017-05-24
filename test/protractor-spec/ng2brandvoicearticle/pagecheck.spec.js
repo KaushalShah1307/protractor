@@ -105,25 +105,8 @@ describe('NG2 BrandVoice Article:', function() {
     });
     
     it('should scroll to the next article', function() {
-        expect(browser.executeScript('return window.scrollTo(0,document.body.scrollHeight=2000)')).toBeNull();
+        expect(browser.executeScript('return window.scrollTo(0,document.body.scrollHeight=4000)')).toBeNull();
     });
     
 	//globals.generalCheck();
-	//globals.checkAds(articlePage);
-});
-
-describe('NG2 BrandVoice Article Ads:', function() {
-   
-    it('should have the medianet unit', function() {
-        expect(element(by.id('_mN_dy_289199738')).isPresent()).toBe(false);      
-    });
-    
-    it('should have the revcontent unit', function() {
-        expect(element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first().isPresent()).toBe(true); 
-    });
-    
-    it('should have all the ads', function() {
-        expect(browser.executeScript('return window.Object.keys(external_services.ad_slots).length')).toBe(5); 
-    });
-    
 });

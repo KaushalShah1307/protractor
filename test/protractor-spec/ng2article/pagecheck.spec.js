@@ -45,5 +45,4 @@ describe('NG2 Article:', function() {
     });
     
 	globals.generalCheck();
-	//globals.checkAds(articlePage.adsService);
 });

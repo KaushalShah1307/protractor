@@ -109,5 +109,19 @@ describe('NG2 BrandVoiceArticle:', function() {
             });
         });
         
+        describe('Chartbeat', function() {
+            
+            it('should pass the right custom parameters', function() {
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.authors')).toEqual('qualityassuranceguest');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.domain')).toEqual('forbes.com');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.mabServer')).toEqual('mabping.chartbeat.net');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.path')).toEqual('/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.pingServer')).toEqual('ping.chartbeat.net');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.sections')).toEqual('business,qualityassuranceslot');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.title')).toEqual('Quality AssuranceVoice: Testing Angular JS apps with Protractor');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.uid')).toBe(17493);
+            });
+        });
+        
 	});
 });
