@@ -39,6 +39,10 @@ describe('NG2 Article:', function() {
         expect(element(by.className('icon icon-staff-verified')).isPresent()).toBe(true); 
     });
     
+    it('should scroll to the next article', function() {
+        expect(browser.executeScript('return window.scrollTo(0,document.body.scrollHeight=5445)')).toBeNull();
+    });
+    
 	globals.generalCheck();
 	//globals.checkAds(articlePage.adsService);
 });
@@ -54,7 +58,7 @@ describe('NG2 Article Ads:', function() {
     });
     
     it('should have all the ads', function() {
-        expect(browser.executeScript('return window.Object.keys(external_services.ad_slots).length')).toBe(10); 
+        expect(browser.executeScript('return window.Object.keys(external_services.ad_slots).length')).toBeGreaterThanOrEqual(10); 
     });
     
     it('should have ntv-rail-1 ad', function() {
@@ -118,15 +122,6 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[9].V')).toContain('scp=pos%3Drecx%26recx%3D2');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[9].V')).toContain('sz=300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[9].V')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
-    });
-    
-    it('should have recx-3 ad', function() {
-        //expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-recx-3"])[4]')).toEqual('ad-rail-0-recx-3');
-        //expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-recx-3"])[2]')).toBeGreaterThanOrEqual(1);
-        //expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-recx-3"])[3]')).toBeGreaterThanOrEqual(1);
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[10].V')).toContain('scp=pos%3Drecx%26recx%3D3');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[10].V')).toContain('sz=300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().ga)[10].V')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
     });
     
     it('should have inread ad', function() {
