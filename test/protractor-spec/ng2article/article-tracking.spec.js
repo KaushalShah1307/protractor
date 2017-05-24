@@ -70,7 +70,7 @@ describe('NG2 Article:', function() {
                 expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Lewis DVorkin'); 
                 expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business'); 
                 expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2015-06-10T14:00:00.000Z'); 
-                expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
+                expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000'); 
                 expect(browser.executeScript('return window.__reach_config.tags.length;')).toEqual(13); 
                 expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
             });
