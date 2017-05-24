@@ -93,5 +93,19 @@ describe('NG2 Article:', function() {
             });
         });
         
+        describe('Chartbeat', function() {
+            
+            it('should pass the right custom parameters', function() {
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.authors')).toEqual('Lewis DVorkin');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.domain')).toEqual('forbes.com');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.mabServer')).toEqual('mabping.chartbeat.net');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.path')).toEqual('/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.pingServer')).toEqual('ping.chartbeat.net');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.sections')).toEqual('business');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.title')).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.uid')).toBe(17493);
+            });
+        });
+        
 	});
 });

@@ -123,7 +123,7 @@ describe('NG2 Article Checks:', function() {
                     expect(dataLayer.primaryChannel).toEqual('Business');
                     expect(dataLayer.primarySection).toEqual('none');
                     expect(dataLayer.doNotPaginate).toEqual('donotpaginate'); */
-                    //expect(dataLayer.pageNumber).toEqual('2');
+                    expect(dataLayer.pageNumber).toEqual('2');
                     //expect(dataLayer.login).toEqual('false');	//re-enable this when the bug to add the param has been pushed out
                 });
 		      });
