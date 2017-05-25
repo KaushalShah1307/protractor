@@ -162,7 +162,21 @@ describe('NG2 Article Checks:', function() {
         it('should have the sig file', function() {
             expect(element(by.tagName('sig-file')).isPresent()).toBe(true); 
         });
+    });  
+    
+    describe('Left Rail Video Article:', function() {
+        
+        it('should get the page', function() {
+            var url = 'https://www.forbes.com/sites/stevenbertoni/2017/05/23/former-apple-ceo-john-sculley-on-how-to-think-like-steve-jobs-and-market-like-pepsi/?view=beta-u';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should have leftrail video on mute by default', function() {
+            var leftRailVideo = element.all(by.css('.vjs-control-text')).get(3);
+            expect(leftRailVideo.getText()).toEqual('unmute');
+        });
     });   
 
-    globals.generalCheck();
+    //globals.generalCheck();
 });

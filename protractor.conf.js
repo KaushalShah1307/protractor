@@ -190,8 +190,8 @@ exports.config = {
 		'test/protractor-spec/global.spec.js',
 //		'test/protractor-spec/article/*pagecheck.spec.js',
 //		'test/protractor-spec/article/**/*.spec.js',
-		'test/protractor-spec/contrib/*pagecheck.spec.js',
-		'test/protractor-spec/contrib/**/*.spec.js',
+//		'test/protractor-spec/contrib/*pagecheck.spec.js',
+//		'test/protractor-spec/contrib/**/*.spec.js',
 //		'test/protractor-spec/csf/*pagecheck.spec.js',
 //		'test/protractor-spec/csf/**/*.spec.js',
 //        'test/protractor-spec/bvarticle/*pagecheck.spec.js',
@@ -200,8 +200,8 @@ exports.config = {
 //		'test/protractor-spec/channelsections/**/*.spec.js',
 //		'test/protractor-spec/search/*pagecheck.spec.js',
 //        'test/protractor-spec/search/**/*.spec.js', 
-        'test/protractor-spec/homepage/*pagecheck.spec.js',
-        'test/protractor-spec/homepage/**/*.spec.js',
+//        'test/protractor-spec/homepage/*pagecheck.spec.js',
+//        'test/protractor-spec/homepage/**/*.spec.js',
 //       'test/protractor-spec/angulargallery/*pagecheck.spec.js',
 //        'test/protractor-spec/angulargallery/**/*.spec.js',
 //      'test/protractor-spec/forbespress/*pagecheck.spec.js',
@@ -224,8 +224,8 @@ exports.config = {
 //        'test/protractor-spec/ng2article/**/*.spec.js',
 //        'test/protractor-spec/ng2brandvoicearticle/*pagecheck.spec.js',
 //        'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
-//        'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
-//        'test/protractor-spec/ng2articlechecks/**/*.spec.js'
+        'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
+        'test/protractor-spec/ng2articlechecks/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
