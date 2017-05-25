@@ -1,12 +1,12 @@
 exports.config = {
   	baseUrl: 'http://www.forbes.com/',
 	getPageTimeout: 30000,
-  	allScriptsTimeout: 100000,
+  	allScriptsTimeout: 60000,
   	framework: 'jasmine2',
 	jasmineNodeOpts: {
 		isVerbose: true,
 		showColors: true, // Use colors in the command line report.
-		defaultTimeoutInterval: 100000,
+		defaultTimeoutInterval: 60000,
 		includeStackTrace: true,
 		realtimeFailure: true,
         useAllAngular2AppRoots: true,
@@ -216,12 +216,12 @@ exports.config = {
 //        'test/protractor-spec/listprofiles/*pagecheck.spec.js',
 //        'test/protractor-spec/video/*pagecheck.spec.js',
 //        'test/protractor-spec/articlescroll/**/*.spec.js',
-//        'test/protractor-spec/mdotarticle/**/*.spec.js',
+        'test/protractor-spec/mdotarticle/**/*.spec.js',
 //        'test/protractor-spec/templatesgallery/**/*.spec.js',
-        'test/protractor-spec/ng2article/*pagecheck.spec.js',
-        'test/protractor-spec/ng2article/**/*.spec.js',
-        'test/protractor-spec/ng2brandvoicearticle/*pagecheck.spec.js',
-        'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
+//        'test/protractor-spec/ng2article/*pagecheck.spec.js',
+//        'test/protractor-spec/ng2article/**/*.spec.js',
+//        'test/protractor-spec/ng2brandvoicearticle/*pagecheck.spec.js',
+//        'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
 //        'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
 //        'test/protractor-spec/ng2articlechecks/**/*.spec.js'
 	],

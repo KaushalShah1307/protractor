@@ -55,7 +55,7 @@ describe('NG2 Article Checks:', function() {
             });
         });
         
-        describe('Most Popular:', function() {
+        xdescribe('Most Popular:', function() {
             
             it('should get the page', function() {
                 var url = 'https://www.forbes.com/sites/gordonkelly/2017/05/21/apple-leak-iphone-8-price-increase/?view=beta-u';
@@ -73,7 +73,7 @@ describe('NG2 Article Checks:', function() {
         });
     });
         
-    describe('Article Pagination:', function() {
+    xdescribe('Article Pagination:', function() {
       
         it('should get the page', function() {
             var url = 'https://www.forbes.com/sites/qa/2014/03/26/link-building-mobile-apps-with-angular-and-trigger-io/?view=beta-u';
@@ -87,11 +87,11 @@ describe('NG2 Article Checks:', function() {
             expect(browser.getCurrentUrl()).toContain('/2/');
         });
         
-        it('should have the continued from indication', function() {
+        xit('should have the continued from indication', function() {
             expect(element(by.css('.fs-article>p')).isPresent()).toBe(true); 
         });
         
-        describe('Paginated Page Tracking:', function() {
+        xdescribe('Paginated Page Tracking:', function() {
            
             xdescribe('Google Analytics', function() {
                 var dataLayer;
