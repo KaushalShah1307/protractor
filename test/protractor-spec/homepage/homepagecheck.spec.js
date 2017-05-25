@@ -24,7 +24,7 @@ describe('Home Page Redesign:', function() {
         expect(element(by.css('.csf-sharing-list.homepage-sharing')).isPresent()).toBe(true);
     });
     
-    it('should play the video', function() {
+    xit('should play the video', function() {
         var videoModule = element(by.id('row-6'));
         expect((videoModule).isDisplayed()).toBeTruthy();
         browser.executeScript("arguments[0].scrollIntoView();", videoModule.getWebElement());
@@ -34,5 +34,6 @@ describe('Home Page Redesign:', function() {
 
 //	globals.generalCheck();
 
-	globals.checkAds(homePage.adsService);
+	//globals.checkAds(homePage.adsService);
 });
+

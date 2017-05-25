@@ -21,7 +21,7 @@ describe('Homepage:', function() {
 			});
 
 			it ('should have the correct parameters', function() {
-				//expect(globals.getParam(trackingPixel.srcString, 'su')).toContain('http://www.forbes.com/');
+				expect(globals.getParam(trackingPixel.srcString, 'su')).not.toContain('undefined');
 			});
 		});
 

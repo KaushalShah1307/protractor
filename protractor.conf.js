@@ -32,7 +32,8 @@ exports.config = {
                 'test/protractor-spec/listprofiles/mobilepagecheck.spec.js',
                 'test/protractor-spec/video/mobilepagecheck.spec.js',
                 'test/protractor-spec/mdotarticle/*.spec.js',
-                'test/protractor-spec/templatesgallery/**/*.spec.js'
+                'test/protractor-spec/templatesgallery/**/*.spec.js',
+                'test/protractor-spec/homepage/mobileads.spec.js'
             ]
 		},
 		{
@@ -60,7 +61,8 @@ exports.config = {
                 'test/protractor-spec/listprofiles/pagecheck.spec.js',
                 'test/protractor-spec/video/pagecheck.spec.js',
                 'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
-                'test/protractor-spec/ng2articlechecks/**/*.spec.js'
+                'test/protractor-spec/ng2articlechecks/**/*.spec.js',
+                'test/protractor-spec/homepage/desktopads.spec.js'
 			]
 		},
 /*        {
@@ -188,8 +190,8 @@ exports.config = {
 		'test/protractor-spec/global.spec.js',
 //		'test/protractor-spec/article/*pagecheck.spec.js',
 //		'test/protractor-spec/article/**/*.spec.js',
-//		'test/protractor-spec/contrib/*pagecheck.spec.js',
-//		'test/protractor-spec/contrib/**/*.spec.js',
+		'test/protractor-spec/contrib/*pagecheck.spec.js',
+		'test/protractor-spec/contrib/**/*.spec.js',
 //		'test/protractor-spec/csf/*pagecheck.spec.js',
 //		'test/protractor-spec/csf/**/*.spec.js',
 //        'test/protractor-spec/bvarticle/*pagecheck.spec.js',
@@ -198,9 +200,9 @@ exports.config = {
 //		'test/protractor-spec/channelsections/**/*.spec.js',
 //		'test/protractor-spec/search/*pagecheck.spec.js',
 //        'test/protractor-spec/search/**/*.spec.js', 
-//        'test/protractor-spec/homepage/*pagecheck.spec.js',
-//        'test/protractor-spec/homepage/**/*.spec.js',
-//        'test/protractor-spec/angulargallery/*pagecheck.spec.js',
+        'test/protractor-spec/homepage/*pagecheck.spec.js',
+        'test/protractor-spec/homepage/**/*.spec.js',
+//       'test/protractor-spec/angulargallery/*pagecheck.spec.js',
 //        'test/protractor-spec/angulargallery/**/*.spec.js',
 //      'test/protractor-spec/forbespress/*pagecheck.spec.js',
 //      'test/protractor-spec/forbespress/**/*.spec.js',
@@ -216,7 +218,7 @@ exports.config = {
 //        'test/protractor-spec/listprofiles/*pagecheck.spec.js',
 //        'test/protractor-spec/video/*pagecheck.spec.js',
 //        'test/protractor-spec/articlescroll/**/*.spec.js',
-        'test/protractor-spec/mdotarticle/**/*.spec.js',
+//        'test/protractor-spec/mdotarticle/**/*.spec.js',
 //        'test/protractor-spec/templatesgallery/**/*.spec.js',
 //        'test/protractor-spec/ng2article/*pagecheck.spec.js',
 //        'test/protractor-spec/ng2article/**/*.spec.js',

@@ -125,7 +125,7 @@ describe('Tracking on Mobile Article - Card View (MDot):', function() {
         it('should pass the right custom parameters', function() {
             expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Holly Warfield');
             expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/4724-165');
-            expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('Business');
+            expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business');
             expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-01-03T13:40:07.138Z');
             expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/datadesign/2017/01/03/a-day-in-the-life-of-a-forbes-under-30-how-young-innovators-stay-balanced-focused-and-connected/?s=Under30');
             expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
@@ -326,7 +326,7 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
         it('should pass the right custom parameters', function() {
             expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('qualityassuranceguest');
             expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/4248-455');
-            expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('Tech');
+            expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('tech');
             expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-05-11T23:11:57.609Z');
             expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending');
             expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
@@ -562,7 +562,7 @@ describe('Tracking on Long-Scroll Mobile Article (MDot):', function() {
         it('should pass the right custom parameters', function() {
             expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Kaushal Shah');
             expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/1553-1533');
-            expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('Tech');
+            expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('tech');
             expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-05-11T17:52:26.362Z');
             expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/?s=trending&ss=thisisswimlane');
             expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
