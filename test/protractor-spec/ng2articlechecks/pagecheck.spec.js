@@ -174,7 +174,7 @@ describe('NG2 Article Checks:', function() {
         
         it('should have leftrail video on mute by default', function() {
             var leftRailVideo = element.all(by.css('.vjs-control-text')).get(3);
-            expect(leftRailVideo.getText()).toEqual('unmute');
+            expect(leftRailVideo.getText()).toEqual('Unmute');
         });
     });   
 
