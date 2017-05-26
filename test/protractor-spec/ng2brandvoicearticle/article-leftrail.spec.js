@@ -19,13 +19,20 @@ describe('NG2 BrandVoice Article:', function() {
             expect(element.all(by.css('.fs-headline.fs-responsive-text>span', ':after')).first().getCssValue('color')).toEqual('#c41a23'); 
         });
 
-        xit('should login', function() {
-            element(by.className('utility-item-login')).click();
+        it('should login', function() {
+            loginButton.click();
             element(by.name('user')).sendKeys('testguy');
             element(by.name('pass')).sendKeys('Forbes123\n');
             
-            var loginModal = element(by.className('modal-close'));
-            expect(loginModal).toBeTruthy();
+            var logedInUser = element(by.css('.user-name-item.fs-headline>a>h4'));
+            expect(logedInUser.getText()).toEqual('My Guy');
+        });
+        
+        it('should logout', function() {
+            var logOut = element.all(by.css('.fs-text-xxs>li>a')).get(6);
+            logOut.click();
+            expect(element(by.css('.navbar-login>login-form>header>h2')).getText()).toEqual('Log in');
+            loginButton.click();
         });        
 	});
 });

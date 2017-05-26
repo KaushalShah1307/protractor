@@ -17,7 +17,6 @@ describe('NG2 Article:', function() {
 
         it('should login', function() {
             loginButton.click();
-            //element(by.css('.textbox.fs-text-xs.fs-text-responsive.ng-pristine.ng-valid.ng-touched')).click();
             element(by.name('user')).sendKeys('testguy');
             element(by.name('pass')).sendKeys('Forbes123\n');
             
