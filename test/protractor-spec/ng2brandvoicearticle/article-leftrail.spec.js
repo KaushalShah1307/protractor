@@ -15,8 +15,8 @@ describe('NG2 BrandVoice Article:', function() {
 			expect(loginButton.isDisplayed()).toBe(true);
 		});
         
-        xit('should have brandvoice styling on the title', function() {
-            expect(element.all(by.css('.fs-headline.fs-responsive-text>span', ':after')).first().getCssValue('color')).toEqual('#c41a23'); 
+        it('should have brandvoice styling on the title', function() {
+            expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.fs-headline.fs-responsive-text>span'), ':after').getPropertyValue('color')")).toEqual('rgb(196, 26, 35)');
         });
 
         it('should login', function() {
