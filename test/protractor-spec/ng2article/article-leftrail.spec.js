@@ -15,13 +15,21 @@ describe('NG2 Article:', function() {
 			expect(loginButton.isDisplayed()).toBe(true);
 		});
 
-        xit('should login', function() {
-            element(by.className('utility-item-login')).click();
+        it('should login', function() {
+            loginButton.click();
+            //element(by.css('.textbox.fs-text-xs.fs-text-responsive.ng-pristine.ng-valid.ng-touched')).click();
             element(by.name('user')).sendKeys('testguy');
             element(by.name('pass')).sendKeys('Forbes123\n');
             
-            var loginModal = element(by.className('modal-close'));
-            expect(loginModal).toBeTruthy();
-        });        
+            var logedInUser = element(by.css('.user-name-item.fs-headline>a>h4'));
+            expect(logedInUser.getText()).toEqual('My Guy');
+        });
+        
+        it('should logout', function() {
+            var logOut = element.all(by.css('.fs-text-xxs>li>a')).get(6);
+            logOut.click();
+            expect(element(by.css('.navbar-login>login-form>header>h2')).getText()).toEqual('Log in');
+            loginButton.click();
+        });
 	});
 });
