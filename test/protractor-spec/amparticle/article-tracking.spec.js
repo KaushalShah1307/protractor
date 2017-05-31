@@ -9,27 +9,19 @@ describe('AMP Article:', function() {
 	});
 
 	describe('Tracking on AMP Articles:', function() {
-/*		describe('Fast Pixel', function() {
-			var trackingPixel;
-
-			beforeAll(function(done) {
-				trackingPixel = $('img[src*="fast.forbes.com"]');
-				trackingPixel.getAttribute('src').then(function(src) {
-					trackingPixel.srcString = src;
-					done();
-				});
-			});
-
+		describe('Fast Pixel', function() {
+			
 			it ('should have the correct parameters', function() {
-				//expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl.replace(browser.baseUrl, "http://www-staging.forbes.com/"));
-				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual(browser.current_page.page_data.type);
-				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual(browser.current_page.page_data.naturalId);
-				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual(browser.current_page.page_data.blogType);
-				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual(browser.current_page.page_data.displayChannel);
-				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual(browser.current_page.page_data.authors[0].naturalId);
+				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('ch=business');
+				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('se=lewisdvorkinblog');
+				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('pt=blog');
+				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('i=blogAndPostId/blog/post/50-13891');
+				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('au=blogAuthorId/blog/author/609');
+				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('at=individual');
+				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('mb=t');
 			});
 		});
-*/
+
 		describe('Google Analytics', function() {
             
 			it('should pass the right custom parameters', function() {
