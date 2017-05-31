@@ -33,7 +33,8 @@ exports.config = {
                 'test/protractor-spec/video/mobilepagecheck.spec.js',
                 'test/protractor-spec/mdotarticle/*.spec.js',
                 'test/protractor-spec/templatesgallery/**/*.spec.js',
-                'test/protractor-spec/homepage/mobileads.spec.js'
+                'test/protractor-spec/homepage/mobileads.spec.js',
+                'test/protractor-spec/welcomead/mobilepagecheck.spec.js'
             ]
 		},
 		{
@@ -62,7 +63,8 @@ exports.config = {
                 'test/protractor-spec/video/pagecheck.spec.js',
                 'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
                 'test/protractor-spec/ng2articlechecks/**/*.spec.js',
-                'test/protractor-spec/homepage/desktopads.spec.js'
+                'test/protractor-spec/homepage/desktopads.spec.js',
+                'test/protractor-spec/welcomead/desktoppagecheck.spec.js'
 			]
 		},
 /*        {

@@ -14,24 +14,30 @@ describe('Welcome Ad:', function() {
 		welcomeAd.get();
 	});
     
-    xit('should have the share icon', function() {
-        expect(element(by.className('share-icon')).isPresent()).toBe(true); 
+    it('should have the continue to site link', function() {
+        expect(element(by.css('.continue-button')).isPresent()).toBe(true); 
     });
     
-    xit('should have the correct slide progress numbers', function(){
-        expect(element.all(by.className('image-number')).get(1).getText()).toEqual('2 of 11'); 
+    it('should have the continue to site countdown', function(){
+        expect(element(by.css('.lead')).isPresent()).toBe(true);
+        expect(element(by.css('.lead')).getText()).toContain('CONTINUE IN'); 
     });
     
-    xit('should have the title of the slide', function() {
-        expect(element.all(by.className('image-title')).get(1).getText()).toEqual('1. Maria Sharapova'); 
+    it('should have the Forbes branding logo', function() {
+        expect(element(by.css('.branding.icon.icon-forbes-logo')).isPresent()).toBe(true); 
     });
     
-    xit('should have the image caption', function() {
-        expect(element.all(by.className('image-caption')).get(1).getText().length > 0); 
+    it('should have the Quote of the Day title', function() {
+        expect(element(by.css('.top')).getText()).toEqual('QUOTE OF'); 
+        expect(element(by.css('.bottom')).getText()).toEqual('THE DAY'); 
     });
     
-    xit('should have the mobile ad', function() {
-        expect(browser.executeScript('return gpt_ad_slots.mobile.V;')).toContain('scp=pos%3Dmobile'); 
+    it('should have the Quote', function() {
+        expect(element(by.tagName('blockquote')).getText().length > 0); 
+    });
+    
+    it('should have the Quote blockquote icon', function() {
+        expect(element(by.css('.body-content>img')).getAttribute('src')).toEqual('https://specials-images.forbesimg.com/imageserve/57e197ac31358e16c589c0b5/40x0.png'); 
     });
     
     xdescribe('Tracking:', function() {
@@ -83,4 +89,23 @@ describe('Welcome Ad:', function() {
     });
     
  });
+
+describe('Desktop Welcome Page Ads:', function() {
+   
+        it('should have all the ads', function() {
+            expect(browser.executeScript('return window.Object.keys(googletag.pubads().getSlots()).length')).toBeGreaterThanOrEqual(2); 
+        });
+
+        it('should have temp ad', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].V')).toContain('scp=pos%3Dtemp');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].V')).toContain('sz=2x2%7C3x3%7C4x4%7C5x');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].V')).toContain('iu=%2F7175%2Ffdc.forbes%2Fwelcome');
+        });
+
+        it('should have welcome ad', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].V')).toContain('scp=pos%3Dwelcome');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].V')).toContain('sz=1x1%7C300x250%7C640x360%7C640x480%7C300x600%7C970x250%7C728x90%7C800x600');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].V')).toContain('iu=%2F7175%2Ffdc.forbes%2Fwelcome');
+        });
+});
 
