@@ -83,5 +83,17 @@ describe('AMP Article:', function() {
             
         });
         
+        describe('Chartbeat', function() {
+            
+            it('should pass the right custom parameters', function() {
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[11].innerText))[0].authors')).toEqual('Lewis DVorkin');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[11].innerText))[0].domain')).toEqual('forbes.com');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[11].innerText))[0].sections')).toEqual('business');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[11].innerText))[0].uid')).toEqual('17493');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[11].innerText))[0].title')).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever');
+			});
+            
+        });
+        
 	});
 });
