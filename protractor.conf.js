@@ -184,6 +184,10 @@ exports.config = {
         ng2articlechecks: [
 			'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
             'test/protractor-spec/ng2articlechecks/**/*.spec.js'
+		],
+        welcomead: [
+			'test/protractor-spec/welcomead/*pagecheck.spec.js',
+            'test/protractor-spec/welcomead/**/*.spec.js'
 		]
 	},
 	specs: [
@@ -215,7 +219,7 @@ exports.config = {
 //        'test/protractor-spec/newsletters/*pagecheck.spec.js',
 //        'test/protractor-spec/legacyarticle/*pagecheck.spec.js',
 //       'test/protractor-spec/listprofiles/**/*.spec.js',
-        'test/protractor-spec/listprofiles/*pagecheck.spec.js',
+//        'test/protractor-spec/listprofiles/*pagecheck.spec.js',
 //        'test/protractor-spec/video/*pagecheck.spec.js',
 //        'test/protractor-spec/articlescroll/**/*.spec.js',
 //        'test/protractor-spec/mdotarticle/**/*.spec.js',
@@ -226,6 +230,7 @@ exports.config = {
 //        'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
 //        'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
 //        'test/protractor-spec/ng2articlechecks/**/*.spec.js'
+        'test/protractor-spec/welcomead/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
