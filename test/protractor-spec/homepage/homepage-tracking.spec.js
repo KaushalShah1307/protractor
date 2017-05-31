@@ -22,6 +22,8 @@ describe('Homepage:', function() {
 
 			it ('should have the correct parameters', function() {
 				expect(globals.getParam(trackingPixel.srcString, 'su')).not.toContain('undefined');
+				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual('home');
+				expect(globals.getParam(trackingPixel.srcString, 'se')).toEqual('main');
 			});
 		});
 

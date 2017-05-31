@@ -327,7 +327,7 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('qualityassuranceguest');
             expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/4248-455');
             expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('tech');
-            expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-05-11T23:11:57.609Z');
+            expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2008-03-09T22:28:00.000Z');
             expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending');
             expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
             expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Testing Angular JS apps with Protractor');
