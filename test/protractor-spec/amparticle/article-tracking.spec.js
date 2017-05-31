@@ -11,7 +11,7 @@ describe('AMP Article:', function() {
 	describe('Tracking on AMP Articles:', function() {
 		describe('Fast Pixel', function() {
 			
-			it ('should have the correct parameters', function() {
+			it('should have the correct parameters', function() {
 				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('ch=business');
 				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('se=lewisdvorkinblog');
 				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('pt=blog');
