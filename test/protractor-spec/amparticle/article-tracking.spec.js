@@ -70,26 +70,17 @@ describe('AMP Article:', function() {
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].pid')).toEqual('50e4a8434240cf5c4b000009');
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].published_at')).toEqual('2015-06-10T14:00:00Z');
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].title')).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever');
-                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].tags.length')).toBe(13);
-                
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].tags.length')).toBe(13);          
 			});
             
         });
         
-        xdescribe('Comscore', function() {
-            var comscorepixel;
+        describe('Comscore', function() {
             
-            beforeAll(function(done) {
-                comscorepixel = $('script[src*="b.scorecardresearch.com/beacon.js"]');
-                comscorepixel.getAttribute('src').then(function(src) {
-                    comscorepixel.srcString = src;
-                    done();
-                });      
-            });
+            it('should pass the right custom parameters', function() {
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[14].innerText))[0].c2')).toEqual('6872493');
+			});
             
-            it('should load the ComScore script', function() {
-                expect(comscorepixel.length > 1);
-            });
         });
         
 	});
