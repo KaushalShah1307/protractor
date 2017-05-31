@@ -69,7 +69,7 @@ describe('AMP Gallery:', function() {
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].categories[0]')).toEqual('business');
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pid')).toEqual('50e4a8434240cf5c4b000009');
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].published_at')).toEqual('2015-08-12T14:00:00Z');
-                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].title')).toEqual('Check if this should be blank?');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].title')).toEqual('Check if this should be blank?'); //replace with the title of the slide once issue has been fixed: https://jira.forbes.com/browse/BUGREPORTING-1709
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].tags.length')).toBe(12);          
 			});
             
