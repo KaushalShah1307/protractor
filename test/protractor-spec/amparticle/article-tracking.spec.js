@@ -1,4 +1,4 @@
-xdescribe('AMP Article:', function() {
+describe('AMP Article:', function() {
 	var currentUrl;
 
 	beforeAll(function(done) {
@@ -36,12 +36,13 @@ xdescribe('AMP Article:', function() {
 			});
 
 			it('should pass the right custom parameters', function() {
-                //var gaData = JSON.parse(JSON.stringify(browser.executeScript('window.document.scripts[15].innerHTML;')));
-                var jsonObject = JSON.parse(JSON.stringify(browser.executeScript('window.document.scripts[15].innerHTML;')));
-                expect(jsonObject).toEqual('asdfasdf');
-                //var gaData = JSON.stringify(JSON.parse(jsonObject));
-                //expect(gaData).toEqual('asdf');
-                pending('Tracking still needs to be worked on!');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].authors[0]')).toEqual('Lewis DVorkin');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].categories[0]')).toEqual('business');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].pid')).toEqual('50e4a8434240cf5c4b000009');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].published_at')).toEqual('2015-06-10T14:00:00Z');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].title')).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].tags.length')).toBe(13);
+                
 			});
 		});
  /*       
