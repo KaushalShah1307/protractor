@@ -9,16 +9,16 @@ describe('AMP Gallery:', function() {
 	});
 
 	describe('Tracking on AMP Galleries:', function() {
-		xdescribe('Fast Pixel', function() {
+		describe('Fast Pixel', function() {
 			
-			it ('should have the correct parameters', function() {
-				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('ch=business');
-				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('se=lewisdvorkinblog');
-				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('pt=blog');
-				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('i=blogAndPostId/blog/post/50-13891');
-				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('au=blogAuthorId/blog/author/609');
-				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('at=individual');
-				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[12].innerText))[0].pageview')).toContain('mb=t');
+			it('should have the correct parameters', function() {
+				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[9].innerText))[0].pageview')).toContain('ch=business');
+				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[9].innerText))[0].pageview')).toContain('se=kurtbadenhausenblog');
+				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[9].innerText))[0].pageview')).toContain('pt=slide');
+				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[9].innerText))[0].pageview')).toContain('i=blogAndSlideId/blog/slide/985-20884');
+				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[9].innerText))[0].pageview')).toContain('au=blogAuthorId/blog/author/36');
+				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[9].innerText))[0].pageview')).toContain('at=individual');
+				expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[9].innerText))[0].pageview')).toContain('mb=t');
 			});
 		});
 
@@ -75,22 +75,22 @@ describe('AMP Gallery:', function() {
             
         });
         
-        xdescribe('Comscore', function() {
+        describe('Comscore', function() {
             
             it('should pass the right custom parameters', function() {
-                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[14].innerText))[0].c2')).toEqual('6872493');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[11].innerText))[0].c2')).toEqual('6872493');
 			});
             
         });
         
-       xdescribe('Chartbeat', function() {
+       describe('Chartbeat', function() {
             
             it('should pass the right custom parameters', function() {
-                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[11].innerText))[0].authors')).toEqual('Lewis DVorkin');
-                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[11].innerText))[0].domain')).toEqual('forbes.com');
-                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[11].innerText))[0].sections')).toEqual('business');
-                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[11].innerText))[0].uid')).toEqual('17493');
-                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[11].innerText))[0].title')).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[8].innerText))[0].authors')).toEqual('Kurt Badenhausen');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[8].innerText))[0].domain')).toEqual('forbes.com');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[8].innerText))[0].sections')).toEqual('business');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[8].innerText))[0].uid')).toEqual('17493');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[8].innerText))[0].title')).toEqual("The World's Highest-Paid Female Athletes 2015 - pg.1");
 			});
             
         });
