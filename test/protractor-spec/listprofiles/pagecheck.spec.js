@@ -127,27 +127,27 @@ describe('List Profile Page Ads:', function() {
     });
     
     it('should have the top ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].V')).toContain('scp=pos%3Dtop'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('scp=pos%3Dtop'); 
     });
     
     it('should have the rec ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].V')).toContain('scp=pos%3Drec'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('scp=pos%3Drec'); 
     });
     
     it('should have the railrec ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].V')).toContain('scp=pos%3Drailrec'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('scp=pos%3Drailrec'); 
     });
     
     it('should have the text ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].V')).toContain('scp=pos%3Dtext'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].T')).toContain('scp=pos%3Dtext'); 
     });
     
     it('should have the loge ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].V')).toContain('scp=pos%3Dloge'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('scp=pos%3Dloge'); 
     });
     
     it('should have the moreon ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].V')).toContain('scp=pos%3Dmoreon'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].T')).toContain('scp=pos%3Dmoreon'); 
     });
     
 });

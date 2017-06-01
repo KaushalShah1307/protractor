@@ -90,15 +90,15 @@ describe('List Profile Page Ads:', function() {
     });
     
     it('should have the mobile ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].V')).toContain('scp=pos%3Dmobile'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('scp=pos%3Dmobile'); 
     });
     
     it('should have the mobilex ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].V')).toContain('scp=pos%3Dmobilex'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('scp=pos%3Dmobilex'); 
     });
     
     it('should have the mobiletext ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].V')).toContain('scp=pos%3Dmobiletext'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('scp=pos%3Dmobiletext'); 
     });
     
 });
