@@ -9,7 +9,7 @@ describe('NG2 Article:', function() {
 	});
 
 	describe('Tracking on Articles:', function() {
-		describe('Fast Pixel', function() {
+		xdescribe('Fast Pixel', function() {
 			var trackingPixel;
 
 			beforeAll(function(done) {
@@ -20,7 +20,7 @@ describe('NG2 Article:', function() {
 				});
 			});
 
-			xit('should have the correct parameters', function() {
+			it('should have the correct parameters', function() {
 				//expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl.replace(browser.baseUrl, "http://www-staging.forbes.com/"));
 				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual(browser.current_page.page_data.type);
 				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual(browser.current_page.page_data.naturalId);

@@ -55,7 +55,7 @@ describe('NG2 Article Checks:', function() {
             });
         });
         
-        xdescribe('Most Popular:', function() {
+        describe('Most Popular:', function() {
             
             it('should get the page', function() {
                 var url = 'https://www.forbes.com/sites/gordonkelly/2017/05/21/apple-leak-iphone-8-price-increase/?view=beta-u';
@@ -87,11 +87,11 @@ describe('NG2 Article Checks:', function() {
             expect(browser.getCurrentUrl()).toContain('/2/');
         });
         
-        xit('should have the continued from indication', function() {
+        it('should have the continued from indication', function() {
             expect(element(by.css('.fs-article>p')).isPresent()).toBe(true); 
         });
         
-        xdescribe('Paginated Page Tracking:', function() {
+        describe('Paginated Page Tracking:', function() {
            
             xdescribe('Google Analytics', function() {
                 var dataLayer;
@@ -134,7 +134,7 @@ describe('NG2 Article Checks:', function() {
                     expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Kaushal Shah'); 
                     expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('Technology'); 
                     expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2014-03-26T21:30:00.000Z'); 
-                    expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
+                    expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000'); 
                     expect(browser.executeScript('return window.__reach_config.tags.length;')).toEqual(3); 
                     expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Link: Building mobile & apps with Angular & Trigger.IO'); 
                     expect(browser.executeScript('return window.__reach_config.ref_url;')).toEqual('value should be passed here once issue has been fixed'); 
@@ -190,7 +190,45 @@ describe('NG2 Article Checks:', function() {
             var leftRailVideo = element(by.css('#brightcove_perform_0_html5_api'));
             expect(browser.isElementPresent(leftRailVideo)).toBe(false);
         });
-    });   
+    });     
+    
+    describe('Brand=IBM & hashtag KV:', function() {
+        
+        it('should get the page', function() {
+            var url = 'https://www.forbes.com/sites/patrickmoorhead/2017/05/25/ibms-new-powerai-features-again-demonstrates-enterprise-ai-leadership/?view=beta-u';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should have brand=IBM as KV pair for ad calls', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('brand%3Dibm');
+        });
+        
+        it('should have hashtag as KV pair for ad calls', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('ht%3DNewTech');
+        });
+    });      
+    
+    describe('Forbes Marketplace Article:', function() {
+        
+        it('should get the page', function() {
+            var url = 'https://www.forbes.com/sites/forbesmarketplace/2017/05/18/forbes-nonprofit-council-members-are-expanding-globally-saving-lives-and-more/?view=beta-u';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should have marketplace logo', function() {
+            var logo = element(by.css('.marketplace-logo'));
+            expect(logo.getText()).toEqual('Marketing,');
+        });
+        
+        it('should have marketplace blurb', function() {
+            var descretion = element.all(by.css('.tag>span')).get(0);
+            var blurb = element.all(by.css('.tag>span')).get(1);
+            expect(descretion.getText()).toEqual('detailed information on Forbes products.');
+            expect(blurb.getText()).toEqual('What is This?');
+        });
+    });  
 
     //globals.generalCheck();
 });
