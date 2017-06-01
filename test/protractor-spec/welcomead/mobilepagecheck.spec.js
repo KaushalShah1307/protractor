@@ -58,15 +58,15 @@ describe('Mobile Welcome Page Ads:', function() {
         });
 
         it('should have temp ad', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].V')).toContain('scp=pos%3Dtemp');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].V')).toContain('sz=2x2%7C3x3%7C4x4%7C5x5');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].V')).toContain('iu=%2F7175%2Ffdcmobile%2Fwelcome');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('scp=pos%3Dtemp');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('sz=2x2%7C3x3%7C4x4%7C5x5');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('iu=%2F7175%2Ffdcmobile%2Fwelcome');
         });
 
         it('should have welcome ad', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].V')).toContain('scp=pos%3Dwelcome');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].V')).toContain('sz=1x1%7C300x250');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].V')).toContain('iu=%2F7175%2Ffdcmobile%2Fwelcome');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('scp=pos%3Dwelcome');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('sz=1x1%7C300x250');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('iu=%2F7175%2Ffdcmobile%2Fwelcome');
         });
 });
 
