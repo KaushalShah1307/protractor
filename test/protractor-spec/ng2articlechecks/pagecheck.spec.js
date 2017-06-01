@@ -176,6 +176,20 @@ describe('NG2 Article Checks:', function() {
             var leftRailVideo = element.all(by.css('.vjs-control-text')).get(3);
             expect(leftRailVideo.getText()).toEqual('Unmute');
         });
+    });  
+    
+    describe('Video on Swimlane Article:', function() {
+        
+        it('should get the page', function() {
+            var url = 'https://www.forbes.com/sites/jimmyrohampton/2017/05/26/is-brain-machine-interface-the-future-of-social-media/?view=beta-u&ss=nostream-one';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should not have the left rail video', function() {
+            var leftRailVideo = element(by.css('#brightcove_perform_0_html5_api'));
+            expect(browser.isElementPresent(leftRailVideo)).toBe(false);
+        });
     });   
 
     //globals.generalCheck();

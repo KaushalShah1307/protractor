@@ -21,6 +21,7 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('scp=pos%3Dntv-rail');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('sz=320x50%7C2x3%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('bbgterm%3Dfalse');
     });
     
     it('should have ntv-rail-5 ad', function() {
@@ -32,6 +33,7 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].T')).toContain('scp=pos%3Dntv-rail-2');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].T')).toContain('sz=320x50%7C2x3%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('bbgterm%3Dfalse');
     });
     
     it('should have ntv-rail-8 ad', function() {
@@ -43,6 +45,7 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('scp=pos%3Dntv-rail');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('sz=320x50%7C2x3%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('bbgterm%3Dfalse');
     });
     
     it('should have spon-logo ad', function() {
@@ -50,6 +53,7 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('scp=pos%3Dspon-logo');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('sz=120x40%7C300x170%7C300x100%7C1x1');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('bbgterm%3Dfalse');
     });
     
     it('should have top ad', function() {
@@ -57,8 +61,9 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["article-0-top"])[2]')).toBeGreaterThanOrEqual(1);
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["article-0-top"])[3]')).toBeGreaterThanOrEqual(1);
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].T')).toContain('scp=pos%3Dtop');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].T')).toContain('sz=728x90%7C970x250%7C970x90%7C970x66%7C640x360%7C1x1');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].T')).toContain('sz=320x50%7C728x90%7C970x250%7C970x90%7C970x66%7C640x360%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('bbgterm%3Dfalse');
     });
     
     it('should have loge ad', function() {
@@ -68,6 +73,7 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].T')).toContain('scp=pos%3Dloge');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].T')).toContain('sz=300x600%7C300x250%7C1x1');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('bbgterm%3Dfalse');
     });
     
     it('should have rec ad', function() {
@@ -77,6 +83,7 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].T')).toContain('scp=pos%3Drec');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].T')).toContain('sz=300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('bbgterm%3Dfalse');
     });
     
     it('should have recx-1 ad', function() {
@@ -86,6 +93,7 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].T')).toContain('scp=pos%3Drecx%26recx%3D1');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].T')).toContain('sz=300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('bbgterm%3Dfalse');
     });
     
     it('should have recx-2 ad', function() {
@@ -95,6 +103,7 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].T')).toContain('scp=pos%3Drecx%26recx%3D2');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].T')).toContain('sz=300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('bbgterm%3Dfalse');
     });
     
     it('should have inread ad', function() {
@@ -106,6 +115,7 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('scp=pos%3Dinread');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('sz=1x1');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('bbgterm%3Dfalse');
     });
  
 });
