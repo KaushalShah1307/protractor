@@ -1,17 +1,7 @@
 describe('NG2 BrandVoice Article Ads:', function() {
    
-    it('should have the medianet unit', function() {
-        //expect(element(by.id('_mN_dy_289199738')).isPresent()).toBe(false);      
-        expect(element(by.id('_mN_dy_289199738')).isDisplayed()).toBe(false);      
-    });
-    
-    it('should have the revcontent unit', function() {
-        //expect(element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first().isPresent()).toBe(true); 
-        expect(element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first().isDisplayed()).toBe(true); 
-    });
-    
     it('should have all the ads', function() {
-        expect(browser.executeScript('return window.Object.keys(external_services.ad_slots).length')).toBe(5); 
+        expect(browser.executeScript('return window.Object.keys(external_services.ad_slots).length')).toBeGreaterThanOrEqual(4); 
     });
     
     it('should have loge ad', function() {
@@ -59,6 +49,16 @@ describe('NG2 BrandVoice Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('scp=pos%3Drecx%26recx%3D1');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('sz=300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
+    });
+    
+    it('should have the medianet unit', function() {
+        var mnetUnit = element(by.id('_mN_dy_289199738'));
+        expect(browser.isElementPresent(mnetUnit)).toBe(false);     
+    });
+    
+    it('should have the revcontent unit', function() {
+        //expect(element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first().isPresent()).toBe(true); 
+        expect(element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first().isDisplayed()).toBe(true); 
     });
 
     
