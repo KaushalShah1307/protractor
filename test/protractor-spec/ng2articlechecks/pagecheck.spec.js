@@ -228,6 +228,11 @@ describe('NG2 Article Checks:', function() {
             expect(descretion.getText()).toEqual('detailed information on Forbes products.');
             expect(blurb.getText()).toEqual('What is This?');
         });
+        
+        it('should have contributor legal disclaimer', function() {
+            var legalDisclaimer = element(by.css('.legal-disclaimer'));
+            expect(legalDisclaimer.getText()).toEqual('Opinions expressed by Forbes Contributors are their own.');
+        });
     });  
 
     //globals.generalCheck();
