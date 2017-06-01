@@ -21,7 +21,7 @@ describe('AMP Gallery:', function() {
     });
     
     it('should have all the ads', function() {
-        expect(browser.executeScript('return window.window.ampAdSlotIdCounter;')).toEqual(3);
+        expect(browser.executeScript('return window.window.ampAdSlotIdCounter;')).toEqual(13);
     });
     
     it('should swipe thru the slides', function() {
