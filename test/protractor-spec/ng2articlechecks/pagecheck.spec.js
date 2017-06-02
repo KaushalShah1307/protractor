@@ -205,10 +205,10 @@ describe('NG2 Article Checks:', function() {
         });
     });     
     
-    describe('Brand=IBM & hashtag KV:', function() {
+    describe('Brand=IBM, co=IBM & hashtag KV:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/patrickmoorhead/2017/05/25/ibms-new-powerai-features-again-demonstrates-enterprise-ai-leadership/?view=beta-u';
+            var url = 'https://www.forbes.com/sites/robertszczerba/2017/05/31/from-aging-to-autism-ibm-is-eliminating-barriers-to-technology/?view=beta-u';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -217,8 +217,12 @@ describe('NG2 Article Checks:', function() {
             expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('brand%3Dibm');
         });
         
+        it('should have co=IBM as KV pair for ad calls', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('co%3Dibm');
+        });
+        
         it('should have hashtag as KV pair for ad calls', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('ht%3DNewTech');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('ht%3DChangeTheWorld');
         });
     });      
     
