@@ -73,7 +73,7 @@ describe('NG2 Article Checks:', function() {
         });
     });
         
-    xdescribe('Article Pagination:', function() {
+    describe('Article Pagination:', function() {
       
         it('should get the page', function() {
             var url = 'https://www.forbes.com/sites/qa/2014/03/26/link-building-mobile-apps-with-angular-and-trigger-io/?view=beta-u';
@@ -190,6 +190,19 @@ describe('NG2 Article Checks:', function() {
             var leftRailVideo = element(by.css('#brightcove_perform_0_html5_api'));
             expect(browser.isElementPresent(leftRailVideo)).toBe(false);
         });
+    });  
+    
+    describe('Amazon slots:', function() {
+        
+        it('should get the page', function() {
+            var url = 'https://www.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?view=beta-u&amzn_debug_mode=1';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should have amzn slots', function() {
+            expect(browser.executeScript('return window.Object.values(window.fbsads.amazonBiddingService.amazonAds.ads).length')).toBeGreaterThan(0);
+        });
     });     
     
     describe('Brand=IBM & hashtag KV:', function() {
@@ -233,7 +246,7 @@ describe('NG2 Article Checks:', function() {
             var legalDisclaimer = element(by.css('.legal-disclaimer'));
             expect(legalDisclaimer.getText()).toEqual('Opinions expressed by Forbes Contributors are their own.');
         });
-    });  
+    }); 
 
     //globals.generalCheck();
 });
