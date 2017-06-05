@@ -195,6 +195,25 @@ describe('NG2 Article Checks:', function() {
         });
     });  
     
+    describe('Top autoplay video Article:', function() {
+        
+        it('should get the page', function() {
+            var url = 'https://www.forbes.com/sites/zackomalleygreenburg/2015/02/05/red-baraat-live-from-the-forbes-newsroom/?view=beta-u';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should have video ad with pos=vid-iab', function() {
+            var topVideo = element(by.css('.video-container.sidebar-autoplay-video.ratio16x9'));
+            expect(topVideo.getAttribute('key-value-string')).toContain('pos=vid-iab');
+        });
+        
+        it('should have correct video ID', function() {
+            var topVideo = element(by.css('.video-container.sidebar-autoplay-video.ratio16x9'));
+            expect(topVideo.getAttribute('player-id')).toEqual('4kXWOFbfYx');
+        });
+    });  
+    
     describe('Video on Swimlane Article:', function() {
         
         it('should get the page', function() {
