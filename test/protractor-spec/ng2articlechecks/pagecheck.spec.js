@@ -46,8 +46,8 @@ describe('NG2 Article Checks:', function() {
             });
 
             it('should have the Women at Forbes badge', function() {
-                var womenAtForbes = element(by.css('.women-at-forbes'));
-                var womenAtForbesImg = element(by.css('.women-at-forbes>img'));
+                var womenAtForbes = element.all(by.css('.women-at-forbes')).first();
+                var womenAtForbesImg = element.all(by.css('.women-at-forbes>img')).first();
                 expect(womenAtForbes.isPresent()).toBe(true);
                 expect(womenAtForbes.getAttribute('href')).toEqual('https://www.forbes.com/women-at-forbes/'); 
                 expect(womenAtForbesImg.getAttribute('src')).toEqual('https://i.forbesimg.com/special-report/2016/women-at-forbes/img/women-at-forbes_logo.svg');
