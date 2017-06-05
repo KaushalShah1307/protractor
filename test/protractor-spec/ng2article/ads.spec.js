@@ -54,7 +54,7 @@ describe('NG2 Article Ads:', function() {
     it('should have spon-logo ad', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["spon-logo"])[4]')).toEqual('spon-logo');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('scp=pos%3Dspon-logo');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('sz=120x40%7C300x170%7C300x100%7C1x1');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('sz=320x50%7C120x40%7C300x170%7C300x100%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].La.length')).toBe(5);
@@ -78,7 +78,7 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-loge"])[2]')).toBeGreaterThanOrEqual(1);
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-loge"])[3]')).toBeGreaterThanOrEqual(1);
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].T')).toContain('scp=pos%3Dloge');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].T')).toContain('sz=300x600%7C300x250%7C1x1');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].T')).toContain('sz=320x50%7C450x254%7C336x280%7C336x850%7C300x600%7C300x250%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].T')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].La.length')).toBe(7);
@@ -89,7 +89,7 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-rec"])[2]')).toBeGreaterThanOrEqual(1);
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-rec"])[3]')).toBeGreaterThanOrEqual(1);
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].T')).toContain('scp=pos%3Drec');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].T')).toContain('sz=300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].T')).toContain('sz=320x50%7C300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].T')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].La.length')).toBe(7);
@@ -100,7 +100,7 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-recx-1"])[2]')).toBeGreaterThanOrEqual(1);
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-recx-1"])[3]')).toBeGreaterThanOrEqual(1);
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].T')).toContain('scp=pos%3Drecx%26recx%3D1');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].T')).toContain('sz=300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].T')).toContain('sz=320x50%7C300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].T')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].La.length')).toBe(7);
@@ -111,7 +111,7 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-recx-2"])[2]')).toBeGreaterThanOrEqual(1);
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-recx-2"])[3]')).toBeGreaterThanOrEqual(1);
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].T')).toContain('scp=pos%3Drecx%26recx%3D2');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].T')).toContain('sz=300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].T')).toContain('sz=320x50%7C300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].T')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].La.length')).toBe(7);
@@ -124,7 +124,7 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["inread"])[0]')).not.toBeUndefined();
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["inread"])[1]')).not.toBeUndefined();
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('scp=pos%3Dinread');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('sz=1x1');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('sz=320x50%7C600x575%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].La.length')).toBe(3);
