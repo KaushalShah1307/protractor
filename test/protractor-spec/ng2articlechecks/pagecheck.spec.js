@@ -176,6 +176,23 @@ describe('NG2 Article Checks:', function() {
             var leftRailVideo = element.all(by.css('.vjs-control-text')).get(3);
             expect(leftRailVideo.getText()).toEqual('Unmute');
         });
+        
+        it('should have video ad with pos=vid-lr', function() {
+            var leftRailVideo = element(by.css('.video-placeholder>fbs-video'));
+            expect(leftRailVideo.getAttribute('key-value-string')).toContain('pos=vid-lr');
+            expect(leftRailVideo.getAttribute('key-value-string')).toContain('vw=400plus');
+            expect(leftRailVideo.getAttribute('key-value-string')).toContain('hashtag=LikeABoss');
+        });
+        
+        it('should have correct video ID', function() {
+            var leftRailVideo = element(by.css('.video-placeholder>fbs-video'));
+            expect(leftRailVideo.getAttribute('player-id')).toEqual('S1EBSbDn');
+        });
+        
+        it('should autoplay video', function() {
+            var leftRailVideo = element(by.css('.video-placeholder>fbs-video'));
+            expect(leftRailVideo.getAttribute('autoplay')).toEqual('true');
+        });
     });  
     
     describe('Video on Swimlane Article:', function() {
