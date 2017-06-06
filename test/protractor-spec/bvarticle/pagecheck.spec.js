@@ -40,6 +40,6 @@ describe('BrandVoice Article', function() {
         expect(element(by.className('name-desc')).getText()).toEqual('IBM Contributor, IBM'); 
     });
 */    
-	globals.generalCheck();
+	//globals.generalCheck();
 	globals.checkAds(bvArticlePage.adsService);
 });

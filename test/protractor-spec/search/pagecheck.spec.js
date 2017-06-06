@@ -23,7 +23,7 @@ describe('Search:', function() {
        expect(element.all(by.css('.search-hashtag.ng-binding.ng-scope')).first().getText()).toEqual('#TrumpsAmerica');
     });
 
-	globals.generalCheck();
+	//globals.generalCheck();
 
 	globals.checkAds(searchPage.adsService);
 });

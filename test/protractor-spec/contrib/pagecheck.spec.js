@@ -45,7 +45,7 @@ describe('ContribHP:', function() {
         element(by.className('close-button')).click();
     });
     
-	globals.generalCheck();
+	//globals.generalCheck();
 
 	globals.checkAds(contribPage.adsService);
 });

@@ -35,6 +35,6 @@ describe('Article:', function() {
         expect(element(by.className('icon icon-staff-verified'))).toBeTruthy(); 
     });
     
-	globals.generalCheck();
+	//globals.generalCheck();
 	globals.checkAds(articlePage.adsService);
 });

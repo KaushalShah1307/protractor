@@ -14,7 +14,7 @@ describe('CSF:', function() {
         expect(element(by.tagName('footer')).isPresent()).toBe(true); 
     });
 
-	globals.generalCheck();
+	//globals.generalCheck();
 
 	globals.checkAds(csfPage.adsService);
 });

@@ -30,7 +30,7 @@ describe('CSR:', function() {
        expect(loadmoreItems.count()) > 11;
     });
 
-	globals.generalCheck();
+	//globals.generalCheck();
 
 	globals.checkAds(csrPage.adsService);
 });

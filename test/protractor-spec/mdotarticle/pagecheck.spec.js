@@ -80,7 +80,7 @@ describe('Mobile Article - Card View (MDot):', function() {
           .perform(); 
     });
     
-    globals.generalCheck();
+    //globals.generalCheck();
     
 });
 
@@ -275,7 +275,7 @@ describe('BrandVoice Mobile Article (MDot):', function() {
 
     });
     
-    globals.generalCheck();
+    //globals.generalCheck();
     
 });
 
@@ -511,7 +511,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         });
     });
     
-    globals.generalCheck();
+    //globals.generalCheck();
     
 });
 
@@ -592,5 +592,30 @@ describe('Tracking on Long-Scroll Mobile Article (MDot):', function() {
 				expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual('https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/');
 			});
         });
+    
+});
+
+describe('Long-Scroll Mobile Article (MDot):', function() {
+   
+    describe('Amazon ads:', function() {
+       
+        it('should get the page', function() {
+            var url = 'https://m.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?s=trending&amzn_debug_mode=1';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+    
+        it('should click and expand the cover card', function() {
+            element(by.className('cover__footer-scrim')).click();
+            browser.sleep(1000).then(function() {
+                expect(browser.getCurrentUrl()).toContain('?c=0');
+            });
+        });
+        
+        it('should have amazon ads', function() {
+            expect(browser.executeScript('return window.Object.values(window.fbsads.amazonBiddingService.amazonAds.ads).length')).toBeGreaterThan(0); 
+        });
+        
+    });
     
 });
