@@ -18,6 +18,12 @@ describe('NG2 BrandVoice Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('channel%3Dtech%26');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('section%3Dtech%253Athetechlife');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('brand=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('swimlane=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('login=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('fl=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('src=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('fvid=');
     });
     
     it('should have spon-logo ad', function() {
@@ -30,6 +36,12 @@ describe('NG2 BrandVoice Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].T')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].T')).toContain('channel%3Dtech%26');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].T')).toContain('section%3Dtech%253Athetechlife');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('brand=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('swimlane=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('login=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('fl=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('src=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('fvid=');
     });
     
     it('should have top ad', function() {
@@ -44,6 +56,12 @@ describe('NG2 BrandVoice Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('channel%3Dtech%26');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('section%3Dtech%253Athetechlife');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('brand=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('swimlane=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('login=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('fl=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('src=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('fvid=');
     });
     
     it('should have rec ad', function() {
@@ -58,6 +76,12 @@ describe('NG2 BrandVoice Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('channel%3Dtech%26');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('section%3Dtech%253Athetechlife');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('brand=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('swimlane=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('login=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('fl=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('src=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('fvid=');
     });
     
     it('should have recx-1 ad', function() {
@@ -72,6 +96,12 @@ describe('NG2 BrandVoice Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('channel%3Dtech%26');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('section%3Dtech%253Athetechlife');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('brand=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('swimlane=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('login=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('fl=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('src=');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('fvid=');
     });
     
     it('should have the medianet unit', function() {
