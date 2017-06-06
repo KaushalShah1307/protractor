@@ -35,6 +35,10 @@ describe('BrandVoice Article', function() {
         expect(element(by.className('brandvoice-logo')).isDisplayed()).toBeTruthy(); 
     });
     
+    it('should have the correct zone for ads', function() {
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('article-d&'); 
+    });
+    
     // this case checks for the author name on BV.
 /*    it('should have the BV Contrib name', function() {
         expect(element(by.className('name-desc')).getText()).toEqual('IBM Contributor, IBM'); 
