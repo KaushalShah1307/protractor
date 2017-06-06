@@ -169,8 +169,6 @@ describe('NG2 Article Checks:', function() {
         });
 
         it('should not have the revcontent unit', function() {
-            //expect(element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first().isPresent()).toBe(true); 
-            //expect(element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first().isDisplayed()).toBe(true);
             var revContent = element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first();
             expect(browser.isElementPresent(revContent)).toBe(false);
         });

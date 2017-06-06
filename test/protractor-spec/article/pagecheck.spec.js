@@ -35,6 +35,10 @@ describe('Article:', function() {
         expect(element(by.className('icon icon-staff-verified'))).toBeTruthy(); 
     });
     
+    it('should have the correct zone for ads', function() {
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('article-d&'); 
+    });
+    
 	//globals.generalCheck();
 	globals.checkAds(articlePage.adsService);
 });

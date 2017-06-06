@@ -87,12 +87,12 @@ exports.config = {
 			exclude: [
 				'test/protractor-spec/article/article-leftrail.spec.js'
 			]
-		}
+		} 
 		 {
 		 	browserName: 'firefox',
 		 	logName: 'Desktop Firefox',
             marionette: true
-		 },*/
+		 }, */
 	],
 	suites: {
 		article: [
@@ -194,8 +194,8 @@ exports.config = {
 	},
 	specs: [
 		'test/protractor-spec/global.spec.js',
-//		'test/protractor-spec/article/*pagecheck.spec.js',
-//		'test/protractor-spec/article/**/*.spec.js',
+		'test/protractor-spec/article/*pagecheck.spec.js',
+		'test/protractor-spec/article/**/*.spec.js',
 //		'test/protractor-spec/contrib/*pagecheck.spec.js',
 //		'test/protractor-spec/contrib/**/*.spec.js',
 //		'test/protractor-spec/csf/*pagecheck.spec.js',
@@ -230,8 +230,8 @@ exports.config = {
 //        'test/protractor-spec/ng2article/**/*.spec.js',
 //        'test/protractor-spec/ng2brandvoicearticle/*pagecheck.spec.js',
 //        'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
-        'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
-        'test/protractor-spec/ng2articlechecks/**/*.spec.js'
+//        'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
+//        'test/protractor-spec/ng2articlechecks/**/*.spec.js'
 //        'test/protractor-spec/welcomead/**/*.spec.js'
 	],
 	onPrepare: function() {

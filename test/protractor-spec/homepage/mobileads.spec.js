@@ -8,18 +8,18 @@ describe('Mobile Ads:', function() {
     it('should have ntv-mobhome ad', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-home-1-0"])[2]')).toBe(3); 
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-home-1-0"])[3]')).toBe(2);
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('prev_scp=pos%3Dntv-mobhome');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('prev_iu_szs=320x50%7C2x3%7C1x1&fluid=height');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('iu_parts=7175%2Cfdcmobile%2Chome');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('prev_scp=pos%3Dntv-mobhome');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('prev_iu_szs=320x50%7C2x3%7C1x1&fluid=height');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('iu_parts=7175%2Cfdcmobile%2Chome');
     });
  
     
     it('should have mobile ad', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["leaderboard"])[2]')).toBeGreaterThanOrEqual(1); 
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["leaderboard"])[3]')).toBeGreaterThanOrEqual(1);
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('prev_scp=pos%3Dmobile');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('prev_iu_szs=320x50%7C300x50%7C320x50%7C1x1&fluid=height');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('iu_parts=7175%2Cfdcmobile%2Chome');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('prev_scp=pos%3Dmobile');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('prev_iu_szs=320x50%7C300x50%7C320x50%7C1x1&fluid=height');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('iu_parts=7175%2Cfdcmobile%2Chome');
     });
  
     
