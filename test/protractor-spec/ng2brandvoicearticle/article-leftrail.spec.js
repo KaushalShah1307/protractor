@@ -8,6 +8,7 @@ describe('NG2 BrandVoice Article:', function() {
 			commentsTrigger = $('.article-comments');
 			commentsPanel = $('.article-sidebar-panel.article-comments-panel');
 			loginButton = element(by.css('.login-text.fs-text-s'));
+            leftRail = element.all(by.css('.trending-expanded.slotted-swimlaned')).get(0);
 		});
 
 		// (http://jira.forbes.com/browse/BUGREPORTING-1051)
@@ -33,6 +34,11 @@ describe('NG2 BrandVoice Article:', function() {
             logOut.click();
             expect(element(by.css('.navbar-login>login-form>header>h2')).getText()).toEqual('Log in');
             loginButton.click();
-        });        
+        });
+        
+        it('should have smaller left rail', function() {
+            expect(leftRail.isDisplayed()).toBe(true);
+            expect(leftRail.getCssValue('width')).toEqual('250px');
+        });
 	});
 });
