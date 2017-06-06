@@ -619,32 +619,3 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
     });
     
 });
-
-describe('Long-Scroll Mobile Article (MDot):', function() {
-   
-    describe('Medianet Chanels & Sections:', function() {
-       
-        it('should get the page', function() {
-            var url = 'https://m.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?s=trending';
-            browser.get(url);
-            globals.pagesChecked.push(url);
-        });
-    
-        it('should click and expand the cover card', function() {
-            element(by.className('cover__footer-scrim')).click();
-            browser.sleep(1000).then(function() {
-                expect(browser.getCurrentUrl()).toContain('?c=0');
-            });
-        });
-        
-        it('should have channels', function() {
-            expect(browser.executeScript('return window.fbsads.medianetService.data.channel')).toEqual('business,leadership,entrepreneurs,tech'); 
-        });
-        
-        it('should have sections', function() {
-            expect(browser.executeScript('return window.fbsads.medianetService.data.section')).toEqual('business:media&entertainment,tech:socialmedia,entrepreneurs:management');  
-        });
-        
-    });
-    
-});
