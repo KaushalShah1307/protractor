@@ -44,5 +44,5 @@ describe('NG2 Article:', function() {
         expect(browser.executeScript('return window.scrollTo(0,document.body.scrollHeight=5445)')).toBeNull();
     });
     
-	globals.generalCheck();
+	//globals.generalCheck();
 });
