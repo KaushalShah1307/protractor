@@ -619,3 +619,28 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
     });
     
 });
+
+describe('Long-Scroll Mobile Article (MDot):', function() {
+   
+    describe('MediaNet Header Bidding:', function() {
+       
+        it('should get the page', function() {
+            var url = 'https://m.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?s=trending&?force_hbtest=1';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+    
+        it('should click and expand the cover card', function() {
+            element(by.className('cover__footer-scrim')).click();
+            browser.sleep(1000).then(function() {
+                expect(browser.getCurrentUrl()).toContain('?c=0');
+            });
+        });
+        
+        it('should have mnet KV on ads', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('mnetPageID%3D0'); 
+        });
+        
+    });
+    
+});
