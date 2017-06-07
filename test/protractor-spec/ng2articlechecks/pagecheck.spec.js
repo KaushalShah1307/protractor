@@ -296,6 +296,23 @@ describe('NG2 Article Checks:', function() {
             var legalDisclaimer = element(by.css('.legal-disclaimer'));
             expect(legalDisclaimer.getText()).toEqual('Opinions expressed by Forbes Contributors are their own.');
         });
+    });      
+    
+    describe('Template Type: noads:', function() {
+        
+        it('should get the page', function() {
+            var url = 'https://www.forbes.com/sites/careers-at-forbes/2017/05/18/forbes-career-opportunity-junior-analyst-programmatic-optimization/?view=beta-u';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should have templatetype: noads', function() {
+            expect(browser.executeScript('return window.Object.values(window.dataLayer[0])[8]')).toEqual('blog:noads');
+        });
+        
+        it('should not have ads', function() {
+            expect(browser.executeScript('return window.Object.values(external_services.ad_slots).length')).toBe(3); 
+        });
     }); 
 
     //globals.generalCheck();
