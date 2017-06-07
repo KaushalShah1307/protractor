@@ -38,8 +38,8 @@ describe('Homepage:', function() {
 			});
 
 			it('should pass the right custom parameters', function() {
-                //expect((dataLayer.DFPSite).toEqual('fdc.forbes') || (dataLayer.DFPSite).toEqual('fdcmobile'));
-                //expect(dataLayer.DFPSite).toBe('fdc.forbes' || 'fdcmobile');
+                var sites = ['fdcmobile', 'fdc.forbes'];
+                expect(sites).toContain(dataLayer.DFPSite);
                 expect(dataLayer.DFPZone).toEqual('home');
 				expect(dataLayer.channel).toEqual('home');
 				expect(dataLayer.pageType).toEqual('csf');

@@ -42,7 +42,8 @@ describe('Search:', function() {
 			});
 
 			it('should pass the right custom parameters', function() {
-                //(expect(dataLayer.DFPSite).toMatch('fdc.forbes' || 'fdcmobile'));
+                var sites = ['fdcmobile', 'fdc.forbes'];
+                expect(sites).toContain(dataLayer.DFPSite);
                 expect(dataLayer.DFPZone).toEqual('search');
 				expect(dataLayer.channel).toEqual('home');
                 expect(dataLayer.section).toEqual('searchhome');

@@ -36,7 +36,8 @@ describe('CSF:', function() {
 			});
 
 			it('should pass the right custom parameters', function() {
-                //(expect(dataLayer.DFPSite).toMatch('fdc.forbes' || 'fdcmobile'));
+                var sites = ['fdcmobile', 'fdc.forbes'];
+                expect(sites).toContain(dataLayer.DFPSite);
                 expect(dataLayer.DFPZone).toEqual('csf');
 				expect(dataLayer.channel).toEqual('business');
                 expect(dataLayer.section).toEqual('none');
