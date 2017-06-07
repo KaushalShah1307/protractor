@@ -260,15 +260,15 @@ describe('NG2 Article Checks:', function() {
         });
         
         it('should have brand=IBM as KV pair for ad calls', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('brand%3Dibm');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].X')).toContain('brand%3Dibm');
         });
         
         it('should have co=IBM as KV pair for ad calls', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('co%3Dibm');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].X')).toContain('co%3Dibm');
         });
         
         it('should have hashtag as KV pair for ad calls', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('ht%3DChangeTheWorld');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].X')).toContain('ht%3DChangeTheWorld');
         });
     });      
     
@@ -312,6 +312,43 @@ describe('NG2 Article Checks:', function() {
         
         it('should not have ads', function() {
             expect(browser.executeScript('return window.Object.values(external_services.ad_slots).length')).toBe(3); 
+        });
+    
+        it('should not have the medianet unit', function() {
+            var mnetUnit = element(by.id('_mN_dy_289199738'));
+            expect(browser.isElementPresent(mnetUnit)).toBe(false);     
+        });
+
+        it('should not have the revcontent unit', function() {
+            var revContent = element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first();
+            expect(browser.isElementPresent(revContent)).toBe(false);
+        });
+    });       
+    
+    describe('Template Type: takeover:', function() {
+        
+        it('should get the page', function() {
+            var url = 'https://www.forbes.com/sites/nextavenue/2017/05/30/are-you-preventing-yourself-from-having-your-dream-retirement/?view=beta-u';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should have templatetype: noads', function() {
+            expect(browser.executeScript('return window.Object.values(window.dataLayer[0])[8]')).toEqual('blog:takeover');
+        });
+        
+        it('should not have ads', function() {
+            expect(browser.executeScript('return window.Object.values(external_services.ad_slots).length')).toBe(5); 
+        });
+    
+        it('should not have the medianet unit', function() {
+            var mnetUnit = element(by.id('_mN_dy_289199738'));
+            expect(browser.isElementPresent(mnetUnit)).toBe(false);     
+        });
+
+        it('should not have the revcontent unit', function() {
+            var revContent = element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first();
+            expect(browser.isElementPresent(revContent)).toBe(false);
         });
     }); 
 
