@@ -40,6 +40,11 @@ describe('NG2 Article:', function() {
         expect(element(by.className('icon icon-staff-verified')).isPresent()).toBe(true); 
     });
     
+    it('captions should be italics', function() {
+        var captions = element.all(by.css('.wp-caption-text')).first();
+        expect(captions.getCssValue('font-style')).toEqual('italic');
+    });
+    
     it('should scroll to the next article', function() {
         expect(browser.executeScript('return window.scrollTo(0,document.body.scrollHeight=5445)')).toBeNull();
     });

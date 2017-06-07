@@ -35,6 +35,11 @@ describe('Article:', function() {
         expect(element(by.className('icon icon-staff-verified'))).toBeTruthy(); 
     });
     
+    it('captions should be italics', function() {
+        var captions = element.all(by.css('.wp-caption-text')).first();
+        expect(captions.getCssValue('font-style')).toEqual('italic');
+    });
+    
     it('should have the correct zone for ads', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('article-d&'); 
     });
