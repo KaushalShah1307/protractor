@@ -42,7 +42,8 @@ describe('BrandVoice Article', function() {
 			});
 
 			it('should pass the right custom parameters', function() {
-                //expect((dataLayer.DFPSite).toEqual('fdc.forbes') || (dataLayer.DFPSite).toEqual('fdcmobile'));
+                var sites = ['fdcmobile', 'fdc.forbes'];
+                expect(sites).toContain(dataLayer.DFPSite);
                 expect(dataLayer.DFPZone).toEqual('article-d');
 				expect(dataLayer.author).toEqual('IBM Contributor');
 				expect(dataLayer.channel).toEqual('leadership');
@@ -58,14 +59,15 @@ describe('BrandVoice Article', function() {
 				expect(dataLayer.contribActive).toEqual('true');
 				expect(dataLayer.contribDivision).toEqual('none');
 				expect(dataLayer.contribType).toEqual('AdVoice');
-                expect(dataLayer.doNotPaginate).toEqual('none');
                 expect(dataLayer.naturalID).toEqual('blogAndPostId/blog/post/2729-3427');
                 expect(dataLayer.paragraphs).toEqual('17');
                 expect(dataLayer.primaryChannel).toEqual('Leadership');
                 expect(dataLayer.primarySection).toEqual('none');
                 expect(dataLayer.publishHour).toEqual('09');
                 expect(dataLayer.published).toEqual('2017-03-30');
-                expect(dataLayer.trendingHashtags).toEqual('none'); 
+                expect(dataLayer.trendingHashtags).toEqual('none');
+                var paginate = ['none', 'donotpaginate'];
+                expect(paginate).toContain(dataLayer.doNotPaginate);
 			});
 		});
         

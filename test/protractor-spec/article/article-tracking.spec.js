@@ -41,8 +41,8 @@ describe('Article:', function() {
 			});
 
 			it('should pass the right custom parameters', function() {
-				// expect(dataLayer.brandvoice).toBe(null);
-                //expect((dataLayer.DFPSite).toEqual('fdc.forbes') || (dataLayer.DFPSite).toEqual('fdcmobile'));
+				var sites = ['fdcmobile', 'fdc.forbes'];
+                expect(sites).toContain(dataLayer.DFPSite);
                 expect(dataLayer.DFPZone).toEqual('article-d');
 				expect(dataLayer.author).toEqual('Lewis DVorkin');
 				expect(dataLayer.channel).toEqual('business');
@@ -50,9 +50,8 @@ describe('Article:', function() {
                 expect(dataLayer.hashtags).toEqual('none');
 				expect(dataLayer.slot).toEqual('none');
 				expect(dataLayer.site).toEqual('lewisdvorkin');
-                //expect(dataLayer.doNotPaginate).toEqual('donotpaginate');
-				
-
+                var paginate = ['none', 'donotpaginate'];
+                expect(paginate).toContain(dataLayer.doNotPaginate);
 			});
 		});
         
