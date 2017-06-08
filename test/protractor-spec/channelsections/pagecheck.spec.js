@@ -29,6 +29,16 @@ describe('CSR:', function() {
        var loadmoreItems = element.all(by.css('ul.edittools-stream li'));
        expect(loadmoreItems.count()) > 11;
     });
+    
+    it('should have mnet unit hardcoded on Mobile-Only', function() {
+        var isMobile = browser.executeScript("return window.matchMedia('only screen and (max-width: 760px)').matches");
+        if (isMobile===true) {
+           var mnet = element(by.id('_mN_dy_583598065'));
+           expect(browser.isElementPresent(mnet)).toBe(true);
+        } else if (isMobile===false) {
+           expect(browser.isElementPresent(mnet)).toBe(true);
+        }
+    });
 
 	//globals.generalCheck();
 
