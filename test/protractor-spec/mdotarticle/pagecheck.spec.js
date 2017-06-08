@@ -242,35 +242,35 @@ describe('BrandVoice Mobile Article (MDot):', function() {
     describe('Ads:', function() {
        
         it('should have the mobile ad', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].X')).toContain('scp=pos%3Dmobile');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].X')).toContain('sz=320x50%7C320x50%7C300x50%7C360x180%7C1x1&fluid=height');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].X')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].X')).toContain('specialSlot%3Dqualityassuranceslot');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].X')).toContain('channel%3D%26section%3D%26');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('scp=pos%3Dmobile');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('sz=320x50%7C320x50%7C300x50%7C360x180%7C1x1&fluid=height');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('specialSlot%3Dqualityassuranceslot');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('channel%3D%26section%3D%26');
         });
 
         it('should have the mobilex-1 ad', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].X')).toContain('scp=pos%3Dmobilex%26mobilex%3D1');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].X')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].X')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].X')).toContain('specialSlot%3Dqualityassuranceslot');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].X')).toContain('channel%3D%26section%3D%26');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('scp=pos%3Dmobilex%26mobilex%3D1');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('specialSlot%3Dqualityassuranceslot');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('channel%3D%26section%3D%26');
         });
 
         it('should have the mobilex-2 ad', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].X')).toContain('scp=pos%3Dmobilex%26mobilex%3D2');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].X')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].X')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].X')).toContain('specialSlot%3Dqualityassuranceslot');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].X')).toContain('channel%3D%26section%3D%26');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('scp=pos%3Dmobilex%26mobilex%3D2');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('specialSlot%3Dqualityassuranceslot');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('channel%3D%26section%3D%26');
         });
 
         it('should have the mob-stream ad', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].X')).toContain('cp=pos%3Dmob-stream');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].X')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].X')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].X')).toContain('specialSlot%3Dqualityassuranceslot');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].X')).toContain('channel%3D%26section%3D%26');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('cp=pos%3Dmob-stream');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('specialSlot%3Dqualityassuranceslot');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('channel%3D%26section%3D%26');
         });
 
     });
@@ -433,44 +433,44 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
     describe('should have ads:', function() {
        
         it('should have the NTV MDot ad', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].X')).toContain('scp=pos%3Dntv-mdot');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].X')).toContain('sz=2x3%7C1x1');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].X')).toContain('strnativekey%3DpxJ5tFGEXnANFtbFTPgK82f7');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].X')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].X')).toContain('swimlane%3Dthisisswimlane');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].X')).toContain('channel%3D%26section%3D');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('scp=pos%3Dntv-mdot');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('sz=2x3%7C1x1');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('strnativekey%3DpxJ5tFGEXnANFtbFTPgK82f7');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('swimlane%3Dthisisswimlane');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('channel%3D%26section%3D');
         });
 
         it('should have the mobilerec ad', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].X')).toContain('scp=pos%3Dmobilerec');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].X')).toContain('sz=320x50%7C300x250%7C360x180%7C320x50%7C300x50%7C320x180%7C1x1&fluid=height');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].X')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].X')).toContain('swimlane%3Dthisisswimlane');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].X')).toContain('channel%3D%26section%3D');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('scp=pos%3Dmobilerec');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('sz=320x50%7C300x250%7C360x180%7C320x50%7C300x50%7C320x180%7C1x1&fluid=height');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('swimlane%3Dthisisswimlane');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('channel%3D%26section%3D');
         });
 
         it('should have the mobile ad', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].X')).toContain('scp=pos%3Dmobile');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].X')).toContain('sz=320x50%7C320x50%7C300x50%7C360x180%7C1x1&fluid=height');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].X')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].X')).toContain('swimlane%3Dthisisswimlane');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].X')).toContain('channel%3D%26section%3D');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('scp=pos%3Dmobile');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('sz=320x50%7C320x50%7C300x50%7C360x180%7C1x1&fluid=height');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('swimlane%3Dthisisswimlane');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('channel%3D%26section%3D');
         });
 
         it('should have the mobilex-1 ad', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].X')).toContain('scp=pos%3Dmobilex%26mobilex%3D1');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].X')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].X')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].X')).toContain('swimlane%3Dthisisswimlane');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].X')).toContain('channel%3D%26section%3D');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('scp=pos%3Dmobilex%26mobilex%3D1');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('swimlane%3Dthisisswimlane');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('channel%3D%26section%3D');
         });
 
         it('should have the mob-stream ad', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].X')).toContain('scp=pos%3Dmob-stream');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].X')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].X')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].X')).toContain('swimlane%3Dthisisswimlane');
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].X')).toContain('channel%3D%26section%3D');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('scp=pos%3Dmob-stream');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('sz=320x50%7C300x250%7C320x50%7C300x50%7C320x180%7C360x180%7C1x1&fluid=height');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('iu=%2F7175%2Ffdcmobile%2Fart-long');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('swimlane%3Dthisisswimlane');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('channel%3D%26section%3D');
         });
 
         it('should have the revcontent unit', function() {
