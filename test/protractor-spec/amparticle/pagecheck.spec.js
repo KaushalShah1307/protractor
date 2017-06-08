@@ -24,7 +24,7 @@ describe('AMP Article Page:', function() {
     });
     
     it('should have the contributors name and type', function() {
-        expect(element.all(by.className('user')).first().getText()).toEqual('Lewis DVorkin , FORBES STAFF'); 
+        expect(element.all(by.className('user')).first().getText()).toEqual('Lewis DVorkin, FORBES STAFF'); 
     });
     
     it('should have the publish time and date', function() {

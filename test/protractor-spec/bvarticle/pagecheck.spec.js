@@ -36,7 +36,7 @@ describe('BrandVoice Article', function() {
     });
     
     it('should have the correct zone for ads', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('article-d&'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('article-d&'); 
     });
     
     it('should have mnet unit hardcoded on Mobile-Only', function() {
@@ -45,7 +45,7 @@ describe('BrandVoice Article', function() {
            var mnet = element(by.id('_mN_dy_547648363'));
            expect(browser.isElementPresent(mnet)).toBe(true);
         } else if (isMobile===false) {
-           expect(browser.isElementPresent(mnet)).toBe(true);
+           expect(browser.isElementPresent(mnet)).toBe(false);
         }
     });
     
