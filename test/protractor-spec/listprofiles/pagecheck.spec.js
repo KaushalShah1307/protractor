@@ -80,8 +80,8 @@ describe('List Profile Page:', function() {
     
     it('should have the connection module and its properties', function() {
         expect(element(by.className('connection')).isPresent()).toBe(true);
-        expect(element(by.getContentUrl()path('/html/body/div[3]/div[6]/div/div/ul/li[1]/div[1]')).getText()).toEqual('Melinda Gates');
-        expect(element(by.getContentUrl()path('/html/body/div[3]/div[6]/div/div/ul/li[1]/div[2]')).getText()).toEqual('Spouse');
+        expect(element(by.xpath('/html/body/div[3]/div[6]/div/div/ul/li[1]/div[1]')).getText()).toEqual('Melinda Gates');
+        expect(element(by.xpath('/html/body/div[3]/div[6]/div/div/ul/li[1]/div[2]')).getText()).toEqual('Spouse');
     });
     
     it('should have the stats module', function() {
@@ -127,27 +127,27 @@ describe('List Profile Page Ads:', function() {
     });
     
     it('should have the top ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('scp=pos%3Dtop'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('scp=pos%3Dtop'); 
     });
     
     it('should have the rec ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].T')).toContain('scp=pos%3Drec'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('scp=pos%3Drec'); 
     });
     
     it('should have the railrec ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].T')).toContain('scp=pos%3Drailrec'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('scp=pos%3Drailrec'); 
     });
     
     it('should have the text ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].T')).toContain('scp=pos%3Dtext'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('scp=pos%3Dtext'); 
     });
     
     it('should have the loge ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].T')).toContain('scp=pos%3Dloge'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('scp=pos%3Dloge'); 
     });
     
     it('should have the moreon ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].T')).toContain('scp=pos%3Dmoreon'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].getContentUrl()')).toContain('scp=pos%3Dmoreon'); 
     });
     
 });
