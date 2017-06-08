@@ -260,15 +260,15 @@ describe('NG2 Article Checks:', function() {
         });
         
         it('should have brand=IBM as KV pair for ad calls', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].X')).toContain('brand%3Dibm');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('brand%3Dibm');
         });
         
         it('should have co=IBM as KV pair for ad calls', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].X')).toContain('co%3Dibm');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('co%3Dibm');
         });
         
         it('should have hashtag as KV pair for ad calls', function() {
-            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].X')).toContain('ht%3DChangeTheWorld');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('ht%3DChangeTheWorld');
         });
     });      
     
