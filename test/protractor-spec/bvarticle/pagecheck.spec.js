@@ -39,6 +39,16 @@ describe('BrandVoice Article', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('article-d&'); 
     });
     
+    it('should have mnet unit hardcoded on Mobile-Only', function() {
+        var isMobile = browser.executeScript("return window.matchMedia('only screen and (max-width: 760px)').matches");
+        if (isMobile===true) {
+           var mnet = element(by.id('_mN_dy_547648363'));
+           expect(browser.isElementPresent(mnet)).toBe(true);
+        } else if (isMobile===false) {
+           expect(browser.isElementPresent(mnet)).toBe(true);
+        }
+    });
+    
     // this case checks for the author name on BV.
 /*    it('should have the BV Contrib name', function() {
         expect(element(by.className('name-desc')).getText()).toEqual('IBM Contributor, IBM'); 
