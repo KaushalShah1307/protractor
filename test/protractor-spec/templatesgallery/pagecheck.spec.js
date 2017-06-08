@@ -31,9 +31,9 @@ describe('Templates Gallery:', function() {
     });
     
     it('should have the mobile ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('scp=pos%3Dmobile'); 
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('sz=320x50%7C300x50%7C320x50&fluid=height'); 
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('iu=%2F7175%2Ffdcmobile%2Fpictures'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('scp=pos%3Dmobile'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('sz=320x50%7C300x50%7C320x50&fluid=height'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('iu=%2F7175%2Ffdcmobile%2Fpictures'); 
     });
     
     describe('Tracking:', function() {
@@ -113,9 +113,9 @@ describe('Next Gallery Slide:', function() {
     });
     
     it('should have the mobile ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('scp=pos%3Dmobile'); 
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('sz=320x50%7C300x50%7C320x50&fluid=height'); 
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].T')).toContain('iu=%2F7175%2Ffdcmobile%2Fpictures'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('scp=pos%3Dmobile'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('sz=320x50%7C300x50%7C320x50&fluid=height'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('iu=%2F7175%2Ffdcmobile%2Fpictures'); 
     });
     
     describe('Tracking:', function() {
