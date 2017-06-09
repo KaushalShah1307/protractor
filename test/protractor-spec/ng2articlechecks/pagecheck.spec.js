@@ -337,7 +337,7 @@ describe('NG2 Article Checks:', function() {
             expect(browser.executeScript('return window.Object.values(window.dataLayer[0])[8]')).toEqual('blog:takeover');
         });
         
-        it('should not have ads', function() {
+        it('should have ads', function() {
             expect(browser.executeScript('return window.Object.values(external_services.ad_slots).length')).toBe(5); 
         });
     

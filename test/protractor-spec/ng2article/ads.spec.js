@@ -1,5 +1,5 @@
 describe('NG2 Article Ads:', function() {
-   
+    
     it('should have the medianet unit', function() {
         expect(element(by.id('_mN_dy_289199738')).isPresent()).toBe(true);      
     });
