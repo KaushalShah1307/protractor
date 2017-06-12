@@ -114,9 +114,7 @@ describe('Tracking on Mobile Article - Card View (MDot):', function() {
             expect(browser.executeScript('return window.dataLayer[0].cm3_coversViewed;')).toBe(1);
             expect(browser.executeScript('return window.dataLayer[0].cm4_cardsConsumed;')).toBe(1);
             expect(browser.executeScript('return window.dataLayer[0].cm6_coversViewedTotal;')).toBe(1);
-            expect(browser.executeScript('return window.dataLayer[0].tags[0];')).toEqual('site::datadesign');
-            expect(browser.executeScript('return window.dataLayer[0].tags[1];')).toEqual('slot::');
-            expect(browser.executeScript('return window.dataLayer[0].tags[2];')).toEqual('type::blog');
+            expect(browser.executeScript('return window.dataLayer[0].tags;')).toEqual('site::datadesign, slot::, type::article');
         });
     });
     
@@ -314,10 +312,7 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.dataLayer[0].cm3_coversViewed;')).toBe(1);
             expect(browser.executeScript('return window.dataLayer[0].cm4_cardsConsumed;')).toBe(1);
             expect(browser.executeScript('return window.dataLayer[0].cm6_coversViewedTotal;')).toBe(1);
-            expect(browser.executeScript('return window.dataLayer[0].tags[0];')).toEqual('brandvoice');
-            expect(browser.executeScript('return window.dataLayer[0].tags[1];')).toEqual('site::qualityassurance');
-            expect(browser.executeScript('return window.dataLayer[0].tags[2];')).toEqual('slot::qualityassuranceslot');
-            expect(browser.executeScript('return window.dataLayer[0].tags[3];')).toEqual('type::blog');
+            expect(browser.executeScript('return window.dataLayer[0].tags;')).toEqual('brandvoice, site::qualityassurance, slot::qualityassuranceslot, type::article');
         });
     });
     
@@ -551,9 +546,7 @@ describe('Tracking on Long-Scroll Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.dataLayer[0].cm3_coversViewed;')).toBe(1);
             expect(browser.executeScript('return window.dataLayer[0].cm4_cardsConsumed;')).toBe(1);
             expect(browser.executeScript('return window.dataLayer[0].cm6_coversViewedTotal;')).toBe(1);
-            expect(browser.executeScript('return window.dataLayer[0].tags[0];')).toEqual('site::qa');
-            expect(browser.executeScript('return window.dataLayer[0].tags[1];')).toEqual('slot::');
-            expect(browser.executeScript('return window.dataLayer[0].tags[2];')).toEqual('type::blogslide');
+            expect(browser.executeScript('return window.dataLayer[0].tags;')).toEqual('site::qa, slot::, type::article');
         });
     });
     
