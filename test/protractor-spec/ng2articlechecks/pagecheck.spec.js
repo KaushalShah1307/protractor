@@ -270,6 +270,7 @@ describe('NG2 Article Checks:', function() {
         it('should have hashtag as KV pair for ad calls', function() {
             expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('ht%3DChangeTheWorld');
         });
+        
     });      
     
     describe('Forbes Marketplace Article:', function() {
@@ -312,6 +313,14 @@ describe('NG2 Article Checks:', function() {
         
         it('should not have ads', function() {
             expect(browser.executeScript('return window.Object.values(external_services.ad_slots).length')).toBe(3); 
+        });
+        
+        it('should have templatetype=noads for all the ad calls', function() {
+            var i;
+            var j = browser.executeScript('return window.Object.values(googletag.pubads().getSlots()).length');
+            for (i=0; i <= j; i++) {
+                expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())['+i+'].getContentUrl()')).toContain('templatetype%3Dnoads');
+            };
         });
     
         it('should not have the medianet unit', function() {
