@@ -35,9 +35,9 @@ describe('Mobile Article - Card View (MDot):', function() {
         expect(element(by.className('cover__byline__contrib')).getText()).toEqual('Holly Warfield, Forbes Staff'); 
     });
     
-    xit('should have the page views', function() {
+    it('should have the page views', function() {
         expect(element(by.className('cover__meta__page__views')).isPresent()).toBe(true);
-        expect(browser.executeScript('return window.Object.values(__INITIAL_STATE__.pageViewsByUri)[0].count')).toBeGreaterThan(0);
+        expect(browser.executeScript('return window.Object.values(window.__INITIAL_STATE__.pageViewsByUri)[0].count')).not.toBeNull();
     });
     
     it('should have the page views iconography', function() {
