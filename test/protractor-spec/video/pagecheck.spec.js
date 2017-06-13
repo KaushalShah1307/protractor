@@ -78,6 +78,57 @@ describe('Video Home Page:', function() {
         loadMore.click();
 	});
     
+    describe('Tracking:', function() {
+       
+        describe('Google Analytics:', function() {
+           
+            it('should pass the right custom parameters', function() {
+                expect(browser.executeScript('return window.dataLayer[0].BrandVoiceLive;')).toEqual('false'); 
+                expect(browser.executeScript('return window.dataLayer[0].DFPSite;')).toEqual('fdc.forbes'); 
+                expect(browser.executeScript('return window.dataLayer[0].DFPZone;')).toEqual('video'); 
+                expect(browser.executeScript('return window.dataLayer[0].blogType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].brandVoice;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].channel;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].contribActive;')).toEqual('false'); 
+                expect(browser.executeScript('return window.dataLayer[0].contribType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].customPage;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].edit;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].naturalID;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageNumber;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageTotal;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].primaryChannel;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].primarySection;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].published;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].section;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].site;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].slot;')).toEqual('none'); 
+            });
+            
+        });
+
+        describe('Fast Pixel', function() {
+			var trackingPixel;
+
+			beforeAll(function(done) {
+				trackingPixel = $('img[src*="fast.forbes.com"]');
+				trackingPixel.getAttribute('src').then(function(src) {
+					trackingPixel.srcString = src;
+					done();
+				});
+			});
+
+			it ('should have the correct parameters', function() {
+				expect(globals.getParam(trackingPixel.srcString, 'su')).not.toContain('#undefined');
+				expect(globals.getParam(trackingPixel.srcString, 'au')).not.toBeNull();
+				expect(globals.getParam(trackingPixel.srcString, 'mb')).toEqual('f');
+				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('video');
+				expect(globals.getParam(trackingPixel.srcString, 'i')).toContain('video/brightcove/');
+			});
+		});
+        
+    });
+    
 });
 
 describe('Individual Video Page:', function() {
@@ -122,6 +173,57 @@ describe('Individual Video Page:', function() {
     
     });
     
+    describe('Tracking:', function() {
+       
+        describe('Google Analytics:', function() {
+           
+            it('should pass the right custom parameters', function() {
+                expect(browser.executeScript('return window.dataLayer[0].BrandVoiceLive;')).toEqual('false'); 
+                expect(browser.executeScript('return window.dataLayer[0].DFPSite;')).toEqual('fdc.forbes'); 
+                expect(browser.executeScript('return window.dataLayer[0].DFPZone;')).toEqual('video'); 
+                expect(browser.executeScript('return window.dataLayer[0].blogType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].brandVoice;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].channel;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].contribActive;')).toEqual('true'); 
+                expect(browser.executeScript('return window.dataLayer[0].contribType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].customPage;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].edit;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].naturalID;')).toEqual('video/brightcove/5194688673001'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageNumber;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageTotal;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].primaryChannel;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].primarySection;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].published;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].section;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].site;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].slot;')).toEqual('none'); 
+            });
+            
+        });
+
+        describe('Fast Pixel', function() {
+			var trackingPixel;
+
+			beforeAll(function(done) {
+				trackingPixel = $('img[src*="fast.forbes.com"]');
+				trackingPixel.getAttribute('src').then(function(src) {
+					trackingPixel.srcString = src;
+					done();
+				});
+			});
+
+			it ('should have the correct parameters', function() {
+				expect(globals.getParam(trackingPixel.srcString, 'su')).not.toContain('#undefined');
+				expect(globals.getParam(trackingPixel.srcString, 'au')).not.toBeNull();
+				expect(globals.getParam(trackingPixel.srcString, 'mb')).toEqual('f');
+				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('video');
+				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual('video/brightcove/5194688673001');
+			});
+		});
+        
+    });
+    
 });
 
 describe('All Playlist Page:', function() {
@@ -140,6 +242,56 @@ describe('All Playlist Page:', function() {
     
     it('should have 30 latest videos in the stream', function() {
         expect(element.all(by.css('.latest_video.col-sm-8.stream.row.load_more_container')).all(by.css('.latest_video.col-sm-8.stream.row.load_more_container>ul>li')).count()).toBe(30); 
+    });
+    
+    describe('Tracking:', function() {
+       
+        describe('Google Analytics:', function() {
+           
+            it('should pass the right custom parameters', function() {
+                expect(browser.executeScript('return window.dataLayer[0].BrandVoiceLive;')).toEqual('false'); 
+                expect(browser.executeScript('return window.dataLayer[0].DFPSite;')).toEqual('fdc.forbes'); 
+                expect(browser.executeScript('return window.dataLayer[0].DFPZone;')).toEqual('video'); 
+                expect(browser.executeScript('return window.dataLayer[0].blogType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].brandVoice;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].channel;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].contribActive;')).toEqual('false'); 
+                expect(browser.executeScript('return window.dataLayer[0].contribType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].customPage;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].edit;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].naturalID;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageNumber;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageTotal;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].primaryChannel;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].primarySection;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].published;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].section;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].site;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].slot;')).toEqual('none'); 
+            });
+            
+        });
+
+        describe('Fast Pixel', function() {
+			var trackingPixel;
+
+			beforeAll(function(done) {
+				trackingPixel = $('img[src*="fast.forbes.com"]');
+				trackingPixel.getAttribute('src').then(function(src) {
+					trackingPixel.srcString = src;
+					done();
+				});
+			});
+
+			it ('should have the correct parameters', function() {
+				expect(globals.getParam(trackingPixel.srcString, 'su')).not.toContain('#undefined');
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual('https://www.forbes.com/all-playlists/');
+				expect(globals.getParam(trackingPixel.srcString, 'au')).not.toEqual('undefined');
+				expect(globals.getParam(trackingPixel.srcString, 'mb')).toEqual('f');
+			});
+		});
+        
     });
     
 });
@@ -175,6 +327,56 @@ describe('Video Playlist Page:', function() {
         blurb.click();
         expect(blurbDek.isDisplayed()).toBe(true);
         blurb.click();
+    });
+    
+    describe('Tracking:', function() {
+       
+        describe('Google Analytics:', function() {
+           
+            it('should pass the right custom parameters', function() {
+                expect(browser.executeScript('return window.dataLayer[0].BrandVoiceLive;')).toEqual('false'); 
+                expect(browser.executeScript('return window.dataLayer[0].DFPSite;')).toEqual('fdc.forbes'); 
+                expect(browser.executeScript('return window.dataLayer[0].DFPZone;')).toEqual('video'); 
+                expect(browser.executeScript('return window.dataLayer[0].blogType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].brandVoice;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].channel;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].contribActive;')).toEqual('false'); 
+                expect(browser.executeScript('return window.dataLayer[0].contribType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].customPage;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].edit;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].naturalID;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageNumber;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageTotal;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].primaryChannel;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].primarySection;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].published;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].section;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].site;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].slot;')).toEqual('none'); 
+            });
+            
+        });
+
+        describe('Fast Pixel', function() {
+			var trackingPixel;
+
+			beforeAll(function(done) {
+				trackingPixel = $('img[src*="fast.forbes.com"]');
+				trackingPixel.getAttribute('src').then(function(src) {
+					trackingPixel.srcString = src;
+					done();
+				});
+			});
+
+			it ('should have the correct parameters', function() {
+				expect(globals.getParam(trackingPixel.srcString, 'su')).not.toContain('#undefined');
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual('https://www.forbes.com/playlist/infinitivoice/');
+				expect(globals.getParam(trackingPixel.srcString, 'au')).not.toEqual('undefined');
+				expect(globals.getParam(trackingPixel.srcString, 'mb')).toEqual('f');
+			});
+		});
+        
     });
     
 });

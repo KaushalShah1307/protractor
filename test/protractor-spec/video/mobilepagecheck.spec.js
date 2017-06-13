@@ -68,6 +68,57 @@ describe('Video Home Page:', function() {
 		expect(element(by.className('most_popular resp_hide')).isPresent()).toBe(true);
 	});
     
+    describe('Tracking:', function() {
+       
+        describe('Google Analytics:', function() {
+           
+            it('should pass the right custom parameters', function() {
+                expect(browser.executeScript('return window.dataLayer[0].BrandVoiceLive;')).toEqual('false'); 
+                expect(browser.executeScript('return window.dataLayer[0].DFPSite;')).toEqual('fdcmobile'); 
+                expect(browser.executeScript('return window.dataLayer[0].DFPZone;')).toEqual('video'); 
+                expect(browser.executeScript('return window.dataLayer[0].blogType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].brandVoice;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].channel;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].contribActive;')).toEqual('false'); 
+                expect(browser.executeScript('return window.dataLayer[0].contribType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].customPage;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].edit;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].naturalID;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageNumber;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageTotal;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].pageType;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].primaryChannel;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].primarySection;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].published;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].section;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].site;')).toEqual('none'); 
+                expect(browser.executeScript('return window.dataLayer[0].slot;')).toEqual('none'); 
+            });
+            
+        });
+
+        describe('Fast Pixel', function() {
+			var trackingPixel;
+
+			beforeAll(function(done) {
+				trackingPixel = $('img[src*="fast.forbes.com"]');
+				trackingPixel.getAttribute('src').then(function(src) {
+					trackingPixel.srcString = src;
+					done();
+				});
+			});
+
+			it ('should have the correct parameters', function() {
+				expect(globals.getParam(trackingPixel.srcString, 'su')).not.toContain('#undefined');
+				expect(globals.getParam(trackingPixel.srcString, 'au')).not.toBeNull();
+				expect(globals.getParam(trackingPixel.srcString, 'mb')).toEqual('t');
+				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('video');
+				expect(globals.getParam(trackingPixel.srcString, 'i')).toContain('video/brightcove/');
+			});
+		});
+        
+    });
+    
 });
 
 describe('Individual Video Page:', function() {

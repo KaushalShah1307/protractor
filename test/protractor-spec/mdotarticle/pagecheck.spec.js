@@ -65,19 +65,10 @@ describe('Mobile Article - Card View (MDot):', function() {
     });
     
     xit('should swipe to show next card', function() {
-        var card = element(by.className('pan__container '));
+        var card = element.all(by.className('pan__card pan__center card card--image ')).get(1);
 
-        browser.actions()
-          .mouseMove(card, {x: 100, y: 100})
-          .mouseDown()
-          .mouseMove({x: 0, y: -400})
-          .perform();
-
-        browser.sleep(500);
-
-        browser.actions()
-          .mouseUp()
-          .perform(); 
+        browser.actions().mouseMove(card, {x: 0,y: -250}).perform(); 
+        browser.sleep(10000);
     });
     
     //globals.generalCheck();
