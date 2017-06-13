@@ -76,7 +76,8 @@ exports.config = {
 			logName: 'Resized Chrome',
 			chromeOptions: {
 				args: [
-                    '--window-size=1229,800'
+                    '--window-size=1229,800',
+                    'incognito'
                 ]
 			},
 			exclude: [
@@ -267,12 +268,12 @@ exports.config = {
 //      'test/protractor-spec/legacyarticle/*pagecheck.spec.js',
 //      'test/protractor-spec/listprofiles/**/*.spec.js',
 //      'test/protractor-spec/listprofiles/*pagecheck.spec.js',
-      'test/protractor-spec/video/*pagecheck.spec.js',
+//      'test/protractor-spec/video/*pagecheck.spec.js',
 //      'test/protractor-spec/articlescroll/**/*.spec.js',
 //      'test/protractor-spec/mdotarticle/**/*.spec.js',
 //      'test/protractor-spec/templatesgallery/**/*.spec.js',
-//      'test/protractor-spec/ng2article/*pagecheck.spec.js',
-//      'test/protractor-spec/ng2article/**/*.spec.js',
+      'test/protractor-spec/ng2article/*pagecheck.spec.js',
+      'test/protractor-spec/ng2article/**/*.spec.js',
 //      'test/protractor-spec/ng2brandvoicearticle/*pagecheck.spec.js',
 //      'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
 //      'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',

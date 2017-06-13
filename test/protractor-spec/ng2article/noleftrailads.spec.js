@@ -18,7 +18,6 @@ describe('NG2 Article Ads on Smaller Breakpoints:', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-belt"])[2]')).toBe(2); 
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-belt"])[3]')).toBe(3); 
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-belt"])[4]')).toEqual('ntv-belt');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getSizes().length')).toBe(2);
     });
     
     it('should have spon-logo ad', function() {
@@ -42,7 +41,6 @@ describe('NG2 Article Ads on Smaller Breakpoints:', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-rec"])[4]')).toEqual('ad-rail-0-rec');
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-rec"])[2]')).toBeGreaterThanOrEqual(1);
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-rec"])[3]')).toBeGreaterThanOrEqual(1);
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getSizes().length')).toBe(7);
     });
     
     it('should have recx-1 ad', function() {
