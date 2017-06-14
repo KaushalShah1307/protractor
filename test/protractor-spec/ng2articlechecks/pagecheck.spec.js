@@ -359,6 +359,25 @@ describe('NG2 Article Checks:', function() {
             var revContent = element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first();
             expect(browser.isElementPresent(revContent)).toBe(false);
         });
+    });       
+    
+    describe('UnicefUSA Article:', function() {
+        
+        it('should get the page', function() {
+            var url = 'https://www.forbes.com/sites/unicefusa/2017/06/11/6-ways-the-fight-against-polio-is-transforming-global-health/?view=beta-u';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should not have the medianet unit', function() {
+            var mnetUnit = element(by.id('_mN_dy_289199738'));
+            expect(browser.isElementPresent(mnetUnit)).toBe(false);     
+        });
+
+        it('should not have the revcontent unit', function() {
+            var revContent = element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first();
+            expect(browser.isElementPresent(revContent)).toBe(false);
+        });
     }); 
 
     //globals.generalCheck();
