@@ -20,20 +20,24 @@ describe('NG2 BrandVoice Article:', function() {
             expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.fs-headline.fs-responsive-text>span'), ':after').getPropertyValue('color')")).toEqual('rgb(196, 26, 35)');
         });
 
-        xit('should login', function() {
+        it('should login', function() {
             loginButton.click();
             element(by.name('user')).sendKeys('testguy');
             element(by.name('pass')).sendKeys('Forbes123\n');
             
-            var logedInUser = element(by.css('.user-name-item.fs-headline>a>h4'));
+            expect(element(by.css('.modal-dialog')).isDisplayed()).toBe(true);
+            expect(element(by.css('.main')).getText()).toEqual('You have been logged into Forbes');
+            var closeLoginModal = element.all(by.css('.icon.icon-close')).first();
+            closeLoginModal.click();
+            
+            var logedInUser = element(by.css('.navbar-login>user-dropdown>a>h4'));
             expect(logedInUser.getText()).toEqual('My Guy');
         });
         
-        xit('should logout', function() {
-            var logOut = element.all(by.css('.fs-text-xxs>li>a')).get(6);
+        it('should logout', function() {
+            var logOut = element.all(by.css('.fs-text-xs>div>li>a')).get(4);
             logOut.click();
-            expect(element(by.css('.navbar-login>login-form>header>h2')).getText()).toEqual('Log in');
-            loginButton.click();
+            expect(element(by.css('.login-text.fs-text-s')).getText()).toEqual('LOG IN');
         });
         
         it('should have smaller left rail', function() {
