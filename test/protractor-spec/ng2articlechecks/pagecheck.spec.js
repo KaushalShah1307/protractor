@@ -383,6 +383,23 @@ describe('NG2 Article Checks:', function() {
             var revContent = element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first();
             expect(browser.isElementPresent(revContent)).toBe(false);
         });
+    });       
+    
+    describe('Source=bloomberg:', function() {
+        
+        it('should get the page', function() {
+            var url = 'https://www.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/?view=beta-u&source=bloomberg';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should have bbgterm=true', function() {
+            var i;
+            var j = browser.executeScript('return window.Object.values(googletag.pubads().getSlots()).length');
+            for (i=0; i <= j; i++) {
+                expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())['+i+'].getContentUrl()')).toContain('bbgterm%3Dtrue');
+            };     
+        });
     }); 
 
     //globals.generalCheck();
