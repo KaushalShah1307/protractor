@@ -40,9 +40,10 @@ describe('NG2 BrandVoice Article:', function() {
             expect(element(by.css('.login-text.fs-text-s')).getText()).toEqual('LOG IN');
         });
         
-        it('should have smaller left rail', function() {
+        // commenting this out for now as we are not changing the width of the left rail for slotted articles, for now. Uncomment this if functionality is re-introduced.
+        /*it('should have smaller left rail', function() {
             expect(leftRail.isDisplayed()).toBe(true);
             expect(leftRail.getCssValue('width')).toEqual('250px');
-        });
+        }); */
 	});
 });
