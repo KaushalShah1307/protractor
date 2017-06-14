@@ -172,6 +172,11 @@ describe('NG2 Article Checks:', function() {
             var revContent = element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first();
             expect(browser.isElementPresent(revContent)).toBe(false);
         });
+        
+        it('should not have channel/section for ads', function() {
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).not.toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership'); 
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).not.toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement'); 
+        });
     });  
     
     describe('Left Rail Video Article:', function() {
