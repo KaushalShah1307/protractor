@@ -97,7 +97,7 @@ describe('NG2 Article Checks:', function() {
                 var dataLayer;
                 beforeAll(function() {
                     browser.executeScript(function() {
-                        return dataLayer[20];
+                        return dataLayer[18];
                     }).then(function(result) {
                         dataLayer = result;
                     });
@@ -400,7 +400,7 @@ describe('NG2 Article Checks:', function() {
                 expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())['+i+'].getContentUrl()')).toContain('bbgterm%3Dtrue');
             };     
         });
-    }); 
+    });
 
     //globals.generalCheck();
 });

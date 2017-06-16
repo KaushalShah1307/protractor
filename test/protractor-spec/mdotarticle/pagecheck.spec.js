@@ -406,6 +406,13 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         //expect(element.all(by.className('wp-caption-text')).first().getText()).toEqual('"Protractor" with Angular JS'); 
     });
     
+    it('should have NTV ad styling', function() {
+        var ntvAd = element(by.className('str-adv'));
+        expect(ntvAd.getText().length > 0);
+        var ntvAdStyling = element(by.css('.str-adv>span'));
+        expect(ntvAdStyling.getCssValue('color')).toEqual('rgba(255, 0, 0, 1)');
+    });
+    
     it('should scroll on the page', function() {
         browser.executeScript("return window.document.getElementsByClassName('card__text')[0].scrollTop=15000");
     });
