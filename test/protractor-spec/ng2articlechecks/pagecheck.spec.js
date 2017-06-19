@@ -366,10 +366,10 @@ describe('NG2 Article Checks:', function() {
         });
     });       
     
-    describe('UnicefUSA Article:', function() {
+    describe('Emirates Article:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/unicefusa/2017/06/11/6-ways-the-fight-against-polio-is-transforming-global-health/?view=beta-u';
+            var url = 'https://www.forbes.com/sites/emirates/2017/06/15/the-secrets-of-high-altitude-sleep/?view=beta-u';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
