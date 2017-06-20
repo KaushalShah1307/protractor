@@ -69,7 +69,7 @@ describe('AMP Video:', function() {
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].categories[0]')).toEqual('');
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].pid')).toEqual('50e4a8434240cf5c4b000009');
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].published_at')).toEqual('2016-11-03T22:49:30Z');
-                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].title')).toEqual('Check if this is suppose to be blank?');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].title')).toEqual('Stan Lee Introduces Augmented Reality For His Kids Universe');
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].tags.length')).toBe(3);          
 			});
             
