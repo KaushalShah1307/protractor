@@ -490,7 +490,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
     });
     
     it('should have the next article module', function() {
-        expect(element(by.className('up-next visible')).isPresent()).toBe(true);
+        expect(element(by.className('up-next visible')).isDisplayed()).toBe(true);
         expect(element(by.className('image')).getAttribute('src').isPresent()).toBe(true);
         expect(element(by.className('headline')).isPresent()).toBe(true);
     });
