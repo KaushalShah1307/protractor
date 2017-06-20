@@ -75,7 +75,7 @@ describe('Mobile Article - Card View (MDot):', function() {
     
 });
 
-describe('Tracking on Mobile Article - Card View (MDot):', function() {
+describe('Tracking on Mobile Article - Cover Card (MDot):', function() {
 
     describe('Google Analytics:', function() {
        
@@ -106,6 +106,77 @@ describe('Tracking on Mobile Article - Card View (MDot):', function() {
             expect(browser.executeScript('return window.dataLayer[0].cm4_cardsConsumed;')).toBe(1);
             expect(browser.executeScript('return window.dataLayer[0].cm6_coversViewedTotal;')).toBe(1);
             expect(browser.executeScript('return window.dataLayer[0].tags;')).toEqual('site::datadesign, slot::, type::article');
+        });
+    });
+    
+    describe('Simple Reach:', function() {
+       
+        it('should pass the right custom parameters', function() {
+            expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Holly Warfield');
+            expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/4724-165');
+            expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business');
+            expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-01-03T13:40:00.000Z');
+            expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/datadesign/2017/01/03/a-day-in-the-life-of-a-forbes-under-30-how-young-innovators-stay-balanced-focused-and-connected/?s=Under30');
+            expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
+            expect(browser.executeScript('return window.__reach_config.title;')).toEqual('A Day In The Life Of A FORBES Under 30: How Young Innovators Stay Balanced, Focused And Connected');
+        }); 
+    });
+    
+	describe('Fast Pixel:', function() {
+			var trackingPixel;
+
+			beforeAll(function(done) {
+				trackingPixel = $('img[src*="fast.forbes.com"]');
+				trackingPixel.getAttribute('src').then(function(src) {
+					trackingPixel.srcString = src;
+					done();
+				});
+			});
+
+			it ('should have the correct parameters', function() {
+				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('blog');
+				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual('blogAndPostId/blog/post/4724-165');
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual('https://m.forbes.com/sites/datadesign/2017/01/03/a-day-in-the-life-of-a-forbes-under-30-how-young-innovators-stay-balanced-focused-and-connected/');
+				expect(globals.getParam(trackingPixel.srcString, 're')).toEqual('m.forbes.com');
+				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual('Forbes Staff');
+				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual('business');
+				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/2479402');
+				expect(globals.getParam(trackingPixel.srcString, 'mb')).toEqual('t');
+			});
+        });        
+});
+
+describe('Tracking on Mobile Article - First Card (MDot):', function() {
+
+    describe('Google Analytics:', function() {
+       
+        it('should pass the right custom parameters', function() {
+            expect(browser.executeScript('return window.dataLayer[13].cd1_title;')).toEqual('A Day In The Life Of A FORBES Under 30: How Young Innovators Stay Balanced, Focused And Connected');
+            expect(browser.executeScript('return window.dataLayer[13].cd2_author;')).toEqual('Holly Warfield');
+            expect(browser.executeScript('return window.dataLayer[13].cd2_stream;')).toEqual('Under30');
+            expect(browser.executeScript('return window.dataLayer[13].cd5_specialSlot;')).toEqual('none');
+            expect(browser.executeScript('return window.dataLayer[13].cd3_cardPosition;')).toEqual('First Content');
+            expect(browser.executeScript('return window.dataLayer[13].cd9_contribType;')).toEqual('Forbes Staff');
+            expect(browser.executeScript('return window.dataLayer[13].cd11_blogType;')).toEqual('individual');
+            expect(browser.executeScript('return window.dataLayer[13].cd12_brandVoice;')).toEqual('none');
+            expect(browser.executeScript('return window.dataLayer[13].cd13_pageType;')).toEqual('blog:standard');
+            expect(browser.executeScript('return window.dataLayer[13].cd15_DFPSite;')).toEqual('fdcmdot');
+            expect(browser.executeScript('return window.dataLayer[13].cd16_DFPZone;')).toEqual('art-short');
+            expect(browser.executeScript('return window.dataLayer[13].cd19_categories;')).toEqual('Under 30');
+            expect(browser.executeScript('return window.dataLayer[13].cd20_editSlot;')).toEqual('30-under-30-17');
+            expect(browser.executeScript('return window.dataLayer[13].cd21_hashtags;')).toEqual('Under30');
+            expect(browser.executeScript('return window.dataLayer[13].cd24_naturalID;')).toEqual('blogAndPostId/blog/post/4724-165');
+            expect(browser.executeScript('return window.dataLayer[13].cd47_hashtagsTrending;')).toEqual('none');
+            expect(browser.executeScript('return window.dataLayer[13].cd59_primaryChannel;')).toEqual('Business');
+            expect(browser.executeScript('return window.dataLayer[13].cd60_primarySection;')).toEqual('none');
+            expect(browser.executeScript('return window.dataLayer[13].cd69_forbesOnTrump;')).toEqual('false');
+            expect(browser.executeScript('return window.dataLayer[13].cd71_cardType;')).toEqual('First Content');
+            expect(browser.executeScript('return window.dataLayer[13].event;')).toEqual('subsequentPageView');
+            expect(browser.executeScript('return window.dataLayer[13].pageTitle;')).toEqual('A Day In The Life Of A FORBES Under 30: How Young Innovators Stay Balanced, Focused And Connected');
+            expect(browser.executeScript('return window.dataLayer[13].cm3_coversViewed;')).toBe(1);
+            expect(browser.executeScript('return window.dataLayer[13].cm4_cardsConsumed;')).toBe(1);
+            expect(browser.executeScript('return window.dataLayer[13].cm6_coversViewedTotal;')).toBe(1);
+            expect(browser.executeScript('return window.dataLayer[13].tags;')).toEqual('site::datadesign, slot::, type::article');
         });
     });
     
@@ -185,6 +256,7 @@ describe('BrandVoice Mobile Article (MDot):', function() {
     it('should have the page views', function() {
         expect(element(by.className('cover__meta__page__views')).isPresent()).toBe(true);
         expect(browser.executeScript('return window.Object.values(__INITIAL_STATE__.pageViewsByUri)[0].count')).toBeGreaterThan(0);
+        expect(browser.executeScript('return window.document.body.getElementsByClassName("cover__meta__page__views__count")[0].innerText')).toBeGreaterThan(0);
     });
     
     it('should have the page views iconography', function() {
