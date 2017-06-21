@@ -342,7 +342,7 @@ describe('NG2 Article Checks:', function() {
     describe('Template Type: takeover:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/nextavenue/2017/05/30/are-you-preventing-yourself-from-having-your-dream-retirement/?view=beta-u';
+            var url = 'https:///sites/qa/2013/05/24/link-mozilla-developer-network-dom-developer-guide/?view=beta-u';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
