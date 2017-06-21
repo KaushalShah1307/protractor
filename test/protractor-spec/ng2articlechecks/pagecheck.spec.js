@@ -342,13 +342,13 @@ describe('NG2 Article Checks:', function() {
     describe('Template Type: takeover:', function() {
         
         it('should get the page', function() {
-            var url = 'https:///sites/qa/2013/05/24/link-mozilla-developer-network-dom-developer-guide/?view=beta-u';
+            var url = 'https://www.forbes.com/sites/qa/2013/05/24/link-mozilla-developer-network-dom-developer-guide/?view=beta-u';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
         
-        it('should have templatetype: noads', function() {
-            expect(browser.executeScript('return window.Object.values(window.dataLayer[0])[8]')).toEqual('blog:takeover');
+        it('should have templatetype: takeover', function() {
+            expect(browser.executeScript('return window.Object.values(window.dataLayer[0])[8]')).toContain(':takeover');
         });
         
         it('should have ads', function() {
