@@ -72,7 +72,7 @@ describe('List Profile Page:', function() {
         expect(element(by.className('historical')).isPresent()).toBe(true); 
     });
     
-    it('should have the tweet-quote modeule', function() {
+    it('should have the tweet-quote module', function() {
         expect(element(by.className('quote')).isPresent()).toBe(true); 
         expect(element(by.className('quote-text')).getText().length > 0); 
         expect(element(by.className('quote-name')).getText()).toEqual('Bill Gates'); 
@@ -80,8 +80,8 @@ describe('List Profile Page:', function() {
     
     it('should have the connection module and its properties', function() {
         expect(element(by.className('connection')).isPresent()).toBe(true);
-        expect(element(by.xpath('/html/body/div[3]/div[6]/div/div/ul/li[1]/div[1]')).getText()).toEqual('Melinda Gates');
-        expect(element(by.xpath('/html/body/div[3]/div[6]/div/div/ul/li[1]/div[2]')).getText()).toEqual('Spouse');
+        expect(element(by.xpath('html/body/div[3]/div[7]/div/div/ul/li[1]/div[1]/a')).getText()).toEqual('Melinda Gates');
+        expect(element.all(by.css('.relationship')).first().getText()).toEqual('Spouse');
     });
     
     it('should have the stats module', function() {

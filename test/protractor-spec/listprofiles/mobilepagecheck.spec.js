@@ -86,7 +86,7 @@ describe('List Profile Page:', function() {
 describe('List Profile Page Ads:', function() {
    
     it('should have ads', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots()).length')).toBe(3); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots()).length')).toBe(2); 
     });
     
     it('should have the mobile ad', function() {
@@ -98,7 +98,8 @@ describe('List Profile Page Ads:', function() {
     });
     
     it('should have the mobiletext ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('scp=pos%3Dmobiletext'); 
+        var mnet = element(by.id('_mN_dy_786499692'));
+        expect(browser.isElementPresent(mnet)).toBe(true); 
     });
     
 });
