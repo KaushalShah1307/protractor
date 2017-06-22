@@ -46,7 +46,7 @@ exports.config = {
 			logName: 'Mobile Chrome',
 			chromeOptions: {
 				mobileEmulation: {
-					deviceName: 'Apple iPhone 6 Plus'
+					deviceName: 'iPhone 6 Plus'
 				},
                 args: [
                     'incognito'
@@ -271,7 +271,7 @@ exports.config = {
 //      'test/protractor-spec/listprofiles/*pagecheck.spec.js',
 //      'test/protractor-spec/video/*pagecheck.spec.js',
 //      'test/protractor-spec/articlescroll/**/*.spec.js',
-//      'test/protractor-spec/mdotarticle/**/*.spec.js',
+      'test/protractor-spec/mdotarticle/**/*.spec.js',
 //      'test/protractor-spec/templatesgallery/**/*.spec.js',
 //      'test/protractor-spec/ng2article/*pagecheck.spec.js',
 //      'test/protractor-spec/ng2article/**/*.spec.js',

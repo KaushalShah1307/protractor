@@ -1,6 +1,11 @@
 
 var Firebase = require('firebase'),
-	firebase = new Firebase('https://protractor-forbes.firebaseio.com/'),
+	//firebase = new Firebase('https://protractor-forbes.firebaseio.com/'),
+    firebase = {
+    databaseURL: "https://protractor-forbes.firebaseio.com/",
+  };
+    Firebase.initializeApp(firebase);
+
 	email = require('./email-processor.js');
 
 var date = new Date(), dateString = date.toDateString() + ' ' + date.toLocaleTimeString(),
@@ -18,7 +23,7 @@ var FbsReporter = {
 			suiteInfo.browser = currentConfig = config.capabilities;
 			suiteInfo.environment = environmentName = config.baseUrl.replace("http://","").replace(".forbes.com","").replace("/","");
 		}).then(function() {
-			environmentRef = firebase.child(environmentName);
+			environmentRef = Firebase.database().ref(environmentName);
 			environmentRef.child('lastSession').once("value", function(lastSession) {
 				nextKey = lastSession.val() ? "session-" + (parseInt(lastSession.val().replace("session-","")) + 1) : "session-0";
 				environmentRef.child('lastSession').set(nextKey);
@@ -79,14 +84,14 @@ var FbsReporter = {
 			email.send(destination.email);
 		};
 
-		var slack_message = https.request({
+/*		var slack_message = https.request({
 				hostname: 'forbesdev.slack.com',
 				path: '/services/hooks/slackbot?token=5z1O62OQb5pipH8Pz3LcVuXS&channel=' + destination.slack,
 				method: 'POST'
 			});
 
 		slack_message.write('*' + environmentName.toUpperCase() + '* (' + currentConfig.logName + '):\n' + failedExpectationCount + ' out of ' + (passedExpectationCount + failedExpectationCount) + ' Expectations Failed.');
-		slack_message.end();
+		slack_message.end(); */
 	}
 };
 module.exports = FbsReporter;
