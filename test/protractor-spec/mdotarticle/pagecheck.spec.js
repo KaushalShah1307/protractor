@@ -6,6 +6,12 @@ beforeEach(function(){
 });
 
 describe('Mobile Article - Card View (MDot):', function() {
+    
+    var authorName = 'Holly Warfield';
+    var authorAvatar = 'https://2.gravatar.com/avatar/5b2ff429336aacc5313aff5ea61f64ff?s=136&d=mm&r=g';
+    var authorRole = 'Forbes Staff';
+    var authorShortBio = 'I am an editorial graphics designer working to make stories visual.';
+    var recentItems = element.all(by.css('.contrib__recent-list>li>a'));
 
 	it('should get the page', function() {
 		mobileDotArticle.get();
@@ -44,6 +50,16 @@ describe('Mobile Article - Card View (MDot):', function() {
         expect(element(by.className('inlineicon inlineicon-preview-eye')).isPresent()).toBe(true);
     });
     
+    xit('should expand and reveal author information', function() {
+        element(by.css('.cover__byline')).click();
+        expect(element(by.css('.contrib__biopic')).getAttribute('alt')).toEqual(authorName);
+        expect(element(by.css('.contrib__biopic')).getAttribute('src')).toEqual(authorAvatar);
+        expect(element(by.css('.contrib__byline-role')).getText()).toEqual(authorRole);
+        expect(element(by.css('.contrib__byline-shortbio')).getText()).toEqual(authorShortBio);
+        expect(recentItems.length > 0);
+        element(by.css('.modal__close')).click();
+    });
+    
     it('should click and expand the cover card', function() {
         element(by.className('cover__footer-scrim')).click();
         browser.sleep(1000).then(function() {
@@ -71,7 +87,7 @@ describe('Mobile Article - Card View (MDot):', function() {
         browser.sleep(10000);
     });
     
-    //globals.generalCheck();
+    globals.generalCheck();
     
 });
 
@@ -254,9 +270,10 @@ describe('BrandVoice Mobile Article (MDot):', function() {
     });
     
     it('should have the page views', function() {
-        expect(element(by.className('cover__meta__page__views')).isPresent()).toBe(true);
-        expect(browser.executeScript('return window.Object.values(__INITIAL_STATE__.pageViewsByUri)[0].count')).toBeGreaterThan(0);
-        expect(browser.executeScript('return window.document.body.getElementsByClassName("cover__meta__page__views__count")[0].innerText')).toBeGreaterThan(0);
+        var pageViews = element(by.css('.cover__meta__page__views__count'));
+        expect(pageViews.isPresent()).toBe(true);
+        expect(pageViews.getText()).toBeGreaterThan(0);
+        
     });
     
     it('should have the page views iconography', function() {
@@ -336,7 +353,7 @@ describe('BrandVoice Mobile Article (MDot):', function() {
 
     });
     
-    //globals.generalCheck();
+    globals.generalCheck();
     
 });
 
@@ -576,7 +593,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         });
     });
     
-    //globals.generalCheck();
+    globals.generalCheck();
     
 });
 
