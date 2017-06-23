@@ -496,7 +496,8 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
     
     it('should have captions and credits for the images', function() {
         expect(element.all(by.className('article-photo-credit')).first().getText()).toEqual('Photo credit is mandatory'); 
-        //expect(element.all(by.className('wp-caption-text')).first().getText()).toEqual('"Protractor" with Angular JS'); 
+        expect(element.all(by.className('wp-caption-text')).first().getText()).not.toBeNull();
+        expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.wp-caption-text')).getPropertyValue('max-height')")).toEqual('15px');
     });
     
     it('should have NTV ad styling', function() {
@@ -741,6 +742,33 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
     
         it('should have the brightcove videos', function() {
             expect(browser.executeScript('return window.Object.values(__INITIAL_STATE__.articles)[0].brightCoveVideos.length')).toBe(4);
+        });
+        
+    });
+    
+});
+
+describe('Long-Scroll Mobile Article (MDot):', function() {
+   
+    describe('Article Swipe - Vertical:', function() {
+        
+        var clickNext = element(by.css('.side-nav.btn-right.is-visible'));
+       
+        it('should get the page', function() {
+            var url = 'https://m.forbes.com/sites/gordonkelly/2017/06/22/iphone-8-display-native-resolution/';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        var firstArticleHeadline = browser.executeScript('return window.Object.values(__INITIAL_STATE__.articles)[0].title');
+    
+        it('should click for the next article', function() {
+            clickNext.click();
+        });
+        
+        it('should have the article headline', function() {
+            browser.sleep(2000);
+            expect(element(by.className('cover__preview__title')).getText()).not.toEqual(firstArticleHeadline); 
         });
         
     });
