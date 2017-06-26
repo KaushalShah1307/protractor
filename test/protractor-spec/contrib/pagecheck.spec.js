@@ -7,7 +7,7 @@ describe('ContribHP:', function() {
 	});
     
     it('should have pageviews in the stream', function() {
-        expect(element(by.className('article-views')).getText().length > 0); 
+        expect(element.all(by.className('article-views')).first().getText().length > 0); 
     });
     
     it('should have the About section', function() {
@@ -23,7 +23,7 @@ describe('ContribHP:', function() {
     });
     
     it('should have the page views on the most popular cards', function() {
-        expect(element(by.className('trending-reason')).getText().length > 0); 
+        expect(element.all(by.className('trending-reason')).first().getText().length > 0); 
     });
     
     xit('should click on the author from the Our Contributor section', function() {

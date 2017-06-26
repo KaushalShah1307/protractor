@@ -79,7 +79,11 @@ describe('ContribHP:', function() {
                 expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business'); 
                 expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2013-03-19T18:40:15.000Z'); 
                 expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
-                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Northwestern MutualVoice - We help you Live Life Differently.'); 
+                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Northwestern MutualVoice - We help you Live Life Differently.');
+                expect(browser.executeScript('return window.__reach_config.tags[0];')).toEqual('brandvoice'); 
+                expect(browser.executeScript('return window.__reach_config.tags[1];')).toEqual('site::northwesternmutual'); 
+                expect(browser.executeScript('return window.__reach_config.tags[2];')).toEqual('slot::nwmf'); 
+                expect(browser.executeScript('return window.__reach_config.tags[3];')).toEqual('type::author homepage');
             });
             
         });
