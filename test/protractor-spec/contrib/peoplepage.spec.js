@@ -62,7 +62,7 @@ describe('SimpleReach', function() {
                 expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2015-11-19T01:09:57.000Z'); 
                 expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
                 expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Northwestern MutualVoice - We help you Live Life Differently.'); 
-                expect(browser.executeScript('return window.__reach_config.url;')).toEqual('https://www.forbes.com/sites/northwesternmutual//people/brentschutte/'); 
+                expect(browser.executeScript('return window.__reach_config.url;')).toEqual('https://www.forbes.com/sites/northwesternmutual/'); 
                 expect(browser.executeScript('return window.__reach_config.tags[0];')).toEqual('brandvoice'); 
                 expect(browser.executeScript('return window.__reach_config.tags[1];')).toEqual('site::northwesternmutual'); 
                 expect(browser.executeScript('return window.__reach_config.tags[2];')).toEqual('slot::nwmf'); 
