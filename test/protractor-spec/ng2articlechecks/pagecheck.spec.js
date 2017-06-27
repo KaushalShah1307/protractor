@@ -405,6 +405,21 @@ describe('NG2 Article Checks:', function() {
                 expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())['+i+'].getContentUrl()')).toContain('bbgterm%3Dtrue');
             };     
         });
+    });       
+    
+    describe('Magazine:', function() {
+        
+        it('should get the page', function() {
+            var url = 'https://www.forbes.com/sites/lewisdvorkin/2017/06/07/inside-forbes-great-people-at-the-core-of-the-now-and-whats-next/?view=beta-u';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should have magazine blurb', function() {
+            var magazineBlurb = element(by.css('.magazine'));
+            expect(browser.isElementPresent(magazineBlurb)).toBe(true);
+            expect(magazineBlurb.getText()).toEqual('This story appears in the June 29, 2017 issue of Forbes. Subscribe');
+        });
     });
 
     //globals.generalCheck();
