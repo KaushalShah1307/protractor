@@ -1,23 +1,7 @@
 describe('NG2 Article Ads on Smaller Breakpoints:', function() {
    
-    it('should have the medianet unit', function() {
-        expect(element(by.id('_mN_dy_289199738')).isPresent()).toBe(true);      
-    });
-    
-    it('should have the revcontent unit', function() {
-        expect(element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first().isPresent()).toBe(true); 
-    });
-    
     it('should have all the ads', function() {
         expect(browser.executeScript('return window.Object.keys(external_services.ad_slots).length')).toBeGreaterThanOrEqual(8); 
-    });
-    
-    it('should have ntv-belt ad', function() {
-        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-belt"])[0]')).not.toBeNull(); 
-        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-belt"])[1]')).not.toBeNull(); 
-        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-belt"])[2]')).toBe(2); 
-        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-belt"])[3]')).toBe(3); 
-        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ntv-belt"])[4]')).toEqual('ntv-belt');
     });
     
     it('should have spon-logo ad', function() {
@@ -34,7 +18,6 @@ describe('NG2 Article Ads on Smaller Breakpoints:', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-loge"])[4]')).toEqual('ad-rail-0-loge');
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-loge"])[2]')).toBeGreaterThanOrEqual(1);
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["ad-rail-0-loge"])[3]')).toBeGreaterThanOrEqual(1);
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getSizes().length')).toBe(7);
     });
     
     it('should have rec ad', function() {
@@ -63,5 +46,23 @@ describe('NG2 Article Ads on Smaller Breakpoints:', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["inread"])[1]')).not.toBeUndefined();
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getSizes().length')).toBe(3);
     });
+    
+    it('should have ntv-belt ad', function() {
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["article-0-ntv-belt"])[0]')).not.toBeNull(); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["article-0-ntv-belt"])[1]')).not.toBeNull(); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["article-0-ntv-belt"])[2]')).toBe(2); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["article-0-ntv-belt"])[3]')).toBe(3); 
+        expect(browser.executeScript('return window.Object.values(external_services.ad_slots["article-0-ntv-belt"])[4]')).toEqual('article-0-ntv-belt');
+    });
+    
+    it('should have the medianet unit', function() {
+        var mnetUnit = element(by.id('_mN_dy_289199738'));
+        expect(browser.isElementPresent(mnetUnit)).toBe(true);     
+    });
+    
+    it('should have the revcontent unit', function() {
+        expect(element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first().isPresent()).toBe(true); 
+    });
+    
  
 });
