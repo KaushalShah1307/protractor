@@ -41,7 +41,7 @@ describe('Mobile Article - Card View (MDot):', function() {
         expect(element(by.className('cover__byline__contrib')).getText()).toEqual('Holly Warfield, Forbes Staff'); 
     });
     
-    it('should have the page views', function() {
+    xit('should have the page views', function() {
         expect(element(by.className('cover__meta__page__views')).isPresent()).toBe(true);
         expect(browser.executeScript('return window.Object.values(window.__INITIAL_STATE__.pageViewsByUri)[0].count')).not.toBeNull();
     });
@@ -189,9 +189,9 @@ describe('Tracking on Mobile Article - First Card (MDot):', function() {
             expect(browser.executeScript('return window.dataLayer[13].cd71_cardType;')).toEqual('First Content');
             expect(browser.executeScript('return window.dataLayer[13].event;')).toEqual('subsequentPageView');
             expect(browser.executeScript('return window.dataLayer[13].pageTitle;')).toEqual('A Day In The Life Of A FORBES Under 30: How Young Innovators Stay Balanced, Focused And Connected');
-            expect(browser.executeScript('return window.dataLayer[13].cm3_coversViewed;')).toBe(1);
+            expect(browser.executeScript('return window.dataLayer[13].cm3_coversViewed;')).toBe(0);
             expect(browser.executeScript('return window.dataLayer[13].cm4_cardsConsumed;')).toBe(1);
-            expect(browser.executeScript('return window.dataLayer[13].cm6_coversViewedTotal;')).toBe(1);
+            expect(browser.executeScript('return window.dataLayer[13].cm6_coversViewedTotal;')).toBe(0);
             expect(browser.executeScript('return window.dataLayer[13].tags;')).toEqual('site::datadesign, slot::, type::article');
         });
     });
