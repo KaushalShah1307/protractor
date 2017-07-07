@@ -6,12 +6,6 @@ beforeEach(function(){
 });
 
 describe('Mobile Article - Card View (MDot):', function() {
-    
-    var authorName = 'Holly Warfield';
-    var authorAvatar = 'https://2.gravatar.com/avatar/5b2ff429336aacc5313aff5ea61f64ff?s=136&d=mm&r=g';
-    var authorRole = 'Forbes Staff';
-    var authorShortBio = 'I am an editorial graphics designer working to make stories visual.';
-    var recentItems = element.all(by.css('.contrib__recent-list>li>a'));
 
 	it('should get the page', function() {
 		mobileDotArticle.get();
@@ -770,12 +764,44 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         var firstArticleHeadline = 'iPhone 8 Leak Reveals A New Secret';
     
         it('should click for the next article', function() {
+            browser.sleep(2000);
             clickNext.click();
         });
         
         it('should have the article headline', function() {
             browser.sleep(2000);
-            expect(element.all(by.className('cover__preview__title')).first().getText()).not.toEqual(firstArticleHeadline); 
+            expect(element.all(by.className('cover__preview__title')).get(1).getText()).not.toEqual(firstArticleHeadline); 
+        });
+        
+    });
+    
+});
+
+describe('Long-Scroll Mobile Article (MDot):', function() {
+   
+    describe('Author Info:', function() {
+        
+        var authorName = 'Gordon Kelly';
+        var authorAvatar = 'https://1.gravatar.com/avatar/135313297429b8a66b069508000b1134?s=136&d=mm&r=g';
+        var authorRole = 'Contributor';
+        var authorShortBio = "I write about technology's biggest companies";
+        var recentItems = element.all(by.css('.contrib__recent-list>li>a'));
+       
+        it('should get the page', function() {
+            var url = 'https://m.forbes.com/sites/gordonkelly/2017/06/22/iphone-8-display-native-resolution/';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should expand and reveal author information', function() {
+            expect(element(by.css('.cover__byline')).isDisplayed()).toBe(true);
+            element(by.css('.cover__byline')).click();
+            expect(element(by.css('.contrib__biopic')).getAttribute('alt')).toEqual(authorName);
+            expect(element(by.css('.contrib__biopic')).getAttribute('src')).toEqual(authorAvatar);
+            expect(element(by.css('.contrib__byline-role')).getText()).toEqual(authorRole);
+            expect(element(by.css('.contrib__byline-shortbio')).getText()).toEqual(authorShortBio);
+            expect(recentItems.length > 0);
+            element(by.css('.modal__close')).click();
         });
         
     });
