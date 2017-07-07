@@ -486,6 +486,13 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         });
     });
     
+    it('should have the guest contrib block', function() {
+        expect(element(by.css('.guest-contrib')).isPresent()).toBe(true);
+        expect(element(by.css('.intro')).getText()).toEqual('Post written by');
+        expect(element(by.css('.contrib-images-square>img')).getAttribute('src')).toEqual('http://blogs-images.forbes.com/qa/files/2016/10/blog-4727_400.jpg');
+        expect(element(by.css('.info-block ')).getText().length > 0);
+    });
+    
     it('should have the sharing module', function() {
         var shareIcons = element(by.className('sharrow__button'));
         expect(shareIcons.isPresent()).toBe(true);
@@ -741,7 +748,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         });
     
         it('should have the brightcove videos', function() {
-            expect(browser.executeScript('return window.Object.values(__INITIAL_STATE__.articles)[0].brightCoveVideos.length')).toBe(4);
+            expect(browser.executeScript('return window.Object.values(window.__INITIAL_STATE__.articles)[0].brightCoveVideos.length')).toBe(4);
         });
         
     });
@@ -760,7 +767,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
             globals.pagesChecked.push(url);
         });
         
-        var firstArticleHeadline = browser.executeScript('return window.Object.values(__INITIAL_STATE__.articles)[0].title');
+        var firstArticleHeadline = 'iPhone 8 Leak Reveals A New Secret';
     
         it('should click for the next article', function() {
             clickNext.click();
@@ -768,7 +775,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         
         it('should have the article headline', function() {
             browser.sleep(2000);
-            expect(element(by.className('cover__preview__title')).getText()).not.toEqual(firstArticleHeadline); 
+            expect(element.all(by.className('cover__preview__title')).first().getText()).not.toEqual(firstArticleHeadline); 
         });
         
     });
