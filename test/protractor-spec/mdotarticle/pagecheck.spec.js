@@ -698,7 +698,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         });
         
         it('should have amazon ads', function() {
-            expect(browser.executeScript('return window.Object.values(window.fbsads.amazonBiddingService.amazonAds.ads).length')).toBeGreaterThan(0); 
+            expect(browser.executeScript('return window.Object.values(window.fbsads.amazonBiddingService._config.amazonSlots).length')).toBeGreaterThan(0); 
         });
         
     });
