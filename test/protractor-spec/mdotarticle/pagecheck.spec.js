@@ -44,16 +44,6 @@ describe('Mobile Article - Card View (MDot):', function() {
         expect(element(by.className('inlineicon inlineicon-preview-eye')).isPresent()).toBe(true);
     });
     
-    xit('should expand and reveal author information', function() {
-        element(by.css('.cover__byline')).click();
-        expect(element(by.css('.contrib__biopic')).getAttribute('alt')).toEqual(authorName);
-        expect(element(by.css('.contrib__biopic')).getAttribute('src')).toEqual(authorAvatar);
-        expect(element(by.css('.contrib__byline-role')).getText()).toEqual(authorRole);
-        expect(element(by.css('.contrib__byline-shortbio')).getText()).toEqual(authorShortBio);
-        expect(recentItems.length > 0);
-        element(by.css('.modal__close')).click();
-    });
-    
     it('should click and expand the cover card', function() {
         element(by.className('cover__footer-scrim')).click();
         browser.sleep(1000).then(function() {
@@ -802,6 +792,38 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
             expect(element(by.css('.contrib__byline-shortbio')).getText()).toEqual(authorShortBio);
             expect(recentItems.length > 0);
             element(by.css('.modal__close')).click();
+        });
+        
+    });
+    
+    describe('Privacy/Terms/Hashtags:', function() {
+        
+        var streamName = element(by.css('.stream__name'));
+        var contactUs = 'mailto:productfeedback@forbes.com';
+        var privacy = '//www.forbes.com/fdc/privacy.html';
+        var terms = '//www.forbes.com/terms';
+        var adChoices = '//preferences-mgr.truste.com/?pid=forbes01';
+        var legal = '© 2017 Forbes Media LLC. All Rights Reserved.';
+       
+        it('should have Contact Us link', function() {
+            streamName.click();
+            expect(element(by.linkText('Contact Us')).getAttribute('href')).toEqual(contactUs);
+        });
+       
+        it('should have Privacy link', function() {
+            expect(element(by.linkText('Privacy')).getAttribute('href')).toContain(privacy);
+        });
+       
+        it('should have Terms link', function() {
+            expect(element(by.linkText('Terms')).getAttribute('href')).toContain(terms);
+        });
+       
+        it('should have AdChoices link', function() {
+            expect(element(by.linkText('AdChoices')).getAttribute('href')).toContain(adChoices);
+        });
+       
+        it('should have legal blurb', function() {
+            expect(element(by.css('.nav__legal')).getText()).toEqual(legal);
         });
         
     });
