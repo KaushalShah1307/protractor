@@ -804,6 +804,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         var terms = '//www.forbes.com/terms';
         var adChoices = '//preferences-mgr.truste.com/?pid=forbes01';
         var legal = '© 2017 Forbes Media LLC. All Rights Reserved.';
+        var streamHashtag = '#iPhoneVsGalaxy';
        
         it('should have Contact Us link', function() {
             streamName.click();
@@ -824,6 +825,11 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
        
         it('should have legal blurb', function() {
             expect(element(by.css('.nav__legal')).getText()).toEqual(legal);
+        });
+       
+        it('should have stream hashtag in list of hashtags', function() {
+            expect(element(by.css('.nav__hashtag--item.nav__current--hashtag')).getText()).toEqual(streamHashtag);
+            streamName.click();
         });
         
     });
