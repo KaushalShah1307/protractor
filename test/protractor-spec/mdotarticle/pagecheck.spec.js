@@ -552,7 +552,8 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         });
 
         it('should have the revcontent unit', function() {
-            expect(element(by.className('rc-wc rc-bp rc-uid-64417 rc-g-p ')).isPresent()).toBe(true); 
+            var revcontentUnit = element(by.className('rc-wc rc-bp rc-uid-64417 rc-g-p '));
+            expect(browser.isElementPresent(revcontentUnit)).toBe(false); 
         });
 
         it('should have the mnet unit', function() {
