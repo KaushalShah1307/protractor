@@ -3,6 +3,7 @@ var MobileDotArticle = require('./mdotarticle.page.js'),
 
 beforeEach(function(){
     browser.ignoreSynchronization = true;
+    browser.executeScript('window.localStorage.clear();');
 });
 
 describe('Mobile Article - Card View (MDot):', function() {
@@ -470,13 +471,6 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         });
     });
     
-    it('should have the guest contrib block', function() {
-        expect(element(by.css('.guest-contrib')).isPresent()).toBe(true);
-        expect(element(by.css('.intro')).getText()).toEqual('Post written by');
-        expect(element(by.css('.contrib-images-square>img')).getAttribute('src')).toEqual('http://blogs-images.forbes.com/qa/files/2016/10/blog-4727_400.jpg');
-        expect(element(by.css('.info-block ')).getText().length > 0);
-    });
-    
     it('should have the sharing module', function() {
         var shareIcons = element(by.className('sharrow__button'));
         expect(shareIcons.isPresent()).toBe(true);
@@ -551,7 +545,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('channel%3D%26section%3D');
         });
 
-        it('should have the revcontent unit', function() {
+        it('should not have the revcontent unit', function() {
             var revcontentUnit = element(by.className('rc-wc rc-bp rc-uid-64417 rc-g-p '));
             expect(browser.isElementPresent(revcontentUnit)).toBe(false); 
         });
@@ -779,7 +773,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         var recentItems = element.all(by.css('.contrib__recent-list>li>a'));
        
         it('should get the page', function() {
-            var url = 'https://m.forbes.com/sites/gordonkelly/2017/06/22/iphone-8-display-native-resolution/';
+            var url = 'https://m.forbes.com/sites/gordonkelly/2017/06/22/iphone-8-display-native-resolution/?s=iPhoneVsGalaxy';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -833,6 +827,29 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
             streamName.click();
         });
         
+    });
+    
+    describe('Guest Contrib Block:', function() {
+        
+        it('should get the page', function() {
+            var url = 'https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/?s=trending';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+    
+        it('should click and expand the cover card', function() {
+            element(by.className('cover__footer-scrim')).click();
+            browser.sleep(1000).then(function() {
+                expect(browser.getCurrentUrl()).toContain('?c=0');
+            });
+        });
+    
+        it('should have the guest contrib block', function() {
+            expect(element(by.css('.guest-contrib')).isPresent()).toBe(true);
+            expect(element(by.css('.intro')).getText()).toEqual('POST WRITTEN BY');
+            expect(element(by.css('.info-block ')).getText().length > 0);
+        });
+                
     });
     
 });
