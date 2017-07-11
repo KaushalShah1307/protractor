@@ -84,6 +84,7 @@ describe('ContribHP:', function() {
                 expect(browser.executeScript('return window.__reach_config.tags[1];')).toEqual('site::northwesternmutual'); 
                 expect(browser.executeScript('return window.__reach_config.tags[2];')).toEqual('slot::nwmf'); 
                 expect(browser.executeScript('return window.__reach_config.tags[3];')).toEqual('type::author homepage');
+                expect(browser.executeScript('return window.__reach_config.url;')).toEqual('https://www.forbes.com/sites/northwesternmutual/');
             });
             
         });
