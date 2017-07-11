@@ -79,6 +79,7 @@ describe('AMP Article:', function() {
             
             it('should pass the right custom parameters', function() {
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[0].c2')).toEqual('6872493');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[15].innerText))[1].comscorekw')).toEqual('amp');
 			});
             
         });
