@@ -257,7 +257,7 @@ describe('NG2 Article Checks:', function() {
         });
         
         it('should have amzn slots', function() {
-            expect(browser.executeScript('return window.Object.values(window.fbsads.amazonBiddingService.bids).length')).toBeGreaterThan(0);
+            expect(browser.executeScript('return window.Object.values(window.fbsads.amazonBiddingService._config.amazonSlots).length')).toBeGreaterThan(0);
         });
     });     
     
