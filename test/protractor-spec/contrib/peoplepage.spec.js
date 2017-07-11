@@ -7,7 +7,7 @@ describe('People Pages:', function() {
         });
         
         it('should have special slot', function() {
-            expect(browser.executeScript('return window.external_services.specialSlot')).toEqual('nwmf'); 
+            expect(browser.executeScript('return window.Object.values(__reach_config.tags)[2]')).toContain('nwmf'); 
         });
         
         it('should have BrandVoice Contrib styling', function() {
