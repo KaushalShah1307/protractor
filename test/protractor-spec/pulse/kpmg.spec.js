@@ -120,3 +120,117 @@ describe('Pulse - KPMG:', function() {
         
 	});        
 });
+   
+describe('Chapters:', function() {
+        
+    it('should get chapter: Introduction', function() {
+        var url = 'https://www.forbes.com/kpmg/the-great-rewrite/#/0';
+        browser.get(url);
+        globals.pagesChecked.push(url);
+    });
+    
+    it('should have the intro promo', function() {
+        expect(element.all(by.css('.ww-chapters__menu__item__header__nav__section.ng-binding')).first().getText()).toEqual('INTRODUCING THE GREAT REWRITE'); 
+    });
+    
+    it('should get chapter: Industrial Manufacturing', function() {
+        var url = 'https://www.forbes.com/kpmg/the-great-rewrite/#/1';
+        browser.get(url);
+        globals.pagesChecked.push(url);
+    });
+    
+    it('should have the intro promo', function() {
+        expect(element.all(by.css('.ww-chapters__menu__item__header__nav__section.ng-binding')).get(5).getText()).toEqual('INDUSTRIAL MANUFACTURING'); 
+    });
+    
+    it('should get chapter: Energy', function() {
+        var url = 'https://www.forbes.com/kpmg/the-great-rewrite/#/2';
+        browser.get(url);
+        globals.pagesChecked.push(url);
+    });
+    
+    it('should have the intro promo', function() {
+        expect(element.all(by.css('.ww-chapters__menu__item__header__nav__section.ng-binding')).get(6).getText()).toEqual('ENERGY'); 
+    });
+    
+    it('should get chapter: Security', function() {
+        var url = 'https://www.forbes.com/kpmg/the-great-rewrite/#/3';
+        browser.get(url);
+        globals.pagesChecked.push(url);
+    });
+    
+    it('should have the intro promo', function() {
+        expect(element.all(by.css('.ww-chapters__menu__item__header__nav__section.ng-binding')).get(7).getText()).toEqual('SECURITY'); 
+    });
+    
+    it('should get chapter: Autonomous Vehicles', function() {
+        var url = 'https://www.forbes.com/kpmg/the-great-rewrite/#/4';
+        browser.get(url);
+        globals.pagesChecked.push(url);
+    });
+    
+    it('should have the intro promo', function() {
+        expect(element.all(by.css('.ww-chapters__menu__item__header__nav__section.ng-binding')).get(8).getText()).toEqual('AUTONOMOUS VEHICLES'); 
+    });
+    
+    it('should get chapter: Financial Services', function() {
+        var url = 'https://www.forbes.com/kpmg/the-great-rewrite/#/5';
+        browser.get(url);
+        globals.pagesChecked.push(url);
+    });
+    
+    it('should have the intro promo', function() {
+        expect(element.all(by.css('.ww-chapters__menu__item__header__nav__section.ng-binding')).get(4).getText()).toEqual('FINANCIAL SERVICES'); 
+    });
+    
+    it('should get chapter: Healthcare', function() {
+        var url = 'https://www.forbes.com/kpmg/the-great-rewrite/#/6';
+        browser.get(url);
+        globals.pagesChecked.push(url);
+    });
+    
+    it('should have the intro promo', function() {
+        expect(element.all(by.css('.ww-chapters__menu__item__header__nav__section.ng-binding')).get(3).getText()).toEqual('HEALTHCARE'); 
+    });
+    
+    it('should get chapter: Technology', function() {
+        var url = 'https://www.forbes.com/kpmg/the-great-rewrite/#/7';
+        browser.get(url);
+        globals.pagesChecked.push(url);
+    });
+    
+    it('should have the intro promo', function() {
+        expect(element.all(by.css('.ww-chapters__menu__item__header__nav__section.ng-binding')).get(2).getText()).toEqual('TECHNOLOGY'); 
+    });
+    
+    it('should get chapter: Government', function() {
+        var url = 'https://www.forbes.com/kpmg/the-great-rewrite/#/8';
+        browser.get(url);
+        globals.pagesChecked.push(url);
+    });
+    
+    it('should have the intro promo', function() {
+        expect(element.all(by.css('.ww-chapters__menu__item__header__nav__section.ng-binding')).get(1).getText()).toEqual('GOVERNMENT'); 
+    });
+    
+    it('should get chapter: Retail', function() {
+        var url = 'https://www.forbes.com/kpmg/the-great-rewrite/#/9';
+        browser.get(url);
+        globals.pagesChecked.push(url);
+    });
+    
+    it('should have the intro promo', function() {
+        expect(element.all(by.css('.ww-chapters__menu__item__header__nav__section.ng-binding')).get(9).getText()).toEqual('RETAIL'); 
+    });
+    
+    it('should get chapter: Media', function() {
+        var url = 'https://www.forbes.com/kpmg/the-great-rewrite/#/10';
+        browser.get(url);
+        globals.pagesChecked.push(url);
+    });
+    
+    it('should have the intro promo', function() {
+        expect(element.all(by.css('.ww-chapters__menu__item__header__nav__section.ng-binding')).get(10).getText()).toEqual('MEDIA'); 
+    });
+
+});

@@ -112,7 +112,6 @@ exports.config = {
                 'test/protractor-spec/video/pagecheck.spec.js',
                 'test/protractor-spec/homepage/desktopads.spec.js',
                 'test/protractor-spec/welcomead/desktoppagecheck.spec.js',
-                'test/protractor-spec/pulse/*pagecheck.spec.js',
 		        'test/protractor-spec/pulse/**/*.spec.js'
 			]
 		},
@@ -241,8 +240,7 @@ exports.config = {
             'test/protractor-spec/welcomead/**/*.spec.js'
 		],
         pulse: [
-			'test/protractor-spec/pulse/*pagecheck.spec.js',
-            'test/protractor-spec/pulse/**/*.spec.js'
+			'test/protractor-spec/pulse/**/*.spec.js'
 		]
 	},
 	specs: [
@@ -286,7 +284,6 @@ exports.config = {
 //      'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
 //      'test/protractor-spec/ng2articlechecks/**/*.spec.js',
 //      'test/protractor-spec/welcomead/**/*.spec.js',
-		'test/protractor-spec/pulse/*pagecheck.spec.js',
 		'test/protractor-spec/pulse/**/*.spec.js'
 	],
 	onPrepare: function() {
