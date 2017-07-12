@@ -1,4 +1,26 @@
-describe('Pulse - Cole Haan:', function() {
+describe('Pulse - Dell:', function() {
+    
+	it('should get the page', function() {
+        var url = 'http://www.forbes.com/dell/cities-transformed/';
+        browser.get(url);
+        globals.pagesChecked.push(url);
+    });
+    
+    it('should have the header on the page', function() {
+        expect(element(by.tagName('header')).isPresent()).toBe(true); 
+    });
+    
+    it('should have the footer on the page', function() {
+        expect(element(by.tagName('footer')).isPresent()).toBe(true); 
+    });
+    
+    it('should have brandvoice blurb', function() {
+        expect(element(by.css('.advoice-desc.initialized.ng-scope.ng-isolate-scope')).isDisplayed()).toBe(true); 
+    });
+    
+});
+
+describe('Pulse - Dell:', function() {
 	var currentUrl;
 
 	beforeAll(function(done) {
