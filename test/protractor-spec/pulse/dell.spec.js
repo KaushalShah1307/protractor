@@ -47,9 +47,11 @@ describe('Pulse - Dell:', function() {
 			});
 
 			it ('should have the correct parameters', function() {
-				expect(globals.getParam(trackingPixel.srcString, 'su')).toContain('http://www.forbes.com/colehaan/daring-to-step-forward/');
-				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/2411724');
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toContain('http://www.forbes.com/dell/cities-transformed/');
+				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/1795913');
 				expect(globals.getParam(trackingPixel.srcString, 'trl')).not.toBeNull();
+				expect(globals.getParam(trackingPixel.srcString, 'se')).toEqual('dell - cities transformed');
+				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual('tech');
 			});
 		});
         
