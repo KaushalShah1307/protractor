@@ -63,14 +63,14 @@ describe('Pulse - Dell:', function() {
                 var sites = ['fdcmobile', 'fdc.forbes'];
                 expect(sites).toContain(dataLayer.DFPSite);
                 expect(dataLayer.DFPZone).toEqual('csf');
-				expect(dataLayer.channel).toEqual('none');
-                expect(dataLayer.section).toEqual('none');
-                expect(dataLayer.brandVoice).toEqual('colehaan');
+				expect(dataLayer.channel).toEqual('tech');
+                expect(dataLayer.section).toEqual('dell - cities transformed');
+                expect(dataLayer.brandVoice).toEqual('delltechnologies');
                 expect(dataLayer.brandVoiceLive).toEqual('false');
                 expect(dataLayer.pageType).toEqual('csf');
                 expect(dataLayer.primaryChannel).toEqual('Business');
-                expect(dataLayer.primarySection).toEqual('Daring To Step Forward');
-				expect(dataLayer.slot).toEqual('colehaansf');
+                expect(dataLayer.primarySection).toEqual('Dell - Cities Transformed');
+				expect(dataLayer.slot).toEqual('dellsfcities');
 			});
 		});
         
