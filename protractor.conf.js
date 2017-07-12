@@ -111,7 +111,9 @@ exports.config = {
                 'test/protractor-spec/listprofiles/pagecheck.spec.js',
                 'test/protractor-spec/video/pagecheck.spec.js',
                 'test/protractor-spec/homepage/desktopads.spec.js',
-                'test/protractor-spec/welcomead/desktoppagecheck.spec.js'
+                'test/protractor-spec/welcomead/desktoppagecheck.spec.js',
+                'test/protractor-spec/pulse/*pagecheck.spec.js',
+		        'test/protractor-spec/pulse/**/*.spec.js'
 			]
 		},
 /*        {
@@ -237,6 +239,10 @@ exports.config = {
         welcomead: [
 			'test/protractor-spec/welcomead/*pagecheck.spec.js',
             'test/protractor-spec/welcomead/**/*.spec.js'
+		],
+        pulse: [
+			'test/protractor-spec/pulse/*pagecheck.spec.js',
+            'test/protractor-spec/pulse/**/*.spec.js'
 		]
 	},
 	specs: [
@@ -273,13 +279,15 @@ exports.config = {
 //      'test/protractor-spec/articlescroll/**/*.spec.js',
 //      'test/protractor-spec/mdotarticle/**/*.spec.js',
 //      'test/protractor-spec/templatesgallery/**/*.spec.js',
-      'test/protractor-spec/ng2article/*pagecheck.spec.js',
-      'test/protractor-spec/ng2article/**/*.spec.js',
+//      'test/protractor-spec/ng2article/*pagecheck.spec.js',
+//      'test/protractor-spec/ng2article/**/*.spec.js',
 //      'test/protractor-spec/ng2brandvoicearticle/*pagecheck.spec.js',
 //      'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
 //      'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
 //      'test/protractor-spec/ng2articlechecks/**/*.spec.js',
-//      'test/protractor-spec/welcomead/**/*.spec.js'
+//      'test/protractor-spec/welcomead/**/*.spec.js',
+		'test/protractor-spec/pulse/*pagecheck.spec.js',
+		'test/protractor-spec/pulse/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
