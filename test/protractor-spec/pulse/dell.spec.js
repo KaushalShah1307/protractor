@@ -90,13 +90,14 @@ describe('Pulse - Dell:', function() {
             });
             
             it('should pass the right custom parameters', function() {
-                expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2016-08-22T21:12:34.893Z'); 
+                expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2016-06-16T20:15:47.179Z'); 
                 expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
-                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Cole HaanVoice: Daring To Step Forward'); 
+                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Dell - Cities Transformed'); 
                 expect(browser.executeScript('return window.__reach_config.tags[0];')).toEqual('brandvoice'); 
-                expect(browser.executeScript('return window.__reach_config.tags[1];')).toEqual('site::colehaan'); 
-                expect(browser.executeScript('return window.__reach_config.tags[2];')).toEqual('slot::colehaansf'); 
+                expect(browser.executeScript('return window.__reach_config.tags[1];')).toEqual('site::delltechnologies'); 
+                expect(browser.executeScript('return window.__reach_config.tags[2];')).toEqual('slot::dellsfcities'); 
                 expect(browser.executeScript('return window.__reach_config.tags[3];')).toEqual('type::special feature'); 
+                expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('tech'); 
             });
             
         });
