@@ -1,3 +1,6 @@
+var Pulse = require('./pulse.page.js'),
+	pulse = new Pulse();
+
 describe('Pulse - Dell:', function() {
     
 	it('should get the page', function() {
@@ -18,6 +21,7 @@ describe('Pulse - Dell:', function() {
         expect(element(by.css('.advoice-desc.initialized.ng-scope.ng-isolate-scope')).isDisplayed()).toBe(true); 
     });
     
+    globals.checkAds(pulse.adsService);
 });
 
 describe('Pulse - Dell:', function() {
