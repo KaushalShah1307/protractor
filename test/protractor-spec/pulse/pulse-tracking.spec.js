@@ -1,4 +1,4 @@
-describe('Pulse:', function() {
+describe('Pulse - Cole Haan:', function() {
 	var currentUrl;
 
 	beforeAll(function(done) {
