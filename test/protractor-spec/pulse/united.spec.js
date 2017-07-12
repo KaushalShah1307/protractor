@@ -45,7 +45,7 @@ describe('Pulse - United:', function() {
 
 			it ('should have the correct parameters', function() {
 				expect(globals.getParam(trackingPixel.srcString, 'su')).toContain('http://www.forbes.com/united/street-to-street/');
-				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/2809365');
+				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/985544');
 				expect(globals.getParam(trackingPixel.srcString, 'trl')).not.toBeNull();
 			});
 		});
@@ -66,13 +66,13 @@ describe('Pulse - United:', function() {
                 expect(dataLayer.DFPZone).toEqual('csf');
 				expect(dataLayer.channel).toEqual('none');
                 expect(dataLayer.section).toEqual('none');
-                expect(dataLayer.brandVoice).toEqual('lincoln');
+                expect(dataLayer.brandVoice).toEqual('united');
                 expect(dataLayer.bvProgramType).toEqual('special_feature');
                 expect(dataLayer.brandVoiceLive).toEqual('false');
                 expect(dataLayer.pageType).toEqual('csf');
                 expect(dataLayer.primaryChannel).toEqual('none');
-                expect(dataLayer.primarySection).toEqual('Sanctuaries');
-				expect(dataLayer.slot).toEqual('lincolnsf');
+                expect(dataLayer.primarySection).toEqual('Street to Street');
+				expect(dataLayer.slot).toEqual('unitedsf');
 			});
 		});
         
@@ -92,12 +92,12 @@ describe('Pulse - United:', function() {
             });
             
             it('should pass the right custom parameters', function() {
-                expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-04-19T19:14:32.397Z'); 
+                expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-03-28T17:40:01.266Z'); 
                 expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
-                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('LincolnVoice: Sanctuaries'); 
+                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('UnitedVoice: Street To Street'); 
                 expect(browser.executeScript('return window.__reach_config.tags[0];')).toEqual('brandvoice'); 
-                expect(browser.executeScript('return window.__reach_config.tags[1];')).toEqual('site::lincoln'); 
-                expect(browser.executeScript('return window.__reach_config.tags[2];')).toEqual('slot::lincolnsf'); 
+                expect(browser.executeScript('return window.__reach_config.tags[1];')).toEqual('site::united'); 
+                expect(browser.executeScript('return window.__reach_config.tags[2];')).toEqual('slot::unitedsf'); 
                 expect(browser.executeScript('return window.__reach_config.tags[3];')).toEqual('type::special feature');
             });
             
