@@ -45,7 +45,6 @@ describe('ContribHP:', function() {
         expect(element(by.className('brandvoice-explained'))).toBeTruthy();
         element(by.className('close-button')).click();
     });
-
     
     it('should have correct og:url', function() {
         var ogUrl = $('meta[property="og:url"]').getAttribute('content');

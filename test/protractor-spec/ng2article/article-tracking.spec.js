@@ -67,8 +67,8 @@ describe('NG2 Article:', function() {
         describe('SimpleReach', function() {
             
             it('should pass the right custom parameters', function() {
-                expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Lewis DVorkin'); 
-                expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business'); 
+                expect(browser.executeScript('return window.__reach_config.authors;')).toEqual('Lewis DVorkin'); 
+                expect(browser.executeScript('return window.__reach_config.channels;')).toEqual('business'); 
                 expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2015-06-10T14:00:00.000Z'); 
                 expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000'); 
                 expect(browser.executeScript('return window.__reach_config.tags.length;')).toEqual(13); 
