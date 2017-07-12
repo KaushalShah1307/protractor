@@ -1,10 +1,10 @@
 var Pulse = require('./pulse.page.js'),
 	pulse = new Pulse();
 
-describe('Pulse - Dell:', function() {
+describe('Pulse - Oppenheimerfunds:', function() {
     
 	it('should get the page', function() {
-        var url = 'https://www.forbes.com/dell/cities-transformed/';
+        var url = 'https://www.forbes.com/oppenheimerfunds/the-upside/';
         browser.get(url);
         globals.pagesChecked.push(url);
     });
@@ -24,7 +24,7 @@ describe('Pulse - Dell:', function() {
     globals.checkAds(pulse.adsService);
 });
 
-describe('Pulse - Dell:', function() {
+describe('Pulse - Oppenheimerfunds:', function() {
 	var currentUrl;
 
 	beforeAll(function(done) {
@@ -47,11 +47,9 @@ describe('Pulse - Dell:', function() {
 			});
 
 			it ('should have the correct parameters', function() {
-				expect(globals.getParam(trackingPixel.srcString, 'su')).toContain('http://www.forbes.com/dell/cities-transformed/');
-				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/1795913');
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toContain('http://www.forbes.com/oppenheimerfunds/the-upside/');
+				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/620052');
 				expect(globals.getParam(trackingPixel.srcString, 'trl')).not.toBeNull();
-				expect(globals.getParam(trackingPixel.srcString, 'se')).toEqual('dell - cities transformed');
-				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual('tech');
 			});
 		});
         
@@ -69,14 +67,14 @@ describe('Pulse - Dell:', function() {
                 var sites = ['fdcmobile', 'fdc.forbes'];
                 expect(sites).toContain(dataLayer.DFPSite);
                 expect(dataLayer.DFPZone).toEqual('csf');
-				expect(dataLayer.channel).toEqual('tech');
-                expect(dataLayer.section).toEqual('dell - cities transformed');
-                expect(dataLayer.brandVoice).toEqual('delltechnologies');
+				expect(dataLayer.channel).toEqual('none');
+                expect(dataLayer.section).toEqual('none');
+                expect(dataLayer.brandVoice).toEqual('oppenheimerfunds');
                 expect(dataLayer.brandVoiceLive).toEqual('false');
                 expect(dataLayer.pageType).toEqual('csf');
                 expect(dataLayer.primaryChannel).toEqual('Business');
-                expect(dataLayer.primarySection).toEqual('Dell - Cities Transformed');
-				expect(dataLayer.slot).toEqual('dellsfcities');
+                expect(dataLayer.primarySection).toEqual('The Upside');
+				expect(dataLayer.slot).toEqual('oppenheimersf');
 			});
 		});
         
@@ -96,14 +94,13 @@ describe('Pulse - Dell:', function() {
             });
             
             it('should pass the right custom parameters', function() {
-                expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2016-06-16T20:15:47.179Z'); 
+                expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2016-09-23T21:39:39.500Z'); 
                 expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
-                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Dell - Cities Transformed'); 
+                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('OppenheimerFundsVoice: The Upside'); 
                 expect(browser.executeScript('return window.__reach_config.tags[0];')).toEqual('brandvoice'); 
-                expect(browser.executeScript('return window.__reach_config.tags[1];')).toEqual('site::delltechnologies'); 
-                expect(browser.executeScript('return window.__reach_config.tags[2];')).toEqual('slot::dellsfcities'); 
-                expect(browser.executeScript('return window.__reach_config.tags[3];')).toEqual('type::special feature'); 
-                expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('tech'); 
+                expect(browser.executeScript('return window.__reach_config.tags[1];')).toEqual('site::oppenheimerfunds'); 
+                expect(browser.executeScript('return window.__reach_config.tags[2];')).toEqual('slot::oppenheimersf'); 
+                expect(browser.executeScript('return window.__reach_config.tags[3];')).toEqual('type::special feature');
             });
             
         });
