@@ -39,14 +39,14 @@ describe('Pulse:', function() {
                 var sites = ['fdcmobile', 'fdc.forbes'];
                 expect(sites).toContain(dataLayer.DFPSite);
                 expect(dataLayer.DFPZone).toEqual('csf');
-				expect(dataLayer.channel).toEqual('business');
+				expect(dataLayer.channel).toEqual('none');
                 expect(dataLayer.section).toEqual('none');
-                expect(dataLayer.brandVoice).toEqual('none');
-                expect(dataLayer.brandVoiceLive).toEqual('none');
+                expect(dataLayer.brandVoice).toEqual('colehaan');
+                expect(dataLayer.brandVoiceLive).toEqual('false');
                 expect(dataLayer.pageType).toEqual('csf');
                 expect(dataLayer.primaryChannel).toEqual('Business');
-                expect(dataLayer.primarySection).toEqual('Vinyl');
-				expect(dataLayer.slot).toEqual('none');
+                expect(dataLayer.primarySection).toEqual('Daring To Step Forward');
+				expect(dataLayer.slot).toEqual('colehaansf');
 			});
 		});
         
