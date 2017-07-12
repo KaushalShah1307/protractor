@@ -20,9 +20,6 @@ describe('Pulse - John Hancock:', function() {
     it('should have brandvoice blurb', function() {
         expect(element(by.css('.advoice-desc.initialized.ng-scope.ng-isolate-scope')).isDisplayed()).toBe(true); 
     });
-    
-    globals.checkAds(pulse.adsService);
-});
 
 describe('Pulse - John Hancock:', function() {
 	var currentUrl;
@@ -125,4 +122,8 @@ describe('Pulse - John Hancock:', function() {
         });        
         
 	});        
+});
+
+	globals.generalCheck();
+    globals.checkAds(pulse.adsService);
 });

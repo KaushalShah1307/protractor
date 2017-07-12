@@ -121,5 +121,6 @@ describe('Pulse - Vanguard:', function() {
         
 	});        
 });
+    //globals.generalCheck();
     globals.checkAds(pulse.adsService);
 });

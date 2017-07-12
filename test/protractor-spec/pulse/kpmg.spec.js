@@ -20,8 +20,6 @@ describe('Pulse - KPMG:', function() {
     it('should have brandvoice blurb', function() {
         expect(element(by.css('.brand-voice-blurb')).isDisplayed()).toBe(true); 
     });
-    
-});
 
 describe('Pulse - KPMG:', function() {
 	var currentUrl;
@@ -233,4 +231,6 @@ describe('Chapters:', function() {
         expect(element.all(by.css('.ww-chapters__menu__item__header__nav__section.ng-binding')).get(10).getText()).toEqual('MEDIA'); 
     });
 
+});
+    
 });

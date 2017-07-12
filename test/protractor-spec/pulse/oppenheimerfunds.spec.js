@@ -20,9 +20,6 @@ describe('Pulse - Oppenheimerfunds:', function() {
     it('should have brandvoice blurb', function() {
         expect(element(by.css('.advoice-desc.initialized.ng-scope.ng-isolate-scope')).isDisplayed()).toBe(true); 
     });
-    
-    globals.checkAds(pulse.adsService);
-});
 
 describe('Pulse - Oppenheimerfunds:', function() {
 	var currentUrl;
@@ -122,4 +119,8 @@ describe('Pulse - Oppenheimerfunds:', function() {
         });        
         
 	});        
+});
+
+	//globals.generalCheck();
+    globals.checkAds(pulse.adsService);
 });

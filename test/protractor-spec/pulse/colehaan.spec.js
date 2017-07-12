@@ -19,10 +19,6 @@ describe('Pulse - Cole Haan:', function() {
         expect(element(by.css('.advoice-desc.initialized.ng-scope.ng-isolate-scope')).isDisplayed()).toBe(true); 
     });
 
-	globals.generalCheck();
-    globals.checkAds(pulse.adsService);
-});
-
 describe('Pulse - Cole Haan:', function() {
 	var currentUrl;
 
@@ -121,4 +117,8 @@ describe('Pulse - Cole Haan:', function() {
         });        
         
 	});        
+});
+
+	globals.generalCheck();
+    globals.checkAds(pulse.adsService);
 });
