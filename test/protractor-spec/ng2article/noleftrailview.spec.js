@@ -37,6 +37,14 @@ describe('NG2 Article on Smaller Breakpoint:', function() {
             expect(element.all(by.css('.current-inline>inline-article>a')).first().getAttribute('href')).toContain(articleUrl);
             trendingDrawer.click();
         });
+        
+        it('should have BrandVoice prepend', function() {
+            trendingDrawer.click();
+            var bvPrepend = element.all(by.css('.ng-binding.ng-scope.str-voice')).first();
+            expect(bvPrepend.isDisplayed()).toBe(true);
+            expect(bvPrepend.getText().length > 0);
+            trendingDrawer.click();
+        });
     
     });
 });

@@ -8,6 +8,7 @@ describe('NG2 Article:', function() {
 			commentsTrigger = $('.article-comments');
 			commentsPanel = $('.article-sidebar-panel.article-comments-panel');
 			loginButton = element(by.css('.login-text.fs-text-s'));
+            bvPrepend = element.all(by.css('.ng-binding.ng-scope.str-voice')).first();
 		});
 
 		// (http://jira.forbes.com/browse/BUGREPORTING-1051)
@@ -33,6 +34,11 @@ describe('NG2 Article:', function() {
             var logOut = element.all(by.css('.fs-text-xs>div>li>a')).get(4);
             logOut.click();
             expect(element(by.css('.login-text.fs-text-s')).getText()).toEqual('LOG IN');
+        });
+        
+        it('should have BrandVoice prepend', function() {
+            expect(bvPrepend.isDisplayed()).toBe(true);
+            expect(bvPrepend.getText().length > 0); 
         });
 	});
 });
