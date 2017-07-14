@@ -136,8 +136,8 @@ describe('NG2 Article Checks:', function() {
             describe('SimpleReach', function() {
 
                 it('should pass the right custom parameters', function() {
-                    expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Kaushal Shah'); 
-                    expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('Technology'); 
+                    expect(browser.executeScript('return window.__reach_config.authors;')).toEqual('Kaushal Shah'); 
+                    expect(browser.executeScript('return window.__reach_config.channels;')).toEqual('Technology'); 
                     expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2014-03-26T21:30:00.000Z'); 
                     expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000'); 
                     expect(browser.executeScript('return window.__reach_config.tags.length;')).toEqual(3); 

@@ -277,14 +277,14 @@ exports.config = {
 //      'test/protractor-spec/articlescroll/**/*.spec.js',
 //      'test/protractor-spec/mdotarticle/**/*.spec.js',
 //      'test/protractor-spec/templatesgallery/**/*.spec.js',
-//      'test/protractor-spec/ng2article/*pagecheck.spec.js',
-//      'test/protractor-spec/ng2article/**/*.spec.js',
+      'test/protractor-spec/ng2article/*pagecheck.spec.js',
+      'test/protractor-spec/ng2article/**/*.spec.js',
 //      'test/protractor-spec/ng2brandvoicearticle/*pagecheck.spec.js',
 //      'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
-//      'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
-//      'test/protractor-spec/ng2articlechecks/**/*.spec.js',
+      'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
+      'test/protractor-spec/ng2articlechecks/**/*.spec.js',
 //      'test/protractor-spec/welcomead/**/*.spec.js',
-		'test/protractor-spec/pulse/**/*.spec.js'
+//		'test/protractor-spec/pulse/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
