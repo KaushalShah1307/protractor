@@ -142,8 +142,6 @@ describe('NG2 Article Checks:', function() {
                     expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000'); 
                     expect(browser.executeScript('return window.__reach_config.tags.length;')).toEqual(3); 
                     expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Link: Building mobile & apps with Angular & Trigger.IO'); 
-                    expect(browser.executeScript('return window.__reach_config.ref_url;')).toEqual('value should be passed here once issue has been fixed'); 
-                    expect(browser.executeScript('return window.__reach_config.referrer;')).toEqual('value should be passed here once issue has been fixed'); 
                 });
 
             });
@@ -213,6 +211,25 @@ describe('NG2 Article Checks:', function() {
             var leftRailVideo = element(by.css('.video-placeholder>fbs-video'));
             expect(leftRailVideo.getAttribute('autoplay')).toEqual('true');
         });
+        
+        xdescribe('Video Fast Pixel Tracking:', function() {
+			var trackingPixel;
+
+			beforeAll(function(done) {
+				trackingPixel = $('img[src*="fast.forbes.com/fps/cookie_backup.php?n=video"]');
+				trackingPixel.getAttribute('src').then(function(src) {
+					trackingPixel.srcString = src;
+					done();
+				});
+			});
+
+			it('should have the correct parameters', function() {
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toContain('https://www.forbes.com/video/5420940992001/');
+				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual('video');
+				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual('video/brightcove/5420940992001');
+				expect(globals.getParam(trackingPixel.srcString, 'n')).toEqual('video');
+			});
+		});
     });  
     
     describe('Top autoplay video Article:', function() {
