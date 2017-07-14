@@ -24,6 +24,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('displaychannel%3Dbusiness');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('displaysection%3Dlewisdvorkinblog');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getSizes().length')).toBe(3);
     });
     
@@ -39,6 +41,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('displaychannel%3Dbusiness');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('displaysection%3Dlewisdvorkinblog');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getSizes().length')).toBe(3);
     });
     
@@ -54,6 +58,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('displaychannel%3Dbusiness');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('displaysection%3Dlewisdvorkinblog');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getSizes().length')).toBe(3);
     });
     
@@ -65,6 +71,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].getContentUrl()')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('displaychannel%3Dbusiness');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('displaysection%3Dlewisdvorkinblog');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].getSizes().length')).toBe(5);
     });
     
@@ -79,6 +87,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getSizes().length')).toBe(7);
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('displaychannel%3Dbusiness');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('displaysection%3Dlewisdvorkinblog');
     });
     
     it('should have loge ad', function() {
@@ -91,6 +101,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].getContentUrl()')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('displaychannel%3Dbusiness');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('displaysection%3Dlewisdvorkinblog');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].getSizes().length')).toBe(7);
     });
     
@@ -104,6 +116,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].getContentUrl()')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('displaychannel%3Dbusiness');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('displaysection%3Dlewisdvorkinblog');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].getSizes().length')).toBe(7);
     });
     
@@ -117,6 +131,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].getContentUrl()')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('displaychannel%3Dbusiness');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('displaysection%3Dlewisdvorkinblog');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].getSizes().length')).toBe(7);
     });
     
@@ -130,6 +146,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].getContentUrl()')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('displaychannel%3Dbusiness');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('displaysection%3Dlewisdvorkinblog');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].getSizes().length')).toBe(7);
     });
     
@@ -145,6 +163,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('bbgterm%3Dfalse');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('displaychannel%3Dbusiness');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('displaysection%3Dlewisdvorkinblog');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getSizes().length')).toBe(3);
     });
  
