@@ -22,6 +22,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('sz=320x50%7C2x3%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('bbgterm%3Dfalse');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[1].getSizes().length')).toBe(3);
     });
     
@@ -35,6 +37,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('sz=320x50%7C2x3%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('bbgterm%3Dfalse');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getSizes().length')).toBe(3);
     });
     
@@ -48,6 +52,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('sz=320x50%7C2x3%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('bbgterm%3Dfalse');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[3].getSizes().length')).toBe(3);
     });
     
@@ -57,6 +63,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].getContentUrl()')).toContain('sz=320x50%7C120x40%7C300x170%7C300x100%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].getContentUrl()')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].getContentUrl()')).toContain('bbgterm%3Dfalse');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[7].getSizes().length')).toBe(5);
     });
     
@@ -81,6 +89,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].getContentUrl()')).toContain('sz=320x50%7C450x254%7C336x280%7C336x850%7C300x600%7C300x250%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].getContentUrl()')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].getContentUrl()')).toContain('bbgterm%3Dfalse');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[5].getSizes().length')).toBe(7);
     });
     
@@ -92,6 +102,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].getContentUrl()')).toContain('sz=320x50%7C300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].getContentUrl()')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].getContentUrl()')).toContain('bbgterm%3Dfalse');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[6].getSizes().length')).toBe(7);
     });
     
@@ -103,6 +115,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].getContentUrl()')).toContain('sz=320x50%7C300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].getContentUrl()')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].getContentUrl()')).toContain('bbgterm%3Dfalse');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[8].getSizes().length')).toBe(7);
     });
     
@@ -114,6 +128,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].getContentUrl()')).toContain('sz=320x50%7C300x250%7C336x280%7C300x600%7C336x850%7C450x254%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].getContentUrl()')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].getContentUrl()')).toContain('bbgterm%3Dfalse');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[9].getSizes().length')).toBe(7);
     });
     
@@ -127,6 +143,8 @@ describe('NG2 Article Ads:', function() {
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('sz=320x50%7C600x575%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('iu=%2F7175%2Ffdc.forbes%2Farticle-d-delta-u');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('bbgterm%3Dfalse');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('channel%3Dbusiness%252Ctech%252Centrepreneurs%252Cleadership');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('section%3Dbusiness%253Amedia%2526entertainment%252Ctech%253Asocialmedia%252Centrepreneurs%253Amanagement');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getSizes().length')).toBe(3);
     });
  
