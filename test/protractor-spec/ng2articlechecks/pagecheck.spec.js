@@ -449,7 +449,7 @@ describe('NG2 Article Checks:', function() {
                 globals.pagesChecked.push(url);
             });
 
-            it('should have insta embeds', function() {
+            it('should have instagram embeds', function() {
                 for(var i=0; i<6; i++) {
                    var instaEmbeds = element(by.css("#instagram-embed-"+i+""));
                    expect(browser.isElementPresent(instaEmbeds)).toBe(true); 
@@ -500,6 +500,36 @@ describe('NG2 Article Checks:', function() {
                 var soundcloudEmbeds = element(by.css(".article-body.fs-article.fs-responsive-text>div>p>iframe"));
                 expect(soundcloudEmbeds.getAttribute('src')).toEqual('https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/260750925&color=ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false');
                 expect(browser.isElementPresent(soundcloudEmbeds)).toBe(true);
+            });
+        });
+        
+        describe('Apester:', function() {
+        
+            it('should get the page', function() {
+                var url = 'https://www.forbes.com/sites/emilyinverso/2016/10/10/quiz-who-said-what-in-last-nights-debate/?view=beta-u';
+                browser.get(url);
+                globals.pagesChecked.push(url);
+            });
+
+            it('should have apester embeds', function() {
+                var apesterEmbeds = element(by.css(".article-body.fs-article.fs-responsive-text>div>p>iframe"));
+                expect(apesterEmbeds.getAttribute('src')).toEqual('https://renderer.qmerce.com/interaction/57fb9063605e06ce177ff792');
+                expect(browser.isElementPresent(apesterEmbeds)).toBe(true);
+            });
+        });
+        
+        describe('JS Maps:', function() {
+        
+            it('should get the page', function() {
+                var url = 'https://www.forbes.com/sites/williamnoglows/2015/06/29/on-tour-with-katy-perry/?view=beta-u';
+                browser.get(url);
+                globals.pagesChecked.push(url);
+            });
+
+            it('should have JS maps embeds', function() {
+                var maps = element(by.css(".article-body.fs-article.fs-responsive-text>div>p>iframe"));
+                expect(maps.getAttribute('src')).toEqual('https://s3.amazonaws.com/uploads.knightlab.com/storymapjs/4d47f43d6126f1807149ed1c60334b50/on-tour-with-katy-perry/index.html');
+                expect(browser.isElementPresent(maps)).toBe(true);
             });
         });
     });
