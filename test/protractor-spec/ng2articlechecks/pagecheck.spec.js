@@ -487,6 +487,21 @@ describe('NG2 Article Checks:', function() {
                 expect(browser.isElementPresent(vimeoEmbeds)).toBe(true);
             });
         });
+        
+        describe('Soundcloud:', function() {
+        
+            it('should get the page', function() {
+                var url = 'https://www.forbes.com/sites/ianaltman/2016/04/28/3-proven-ways-to-ensure-success-at-your-next-business-conference/?view=beta-u';
+                browser.get(url);
+                globals.pagesChecked.push(url);
+            });
+
+            it('should have soundcloud embeds', function() {
+                var soundcloudEmbeds = element(by.css(".article-body.fs-article.fs-responsive-text>div>p>iframe"));
+                expect(soundcloudEmbeds.getAttribute('src')).toEqual('https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/260750925&color=ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false');
+                expect(browser.isElementPresent(soundcloudEmbeds)).toBe(true);
+            });
+        });
     });
 
     //globals.generalCheck();
