@@ -456,6 +456,22 @@ describe('NG2 Article Checks:', function() {
                 };
             });
         });
+        
+        describe('Twitter:', function() {
+        
+            it('should get the page', function() {
+                var url = 'https://www.forbes.com/sites/jerrybarca/2016/11/09/belichick-letter-to-trump-about-friendship-not-politics/?view=beta-u';
+                browser.get(url);
+                globals.pagesChecked.push(url);
+            });
+
+            it('should have insta embeds', function() {
+                for(var i=0; i<1; i++) {
+                   var twitterEmbeds = element(by.css("#twitter-widget-"+i+""));
+                   expect(browser.isElementPresent(twitterEmbeds)).toBe(true); 
+                };
+            });
+        });
     });
 
     //globals.generalCheck();
