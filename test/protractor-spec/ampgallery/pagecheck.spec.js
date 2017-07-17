@@ -30,14 +30,8 @@ describe('AMP Gallery:', function() {
     
     xit('should validate', function() {
         browser.get('https://www.forbes.com/pictures/mli45fdllh/the-worlds-highest-paid/amp/#development=1');
-        //var result = browser.executeScript("var xhr = new XMLHttpRequest();xhr.open('GET', document.location, true);xhr.onreadystatechange = validationResult;xhr.send();function validationResult() {if (xhr.readyState === 4) {result = amp.validator.validateString(xhr.responseText);}};");
-        //var result = browser.executeScript("return window."+result+".status");
-        //expect(result).toEqual('asdfasdf');
         
-        //expect(browser.executeScript("var xhr = new XMLHttpRequest();xhr.open('GET', document.location, true);xhr.onreadystatechange = validationResult;xhr.send();function validationResult() {if (xhr.readyState === 4) {result = amp.validator.validateString(xhr.responseText);}}; return result;")).toEqual('asdf');;  
-        
-        //var pageSource = browser.executeScript('window.document.documentElement.outerHTML');
-        expect(browser.executeScript('window.document.documentElement.outerHTML')).toEqual('asdf');
+        //expect(browser.executeScript(" var xhr = new XMLHttpRequest(); xhr.open('GET', document.location, true); xhr.onreadystatechange = validationResult; xhr.send(); function validationResult() { if (xhr.readyState === 4) { result = amp.validator.validateString(xhr.responseText); return result.status; var data = result.status}};")).toEqual('asdf');
     });
     
 });

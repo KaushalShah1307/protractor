@@ -81,9 +81,9 @@ describe('NG2 Article Checks:', function() {
             globals.pagesChecked.push(url);
         });
         
-        it('should not have black border on hover state for continue button', function() {
+        xit('should not have black border on hover state for continue button', function() {
             expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.next'), ':hover').getPropertyValue('border-color')")).toEqual('rgb(6, 158, 236)');
-            expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.next'), ':hover').getPropertyValue('color')")).toEqual('rgb(6, 158, 236)');
+            expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.next'), ':hover').getPropertyValue('background')")).toEqual('rgb(6, 158, 236)');
         });
         
         it('should load the paginated page', function() {
