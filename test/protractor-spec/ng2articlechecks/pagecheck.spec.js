@@ -465,11 +465,26 @@ describe('NG2 Article Checks:', function() {
                 globals.pagesChecked.push(url);
             });
 
-            it('should have insta embeds', function() {
+            it('should have twitter embeds', function() {
                 for(var i=0; i<1; i++) {
                    var twitterEmbeds = element(by.css("#twitter-widget-"+i+""));
                    expect(browser.isElementPresent(twitterEmbeds)).toBe(true); 
                 };
+            });
+        });
+        
+        describe('Vimeo:', function() {
+        
+            it('should get the page', function() {
+                var url = 'https://www.forbes.com/sites/brucekasanoff/2016/05/20/the-1-secret-to-career-success/?view=beta-u';
+                browser.get(url);
+                globals.pagesChecked.push(url);
+            });
+
+            it('should have vimeo embeds', function() {
+                var vimeoEmbeds = element(by.css(".article-body.fs-article.fs-responsive-text>div>p>span>iframe"));
+                expect(vimeoEmbeds.getAttribute('src')).toEqual('https://player.vimeo.com/video/167292188?title=0&byline=0&portrait=0');
+                expect(browser.isElementPresent(vimeoEmbeds)).toBe(true);
             });
         });
     });
