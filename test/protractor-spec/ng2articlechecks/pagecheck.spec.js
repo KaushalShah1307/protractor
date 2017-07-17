@@ -532,6 +532,21 @@ describe('NG2 Article Checks:', function() {
                 expect(browser.isElementPresent(maps)).toBe(true);
             });
         });
+        
+        describe('Scribd:', function() {
+        
+            it('should get the page', function() {
+                var url = 'https://www.forbes.com/sites/matthewherper/2016/07/08/theranos-defiantly-says-holmes-will-remain-ceo-but-it-may-stop-all-lab-operations/?view=beta-u';
+                browser.get(url);
+                globals.pagesChecked.push(url);
+            });
+
+            it('should have scribd embeds', function() {
+                var scribdEmbeds = element(by.css(".article-body.fs-article.fs-responsive-text>div>p>iframe"));
+                expect(scribdEmbeds.getAttribute('src')).toEqual('https://www.scribd.com/embeds/317818941/content?start_page=1&view_mode=scroll&access_key=key-26Hzw5EOAg42Pz78N8JD&show_recommendations=true&show_upsell=true');
+                expect(browser.isElementPresent(scribdEmbeds)).toBe(true);
+            });
+        });
     });
 
     //globals.generalCheck();
