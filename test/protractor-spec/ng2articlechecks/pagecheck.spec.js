@@ -437,6 +437,25 @@ describe('NG2 Article Checks:', function() {
             expect(browser.isElementPresent(magazineBlurb)).toBe(true);
             expect(magazineBlurb.getText()).toEqual('This story appears in the June 29, 2017 issue of Forbes. Subscribe');
         });
+    });       
+    
+    describe('Embeds:', function() {
+        
+        describe('Instagram:', function() {
+        
+            it('should get the page', function() {
+                var url = 'https://www.forbes.com/sites/natalierobehmed/2015/09/17/inside-the-earnings-of-taylor-swifts-girl-gang/?view=beta-u';
+                browser.get(url);
+                globals.pagesChecked.push(url);
+            });
+
+            it('should have insta embeds', function() {
+                for(var i=0; i<6; i++) {
+                   var instaEmbeds = element(by.css("#instagram-embed-"+i+""));
+                   expect(browser.isElementPresent(instaEmbeds)).toBe(true); 
+                };
+            });
+        });
     });
 
     //globals.generalCheck();
