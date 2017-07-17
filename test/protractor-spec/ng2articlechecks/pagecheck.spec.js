@@ -547,6 +547,21 @@ describe('NG2 Article Checks:', function() {
                 expect(browser.isElementPresent(scribdEmbeds)).toBe(true);
             });
         });
+        
+        describe('Libsyn:', function() {
+        
+            it('should get the page', function() {
+                var url = 'https://www.forbes.com/sites/jacobmorgan/2016/06/27/marshall-goldsmith-on-how-to-drive-behavior-change/?view=beta-u';
+                browser.get(url);
+                globals.pagesChecked.push(url);
+            });
+
+            it('should have libsyn embeds', function() {
+                var libsynEmbeds = element(by.css(".article-body.fs-article.fs-responsive-text>div>p>iframe"));
+                expect(libsynEmbeds.getAttribute('src')).toEqual('https://html5-player.libsyn.com/embed/episode/id/4472425/height/300/width/640/theme/standard/autoplay/no/autonext/no/thumbnail/yes/preload/no/no_addthis/no/direction/backward/no-cache/true/');
+                expect(browser.isElementPresent(libsynEmbeds)).toBe(true);
+            });
+        });
     });
 
     //globals.generalCheck();
