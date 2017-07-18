@@ -21,6 +21,14 @@ describe('Media Manager:', function() {
     });
     
     describe('Header:', function() {
+        
+        it('should have the header', function() {
+            expect(element(by.tagName('header')).isDisplayed()).toBe(true); 
+        });
+        
+        it('should have forbes logo', function() {
+            expect(element.all(by.css('.icon.icon-forbes-logo')).get(0).isDisplayed()).toBe(true); 
+        });
     
         it('should have header logo', function() {
             expect(element.all(by.css('.forbes-logo>a')).get(1).getText()).toEqual('Media Manager');
@@ -36,6 +44,21 @@ describe('Media Manager:', function() {
 
         it('should have Log Out link', function() {
             expect(element.all(by.css('.dam-links>ul>li>a')).get(2).getText()).toEqual('LOG OUT');
+        });
+    });
+    
+    describe('Footer:', function() {
+    
+        it('should have the footer', function() {
+            expect(element(by.tagName('footer')).isDisplayed()).toBe(true);
+        });
+        
+        it('should have forbes logo', function() {
+            expect(element.all(by.css('.icon.icon-forbes-logo')).get(1).isDisplayed()).toBe(true); 
+        });
+        
+        it('should have copyright', function() {
+            expect(element(by.css('.copy')).getText()).toEqual('2015 Forbes.com LLC™ All Rights Reserved'); 
         });
     });    
 });
