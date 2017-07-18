@@ -68,5 +68,35 @@ describe('Media Manager:', function() {
                 expect(links).toContain(element.all(by.css('.footer-links>li>a')).get(i).getText());
             };
         });
+    });
+    
+    describe('Search:', function() {
+    
+        it('should have the search bar', function() {
+            expect(element(by.css('.search-bar')).isDisplayed()).toBe(true);
+        });
+        
+        it('should have Galleries as an option', function() {
+            expect(element(by.css('.switch-label.switch-label-off.active')).isDisplayed()).toBe(true); 
+        });
+        
+        it('should have Images as an option', function() {
+            expect(element(by.css('.switch-label.switch-label-on.not-active')).isDisplayed()).toBe(true); 
+        });
+        
+        it('should have Date Picker option', function() {
+            var dateGear = element(by.css('.icon.icon-cog'));
+            var startDate = element(by.css('.date-picker-group.start-date'));
+            var endDate = element(by.css('.date-picker-group.end-date'));
+            var datePicker = element(by.css('.pickadate'));
+            expect(dateGear.isDisplayed()).toBe(true);
+            dateGear.click();
+            expect(startDate.isDisplayed()).toBe(true);
+            startDate.click();
+            expect(datePicker.isDisplayed()).toBe(true);
+            endDate.click();
+            expect(element(by.css('.pickadate')).isDisplayed()).toBe(true);
+            dateGear.click();
+        });
     });    
 });
