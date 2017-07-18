@@ -60,5 +60,13 @@ describe('Media Manager:', function() {
         it('should have copyright', function() {
             expect(element(by.css('.copy')).getText()).toEqual('2015 Forbes.com LLC™ All Rights Reserved'); 
         });
+        
+        it('should have footer links', function() {
+            var links = ['Advertise', 'Forbes Press Room', 'Reprints & Permissions', 'Contact Us', 'Jobs At Forbes', 'Terms and Conditions', 'Help', 'Privacy Statement', 'AdChoices'];
+        
+            for(var i=0; i<9; i++) {
+                expect(links).toContain(element.all(by.css('.footer-links>li>a')).get(i).getText());
+            };
+        });
     });    
 });
