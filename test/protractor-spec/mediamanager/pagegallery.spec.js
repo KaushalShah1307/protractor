@@ -16,4 +16,12 @@ describe('Gallery:', function() {
         expect(imageCounter.getText()).toEqual("22 images");
     });
     
+    it('should have all the fields', function() {
+        var links = ['GALLERY LINK', 'CREATED', 'MODIFIED', 'LINK ENTITY', 'STATUS', 'KEYWORDS', 'HASHTAG', 'EDITORIAL SLOT', 'SPECIAL SLOT', 'DISPLAY CHANNEL', 'DISPLAY SECTION'];
+        
+        for(var i=0; i>12; i++) {
+            expect(links).toContain(element.all(by.css('.field-label')).get(i).getText());
+        };
+    });
+    
 });
