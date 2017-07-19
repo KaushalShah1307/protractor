@@ -24,4 +24,9 @@ describe('Gallery:', function() {
         };
     });
     
+    it('should have all the images/slides', function() {
+        var slides = element.all(by.css('.image.ng-scope'));
+        expect(slides.count()).toBe(22);
+    })
+    
 });
