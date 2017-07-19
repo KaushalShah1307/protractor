@@ -98,5 +98,17 @@ describe('Media Manager:', function() {
             expect(element(by.css('.pickadate')).isDisplayed()).toBe(true);
             dateGear.click();
         });
+    });
+    
+    describe('Recent Galleries:', function() {
+    
+        it('should have recent galleries', function() {
+            expect(element.all(by.css('.section-title')).get(1).getText()).toEqual('Recent Galleries'); 
+        });
+        
+        it('should have gallery carousel', function() {
+            var galleries = element.all(by.repeater('gallery in galleryList'));
+            expect(galleries.count()).toBeGreaterThanOrEqual(4);
+        });
     });    
 });
