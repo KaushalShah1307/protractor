@@ -110,5 +110,12 @@ describe('Media Manager:', function() {
             var galleries = element.all(by.repeater('gallery in galleryList'));
             expect(galleries.count()).toBeGreaterThanOrEqual(4);
         });
+        
+        it('should click next on gallery carousel', function() {
+            var next = element(by.css('.arrow.arrow-next'));
+            next.click();
+            var galleries = element.all(by.repeater('gallery in galleryList'));
+            expect(galleries.count()).toBeGreaterThanOrEqual(4);
+        });
     });    
 });
