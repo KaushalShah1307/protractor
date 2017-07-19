@@ -11,4 +11,9 @@ describe('Gallery:', function() {
         expect(title.getText()).toContain("Exclusive Look Inside Giorgio Armani's Pantelleria Island Villa");
     });
     
+    it('should have image counter', function() {
+        var imageCounter = element.all(by.tagName('small')).first();
+        expect(imageCounter.getText()).toEqual("22 images");
+    });
+    
 });
