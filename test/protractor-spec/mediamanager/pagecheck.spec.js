@@ -117,5 +117,12 @@ describe('Media Manager:', function() {
             var galleries = element.all(by.repeater('gallery in galleryList'));
             expect(galleries.count()).toBeGreaterThanOrEqual(4);
         });
+        
+        it('should click to reveal gallery', function() {
+            var gallery = element.all(by.css('.asset-thumb')).first();
+            expect(gallery.isDisplayed()).toBe(true);
+            gallery.click();
+            expect(browser.getCurrentUrl()).toContain('https://www.forbes.com/media-manager/#/gallery/');
+        });
     });    
 });
