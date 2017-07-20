@@ -12,4 +12,14 @@ describe('Create Gallery:', function() {
         title.sendKeys('This is the title of the gallery entered by Protractor');
     });
     
+    it('should add keywords', function() {
+        var tags = element(by.model('new_gallery.keywords'));
+        tags.click();
+        tags.sendKeys('Protractor Tags');
+    });
+    
+    it('should submit to create the gallery', function() {
+        element(by.css('.button')).click(); 
+    });
+    
 });
