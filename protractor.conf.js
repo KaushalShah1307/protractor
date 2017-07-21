@@ -280,7 +280,7 @@ exports.config = {
 //      'test/protractor-spec/listprofiles/*pagecheck.spec.js',
 //      'test/protractor-spec/video/*pagecheck.spec.js',
 //      'test/protractor-spec/articlescroll/**/*.spec.js',
-//      'test/protractor-spec/mdotarticle/**/*.spec.js',
+      'test/protractor-spec/mdotarticle/**/*.spec.js',
 //      'test/protractor-spec/templatesgallery/**/*.spec.js',
 //      'test/protractor-spec/ng2article/*pagecheck.spec.js',
 //      'test/protractor-spec/ng2article/**/*.spec.js',
@@ -290,7 +290,7 @@ exports.config = {
 //      'test/protractor-spec/ng2articlechecks/**/*.spec.js',
 //      'test/protractor-spec/welcomead/**/*.spec.js',
 //		'test/protractor-spec/pulse/**/*.spec.js',
-        'test/protractor-spec/mediamanager/**/*.spec.js'
+//      'test/protractor-spec/mediamanager/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');

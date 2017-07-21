@@ -660,7 +660,7 @@ describe('Tracking on Long-Scroll Mobile Article (MDot):', function() {
 				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual('blogAuthorId/blog/author/958141');
 				expect(globals.getParam(trackingPixel.srcString, 're')).toEqual('m.forbes.com');
 				expect(globals.getParam(trackingPixel.srcString, 'mb')).toEqual('t');
-				expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual('https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/');
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toContain('https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/');
 			});
         });
     
@@ -684,7 +684,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         });
         
         it('should have amazon ads', function() {
-            expect(browser.executeScript('return window.Object.values(window.fbsads.amazonBiddingService._config.amazonSlots).length')).toBeGreaterThan(0); 
+            expect(browser.executeScript('return window.fbsads.amazonBiddingService._config.amazonSlots.length')).toBeGreaterThan(0); 
         });
         
     });
