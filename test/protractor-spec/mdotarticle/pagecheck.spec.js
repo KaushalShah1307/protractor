@@ -671,7 +671,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
     describe('Amazon ads:', function() {
        
         it('should get the page', function() {
-            var url = 'https://m.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?s=trending&amzn_debug_mode=1';
+            var url = 'https://m.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?amzn_debug_mode=1';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -684,7 +684,10 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         });
         
         it('should have amazon ads', function() {
-            expect(browser.executeScript('return window.fbsads.amazonBiddingService._config.amazonSlots.length')).toBeGreaterThan(0); 
+            browser.sleep(5000);
+            expect(browser.executeScript('return window.Object.values(window.fbsads.amazonBiddingService._config.amazonSlots).length')).toBeGreaterThan(0);
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('amznsz%3D320x50');
+            expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('amznbid');
         });
         
     });
