@@ -139,7 +139,7 @@ describe('NG2 Article Checks:', function() {
                     expect(browser.executeScript('return window.__reach_config.authors;')).toEqual('Kaushal Shah'); 
                     expect(browser.executeScript('return window.__reach_config.channels;')).toEqual('Technology'); 
                     expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2014-03-26T21:30:00.000Z'); 
-                    expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000'); 
+                    expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
                     expect(browser.executeScript('return window.__reach_config.tags.length;')).toEqual(3); 
                     expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Link: Building mobile & apps with Angular & Trigger.IO'); 
                 });
