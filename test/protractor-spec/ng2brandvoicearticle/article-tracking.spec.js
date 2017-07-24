@@ -87,7 +87,7 @@ describe('NG2 BrandVoiceArticle:', function() {
                 expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2008-03-09T22:28:00.000Z'); 
                 expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000'); 
                 expect(browser.executeScript('return window.__reach_config.tags.length;')).toEqual(4); 
-                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Quality AssuranceVoice: Testing Angular JS apps with Protractor'); 
+                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Testing Angular JS apps with Protractor'); 
                 expect(browser.executeScript('return window.__reach_config.url;')).toEqual('https://www.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/'); 
             });
             
