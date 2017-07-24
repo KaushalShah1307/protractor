@@ -7,7 +7,7 @@ describe('AMP Gallery Validation:', function() {
     });
     
     it('should check for validation', function() {
-        browser.sleep(5000);
+        browser.sleep(2000);
         expect(element(by.css('.ampproject-result.style-scope.webui-statusbar')).getText()).not.toContain('FAIL');
     });
     
