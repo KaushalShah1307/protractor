@@ -37,8 +37,10 @@ describe('Mobile Article - Card View (MDot):', function() {
     });
     
     xit('should have the page views', function() {
-        expect(element(by.className('cover__meta__page__views')).isPresent()).toBe(true);
-        expect(browser.executeScript('return window.Object.values(window.__INITIAL_STATE__.pageViewsByUri)[0].count')).not.toBeNull();
+        browser.sleep(2000);
+        var pageViews = element(by.css('.cover__meta__page__views__count'));
+        expect(pageViews.isPresent()).toBe(true);
+        expect(pageViews.getText().toString().length()).toBeGreaterThanOrEqual(6); 
     });
     
     it('should have the page views iconography', function() {
@@ -254,7 +256,7 @@ describe('BrandVoice Mobile Article (MDot):', function() {
         expect(element(by.className('cover__byline__contrib')).getText()).toEqual('qualityassuranceguest, Quality Assurance'); 
     });
     
-    xit('should have the page views', function() {
+    it('should have the page views', function() {
         var pageViews = element(by.css('.cover__meta__page__views__count'));
         expect(pageViews.isPresent()).toBe(true);
         expect(pageViews.getText()).toBeGreaterThan(0);  
@@ -451,11 +453,9 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         expect(element(by.className('cover__byline__contrib')).getText()).toEqual('Kaushal Shah, Forbes Staff'); 
     });
     
-    xit('should have the page views', function() {
-        //expect(element(by.className('cover__meta__page__views')).isPresent()).toBe(true);
-        //expect(browser.executeScript('return window.Object.values(__INITIAL_STATE__.pageViewsByUri)[0].count')).toBeGreaterThan(0);
+    it('should have the page views', function() {
         browser.sleep(2000);
-        var pageViews = element(by.className('cover__meta__page__views__count'));
+        var pageViews = element(by.css('.cover__meta__page__views__count'));
         expect(pageViews.isPresent()).toBe(true);
         expect(pageViews.getText()).toBeGreaterThan(0); 
     });
