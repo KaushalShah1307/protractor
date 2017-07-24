@@ -38,7 +38,8 @@ exports.config = {
                 'test/protractor-spec/ng2article/noleftrailview.spec.js',
                 'test/protractor-spec/ng2article/noleftrailads.spec.js',
                 'test/protractor-spec/ng2brandvoicearticle/noleftrailview.spec.js',
-                'test/protractor-spec/ng2brandvoicearticle/noleftrailads.spec.js'
+                'test/protractor-spec/ng2brandvoicearticle/noleftrailads.spec.js',
+                'test/protractor-spec/ng2article/noleftrailview-tracking.spec.js'
             ]
 		},
 		{
