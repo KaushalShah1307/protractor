@@ -73,14 +73,3 @@ describe('AMP Article Page:', function() {
 
 //	globals.checkAds(ampArticle.adsService);
 });
-
-describe('AMP Article Validation:', function() {
-   
-    it('should validate the page', function() {
-        browser.get('/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/amp/#development=1')
-        browser.executeScript('return amp.validator.validateUrlAndLog("https://www.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/amp/");');
-        browser.executeScript('return amp.validator.ValidationResult();');
-        expect(browser.executeScript('return amp.validator.errors.length;')).toEqual(0);
-    });
-    
-});
