@@ -28,10 +28,4 @@ describe('AMP Gallery:', function() {
         browser.actions().mouseMove({x: 20, y: 0}).mouseMove({x: 20, y: 500}).perform();
     });
     
-    xit('should validate', function() {
-        browser.get('https://www.forbes.com/pictures/mli45fdllh/the-worlds-highest-paid/amp/#development=1');
-        
-        //expect(browser.executeScript(" var xhr = new XMLHttpRequest(); xhr.open('GET', document.location, true); xhr.onreadystatechange = validationResult; xhr.send(); function validationResult() { if (xhr.readyState === 4) { result = amp.validator.validateString(xhr.responseText); return result.status; var data = result.status}};")).toEqual('asdf');
-    });
-    
 });
