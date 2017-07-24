@@ -48,7 +48,7 @@ describe('NG2 BrandVoiceArticle:', function() {
 				expect(dataLayer.brandVoice).toEqual('qualityassurance');
 				expect(dataLayer.brandVoiceLive).toEqual('true');
 				expect(dataLayer.bvContentSource).toEqual('forbes');
-				expect(dataLayer.bvLeftRailHeadline).toEqual('recommend');
+				expect(dataLayer.bvLeftRailHeadline).toEqual('none');
 				expect(dataLayer.bvProgramType).toEqual('elite');
 				expect(dataLayer.categories).toEqual('Tech,The Tech Life');
 				expect(dataLayer.channel).toEqual('business');
