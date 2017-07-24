@@ -18,7 +18,7 @@ describe('NG2 Article on Smaller Breakpoint:', function() {
 
         it('should not have brandvoice treatment', function() {
             var brandVoiceStyling = element(by.css('.brandvoice'));
-            expect(browser.isElementPresent(brandVoiceStyling)).toBe(false);
+            expect(browser.isElementPresent(brandVoiceStyling)).toBe(true);
         });
     
     });
