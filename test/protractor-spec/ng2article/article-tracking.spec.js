@@ -21,7 +21,7 @@ describe('NG2 Article:', function() {
 			});
 
 			it('should have the correct parameters', function() {
-				//expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl.replace(browser.baseUrl, "http://www-staging.forbes.com/"));
+				expect(globals.getParam(trackingPixel.srcString, 'su')).toContain('www.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/');
 				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual(browser.current_page.page_data.type);
 				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual(browser.current_page.page_data.naturalId);
 				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual(browser.current_page.page_data.blogType);
@@ -47,6 +47,7 @@ describe('NG2 Article:', function() {
 				expect(dataLayer.blogType).toEqual('individual');
 				expect(dataLayer.categories).toEqual('Business,Media & Entertainment,Tech,Social Media,Entrepreneurs,Management,Leadership');
 				expect(dataLayer.channel).toEqual('business');
+				expect(dataLayer.contentTitle).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever');
 				expect(dataLayer.contribActive).toEqual('false');
 				expect(dataLayer.contribType).toEqual('Forbes Staff');
 				expect(dataLayer.edit).toEqual('none');
@@ -60,6 +61,8 @@ describe('NG2 Article:', function() {
 				expect(dataLayer.primaryChannel).toEqual('Business');
 				expect(dataLayer.primarySection).toEqual('none');
                 expect(dataLayer.doNotPaginate).toEqual('donotpaginate');	
+                expect(dataLayer.imageCount).toEqual('3');	
+                expect(dataLayer.leftRail).toEqual('true');	
                 //expect(dataLayer.login).toEqual('false');	//re-enable this when the bug to add the param has been pushed out
 			});
 		});
