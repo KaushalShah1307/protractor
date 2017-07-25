@@ -861,7 +861,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         
         var hamburger = element(by.css('.ficon.ficon-hamburger'));
         var forbesLogo = element(by.css('.header__home'));
-        var searchIcon = element(by.css('.search__icon'));
+        var searchIcon = element(by.css('.inlineicon.inlineicon-search'));
         
         it('should get the page', function() {
             var url = 'https://m.forbes.com/sites/lizryan/2017/07/24/why-is-my-manager-suddenly-hostile-toward-me-heres-why/?a=a';
@@ -914,6 +914,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         });
         
         it('should have search results', function() {
+            browser.sleep(1500);
             expect(element.all(by.css('.search__result__item')).count()).toBeGreaterThanOrEqual(10); 
         });
                 
