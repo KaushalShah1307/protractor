@@ -898,6 +898,10 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
             element.all(by.css('.nav__menu--items>li')).first().click();
             expect(element.all(by.css('.nav__submenu--items>li')).first().getText()).toEqual(element.all(by.css('.nav__submenu--item-link')).first().getText());
         });
+        
+        it('should close the nav', function() {
+            element(by.css('.modal__close')).click(); 
+        });
                 
     });
     
