@@ -498,7 +498,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         browser.executeScript("return window.document.getElementsByClassName('card__text')[0].scrollTop=15000");
     });
     
-    it('should have the next article module', function() {
+    xit('should have the next article module', function() {
         expect(element(by.className('up-next visible')).isDisplayed()).toBe(true);
         expect(element(by.className('image')).getAttribute('src').isPresent()).toBe(true);
         expect(element(by.className('headline')).isPresent()).toBe(true);
