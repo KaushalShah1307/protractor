@@ -223,7 +223,7 @@ describe('Tracking on Mobile Article - First Card (MDot):', function() {
 describe('BrandVoice Mobile Article (MDot):', function() {
    
     it('should get the page', function() {
-        var url = 'https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending';
+        var url = 'https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending&a=a';
         browser.get(url);
         globals.pagesChecked.push(url);
     });
@@ -232,11 +232,11 @@ describe('BrandVoice Mobile Article (MDot):', function() {
         expect(element(by.className('inlineicon inlineicon-forbes-logo')).isPresent()).toBe(true); 
     });
     
-    it('should have the stream name', function() {
+    xit('should have the stream name', function() {
         expect(element(by.className('stream__name')).getText()).toEqual('#Trending'); 
     });
     
-    it('should have the hashtag modal', function() {
+    xit('should have the hashtag modal', function() {
         var hashtagModal = element(by.className('stream__name'));
         expect(hashtagModal.getText()).toEqual('#Trending');
         hashtagModal.click();
@@ -280,8 +280,10 @@ describe('BrandVoice Mobile Article (MDot):', function() {
     it('should click on the BrandVoice what-is-this link to expand the blurb', function() {
         element(by.className('bv-explainer__what')).click();
         expect(element(by.className('bv-explainer__modal')).isPresent()).toBe(true);
-        var disclaimer = 'Forbes allows marketers to connect directly with the Forbes audience by enabling them to create content – and participate in the conversation – on the Forbes digital publishing platform. Each is produced by the marketer. More on here, or contact us at brandvoice.com.'
-        expect(element(by.className('bv-explainer__modal')).getText()).toContain(disclaimer);
+        var disclaimer1 = 'Forbes allows marketers to connect directly with the Forbes audience by enabling them to create content – and participate in the conversation – on the Forbes digital publishing platform. Each is produced by the marketer. Learn more about , or contact us at brandvoice.com'
+        var disclaimer2 = 'Opinions expressed by Forbes Contributors are their own.'
+        expect(element(by.className('bv-explainer__modal')).getText()).toContain(disclaimer1);
+        expect(element(by.className('bv-explainer__modal')).getText()).toContain(disclaimer2);
         element(by.className('modal__close')).click();
     });
     
@@ -390,7 +392,7 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.__reach_config.article_id;')).toEqual('blogAndPostId/blog/post/4248-455');
             expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business');
             expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2008-03-09T22:28:00.000Z');
-            expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending');
+            expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?a=a&s=trending');
             expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009');
             expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Testing Angular JS apps with Protractor');
         }); 
@@ -901,6 +903,18 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         
         it('should close the nav', function() {
             element(by.css('.modal__close')).click(); 
+        });
+        
+        it('should click to search content', function() {
+            browser.sleep(1500);
+            searchIcon.click();
+            var searchInput = element(by.css('.search__input__box>input'));
+            searchInput.click();
+            searchInput.sendKeys('Lewis Dvorkin\n');
+        });
+        
+        it('should have search results', function() {
+            expect(element.all(by.css('.search__result__item')).count()).toBeGreaterThanOrEqual(10); 
         });
                 
     });
