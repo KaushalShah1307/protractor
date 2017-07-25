@@ -918,6 +918,7 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
             expect(element.all(by.css('.search__result__item')).count()).toBeGreaterThanOrEqual(10);
             var showMore = element(by.css('.search__more__results>a'));
             expect(showMore.getAttribute('href')).toEqual('https://www.forbes.com/search/?q=Lewis%20Dvorkin');
+            element(by.css('.modal__close')).click();
         });
                 
     });
