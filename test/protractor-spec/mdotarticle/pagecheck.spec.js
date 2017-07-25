@@ -120,7 +120,7 @@ describe('Tracking on Mobile Article - Cover Card (MDot):', function() {
             expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business');
             expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-01-03T13:40:00.000Z');
             expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/datadesign/2017/01/03/a-day-in-the-life-of-a-forbes-under-30-how-young-innovators-stay-balanced-focused-and-connected/?s=Under30');
-            expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
+            expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009');
             expect(browser.executeScript('return window.__reach_config.title;')).toEqual('A Day In The Life Of A FORBES Under 30: How Young Innovators Stay Balanced, Focused And Connected');
         }); 
     });
@@ -191,7 +191,7 @@ describe('Tracking on Mobile Article - First Card (MDot):', function() {
             expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business');
             expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2017-01-03T13:40:00.000Z');
             expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/datadesign/2017/01/03/a-day-in-the-life-of-a-forbes-under-30-how-young-innovators-stay-balanced-focused-and-connected/?s=Under30');
-            expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
+            expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009');
             expect(browser.executeScript('return window.__reach_config.title;')).toEqual('A Day In The Life Of A FORBES Under 30: How Young Innovators Stay Balanced, Focused And Connected');
         }); 
     });
@@ -391,7 +391,7 @@ describe('Tracking on BrandVoice Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business');
             expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2008-03-09T22:28:00.000Z');
             expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?s=trending');
-            expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
+            expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009');
             expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Testing Angular JS apps with Protractor');
         }); 
     });
@@ -636,7 +636,7 @@ describe('Tracking on Long-Scroll Mobile Article (MDot):', function() {
             expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('technology');
             expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2013-03-07T01:03:00.000Z');
             expect(browser.executeScript('return window.__reach_config.page_url;')).toEqual('https://m.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/?s=trending&ss=thisisswimlane');
-            expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('000000000000000000000000');
+            expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009');
             expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Link: How To Predict Managerial Success: 4 Key Qualities To Consider - Victor Lipman');
         }); 
     });
