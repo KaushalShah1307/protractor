@@ -857,6 +857,10 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
     
     describe('Hamburger/Nav:', function() {
         
+        var hamburger = element(by.css('.ficon.ficon-hamburger'));
+        var forbesLogo = element(by.css('.header__home'));
+        var searchIcon = element(by.css('.search__icon'));
+        
         it('should get the page', function() {
             var url = 'https://m.forbes.com/sites/lizryan/2017/07/24/why-is-my-manager-suddenly-hostile-toward-me-heres-why/?a=a';
             browser.get(url);
@@ -864,15 +868,35 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
         });
         
         it('should have hamburger', function() {
-            var hamburger = element(by.css('.ficon.ficon-hamburger'));
             expect(browser.isElementPresent(hamburger)).toBe(true);
             expect(hamburger.isDisplayed()).toBe(true);
         });
         
         it('should have Forbes homepage link/logo', function() {
-            var forbesLogo = element(by.css('.header__home'));
             expect(forbesLogo.isDisplayed()).toBe(true);
             expect(forbesLogo.getAttribute('href')).toBe('https://www.forbes.com/?homepage');
+        });
+        
+        it('should have search icon', function() {
+            expect(searchIcon.isDisplayed()).toBe(true);
+        });
+        
+        it('should click hamburger to reveal channel/section menu', function() {
+            hamburger.click();
+            expect(element(by.css('.nav')).isDisplayed()).toBe(true);
+        });
+        
+        it('should have channels in the nav', function() {
+            expect(element.all(by.css('.nav__menu--items>li')).count()).toBeGreaterThanOrEqual(18); 
+        });
+        
+        it('should have sections in the nav', function() {
+            expect(element.all(by.css('.nav__submenu--items>li')).count()).toBeGreaterThanOrEqual(168); 
+        });
+        
+        it('should click channel to expand sections', function() {
+            element.all(by.css('.nav__menu--items>li')).first().click();
+            expect(element.all(by.css('.nav__submenu--items>li')).first().getText()).toEqual(element.all(by.css('.nav__submenu--item-link')).first().getText());
         });
                 
     });
