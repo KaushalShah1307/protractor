@@ -868,6 +868,12 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
             expect(browser.isElementPresent(hamburger)).toBe(true);
             expect(hamburger.isDisplayed()).toBe(true);
         });
+        
+        it('should have Forbes homepage link/logo', function() {
+            var forbesLogo = element(by.css('.header__home'));
+            expect(forbesLogo.isDisplayed()).toBe(true);
+            expect(forbesLogo.getAttribute('href')).toBe('https://www.forbes.com/?homepage');
+        });
                 
     });
     
