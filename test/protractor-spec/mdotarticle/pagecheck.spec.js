@@ -855,4 +855,20 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
                 
     });
     
+    describe('Hamburger/Nav:', function() {
+        
+        it('should get the page', function() {
+            var url = 'https://m.forbes.com/sites/lizryan/2017/07/24/why-is-my-manager-suddenly-hostile-toward-me-heres-why/?a=a';
+            browser.get(url);
+            globals.pagesChecked.push(url);
+        });
+        
+        it('should have hamburger', function() {
+            var hamburger = element(by.css('.ficon.ficon-hamburger'));
+            expect(browser.isElementPresent(hamburger)).toBe(true);
+            expect(hamburger.isDisplayed()).toBe(true);
+        });
+                
+    });
+    
 });
