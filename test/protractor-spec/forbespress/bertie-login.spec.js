@@ -1,13 +1,15 @@
 var ForbesPress = require('./forbespress.page.js'),
 	forbesPress = new ForbesPress();
 
-describe('Bertie Dashboard:', function() {
+var legalLinks = element.all(by.css('.ng-tns-c6-1'));
+
+describe('Bertie:', function() {
     
 	it('should get the page', function() {
 		forbesPress.get();
 	});
     
-    describe('login:', function() {
+    describe('should login', function() {
     
         it('should have login module', function() {
             expect(element(by.css('.container')).isDisplayed()).toBe(true); 
@@ -23,6 +25,19 @@ describe('Bertie Dashboard:', function() {
             element(by.name('authentication')).sendKeys('918273');
             element(by.tagName('button')).click();
             expect(element(by.css('.error-text.ng-tns-c6-1')).isDisplayed()).toBe(false);
+        });
+    });
+    
+    describe('should have Privacy & Terms links', function() {
+        
+        it('should have Privacy link', function() {
+            expect(legalLinks.get(13).getText()).toEqual('Privacy'); 
+            expect(legalLinks.get(13).getAttribute('href')).toEqual('https://www.forbes.com/fdc/privacy.html'); 
+        });
+        
+        it('should have Terms link', function() {
+            expect(legalLinks.get(14).getText()).toEqual('Terms'); 
+            expect(legalLinks.get(14).getAttribute('href')).toEqual('https://www.forbes.com/terms'); 
         });
     });
 
