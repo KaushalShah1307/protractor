@@ -1,5 +1,34 @@
 var ForbesPress = require('./forbespress.page.js'),
 	forbesPress = new ForbesPress();
+
+describe('Bertie Dashboard:', function() {
+    
+	it('should get the page', function() {
+		forbesPress.get();
+	});
+    
+    describe('login:', function() {
+    
+        it('should have login module', function() {
+            expect(element(by.css('.container')).isDisplayed()).toBe(true); 
+        });
+        
+        it('should have forbes logo', function() {
+            expect(element(by.css('.icon.icon-forbes-logo')).isDisplayed()).toBe(true); 
+        });
+
+        it('should login', function() {
+            element(by.name('username')).sendKeys('qa_automation');
+            element(by.name('password')).sendKeys('qa_automation');
+            element(by.name('authentication')).sendKeys('918273');
+            element(by.tagName('button')).click();
+            expect(element(by.css('.error-text.ng-tns-c6-1')).isDisplayed()).toBe(false);
+        });
+    });
+
+});
+
+/*
 describe('ForbesPress Dashboard:', function() {
 	it('should get the page', function() {
 		forbesPress.get();
@@ -96,7 +125,7 @@ describe('Publish a ForbesPress Article Page:', function() {
         expect(element(by.className('link')).getText() > 0);
     });
 */    
-    it('should have the published article on the top of the recent articles on dashboard', function() {
+/*    it('should have the published article on the top of the recent articles on dashboard', function() {
         forbesPress.get('https://www-staging.forbes.com/forbespress/#/dashboard', 5000);  
         expect(element(by.css('.headline')).getText()).toEqual(articleHeadline);
     });
@@ -145,3 +174,4 @@ describe('Draft a ForbesPress Article Page:', function() {
     });
     
 });
+*/

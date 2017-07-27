@@ -24,7 +24,7 @@ describe('Create Gallery:', function() {
     
 });
 
-describe('Gallery Images:', function() {
+describe('Add Images:', function() {
    
     it('should open the gallery', function() {
         var url = 'https://www.forbes.com/media-manager/#/gallery/5977a214a7ea436467b59929/';
