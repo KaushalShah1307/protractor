@@ -63,7 +63,7 @@ exports.config = {
 				'test/protractor-spec/angulargallery/pagecheck.spec.js',
                 'test/protractor-spec/angulargallery/**/*.spec.js',
                 'test/protractor-spec/newsletters/pagecheck.spec.js',
-                'test/protractor-spec/forbespress/**/*.spec.js',
+                //'test/protractor-spec/forbespress/**/*.spec.js',
                 'test/protractor-spec/listprofiles/pagecheck.spec.js',
                 'test/protractor-spec/video/pagecheck.spec.js',
                 'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
