@@ -9,4 +9,5 @@ var ForbesPress = function() {
     });
   };
 };
+
 module.exports = ForbesPress;
