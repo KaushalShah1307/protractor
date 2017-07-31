@@ -2,12 +2,26 @@ var ForbesPress = require('./forbespress.page.js'),
 	forbesPress = new ForbesPress();
 
 var legalLinks = element.all(by.css('.ng-tns-c6-1'));
+var loginFailed = element(by.css('.error-text.ng-tns-c6-1'));
 
 describe('Bertie:', function() {
     
 	it('should get the page', function() {
 		forbesPress.get();
 	});
+    
+    describe('should have Privacy & Terms links', function() {
+        
+        it('should have Privacy link', function() {
+            expect(legalLinks.get(11).getText()).toEqual('Privacy'); 
+            expect(legalLinks.get(11).getAttribute('href')).toEqual('https://www.forbes.com/fdc/privacy.html'); 
+        });
+
+        it('should have Terms link', function() {
+            expect(legalLinks.get(12).getText()).toEqual('Terms'); 
+            expect(legalLinks.get(12).getAttribute('href')).toEqual('https://www.forbes.com/terms'); 
+        });
+    });
     
     describe('should login', function() {
     
@@ -25,25 +39,8 @@ describe('Bertie:', function() {
             element(by.name('authentication')).sendKeys('918273');
             element(by.tagName('button')).click();
             browser.sleep(1000);
-            expect(element(by.css('.error-text.ng-tns-c6-1')).isDisplayed()).toBe(false);
+            expect(browser.isElementPresent(loginFailed)).toBe(false);
         });
-    });
-    
-    describe('should have Privacy & Terms links', function() {
-        
-        it('should have Privacy link', function() {
-            expect(legalLinks.get(13).getText()).toEqual('Privacy'); 
-            expect(legalLinks.get(13).getAttribute('href')).toEqual('https://www.forbes.com/fdc/privacy.html'); 
-        });
-        
-        it('should have Terms link', function() {
-            expect(legalLinks.get(14).getText()).toEqual('Terms'); 
-            expect(legalLinks.get(14).getAttribute('href')).toEqual('https://www.forbes.com/terms'); 
-        });
-    });
-    
-    describe('should have password forgot link', function() {
-        expect(element(by.css('.forgot.ng-tns-c6-1')).getAttribute('href')).toEqual('/login/forgot'); 
     });
 
 });
