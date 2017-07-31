@@ -29,5 +29,13 @@ describe('Compose Draft:', function() {
        expect(articleBody.isDisplayed()).toBe(true);
        expect(articleBody.getAttribute('data-placeholder')).toEqual('Tell your story...');
    });
-   
+    
+   it('should add headline', function() {
+       headline.sendKeys('Protractor added this!');   
+   });
+    
+   it('should add body text', function() {
+       articleBody.sendKeys('Protractor added this text.');   
+   });
+    
 });
