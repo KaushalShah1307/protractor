@@ -18,6 +18,7 @@ describe('Dashboard:', function() {
         hamburger.click();
         expect(menuItems.first().isDisplayed()).toBe(true);
         expect(menuItems.first().getText()).toEqual('Dashboard');
+        hamburger.click();
     });
     
     it('should have footer', function() {

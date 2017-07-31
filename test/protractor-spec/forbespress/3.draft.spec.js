@@ -5,8 +5,11 @@ describe('Compose Draft:', function() {
    var articleBody = element(by.css('.ql-editor'));
    var desktopView = element(by.css('.icon.icon-desktop.desktop'));
    var mobileView = element(by.css('.icon.icon-mobile.mobile'));
-   var meta = element(by.css('.button-meta'));
+   var metaOpen = element(by.css('.button-meta'));
+   var metaClose = element(by.css('.button-meta.show-close-button'))
    var nopublishFileds = element.all(by.css('.tray .no-publish'));
+   var channelSection = element(by.css('.chansec'));
+   var hashtags = element(by.css('.hashtags'));
     
    it('should click create button', function() {
        var compose = element(by.css('.button-new'));
@@ -32,14 +35,6 @@ describe('Compose Draft:', function() {
        expect(articleBody.getAttribute('data-placeholder')).toEqual('Tell your story...');
    });
     
-   it('should have meta properties', function() {
-       browser.sleep(1000);
-       meta.click();
-       browser.sleep(1000);
-       expect(nopublishFileds.count()).toBe(3);
-       element(by.css('.button-meta.show-close-button')).click();
-   });
-    
    it('should add headline', function() {
        headline.sendKeys('Protractor added this!');   
    });
@@ -51,6 +46,36 @@ describe('Compose Draft:', function() {
    it('should click to save the draft', function() {
        saveButton.click();
        expect(browser.getCurrentUrl()).toContain('compose?id=');
+   });
+    
+   it('should have meta properties', function() {
+       browser.sleep(1000);
+       metaOpen.click();
+       browser.sleep(1000);
+       expect(nopublishFileds.count()).toBe(3);
+   });
+    
+   it('should select channel/section', function() {
+       channelSection.click();
+       browser.sleep(1000);
+       var searchChannel = element(by.css('.search-box'));
+       searchChannel.click();
+       expect(element.all(by.css('.items>li')).count()).toBeGreaterThanOrEqual(221);
+       searchChannel.sendKeys('Busine');
+       element.all(by.css('.items>li')).first().click();
+       var selctedChannels = element.all(by.css('.item'));
+       browser.sleep(1000);
+       expect(selctedChannels.count()).toBe(1);
+       channelSection.click();
+   });
+    
+   it('should select hashtags', function() {
+       hashtags.click();
+       browser.sleep(1000);
+       var searchHashtag = element(by.xpath('html/body/ng-component/div/app-meta-tray/div[2]/div/app-hashtags/div[3]/input'));
+       searchHashtag.click();
+       searchHashtag.sendKeys('KayMone');
+       element.all(by.css('.items>li')).get(221).click();
    });
     
 });
