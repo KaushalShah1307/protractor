@@ -10,6 +10,7 @@ describe('Compose Draft:', function() {
    var nopublishFileds = element.all(by.css('.tray .no-publish'));
    var channelSection = element(by.css('.chansec'));
    var hashtags = element(by.css('.hashtags'));
+   var excerpt = element(by.css('.excerpt'));
     
    it('should click create button', function() {
        var compose = element(by.css('.button-new'));
@@ -76,6 +77,14 @@ describe('Compose Draft:', function() {
        searchHashtag.click();
        searchHashtag.sendKeys('KayMone');
        element.all(by.css('.items>li')).get(221).click();
+   });
+    
+   it('should have excerpt', function() {
+       //browser.sleep(1000);
+       excerpt.click();
+       excerpt.sendKeys('This is an excerpt entered using protractor.');
+       var counter = element(by.css('.tray>div>app-excerpt>span'));
+       expect(counter.getText()).toBe('256');
    });
     
 });
