@@ -2,7 +2,9 @@ describe('Compose Draft:', function() {
    var saveButton = element(by.css('.fp-button.button-save'));
    var publishButton = element(by.css('.fp-button.button-publish'));
    var headline = element.all(by.css('.title.headline-input')).first();
-   var articleBody = element(by.css('.ql-editor'));    
+   var articleBody = element(by.css('.ql-editor'));
+   var desktopView = element(by.css('.icon.icon-desktop.desktop'));
+   var mobileView = element(by.css('.icon.icon-mobile.mobile'));
     
    it('should click create button', function() {
        var compose = element(by.css('.button-new'));
@@ -11,6 +13,11 @@ describe('Compose Draft:', function() {
     
    it('should have the correct url', function() {
        expect(browser.getCurrentUrl()).toContain('compose');
+   });
+    
+   it('should have view toggle', function() {
+       expect(desktopView.getAttribute('title')).toEqual('Preview Desktop Version');
+       expect(mobileView.getAttribute('title')).toEqual('Preview Mobile Version');
    });
     
    it('should have headline area', function() {
