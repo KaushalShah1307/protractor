@@ -49,42 +49,46 @@ describe('Compose Draft:', function() {
        expect(browser.getCurrentUrl()).toContain('compose?id=');
    });
     
-   it('should have meta properties', function() {
-       browser.sleep(1000);
-       metaOpen.click();
-       browser.sleep(1000);
-       expect(nopublishFileds.count()).toBe(3);
-   });
+   describe('Meta Box:', function() {
+      
+       it('should have meta properties', function() {
+           browser.sleep(1000);
+           metaOpen.click();
+           browser.sleep(1000);
+           expect(nopublishFileds.count()).toBe(3);
+        });
     
-   it('should select channel/section', function() {
-       channelSection.click();
-       browser.sleep(1000);
-       var searchChannel = element(by.css('.search-box'));
-       searchChannel.click();
-       expect(element.all(by.css('.items>li')).count()).toBeGreaterThanOrEqual(221);
-       searchChannel.sendKeys('Busine');
-       element.all(by.css('.items>li')).first().click();
-       var selctedChannels = element.all(by.css('.item'));
-       browser.sleep(1000);
-       expect(selctedChannels.count()).toBe(1);
-       channelSection.click();
-   });
+       it('should select channel/section', function() {
+           channelSection.click();
+           browser.sleep(1000);
+           var searchChannel = element(by.css('.search-box'));
+           searchChannel.click();
+           expect(element.all(by.css('.items>li')).count()).toBeGreaterThanOrEqual(221);
+           searchChannel.sendKeys('Busine');
+           element.all(by.css('.items>li')).first().click();
+           var selctedChannels = element.all(by.css('.item'));
+           browser.sleep(1000);
+           expect(selctedChannels.count()).toBe(1);
+           channelSection.click();
+        });
     
-   it('should select hashtags', function() {
-       hashtags.click();
-       browser.sleep(1000);
-       var searchHashtag = element(by.xpath('html/body/ng-component/div/app-meta-tray/div[2]/div/app-hashtags/div[3]/input'));
-       searchHashtag.click();
-       searchHashtag.sendKeys('KayMone');
-       element.all(by.css('.items>li')).get(221).click();
-   });
+        it('should select hashtags', function() {
+           hashtags.click();
+           browser.sleep(1000);
+           var searchHashtag = element(by.xpath('html/body/ng-component/div/app-meta-tray/div[2]/div/app-hashtags/div[3]/input'));
+           searchHashtag.click();
+           searchHashtag.sendKeys('KayMone');
+           element.all(by.css('.items>li')).get(221).click();
+        });
     
-   it('should have excerpt', function() {
-       //browser.sleep(1000);
-       excerpt.click();
-       excerpt.sendKeys('This is an excerpt entered using protractor.');
-       var counter = element(by.css('.tray>div>app-excerpt>span'));
-       expect(counter.getText()).toBe('256');
+        it('should have excerpt', function() {
+           excerpt.click();
+           excerpt.sendKeys('This is an excerpt entered using protractor.');
+           var counter = element(by.css('.tray>div>app-excerpt>span'));
+           expect(counter.getText()).toBe('256');
+           expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.tray>div>app-excerpt>span')).getPropertyValue('color')")).toEqual('rgb(152, 223, 160)');
+        });
+       
    });
     
 });
