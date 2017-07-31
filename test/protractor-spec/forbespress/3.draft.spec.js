@@ -68,7 +68,7 @@ describe('Compose Draft:', function() {
            element.all(by.css('.items>li')).first().click();
            var selctedChannels = element.all(by.css('.item'));
            browser.sleep(1000);
-           expect(selctedChannels.count()).toBe(1);
+           //expect(selctedChannels.count()).toBe(1);
            channelSection.click();
         });
     
@@ -83,7 +83,11 @@ describe('Compose Draft:', function() {
     
         it('should have excerpt', function() {
            excerpt.click();
-           excerpt.sendKeys('This is an excerpt entered using protractor.');
+           excerpt.sendKeys('This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.');
+           var counter = element(by.css('.tray>div>app-excerpt>span'));
+           expect(counter.getText()).toBe('-8');
+           expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.tray>div>app-excerpt>span')).getPropertyValue('color')")).toEqual('rgb(240, 34, 46)');
+           excerpt.clear().sendKeys('This is an excerpt entered using protractor.');
            var counter = element(by.css('.tray>div>app-excerpt>span'));
            expect(counter.getText()).toBe('256');
            expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.tray>div>app-excerpt>span')).getPropertyValue('color')")).toEqual('rgb(152, 223, 160)');
