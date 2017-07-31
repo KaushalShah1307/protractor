@@ -11,6 +11,11 @@ describe('Dashboard', function() {
         expect(avatar.getAttribute('style')).toContain('https://blogs-stage.forbes.com/qa/files/2017/07/King-of-Hell_avatar_1501255395-40x40.jpg');
     });
     
+    it('should have compose button', function() {
+        var composeButton = element(by.css('.button-new'));
+        expect(composeButton.isDisplayed()).toBe(true); 
+    });
+    
 });
 
 describe('Recent Stories', function() {
