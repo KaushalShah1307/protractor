@@ -42,9 +42,5 @@ describe('Recent Stories:', function() {
             expect(lastModified.get(i).isDisplayed()).toBe(true); 
         };
     });
-   
-    it('should have title of the story', function() {
-        expect(element.all(by.css('.title.truncate')).get(1).getText()).toEqual('This is the first Bertie post written by Crowley'); 
-    });
     
 });
