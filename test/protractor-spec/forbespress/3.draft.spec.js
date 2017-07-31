@@ -93,6 +93,10 @@ describe('Compose Draft:', function() {
            expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.tray>div>app-excerpt>span')).getPropertyValue('color')")).toEqual('rgb(152, 223, 160)');
         });
        
+        it('should close the meta box', function() {
+           metaClose.click(); 
+        });
+       
    });
     
 });
