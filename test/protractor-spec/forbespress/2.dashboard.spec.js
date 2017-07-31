@@ -14,12 +14,18 @@ describe('Dashboard', function() {
 });
 
 describe('Recent Stories', function() {
+    var storiesTitle = element.all(by.css('.all>ul>li>a .title.truncate'));
+    var publishStatus = element.all(by.css('.all>ul>li .publish-status'));
+    var lastModified = element.all(by.css('.all>ul>li .last-published'));
+    var storyStatus = ['Draft', 'Published'];
     
     it('should have recent stories', function() {
-        var storiesTitle = element.all(by.css('.all>ul>li>a .title.truncate'));
         
         for(var i = 0; i < 2; i++) {
             expect(storiesTitle.get(i).isDisplayed()).toBe(true); 
+            expect(publishStatus.get(i).isDisplayed()).toBe(true);
+            expect(storyStatus).toContain(publishStatus.get(i).getText());
+            expect(lastModified.get(i).isDisplayed()).toBe(true); 
         };
     });
    
