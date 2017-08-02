@@ -41,7 +41,7 @@ describe('Article:', function() {
     });
     
     it('should have the correct zone for ads', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('article-d&'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('article-d-delta-u'); 
     });
     
     it('should have mnet unit hardcoded on Mobile-Only', function() {

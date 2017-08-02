@@ -43,7 +43,7 @@ describe('Article:', function() {
 			it('should pass the right custom parameters', function() {
 				var sites = ['fdcmobile', 'fdc.forbes'];
                 expect(sites).toContain(dataLayer.DFPSite);
-                expect(dataLayer.DFPZone).toEqual('article-d');
+                expect(dataLayer.DFPZone).toEqual('article-d-delta-u');
 				expect(dataLayer.author).toEqual('Lewis DVorkin');
 				expect(dataLayer.channel).toEqual('business');
                 expect(dataLayer.section).toEqual('lewisdvorkinblog');

@@ -11,11 +11,11 @@ describe('Article:', function() {
 		});
     
         it('should have the medianet unit', function() {
-            expect(element(by.id('_mN_dy_688196485')).isPresent()).toBe(true);      
+            expect(element(by.id('_mN_dy_289199738')).isPresent()).toBe(true);      
         });
     
         it('should have the revcontent unit', function() {
-            expect(element.all(by.className('rc-w-16285 rc-p rc-p-pt')).first().isPresent()).toBe(true); 
+            expect(element.all(by.className('rc-wc rc-bp rc-uid-30022 rc-g-dl ')).first().isPresent()).toBe(true); 
         });
 
 		// (http://jira.forbes.com/browse/BUGREPORTING-1051)
