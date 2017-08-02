@@ -130,7 +130,7 @@ describe('Miscellaneous Checks:', function() {
         
         var hamburger = element(by.css('.ficon.ficon-hamburger'));
         var forbesLogo = element(by.css('.header__home'));
-        var searchIcon = element(by.css('.inlineicon.inlineicon-search'));
+        var searchIcon = element(by.css('.search__icon'));
         
         it('should get the page', function() {
             var url = 'https://m.forbes.com/sites/lizryan/2017/07/24/why-is-my-manager-suddenly-hostile-toward-me-heres-why/?a=a';
@@ -177,7 +177,7 @@ describe('Miscellaneous Checks:', function() {
         it('should click to search content', function() {
             browser.sleep(1500);
             searchIcon.click();
-            var searchInput = element(by.css('.search__input__box>input'));
+            var searchInput = element(by.css('#search'));
             searchInput.click();
             searchInput.sendKeys('Lewis Dvorkin\n');
         });
