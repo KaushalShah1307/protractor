@@ -16,18 +16,6 @@ describe('Mobile Article - Card View (MDot):', function() {
         expect(element(by.className('inlineicon inlineicon-forbes-logo')).isPresent()).toBe(true); 
     });
     
-    xit('should have the stream name', function() {
-        expect(element(by.className('stream__name')).getText()).toEqual('#Under30'); 
-    });
-    
-    xit('should have the hashtag modal', function() {
-        var hashtagModal = element(by.className('stream__name'));
-        expect(hashtagModal.getText()).toEqual('#Under30');
-        hashtagModal.click();
-        expect(element(by.className('fbs-r-modal__content')).isPresent()).toBe(true);
-        hashtagModal.click();
-    });
-    
     it('should have the article headline', function() {
         expect(element(by.className('cover__preview__title')).getText()).toEqual('A Day In The Life Of A FORBES Under 30: How Young Innovators Stay Balanced, Focused And Connected'); 
     });
@@ -232,18 +220,6 @@ describe('BrandVoice Mobile Article (MDot):', function() {
         expect(element(by.className('inlineicon inlineicon-forbes-logo')).isPresent()).toBe(true); 
     });
     
-    xit('should have the stream name', function() {
-        expect(element(by.className('stream__name')).getText()).toEqual('#Trending'); 
-    });
-    
-    xit('should have the hashtag modal', function() {
-        var hashtagModal = element(by.className('stream__name'));
-        expect(hashtagModal.getText()).toEqual('#Trending');
-        hashtagModal.click();
-        expect(element(by.className('fbs-r-modal__content')).isPresent()).toBe(true);
-        hashtagModal.click();
-    });
-    
     it('should have the BrandVoice flag', function() {
         expect(element(by.className('cover__bv-flag')).getText()).toEqual('Quality Assurance'); 
     });
@@ -434,18 +410,6 @@ describe('Long-Scroll Mobile Article (MDot):', function() {
     
     it('should have the forbes logo', function() {
         expect(element(by.className('inlineicon inlineicon-forbes-logo')).isPresent()).toBe(true); 
-    });
-    
-    xit('should have the stream name', function() {
-        expect(element(by.className('stream__name')).getText()).toEqual('#Trending'); 
-    });
-    
-    xit('should have the hashtag modal', function() {
-        var hashtagModal = element(by.className('stream__name'));
-        expect(hashtagModal.getText()).toEqual('#Trending');
-        hashtagModal.click();
-        expect(element(by.className('fbs-r-modal__content')).isPresent()).toBe(true);
-        hashtagModal.click();
     });
     
     it('should have the article headline', function() {
