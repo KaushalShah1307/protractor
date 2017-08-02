@@ -44,7 +44,7 @@ describe('BrandVoice Article', function() {
 			it('should pass the right custom parameters', function() {
                 var sites = ['fdcmobile', 'fdc.forbes'];
                 expect(sites).toContain(dataLayer.DFPSite);
-                expect(dataLayer.DFPZone).toEqual('article-d');
+                expect(dataLayer.DFPZone).toEqual('article-d-delta-u');
 				expect(dataLayer.author).toEqual('IBM Contributor');
 				expect(dataLayer.channel).toEqual('leadership');
                 expect(dataLayer.section).toEqual('ibmblog');

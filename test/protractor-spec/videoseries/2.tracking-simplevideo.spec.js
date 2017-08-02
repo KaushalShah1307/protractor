@@ -41,7 +41,8 @@ describe('Simple Video Homepage:', function() {
 			});
 
 			it('should pass the right custom parameters', function() {
-                expect(dataLayer.DFPSite).toEqual('fdc.forbes');
+                var sites = ['fdcmobile', 'fdc.forbes'];
+                expect(sites).toContain(dataLayer.DFPSite);
                 expect(dataLayer.DFPZone).toEqual('video');
 				expect(dataLayer.channel).toEqual('video');
 				expect(dataLayer.contentTitle).toEqual('TODO Page title');
