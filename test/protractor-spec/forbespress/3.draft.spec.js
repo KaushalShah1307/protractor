@@ -11,6 +11,9 @@ describe('Compose Draft:', function() {
    var channelSection = element(by.css('.chansec'));
    var hashtags = element(by.css('.hashtags'));
    var excerpt = element(by.css('.excerpt'));
+   var mediaToggle = element(by.css('.toggle'));
+   var addMedia = element(by.css('.add-image.toggleable'));
+   var addVideo = element(by.css('.add-video.toggleable'));
     
    it('should click create button', function() {
        var compose = element(by.css('.button-new'));
@@ -37,11 +40,24 @@ describe('Compose Draft:', function() {
    });
     
    it('should add headline', function() {
-       headline.sendKeys('Protractor added this!');   
+       headline.sendKeys('Protractor added this! and this is the headline for the draft post.');   
    });
     
    it('should add body text', function() {
-       articleBody.sendKeys('Protractor added this text.');   
+       articleBody.sendKeys('Protractor added this text and it should serve as article body.\n');   
+   });
+    
+   it('should toggle media options', function() {
+       
+       var isMobile = browser.executeScript("return window.matchMedia('only screen and (max-width: 760px)').matches");
+        if (isMobile===false) {
+           mediaToggle.click();
+           expect(addMedia.isDisplayed()).toBe(true);
+           expect(addVideo.isDisplayed()).toBe(true);
+        } else if (isMobile===true) {
+           expect(addMedia.isDisplayed()).toBe(false);
+           expect(addVideo.isDisplayed()).toBe(false);
+        };
    });
     
    it('should click to save the draft', function() {
