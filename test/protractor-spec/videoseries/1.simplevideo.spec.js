@@ -7,6 +7,7 @@ beforeEach(function(){
 });
 
 var topPromo = element.all(by.css('.fbs-slider__slide'));
+var heroTitle = element.all(by.css('.hero__title'));
 
 describe('Simple Video Homepage:', function() {
     
@@ -24,6 +25,12 @@ describe('Simple Video Homepage:', function() {
     
     it('should have top video promo', function() {
         expect(topPromo.first().isDisplayed()).toBe(true); 
+    });
+    
+    it('should have top video promo title', function() {
+        expect(heroTitle.first().isDisplayed()).toBe(true); 
+        expect(heroTitle.first().getText().length).toBeGreaterThan(0); 
+        expect(heroTitle.first().getText()).toEqual('blahblah'); 
     });
     
 });
