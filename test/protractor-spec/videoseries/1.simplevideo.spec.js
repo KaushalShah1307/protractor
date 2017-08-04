@@ -6,10 +6,12 @@ beforeEach(function(){
     browser.executeScript('window.localStorage.clear();');
 });
 
+var topPromo = element.all(by.css('.fbs-slider__slide'));
+
 describe('Simple Video Homepage:', function() {
     
     it('get the page', function() {
-       simpleVideo.get(); 
+        simpleVideo.get(); 
     });
     
     it('should have the header', function() {
@@ -18,7 +20,11 @@ describe('Simple Video Homepage:', function() {
     
     it('should have the footer', function() {
         expect(element(by.tagName('footer')).isDisplayed()).toBe(true); 
-    });        
+    });
+    
+    it('should have top video promo', function() {
+        expect(topPromo.first().isDisplayed()).toBe(true); 
+    });
     
 });
 
