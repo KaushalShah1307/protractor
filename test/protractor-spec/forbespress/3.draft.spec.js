@@ -1,12 +1,10 @@
 describe('Compose Draft:', function() {
    var saveButton = element(by.css('.fp-button.button-save'));
-   var publishButton = element(by.css('.fp-button.button-publish'));
+   var publishButton = element.all(by.css('.fp-button.button-publish'));
    var headline = element.all(by.css('.title.headline-input')).first();
    var articleBody = element(by.css('.ql-editor'));
    var desktopView = element(by.css('.icon.icon-desktop.desktop'));
    var mobileView = element(by.css('.icon.icon-mobile.mobile'));
-   var metaOpen = element(by.css('.button-meta'));
-   var metaClose = element(by.css('.button-meta.show-close-button'))
    var nopublishFileds = element.all(by.css('.tray .no-publish'));
    var channelSection = element(by.css('.chansec'));
    var hashtags = element(by.css('.hashtags'));
@@ -14,6 +12,7 @@ describe('Compose Draft:', function() {
    var mediaToggle = element(by.css('.toggle'));
    var addMedia = element(by.css('.add-image.toggleable'));
    var addVideo = element(by.css('.add-video.toggleable'));
+   var isMobile = browser.executeScript("return window.matchMedia('only screen and (max-width: 760px)').matches");
     
    it('should click create button', function() {
        var compose = element(by.css('.button-new'));
@@ -47,19 +46,6 @@ describe('Compose Draft:', function() {
        articleBody.sendKeys('Protractor added this text and it should serve as article body.\n');   
    });
     
-   it('should toggle media options', function() {
-       
-       var isMobile = browser.executeScript("return window.matchMedia('only screen and (max-width: 760px)').matches");
-        if (isMobile===false) {
-           mediaToggle.click();
-           expect(addMedia.isDisplayed()).toBe(true);
-           expect(addVideo.isDisplayed()).toBe(true);
-        } else if (isMobile===true) {
-           expect(addMedia.isDisplayed()).toBe(false);
-           expect(addVideo.isDisplayed()).toBe(false);
-        };
-   });
-    
    it('should click to save the draft', function() {
        saveButton.click();
        expect(browser.getCurrentUrl()).toContain('compose?id=');
@@ -69,9 +55,9 @@ describe('Compose Draft:', function() {
       
        it('should have meta properties', function() {
            browser.sleep(1000);
-           metaOpen.click();
+           publishButton.first().click();
            browser.sleep(1000);
-           expect(nopublishFileds.count()).toBe(3);
+           expect(nopublishFileds.count()).toBe(4);
         });
     
        it('should select channel/section', function() {
@@ -91,7 +77,7 @@ describe('Compose Draft:', function() {
         it('should select hashtags', function() {
            hashtags.click();
            browser.sleep(1000);
-           var searchHashtag = element(by.xpath('html/body/ng-component/div/app-meta-tray/div[2]/div/app-hashtags/div[3]/input'));
+           var searchHashtag = element(by.xpath('html/body/app-compose-container/app-compose/app-meta-tray/div[2]/app-hashtags/div[3]/input'));
            searchHashtag.click();
            searchHashtag.sendKeys('KayMone');
            element.all(by.css('.items>li')).get(221).click();
@@ -100,17 +86,50 @@ describe('Compose Draft:', function() {
         it('should have excerpt', function() {
            excerpt.click();
            excerpt.sendKeys('This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.');
-           var counter = element(by.css('.tray>div>app-excerpt>span'));
+           var counter = element(by.css('.tray>app-excerpt>span'));
            expect(counter.getText()).toBe('-8');
-           expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.tray>div>app-excerpt>span')).getPropertyValue('color')")).toEqual('rgb(240, 34, 46)');
+           expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.tray>app-excerpt>span')).getPropertyValue('color')")).toEqual('rgb(240, 34, 46)');
            excerpt.clear().sendKeys('This is an excerpt entered using protractor.');
-           var counter = element(by.css('.tray>div>app-excerpt>span'));
+           var counter = element(by.css('.tray>app-excerpt>span'));
            expect(counter.getText()).toBe('256');
-           expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.tray>div>app-excerpt>span')).getPropertyValue('color')")).toEqual('rgb(152, 223, 160)');
+           expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.tray>app-excerpt>span')).getPropertyValue('color')")).toEqual('rgb(152, 223, 160)');
         });
        
         it('should close the meta box', function() {
-           metaClose.click(); 
+           publishButton.first().click(); 
+        });
+       
+   });
+    
+   describe('Image Library:', function() {
+       
+        it('should toggle media options', function() {
+            if (isMobile===false) {
+               mediaToggle.click();
+               expect(addMedia.isDisplayed()).toBe(true);
+               expect(addVideo.isDisplayed()).toBe(true);
+            } else if (isMobile===true) {
+               expect(addMedia.isDisplayed()).toBe(false);
+               expect(addVideo.isDisplayed()).toBe(false);
+            };
+        });
+
+        it('should add image', function() {
+            if (isMobile===false) {
+               addMedia.click();
+               expect(element(by.tagName('app-photo-manager')).isDisplayed()).toBe(true);
+            } else if (isMobile===true) {
+               expect(isMobile).toBe(true);
+            };
+        });
+
+        it('should have image sources', function() {
+            if (isMobile===false) {
+               var sources = ['Getty', 'AP', 'Bloommberg', 'Shutterstock'];
+               expect(sources).toContain(element.all(by.css('.hoverdiv.sources>ul>li')));
+            } else if (isMobile===true) {
+               expect(isMobile).toBe(true);
+            };
         });
        
    });
