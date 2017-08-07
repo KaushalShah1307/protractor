@@ -39,7 +39,8 @@ exports.config = {
                 'test/protractor-spec/ng2article/noleftrailads.spec.js',
                 'test/protractor-spec/ng2brandvoicearticle/noleftrailview.spec.js',
                 'test/protractor-spec/ng2brandvoicearticle/noleftrailads.spec.js',
-                'test/protractor-spec/ng2article/noleftrailview-tracking.spec.js'
+                'test/protractor-spec/ng2article/noleftrailview-tracking.spec.js',
+                'test/protractor-spec/videoseries/2.mobileads.spec.js'
             ]
 		},
 		{
@@ -70,7 +71,8 @@ exports.config = {
                 'test/protractor-spec/ng2articlechecks/**/*.spec.js',
                 'test/protractor-spec/homepage/desktopads.spec.js',
                 'test/protractor-spec/welcomead/desktoppagecheck.spec.js',
-                'test/protractor-spec/mediamanager/**/*.spec.js'
+                'test/protractor-spec/mediamanager/**/*.spec.js',
+                'test/protractor-spec/videoseries/2.desktopads.spec.js'
 			]
 		},
 		{
@@ -271,7 +273,7 @@ exports.config = {
 //      'test/protractor-spec/homepage/**/*.spec.js',
 //      'test/protractor-spec/angulargallery/*pagecheck.spec.js',
 //      'test/protractor-spec/angulargallery/**/*.spec.js',
-      'test/protractor-spec/forbespress/**/*.spec.js',
+//      'test/protractor-spec/forbespress/**/*.spec.js',
 //      'test/protractor-spec/amparticle/*pagecheck.spec.js',
 //      'test/protractor-spec/amparticle/**/*.spec.js',
 //      'test/protractor-spec/ampgallery/*pagecheck.spec.js',
@@ -295,7 +297,7 @@ exports.config = {
 //      'test/protractor-spec/welcomead/**/*.spec.js',
 //		'test/protractor-spec/pulse/**/*.spec.js',
 //      'test/protractor-spec/mediamanager/**/*.spec.js',
-//      'test/protractor-spec/videoseries/**/*.spec.js'
+      'test/protractor-spec/videoseries/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');
