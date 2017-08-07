@@ -23,7 +23,7 @@ describe('Simple Video Homepage:', function() {
     });
     
     it('should have top video promo', function() {
-        expect(sections.first().isDisplayed()).toBe(true); 
+        expect(sections.first().isDisplayed()).toBe(true);
     });
     
     it('should have latest video section', function() {
