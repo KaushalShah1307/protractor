@@ -7,6 +7,9 @@ beforeEach(function(){
 });
 
 var sections = element.all(by.css('.slider-container.fs-content'));
+var heroImage = element.all(by.css('.fbs-slide__bg-image.hero__image')).first();
+var videoModal  = element(by.css('.modal__body>fbs-video'));
+var modalClose  = element(by.css('#close'));
 
 describe('Simple Video Homepage:', function() {
     
@@ -35,6 +38,12 @@ describe('Simple Video Homepage:', function() {
     it('should have recommended video section', function() {
         expect(sections.get(2).isDisplayed()).toBe(true);
         expect(element(by.css('.fbs-slider.fbs-slider--multiple.fbs-slider--recommended')).getAttribute('data-in-view')).toEqual('4'); 
+    });
+    
+    it('should click and open video modal', function() {
+        heroImage.click();
+        expect(videoModal.isDisplayed()).toBe(true);
+        modalClose.click();
     });
     
 });
