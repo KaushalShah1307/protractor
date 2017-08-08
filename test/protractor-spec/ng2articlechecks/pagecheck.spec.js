@@ -40,7 +40,7 @@ describe('NG2 Article Checks:', function() {
         describe('Women at Forbes:', function() {
             
             it('should get the page', function() {
-                var url = 'https://www.forbes.com/sites/katepierce/2015/05/26/taylor-swift-beyonce-and-the-most-powerful-women-in-entertainment/?view=beta-u';
+                var url = 'https://www.forbes.com/sites/katepierce/2015/05/26/taylor-swift-beyonce-and-the-most-powerful-women-in-entertainment/?view=prod';
                 browser.get(url);
                 globals.pagesChecked.push(url);
             });
@@ -58,7 +58,7 @@ describe('NG2 Article Checks:', function() {
         describe('Most Popular:', function() {
             
             it('should get the page', function() {
-                var url = 'https://www.forbes.com/sites/gordonkelly/2017/05/21/apple-leak-iphone-8-price-increase/?view=beta-u';
+                var url = 'https://www.forbes.com/sites/gordonkelly/2017/05/21/apple-leak-iphone-8-price-increase/?view=prod';
                 browser.get(url);
                 globals.pagesChecked.push(url);
             });
@@ -76,7 +76,7 @@ describe('NG2 Article Checks:', function() {
     describe('Article Pagination:', function() {
       
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/qa/2014/03/26/link-building-mobile-apps-with-angular-and-trigger-io/?view=beta-u';
+            var url = 'https://www.forbes.com/sites/qa/2014/03/26/link-building-mobile-apps-with-angular-and-trigger-io/?view=prod';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -152,7 +152,7 @@ describe('NG2 Article Checks:', function() {
     describe('Swimlane=NoStream-one/two Article:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?ss=nostream-one&view=beta-u';
+            var url = 'https://www.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?ss=nostream-one&view=prod';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -185,7 +185,7 @@ describe('NG2 Article Checks:', function() {
     describe('Left Rail Video Article:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/stevenbertoni/2017/05/23/former-apple-ceo-john-sculley-on-how-to-think-like-steve-jobs-and-market-like-pepsi/?view=beta-u';
+            var url = 'https://www.forbes.com/sites/stevenbertoni/2017/05/23/former-apple-ceo-john-sculley-on-how-to-think-like-steve-jobs-and-market-like-pepsi/?view=prod';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -235,7 +235,7 @@ describe('NG2 Article Checks:', function() {
     describe('Top autoplay video Article:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/zackomalleygreenburg/2015/02/05/red-baraat-live-from-the-forbes-newsroom/?view=beta-u';
+            var url = 'https://www.forbes.com/sites/zackomalleygreenburg/2015/02/05/red-baraat-live-from-the-forbes-newsroom/?view=prod';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -254,7 +254,7 @@ describe('NG2 Article Checks:', function() {
     describe('Video on Swimlane Article:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/jimmyrohampton/2017/05/26/is-brain-machine-interface-the-future-of-social-media/?view=beta-u&ss=nostream-one';
+            var url = 'https://www.forbes.com/sites/jimmyrohampton/2017/05/26/is-brain-machine-interface-the-future-of-social-media/?view=prod&ss=nostream-one';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -268,7 +268,7 @@ describe('NG2 Article Checks:', function() {
     describe('Amazon slots:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?view=beta-u&amzn_debug_mode=1';
+            var url = 'https://www.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?view=prod&amzn_debug_mode=1';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -281,7 +281,7 @@ describe('NG2 Article Checks:', function() {
     describe('Brand=IBM, co=IBM & hashtag KV:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/robertszczerba/2017/05/31/from-aging-to-autism-ibm-is-eliminating-barriers-to-technology/?view=beta-u';
+            var url = 'https://www.forbes.com/sites/robertszczerba/2017/05/31/from-aging-to-autism-ibm-is-eliminating-barriers-to-technology/?view=prod';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -303,7 +303,7 @@ describe('NG2 Article Checks:', function() {
     describe('Forbes Marketplace Article:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/forbesmarketplace/2017/05/18/forbes-nonprofit-council-members-are-expanding-globally-saving-lives-and-more/?view=beta-u';
+            var url = 'https://www.forbes.com/sites/forbesmarketplace/2017/05/18/forbes-nonprofit-council-members-are-expanding-globally-saving-lives-and-more/?view=prod';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -329,7 +329,7 @@ describe('NG2 Article Checks:', function() {
     describe('Template Type: noads:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/careers-at-forbes/2017/05/18/forbes-career-opportunity-junior-analyst-programmatic-optimization/?view=beta-u';
+            var url = 'https://www.forbes.com/sites/careers-at-forbes/2017/05/18/forbes-career-opportunity-junior-analyst-programmatic-optimization/?view=prod';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -364,7 +364,7 @@ describe('NG2 Article Checks:', function() {
     describe('Template Type: takeover:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/qa/2013/05/24/link-mozilla-developer-network-dom-developer-guide/?view=beta-u';
+            var url = 'https://www.forbes.com/sites/qa/2013/05/24/link-mozilla-developer-network-dom-developer-guide/?view=prod';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -391,7 +391,7 @@ describe('NG2 Article Checks:', function() {
     describe('Emirates Article:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/emirates/2017/06/15/the-secrets-of-high-altitude-sleep/?view=beta-u';
+            var url = 'https://www.forbes.com/sites/emirates/2017/06/15/the-secrets-of-high-altitude-sleep/?view=prod';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -410,7 +410,7 @@ describe('NG2 Article Checks:', function() {
     describe('Source=bloomberg:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/?view=beta-u&source=bloomberg';
+            var url = 'https://www.forbes.com/sites/qa/2013/03/06/link-how-to-predict-managerial-success-4-key-qualities-to-consider-victor-lipman/?view=prod&source=bloomberg';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -427,7 +427,7 @@ describe('NG2 Article Checks:', function() {
     describe('Magazine:', function() {
         
         it('should get the page', function() {
-            var url = 'https://www.forbes.com/sites/lewisdvorkin/2017/06/07/inside-forbes-great-people-at-the-core-of-the-now-and-whats-next/?view=beta-u';
+            var url = 'https://www.forbes.com/sites/lewisdvorkin/2017/06/07/inside-forbes-great-people-at-the-core-of-the-now-and-whats-next/?view=prod';
             browser.get(url);
             globals.pagesChecked.push(url);
         });
@@ -444,7 +444,7 @@ describe('NG2 Article Checks:', function() {
         describe('Instagram:', function() {
         
             it('should get the page', function() {
-                var url = 'https://www.forbes.com/sites/natalierobehmed/2015/09/17/inside-the-earnings-of-taylor-swifts-girl-gang/?view=beta-u';
+                var url = 'https://www.forbes.com/sites/natalierobehmed/2015/09/17/inside-the-earnings-of-taylor-swifts-girl-gang/?view=prod';
                 browser.get(url);
                 globals.pagesChecked.push(url);
             });
@@ -460,7 +460,7 @@ describe('NG2 Article Checks:', function() {
         describe('Twitter:', function() {
         
             it('should get the page', function() {
-                var url = 'https://www.forbes.com/sites/jerrybarca/2016/11/09/belichick-letter-to-trump-about-friendship-not-politics/?view=beta-u';
+                var url = 'https://www.forbes.com/sites/jerrybarca/2016/11/09/belichick-letter-to-trump-about-friendship-not-politics/?view=prod';
                 browser.get(url);
                 globals.pagesChecked.push(url);
             });
@@ -476,7 +476,7 @@ describe('NG2 Article Checks:', function() {
         describe('Vimeo:', function() {
         
             it('should get the page', function() {
-                var url = 'https://www.forbes.com/sites/brucekasanoff/2016/05/20/the-1-secret-to-career-success/?view=beta-u';
+                var url = 'https://www.forbes.com/sites/brucekasanoff/2016/05/20/the-1-secret-to-career-success/?view=prod';
                 browser.get(url);
                 globals.pagesChecked.push(url);
             });
@@ -491,7 +491,7 @@ describe('NG2 Article Checks:', function() {
         describe('Soundcloud:', function() {
         
             it('should get the page', function() {
-                var url = 'https://www.forbes.com/sites/ianaltman/2016/04/28/3-proven-ways-to-ensure-success-at-your-next-business-conference/?view=beta-u';
+                var url = 'https://www.forbes.com/sites/ianaltman/2016/04/28/3-proven-ways-to-ensure-success-at-your-next-business-conference/?view=prod';
                 browser.get(url);
                 globals.pagesChecked.push(url);
             });
@@ -506,7 +506,7 @@ describe('NG2 Article Checks:', function() {
         describe('Apester:', function() {
         
             it('should get the page', function() {
-                var url = 'https://www.forbes.com/sites/emilyinverso/2016/10/10/quiz-who-said-what-in-last-nights-debate/?view=beta-u';
+                var url = 'https://www.forbes.com/sites/emilyinverso/2016/10/10/quiz-who-said-what-in-last-nights-debate/?view=prod';
                 browser.get(url);
                 globals.pagesChecked.push(url);
             });
@@ -521,7 +521,7 @@ describe('NG2 Article Checks:', function() {
         describe('JS Maps:', function() {
         
             it('should get the page', function() {
-                var url = 'https://www.forbes.com/sites/williamnoglows/2015/06/29/on-tour-with-katy-perry/?view=beta-u';
+                var url = 'https://www.forbes.com/sites/williamnoglows/2015/06/29/on-tour-with-katy-perry/?view=prod';
                 browser.get(url);
                 globals.pagesChecked.push(url);
             });
@@ -536,7 +536,7 @@ describe('NG2 Article Checks:', function() {
         describe('Scribd:', function() {
         
             it('should get the page', function() {
-                var url = 'https://www.forbes.com/sites/matthewherper/2016/07/08/theranos-defiantly-says-holmes-will-remain-ceo-but-it-may-stop-all-lab-operations/?view=beta-u';
+                var url = 'https://www.forbes.com/sites/matthewherper/2016/07/08/theranos-defiantly-says-holmes-will-remain-ceo-but-it-may-stop-all-lab-operations/?view=prod';
                 browser.get(url);
                 globals.pagesChecked.push(url);
             });
@@ -551,7 +551,7 @@ describe('NG2 Article Checks:', function() {
         describe('Libsyn:', function() {
         
             it('should get the page', function() {
-                var url = 'https://www.forbes.com/sites/jacobmorgan/2016/06/27/marshall-goldsmith-on-how-to-drive-behavior-change/?view=beta-u';
+                var url = 'https://www.forbes.com/sites/jacobmorgan/2016/06/27/marshall-goldsmith-on-how-to-drive-behavior-change/?view=prod';
                 browser.get(url);
                 globals.pagesChecked.push(url);
             });
