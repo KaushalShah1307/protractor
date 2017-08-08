@@ -40,7 +40,8 @@ exports.config = {
                 'test/protractor-spec/ng2brandvoicearticle/noleftrailview.spec.js',
                 'test/protractor-spec/ng2brandvoicearticle/noleftrailads.spec.js',
                 'test/protractor-spec/ng2article/noleftrailview-tracking.spec.js',
-                'test/protractor-spec/videoseries/2.mobileads.spec.js'
+                'test/protractor-spec/videoseries/2.mobileads.spec.js',
+                'test/protractor-spec/article/**/*.spec.js'
             ]
 		},
 		{
@@ -118,7 +119,8 @@ exports.config = {
                 'test/protractor-spec/welcomead/desktoppagecheck.spec.js',
 		        'test/protractor-spec/pulse/**/*.spec.js',
                 'test/protractor-spec/mediamanager/**/*.spec.js',
-                'test/protractor-spec/videoseries/**/*.spec.js'
+                'test/protractor-spec/videoseries/**/*.spec.js',
+                'test/protractor-spec/article/**/*.spec.js'
 			]
 		},
 /*        {

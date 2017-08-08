@@ -61,7 +61,7 @@ describe('NG2 Article Ads on Smaller Breakpoints:', function() {
     });
     
     it('should have the revcontent unit', function() {
-        expect(element.all(by.className('rc-wc rc-bp rc-uid-16285 rc-g-d ')).first().isPresent()).toBe(true); 
+        expect(element.all(by.className('rc-w-16285 rc-p rc-p-pt')).first().isPresent()).toBe(true); 
     });
     
  
