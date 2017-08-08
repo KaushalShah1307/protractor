@@ -8,7 +8,7 @@ describe('NG2 Article:', function() {
 	});
     
     it('should have the beta flag', function() {
-        expect(element.all(by.className('beta fs-text-s')).isPresent()).toBe(true); 
+        expect(element.all(by.className('beta fs-text-s')).isPresent()).toBe(false); 
     });
     
     it('should have the title of the article', function() {

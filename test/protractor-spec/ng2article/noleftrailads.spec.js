@@ -56,12 +56,12 @@ describe('NG2 Article Ads on Smaller Breakpoints:', function() {
     });
     
     it('should have the medianet unit', function() {
-        var mnetUnit = element(by.id('_mN_dy_289199738'));
+        var mnetUnit = element(by.id('_mN_dy_688196485'));
         expect(browser.isElementPresent(mnetUnit)).toBe(true);     
     });
     
     it('should have the revcontent unit', function() {
-        expect(element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first().isPresent()).toBe(true); 
+        expect(element.all(by.className('rc-wc rc-bp rc-uid-16285 rc-g-d ')).first().isPresent()).toBe(true); 
     });
     
  
