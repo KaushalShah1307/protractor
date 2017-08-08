@@ -1,5 +1,5 @@
 var ArticlePageScroll = require('./articlescroll.page.js'),
-	articlePageScroll = new ArticlePageScroll('/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?view=prod');
+	articlePageScroll = new ArticlePageScroll('/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?view=beta-u');
 
 describe('Article:', function() {
 
