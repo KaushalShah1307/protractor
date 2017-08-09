@@ -44,12 +44,14 @@ describe('Simple Video Homepage:', function() {
                 var sites = ['fdcmobile', 'fdc.forbes'];
                 expect(sites).toContain(dataLayer.DFPSite);
                 expect(dataLayer.DFPZone).toEqual('video');
+                expect(dataLayer.author).toEqual('none');
 				expect(dataLayer.channel).toEqual('video');
-				expect(dataLayer.contentTitle).toEqual('TODO Page title');
-				expect(dataLayer.naturalID).toEqual('TODO Page Id');
+				expect(dataLayer.section).toEqual('video');
+				expect(dataLayer.naturalID).toEqual('none');
 				expect(dataLayer.primaryChannel).toEqual('video');
-				expect(dataLayer.displayedChannel).toEqual('video');
+				expect(dataLayer.primarySection).toEqual('video');
                 expect(dataLayer.pageType).toEqual('video');
+                expect(dataLayer.slot).toEqual('none');
 			});
 		});
         
@@ -90,8 +92,8 @@ describe('Simple Video Homepage:', function() {
                 expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.mabServer')).toEqual('mabping.chartbeat.net');
                 expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.path')).toEqual('/video/');
                 expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.pingServer')).toEqual('ping.chartbeat.net');
-                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.sections')).toEqual('');
-                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.title')).toEqual('Forbes - The Brooklyn Startup Bringing Eyewear Manufacturing Back To America');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.sections')).toEqual('video');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.title.length')).toBeGreaterThan(0);
                 expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.uid')).toBe(17493);
             });
         });
