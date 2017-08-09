@@ -36,6 +36,11 @@ describe('AMP Video Page:', function() {
         expect(browser.executeScript('return window.window.ampAdSlotIdCounter;')).toEqual(2);
     });
     
+    it('should have medianet hardcoded', function() {
+        var mnetUnit = element(by.id('_mN_main_272775215_0_n'));
+        expect(browser.isElementPresent(mnetUnit)).toBe(true);
+    });
+    
     it('should have the share icon in the header', function() {
         var shareIcon = element(by.className('share-icon'));
         var closeButton = element(by.css('.close-button-wrapper'));
