@@ -37,6 +37,7 @@ describe('AMP Video Page:', function() {
     });
     
     it('should have medianet hardcoded', function() {
+        browser.sleep(2000);
         var mnetUnit = element(by.id('_mN_main_272775215_0_n'));
         expect(browser.isElementPresent(mnetUnit)).toBe(true);
     });
