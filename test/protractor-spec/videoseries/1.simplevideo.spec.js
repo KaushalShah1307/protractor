@@ -48,4 +48,6 @@ describe('Simple Video Homepage:', function() {
         modalClose.click();
     });
     
+    globals.generalCheck();
+    
 });
