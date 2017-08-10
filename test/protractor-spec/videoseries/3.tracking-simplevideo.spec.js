@@ -46,12 +46,12 @@ describe('Simple Video Homepage:', function() {
                 expect(dataLayer.DFPZone).toEqual('video');
                 expect(dataLayer.author).toEqual('none');
 				expect(dataLayer.channel).toEqual('video');
-				expect(dataLayer.section).toEqual('video');
+				expect(dataLayer.section).toEqual('home');
 				expect(dataLayer.naturalID).toEqual('none');
 				expect(dataLayer.primaryChannel).toEqual('video');
-				expect(dataLayer.primarySection).toEqual('video');
+				expect(dataLayer.primarySection).toEqual('home');
                 expect(dataLayer.pageType).toEqual('video');
-                expect(dataLayer.slot).toEqual('none');
+                expect(dataLayer.slot).toEqual('kpmgsf');
 			});
 		});
         
@@ -92,7 +92,7 @@ describe('Simple Video Homepage:', function() {
                 expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.mabServer')).toEqual('mabping.chartbeat.net');
                 expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.path')).toEqual('/video/');
                 expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.pingServer')).toEqual('ping.chartbeat.net');
-                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.sections')).toEqual('video');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.sections')).toEqual('video,kpmgsf');
                 expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.title.length')).toBeGreaterThan(0);
                 expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.uid')).toBe(17493);
             });
