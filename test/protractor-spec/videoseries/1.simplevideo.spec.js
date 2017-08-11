@@ -39,7 +39,7 @@ describe('Simple Video Homepage:', function() {
     it('should have recommended video section', function() {
         expect(sections.get(2).isDisplayed()).toBe(true);
         expect(element(by.css('.fbs-slider.fbs-slider--multiple.fbs-slider--recommended')).getAttribute('data-in-view')).toEqual('4');
-        expect(recommendedVideos.count()).toBeGreaterThanOrEqual(4);
+        expect(recommendedVideos.count()).toBeGreaterThanOrEqual(3);
     });
     
     it('should click and open video modal', function() {
