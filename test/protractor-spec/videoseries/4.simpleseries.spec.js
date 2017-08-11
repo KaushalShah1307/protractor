@@ -8,6 +8,7 @@ beforeEach(function(){
 
 var heroVideo = element(by.css('#brightcove_perform_0_html5_api'));
 var fbsVideoGrid = element.all(by.css('.grid__image')).first();
+var videoEpisodesGrid = element.all(by.css('.grid__index'));
 var isMobile = browser.executeScript("return window.matchMedia('only screen and (max-width: 760px)').matches");
 
 describe('Simple Series Playlist:', function() {
@@ -38,6 +39,10 @@ describe('Simple Series Playlist:', function() {
         } else if(isMobile===true) {
             expect(fbsVideoGrid.getAttribute('style')).not.toBeNull(true);
         }
+    });
+    
+    it('should have video episode grid', function() {
+        expect(videoEpisodesGrid.count()).toBeGreaterThanOrEqual(11); 
     });
     
     
