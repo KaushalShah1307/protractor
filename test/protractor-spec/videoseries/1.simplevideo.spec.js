@@ -7,8 +7,8 @@ beforeEach(function(){
 });
 
 var sections = element.all(by.css('.slider-container.fs-content'));
-var heroImage = element.all(by.css('.fbs-slide__bg-image.hero__image')).first();
-var videoModal  = element(by.css('.modal__body>fbs-video'));
+var heroImage = element.all(by.css('.hero__title')).first();
+var videoModal  = element(by.css('.modal__content>fbs-video'));
 var modalClose  = element(by.css('#close'));
 var recommendedVideos = element.all(by.css('.recommended__title>a'));
 
@@ -33,7 +33,7 @@ describe('Simple Video Homepage:', function() {
     it('should have latest video section', function() {
         expect(sections.get(1).isDisplayed()).toBe(true);
         expect(element(by.css('.fbs-slider.fbs-slider--multiple.fbs-slider--latest')).getAttribute('data-in-view')).toEqual('3');
-        expect(element.all(by.css('.grid__index')).count()).toBeGreaterThanOrEqual(30);
+        expect(element.all(by.css('.fbs-slide__bg-image.grid__image.modal__trigger')).count()).toBeGreaterThanOrEqual(30);
     });
     
     it('should have recommended video section', function() {
