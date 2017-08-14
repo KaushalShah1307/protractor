@@ -7,7 +7,7 @@ beforeEach(function(){
 });
 
 var sections = element.all(by.css('.slider-container.fs-content'));
-var heroImage = element.all(by.css('.hero__title')).first();
+var heroImage = element.all(by.css('.fbs-slide__bg-image.hero__image')).first();
 var videoModal  = element(by.css('.modal__content>fbs-video'));
 var modalClose  = element(by.css('#close'));
 var recommendedVideos = element.all(by.css('.recommended__title>a'));
@@ -45,7 +45,7 @@ describe('Simple Video Homepage:', function() {
     it('should click and open video modal', function() {
         heroImage.click();
         expect(videoModal.isDisplayed()).toBe(true);
-        modalClose.click();
+        //modalClose.click();
     });
     
     globals.generalCheck();
