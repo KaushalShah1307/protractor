@@ -43,7 +43,7 @@ describe('Simple Series Playlist:', function() {
 			it('should pass the right custom parameters', function() {
                 var sites = ['fdcmobile', 'fdc.forbes'];
                 expect(sites).toContain(dataLayer.DFPSite);
-                expect(dataLayer.DFPZone).toEqual('video');
+                expect(dataLayer.DFPZone).toEqual('series');
                 expect(dataLayer.author).toEqual('none');
 				expect(dataLayer.channel).toEqual('video');
 				expect(dataLayer.section).toEqual('series');
