@@ -55,19 +55,6 @@ describe('Simple Series Playlist:', function() {
 			});
 		});
         
-        xdescribe('SimpleReach', function() {
-            
-            it('should pass the right custom parameters', function() {
-                expect(browser.executeScript('return window.__reach_config.authors;')).toEqual('Lewis DVorkin'); 
-                expect(browser.executeScript('return window.__reach_config.channels;')).toEqual('business'); 
-                expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2015-06-10T14:00:00.000Z'); 
-                expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
-                expect(browser.executeScript('return window.__reach_config.tags.length;')).toEqual(13); 
-                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
-            });
-            
-        });
-        
         describe('Comscore', function() {
             var comscorepixel;
             
