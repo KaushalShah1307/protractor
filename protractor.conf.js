@@ -145,12 +145,12 @@ exports.config = {
 			exclude: [
 				'test/protractor-spec/article/article-leftrail.spec.js'
 			]
-		} 
+		}
 		 {
 		 	browserName: 'firefox',
 		 	logName: 'Desktop Firefox',
-            marionette: true
-		 }, */
+            firefoxPath: 'C:/Users/kshah/AppData/Roaming/npm/node_modules/protractor/node_modules/webdriver-manager/selenium/geckodriver-v0.17.0.exe'
+		 },*/
 	],
 	suites: {
 		article: [
