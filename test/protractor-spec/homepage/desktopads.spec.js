@@ -28,7 +28,7 @@ describe('Desktop Ads:', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["top-3-0"])[2]')).toBeGreaterThanOrEqual(1); 
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["top-3-0"])[3]')).toBeGreaterThanOrEqual(1);
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('pos%3Dtopx');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('Main%26topx%3D1');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('topx%3D1');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('sz=320x50%7C728x90%7C970x250%7C970x90%7C970x66%7C640x360%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[2].getContentUrl()')).toContain('iu=%2F7175%2Ffdc.forbes%2Fhome');
     });
@@ -47,7 +47,7 @@ describe('Desktop Ads:', function() {
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["top-7-0"])[2]')).toBeGreaterThanOrEqual(1); 
         expect(browser.executeScript('return window.Object.values(external_services.ad_slots["top-7-0"])[3]')).toBeGreaterThanOrEqual(1);
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('pos%3Dtopx');
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('Main%26topx%3D2');
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('topx%3D2');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('sz=320x50%7C728x90%7C970x250%7C970x90%7C970x66%7C640x360%7C1x1&fluid=height');
         expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[4].getContentUrl()')).toContain('iu=%2F7175%2Ffdc.forbes%2Fhome');
     });

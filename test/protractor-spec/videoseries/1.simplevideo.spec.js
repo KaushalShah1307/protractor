@@ -6,7 +6,9 @@ beforeEach(function(){
     browser.executeScript('window.localStorage.clear();');
 });
 
-var sections = element.all(by.css('.slider-container.fs-content'));
+var heroVideo = element(by.css('.fbs-slider.fbs-slider--hero.ratio16x9'));
+var latestVideoSection = element(by.css('.slider-container.fs-content'));
+var recommendedVideoSection = element(by.css('.slider-container.slider-container--recommended'));
 var heroImage = element.all(by.css('.fbs-slide__bg-image.hero__image')).first();
 var videoModal  = element(by.css('.modal__content>fbs-video'));
 var modalClose  = element(by.css('#close'));
@@ -27,17 +29,17 @@ describe('Simple Video Homepage:', function() {
     });
     
     it('should have top video promo', function() {
-        expect(sections.first().isDisplayed()).toBe(true);
+        expect(heroVideo.isDisplayed()).toBe(true);
     });
     
     it('should have latest video section', function() {
-        expect(sections.get(1).isDisplayed()).toBe(true);
+        expect(latestVideoSection.isDisplayed()).toBe(true);
         expect(element(by.css('.fbs-slider.fbs-slider--multiple.fbs-slider--latest')).getAttribute('data-in-view')).toEqual('3');
         expect(element.all(by.css('.fbs-slide__bg-image.grid__image.modal__trigger')).count()).toBeGreaterThanOrEqual(30);
     });
     
     it('should have recommended video section', function() {
-        expect(sections.get(2).isDisplayed()).toBe(true);
+        expect(recommendedVideoSection.isDisplayed()).toBe(true);
         expect(element(by.css('.fbs-slider.fbs-slider--multiple.fbs-slider--recommended')).getAttribute('data-in-view')).toEqual('4');
         expect(recommendedVideos.count()).toBeGreaterThanOrEqual(3);
     });
