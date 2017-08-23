@@ -43,7 +43,8 @@ exports.config = {
                 'test/protractor-spec/ng2article/noleftrailview-tracking.spec.js',
                 'test/protractor-spec/videoseries/2.mobileads.spec.js',
                 'test/protractor-spec/videoseries/7.mobileads.spec.js',
-                'test/protractor-spec/article/**/*.spec.js'
+                'test/protractor-spec/article/**/*.spec.js',
+                'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js'
             ]
 		},
 		{
@@ -123,7 +124,8 @@ exports.config = {
 		        'test/protractor-spec/pulse/**/*.spec.js',
                 'test/protractor-spec/mediamanager/**/*.spec.js',
                 'test/protractor-spec/videoseries/**/*.spec.js',
-                'test/protractor-spec/article/**/*.spec.js'
+                'test/protractor-spec/article/**/*.spec.js',
+                'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js'
 			]
 		},
   /*      {
@@ -277,8 +279,8 @@ exports.config = {
 //      'test/protractor-spec/angulargallery/*pagecheck.spec.js',
 //      'test/protractor-spec/angulargallery/**/*.spec.js',
 //      'test/protractor-spec/forbespress/**/*.spec.js',
-      'test/protractor-spec/amparticle/*pagecheck.spec.js',
-      'test/protractor-spec/amparticle/**/*.spec.js',
+//      'test/protractor-spec/amparticle/*pagecheck.spec.js',
+//      'test/protractor-spec/amparticle/**/*.spec.js',
 //      'test/protractor-spec/ampgallery/*pagecheck.spec.js',
 //      'test/protractor-spec/ampgallery/**/*.spec.js',
 //      'test/protractor-spec/ampvideo/*pagecheck.spec.js',
@@ -297,7 +299,7 @@ exports.config = {
 //      'test/protractor-spec/ng2brandvoicearticle/*pagecheck.spec.js',
 //      'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
 //      'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
-//      'test/protractor-spec/ng2articlechecks/**/*.spec.js',
+      'test/protractor-spec/ng2articlechecks/**/*.spec.js',
 //      'test/protractor-spec/welcomead/**/*.spec.js',
 //		'test/protractor-spec/pulse/**/*.spec.js',
 //      'test/protractor-spec/mediamanager/**/*.spec.js',
