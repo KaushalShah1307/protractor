@@ -1,5 +1,6 @@
 exports.config = {
   	baseUrl: 'https://www.forbes.com/',
+    //'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
 	getPageTimeout: 30000,
   	allScriptsTimeout: 60000,
   	framework: 'jasmine2',
@@ -125,13 +126,11 @@ exports.config = {
                 'test/protractor-spec/article/**/*.spec.js'
 			]
 		},
-/*        {
+  /*      {
             'capabilities': {
                 'browserstack.user': 'kaushalshah3',
                 'browserstack.key': 'aZuM2X6UL573W77rkbmJ',
-                'browserName': 'iPhone',
-                'platform': 'MAC',
-                'device': 'iPhone 6S Plus'
+                'browserName': 'chrome'
             }
         },
         {
@@ -278,8 +277,8 @@ exports.config = {
 //      'test/protractor-spec/angulargallery/*pagecheck.spec.js',
 //      'test/protractor-spec/angulargallery/**/*.spec.js',
 //      'test/protractor-spec/forbespress/**/*.spec.js',
-//      'test/protractor-spec/amparticle/*pagecheck.spec.js',
-//      'test/protractor-spec/amparticle/**/*.spec.js',
+      'test/protractor-spec/amparticle/*pagecheck.spec.js',
+      'test/protractor-spec/amparticle/**/*.spec.js',
 //      'test/protractor-spec/ampgallery/*pagecheck.spec.js',
 //      'test/protractor-spec/ampgallery/**/*.spec.js',
 //      'test/protractor-spec/ampvideo/*pagecheck.spec.js',
@@ -302,7 +301,7 @@ exports.config = {
 //      'test/protractor-spec/welcomead/**/*.spec.js',
 //		'test/protractor-spec/pulse/**/*.spec.js',
 //      'test/protractor-spec/mediamanager/**/*.spec.js',
-      'test/protractor-spec/videoseries/**/*.spec.js'
+//      'test/protractor-spec/videoseries/**/*.spec.js'
 	],
 	onPrepare: function() {
 		var FbsReporter = require('./reporter/custom-reporter.js');

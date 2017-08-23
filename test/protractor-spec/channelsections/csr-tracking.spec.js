@@ -50,7 +50,8 @@ describe('CSR:', function() {
 			});
 		});
         
-        describe('SimpleReach', function() {
+        //excluding SR check from HP based on https://jira.forbes.com/browse/TRACKREQ-159
+        xdescribe('SimpleReach', function() {
             var reachpixel;
             
             beforeAll(function(done) {
