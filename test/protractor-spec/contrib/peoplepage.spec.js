@@ -6,10 +6,6 @@ describe('People Pages:', function() {
             globals.pagesChecked.push(url);
         });
         
-        it('should have special slot', function() {
-            expect(browser.executeScript('return window.Object.values(__reach_config.tags)[2]')).toContain('nwmf'); 
-        });
-        
         it('should have BrandVoice Contrib styling', function() {
             var contribStyles = element(by.css('.advoice-atype'));
             expect(contribStyles.getText()).toEqual('Northwestern Mutual Contributor');
@@ -42,23 +38,10 @@ describe('People Pages:', function() {
  });
 
 describe('SimpleReach', function() {
-        var reachpixel;
-            
-            beforeAll(function(done) {
-                reachpixel = $('script#simplereach-script[src*="d8rk54i4mohrb.cloudfront.net"]');
-                reachpixel.getAttribute('src').then(function(src) {
-                    reachpixel.srcString = src;
-                    done();
-                });      
-            });
-            
-            it('should load the SimpleReach script', function() {
-                expect(reachpixel.length > 1);
-            });
             
             it('should pass the right custom parameters', function() {
-                expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Brent Schutte, CFA'); 
-                expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business'); 
+                expect(browser.executeScript('return window.__reach_config.authors;')).toEqual('Brent Schutte, CFA'); 
+                expect(browser.executeScript('return window.__reach_config.channels;')).toEqual('business'); 
                 expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2015-11-19T01:09:57.000Z'); 
                 expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
                 expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Northwestern MutualVoice - We help you Live Life Differently.');
