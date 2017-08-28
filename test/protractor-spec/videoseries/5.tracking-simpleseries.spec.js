@@ -1,4 +1,4 @@
-describe('Simple Video Homepage:', function() {
+describe('Simple Series Playlist:', function() {
 	var currentUrl;
 
 	beforeAll(function(done) {
@@ -43,28 +43,17 @@ describe('Simple Video Homepage:', function() {
 			it('should pass the right custom parameters', function() {
                 var sites = ['fdcmobile', 'fdc.forbes'];
                 expect(sites).toContain(dataLayer.DFPSite);
-                expect(dataLayer.DFPZone).toEqual('video');
+                expect(dataLayer.DFPZone).toEqual('series');
+                expect(dataLayer.author).toEqual('none');
 				expect(dataLayer.channel).toEqual('video');
-				expect(dataLayer.contentTitle).toEqual('TODO Page title');
-				expect(dataLayer.naturalID).toEqual('TODO Page Id');
+				expect(dataLayer.section).toEqual('series');
+				expect(dataLayer.naturalID).toEqual('none');
 				expect(dataLayer.primaryChannel).toEqual('video');
-				expect(dataLayer.displayedChannel).toEqual('video');
+				expect(dataLayer.primarySection).toEqual('series');
                 expect(dataLayer.pageType).toEqual('video');
+                expect(dataLayer.slot).toEqual('capone');
 			});
 		});
-        
-        xdescribe('SimpleReach', function() {
-            
-            it('should pass the right custom parameters', function() {
-                expect(browser.executeScript('return window.__reach_config.authors;')).toEqual('Lewis DVorkin'); 
-                expect(browser.executeScript('return window.__reach_config.channels;')).toEqual('business'); 
-                expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2015-06-10T14:00:00.000Z'); 
-                expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
-                expect(browser.executeScript('return window.__reach_config.tags.length;')).toEqual(13); 
-                expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever'); 
-            });
-            
-        });
         
         describe('Comscore', function() {
             var comscorepixel;
@@ -88,10 +77,10 @@ describe('Simple Video Homepage:', function() {
                 expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.authors')).toEqual('');
                 expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.domain')).toEqual('forbes.com');
                 expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.mabServer')).toEqual('mabping.chartbeat.net');
-                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.path')).toEqual('/video/');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.path')).toEqual('/series/capitalonesparkvoice/');
                 expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.pingServer')).toEqual('ping.chartbeat.net');
-                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.sections')).toEqual('');
-                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.title')).toEqual('Forbes - The Brooklyn Startup Bringing Eyewear Manufacturing Back To America');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.sections')).toEqual('video,capone');
+                expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.title.length')).toBeGreaterThan(0);
                 expect(browser.executeScript('return window.trackingService.chartbeatService.sfAsyncConfig.uid')).toBe(17493);
             });
         });

@@ -128,7 +128,7 @@ describe('Miscellaneous Checks:', function() {
     
     describe('Hamburger/Nav:', function() {
         
-        var hamburger = element(by.css('.ficon.ficon-hamburger'));
+        var hamburger = element(by.css('.inlineicon.inlineicon-hamburger'));
         var forbesLogo = element(by.css('.header__home'));
         var searchIcon = element(by.css('.search__icon'));
         

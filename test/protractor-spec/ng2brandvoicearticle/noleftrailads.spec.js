@@ -29,7 +29,7 @@ describe('NG2 Brandvoice Article Ads on Smaller Breakpoints:', function() {
     });
     
     it('should have all the ads', function() {
-        expect(browser.executeScript('return window.Object.keys(external_services.ad_slots).length')).toBeGreaterThanOrEqual(5); 
+        expect(browser.executeScript('return window.Object.keys(external_services.ad_slots).length')).toBeGreaterThanOrEqual(4); 
     });
     
     it('should not have the medianet unit', function() {
@@ -38,7 +38,7 @@ describe('NG2 Brandvoice Article Ads on Smaller Breakpoints:', function() {
     });
     
     it('should have the revcontent unit', function() {
-        expect(element.all(by.className('rc-w-30022 rc-p rc-p-pt')).first().isDisplayed()).toBe(true); 
+        expect(element.all(by.className('rc-w-16285 rc-p rc-p-pt')).first().isDisplayed()).toBe(true); 
     });
  
 });

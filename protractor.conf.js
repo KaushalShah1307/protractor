@@ -39,7 +39,10 @@ exports.config = {
                 'test/protractor-spec/ng2article/noleftrailads.spec.js',
                 'test/protractor-spec/ng2brandvoicearticle/noleftrailview.spec.js',
                 'test/protractor-spec/ng2brandvoicearticle/noleftrailads.spec.js',
-                'test/protractor-spec/ng2article/noleftrailview-tracking.spec.js'
+                'test/protractor-spec/ng2article/noleftrailview-tracking.spec.js',
+                'test/protractor-spec/videoseries/2.mobileads.spec.js',
+                'test/protractor-spec/videoseries/7.mobileads.spec.js',
+                'test/protractor-spec/article/**/*.spec.js'
             ]
 		},
 		{
@@ -70,7 +73,9 @@ exports.config = {
                 'test/protractor-spec/ng2articlechecks/**/*.spec.js',
                 'test/protractor-spec/homepage/desktopads.spec.js',
                 'test/protractor-spec/welcomead/desktoppagecheck.spec.js',
-                'test/protractor-spec/mediamanager/**/*.spec.js'
+                'test/protractor-spec/mediamanager/**/*.spec.js',
+                'test/protractor-spec/videoseries/2.desktopads.spec.js',
+                'test/protractor-spec/videoseries/6.desktopads.spec.js'
 			]
 		},
 		{
@@ -116,7 +121,8 @@ exports.config = {
                 'test/protractor-spec/welcomead/desktoppagecheck.spec.js',
 		        'test/protractor-spec/pulse/**/*.spec.js',
                 'test/protractor-spec/mediamanager/**/*.spec.js',
-                'test/protractor-spec/videoseries/**/*.spec.js'
+                'test/protractor-spec/videoseries/**/*.spec.js',
+                'test/protractor-spec/article/**/*.spec.js'
 			]
 		},
 /*        {
@@ -139,12 +145,12 @@ exports.config = {
 			exclude: [
 				'test/protractor-spec/article/article-leftrail.spec.js'
 			]
-		} 
+		}
 		 {
 		 	browserName: 'firefox',
 		 	logName: 'Desktop Firefox',
-            marionette: true
-		 }, */
+            firefoxPath: 'C:/Users/kshah/AppData/Roaming/npm/node_modules/protractor/node_modules/webdriver-manager/selenium/geckodriver-v0.17.0.exe'
+		 },*/
 	],
 	suites: {
 		article: [
@@ -279,6 +285,7 @@ exports.config = {
 //      'test/protractor-spec/ampvideo/*pagecheck.spec.js',
 //      'test/protractor-spec/ampvideo/**/*.spec.js',
 //      'test/protractor-spec/newsletters/*pagecheck.spec.js',
+//      'test/protractor-spec/legacyarticle/**/*.spec.js',
 //      'test/protractor-spec/legacyarticle/*pagecheck.spec.js',
 //      'test/protractor-spec/listprofiles/**/*.spec.js',
 //      'test/protractor-spec/listprofiles/*pagecheck.spec.js',

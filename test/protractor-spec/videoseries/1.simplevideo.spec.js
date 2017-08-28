@@ -6,8 +6,13 @@ beforeEach(function(){
     browser.executeScript('window.localStorage.clear();');
 });
 
-var topPromo = element.all(by.css('.fbs-slider__slide'));
-var heroTitle = element.all(by.css('.hero__title'));
+var heroVideo = element(by.css('.fbs-slider.fbs-slider--hero.ratio16x9'));
+var latestVideoSection = element(by.css('.slider-container.fs-content'));
+var recommendedVideoSection = element(by.css('.slider-container.slider-container--recommended'));
+var heroImage = element.all(by.css('.fbs-slide__bg-image.hero__image')).first();
+var videoModal  = element(by.css('.modal__content>fbs-video'));
+var modalClose  = element(by.css('#close'));
+var recommendedVideos = element.all(by.css('.recommended__title>a'));
 
 describe('Simple Video Homepage:', function() {
     
@@ -24,23 +29,27 @@ describe('Simple Video Homepage:', function() {
     });
     
     it('should have top video promo', function() {
-        expect(topPromo.first().isDisplayed()).toBe(true); 
+        expect(heroVideo.isDisplayed()).toBe(true);
     });
     
-    it('should have top video promo title', function() {
-        expect(heroTitle.first().isDisplayed()).toBe(true); 
-        expect(heroTitle.first().getText().length).toBeGreaterThan(0); 
-        expect(heroTitle.first().getText()).toEqual('blahblah'); 
+    it('should have latest video section', function() {
+        expect(latestVideoSection.isDisplayed()).toBe(true);
+        expect(element(by.css('.fbs-slider.fbs-slider--multiple.fbs-slider--latest')).getAttribute('data-in-view')).toEqual('3');
+        expect(element.all(by.css('.fbs-slide__bg-image.grid__image.modal__trigger')).count()).toBeGreaterThanOrEqual(30);
     });
     
-});
-
-describe('Ads', function() {
-    
-    it('should have top ad', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('scp=pos%3Dtop'); 
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('iu=7175%2Ffdc.forbes%2Fvideo'); 
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('sz=320x50%7C728x90%7C970x250%7C970x90%7C970x66%7C640x360%7C1x1&fluid=height'); 
+    it('should have recommended video section', function() {
+        expect(recommendedVideoSection.isDisplayed()).toBe(true);
+        expect(element(by.css('.fbs-slider.fbs-slider--multiple.fbs-slider--recommended')).getAttribute('data-in-view')).toEqual('4');
+        expect(recommendedVideos.count()).toBeGreaterThanOrEqual(3);
     });
+    
+    it('should click and open video modal', function() {
+        heroImage.click();
+        expect(videoModal.isDisplayed()).toBe(true);
+        //modalClose.click();
+    });
+    
+    globals.generalCheck();
     
 });

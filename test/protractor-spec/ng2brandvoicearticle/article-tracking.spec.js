@@ -42,7 +42,7 @@ describe('NG2 BrandVoiceArticle:', function() {
 
 			it('should pass the right custom parameters', function() {
                 expect(dataLayer.DFPSite).toEqual('fdc.forbes');
-                expect(dataLayer.DFPZone).toEqual('article-d-delta-u');
+                expect(dataLayer.DFPZone).toEqual('article-d');
 				expect(dataLayer.author).toEqual('qualityassuranceguest');
 				expect(dataLayer.blogType).toEqual('ad');
 				expect(dataLayer.brandVoice).toEqual('qualityassurance');
