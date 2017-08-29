@@ -9,24 +9,16 @@ describe('NG2 Article:', function() {
 	});
 
 	describe('Tracking on NG2 Articles with no Leftrail:', function() {
-		xdescribe('Fast Pixel', function() {
-			var trackingPixel;
-
-			beforeAll(function(done) {
-				trackingPixel = $('img[src*="fast.forbes.com"]');
-				trackingPixel.getAttribute('src').then(function(src) {
-					trackingPixel.srcString = src;
-					done();
-				});
-			});
-
-			it('should have the correct parameters', function() {
-				expect(globals.getParam(trackingPixel.srcString, 'su')).toContain('www.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/');
-				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual(browser.current_page.page_data.type);
-				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual(browser.current_page.page_data.naturalId);
-				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual(browser.current_page.page_data.blogType);
-				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual(browser.current_page.page_data.displayChannel);
-				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual(browser.current_page.page_data.authors[0].naturalId);
+		describe('Fast Pixel', function() {
+			
+            it('should have the correct parameters', function() {
+				expect(browser.executeScript('return window.trackingService.trackingCalls[0]["fast"].at')).toEqual('individual');
+				expect(browser.executeScript('return window.trackingService.trackingCalls[0]["fast"].au')).toEqual('blogAuthorId/blog/author/609');
+				expect(browser.executeScript('return window.trackingService.trackingCalls[0]["fast"].ch')).toEqual('business');
+				expect(browser.executeScript('return window.trackingService.trackingCalls[0]["fast"].i')).toEqual('blogAndPostId/blog/post/50-13891');
+				expect(browser.executeScript('return window.trackingService.trackingCalls[0]["fast"].mb')).toEqual('f');
+				expect(browser.executeScript('return window.trackingService.trackingCalls[0]["fast"].pt')).toEqual('blog');
+				expect(browser.executeScript('return window.trackingService.trackingCalls[0]["fast"].su')).toContain('www.forbes.com/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/');
 			});
 		});
 
