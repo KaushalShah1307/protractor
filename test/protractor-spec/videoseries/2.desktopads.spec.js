@@ -13,12 +13,12 @@ describe('Ads', function() {
     });
     
     it('should have video ad', function() {
-        expect(browser.executeScript('return window.videojs.players["brightcove_perform_0"].ima3.adsRequest.adTagUrl')).toContain('pos%3Doverlay');
+        expect(browser.executeScript('return window.videojs.players["brightcove_perform_0"].ima3.adsRequest.adTagUrl')).toContain('pos%3Dvid-overlay%');
         expect(browser.executeScript('return window.videojs.players["brightcove_perform_0"].ima3.adsRequest.adTagUrl')).toContain('sz=620x350');
         expect(browser.executeScript('return window.videojs.players["brightcove_perform_0"].ima3.adsRequest.adTagUrl')).toContain('iu=/7175/fdc.forbes/video');
-        expect(browser.executeScript('return window.videojs.players["brightcove_perform_0"].ima3.adsRequest.adTagUrl')).toContain('specialSlot%3Dkpmgsf');
+        expect(browser.executeScript('return window.videojs.players["brightcove_perform_0"].ima3.adsRequest.adTagUrl')).toContain('specialSlot%3D');
         expect(browser.executeScript('return window.videojs.players["brightcove_perform_0"].ima3.adsRequest.adTagUrl')).toContain('autoplay%3Dyes&');
-        expect(browser.executeScript('return window.videojs.players["brightcove_perform_0"].ima3.adsRequest.adTagUrl')).toContain('vid%3D5483625126001');
+        expect(browser.executeScript('return window.videojs.players["brightcove_perform_0"].ima3.adsRequest.adTagUrl')).toContain('vid%3D');
     });
     
 });

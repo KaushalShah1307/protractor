@@ -7,8 +7,8 @@ beforeEach(function(){
 });
 
 var heroVideo = element(by.css('.fbs-slider.fbs-slider--hero.ratio16x9'));
-var latestVideoSection = element(by.css('.slider-container.fs-content'));
-var recommendedVideoSection = element(by.css('.slider-container.slider-container--recommended'));
+var latestVideoSection = element.all(by.css('.fbs-slide__bg-image.grid__image.modal__trigger'));
+var latestSeriesSection = element.all(by.css('.fbs-slide__bg-image.grid__image.fs-responsive-text.fs-text-m'));
 var heroImage = element.all(by.css('.fbs-slide__bg-image.hero__image')).first();
 var videoModal  = element(by.css('.modal__content>fbs-video'));
 var modalClose  = element(by.css('#close'));
@@ -33,24 +33,14 @@ describe('Simple Video Homepage:', function() {
         expect(heroVideo.isDisplayed()).toBe(true);
     });
     
-    it('should have latest video header', function() {
-        expect(moduleNames.first()).toEqual('asdf'); 
-    });
-    
     it('should have latest video section', function() {
-        expect(latestVideoSection.isDisplayed()).toBe(true);
-        expect(element(by.css('.fbs-slider.fbs-slider--multiple.fbs-slider--latest')).getAttribute('data-in-view')).toEqual('3');
-        expect(element.all(by.css('.fbs-slide__bg-image.grid__image.modal__trigger')).count()).toBeGreaterThanOrEqual(30);
+        expect(latestVideoSection.isPresent()).toBe(true);
+        expect(latestVideoSection.count()).toBe(30);
     });
     
-    it('should have recommended video header', function() {
-        expect(moduleNames.get(1)).toEqual('asdf'); 
-    });
-    
-    it('should have recommended video section', function() {
-        expect(recommendedVideoSection.isDisplayed()).toBe(true);
-        expect(element(by.css('.fbs-slider.fbs-slider--multiple.fbs-slider--recommended')).getAttribute('data-in-view')).toEqual('4');
-        expect(recommendedVideos.count()).toBeGreaterThanOrEqual(3);
+    it('should have latest series section', function() {
+        expect(latestSeriesSection.isPresent()).toBe(true);
+        expect(latestSeriesSection.count()).toBeGreaterThanOrEqual(3);
     });
     
     it('should click and open video modal', function() {

@@ -8,7 +8,7 @@ beforeEach(function(){
 
 var heroVideo = element(by.css('#brightcove_perform_0_html5_api'));
 var fbsVideoGrid = element.all(by.css('.grid__image')).first();
-var videoEpisodesGrid = element.all(by.css('.grid__index'));
+var videoEpisodesGrid = element.all(by.css('.grid__image.modal__trigger'));
 var videoModal  = element(by.css('.modal__content>fbs-video'));
 var isMobile = browser.executeScript("return window.matchMedia('only screen and (max-width: 760px)').matches");
 
