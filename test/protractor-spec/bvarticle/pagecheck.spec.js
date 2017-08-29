@@ -1,5 +1,5 @@
 var BVArticlePage = require('./article.page.js'),
-	bvArticlePage = new BVArticlePage('/sites/ibm/2017/03/30/how-cdos-can-use-cognitive-computing-to-transform-their-businesses-qa/?view=beta-u');
+	bvArticlePage = new BVArticlePage('/sites/ibm/2017/03/30/how-cdos-can-use-cognitive-computing-to-transform-their-businesses-qa/');
 
 beforeAll(function() {
    browser.manage().addCookie({name: 'forbesbeta', value: 'A'}, {name: 'forbes_article', value: 'A'});
@@ -36,7 +36,7 @@ describe('BrandVoice Article', function() {
     });
     
     it('should have the correct zone for ads', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('article-d-delta-u'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('article-d'); 
     });
     
     it('should have mnet unit hardcoded on Mobile-Only', function() {

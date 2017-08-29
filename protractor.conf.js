@@ -44,6 +44,7 @@ exports.config = {
                 'test/protractor-spec/videoseries/2.mobileads.spec.js',
                 'test/protractor-spec/videoseries/7.mobileads.spec.js',
                 'test/protractor-spec/article/**/*.spec.js',
+                'test/protractor-spec/bvarticle/**/*.spec.js',
                 'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js'
             ]
 		},
@@ -125,6 +126,7 @@ exports.config = {
                 'test/protractor-spec/mediamanager/**/*.spec.js',
                 'test/protractor-spec/videoseries/**/*.spec.js',
                 'test/protractor-spec/article/**/*.spec.js',
+                'test/protractor-spec/bvarticle/**/*.spec.js',
                 'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js'
 			]
 		},
@@ -268,8 +270,8 @@ exports.config = {
 //		'test/protractor-spec/contrib/**/*.spec.js',
 //		'test/protractor-spec/csf/*pagecheck.spec.js',
 //		'test/protractor-spec/csf/**/*.spec.js',
-//      'test/protractor-spec/bvarticle/*pagecheck.spec.js',
-//		'test/protractor-spec/bvarticle/**/*.spec.js',
+      'test/protractor-spec/bvarticle/*pagecheck.spec.js',
+		'test/protractor-spec/bvarticle/**/*.spec.js',
 //		'test/protractor-spec/channelsections/*pagecheck.spec.js',
 //		'test/protractor-spec/channelsections/**/*.spec.js',
 //		'test/protractor-spec/search/*pagecheck.spec.js',
@@ -294,10 +296,10 @@ exports.config = {
 //      'test/protractor-spec/articlescroll/**/*.spec.js',
 //      'test/protractor-spec/mdotarticle/**/*.spec.js',
 //      'test/protractor-spec/templatesgallery/**/*.spec.js',
-      'test/protractor-spec/ng2article/*pagecheck.spec.js',
-      'test/protractor-spec/ng2article/**/*.spec.js',
-      'test/protractor-spec/ng2brandvoicearticle/*pagecheck.spec.js',
-      'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
+//      'test/protractor-spec/ng2article/*pagecheck.spec.js',
+//      'test/protractor-spec/ng2article/**/*.spec.js',
+//      'test/protractor-spec/ng2brandvoicearticle/*pagecheck.spec.js',
+//      'test/protractor-spec/ng2brandvoicearticle/**/*.spec.js',
 //      'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js',
 //      'test/protractor-spec/ng2articlechecks/**/*.spec.js',
 //      'test/protractor-spec/welcomead/**/*.spec.js',

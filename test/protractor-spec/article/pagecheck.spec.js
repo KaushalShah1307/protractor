@@ -1,5 +1,5 @@
 var ArticlePage = require('./article.page.js'),
-	articlePage = new ArticlePage('/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?view=beta-u');
+	articlePage = new ArticlePage('/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/');
 
 describe('Article:', function() {
 
@@ -41,7 +41,7 @@ describe('Article:', function() {
     });
     
     it('should have the correct zone for ads', function() {
-        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('article-d-delta-u'); 
+        expect(browser.executeScript('return window.Object.values(googletag.pubads().getSlots())[0].getContentUrl()')).toContain('article-d'); 
     });
     
     it('should have mnet unit hardcoded on Mobile-Only', function() {
