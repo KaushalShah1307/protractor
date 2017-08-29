@@ -9,24 +9,16 @@ describe('NG2 BrandVoiceArticle:', function() {
 	});
 
 	describe('Tracking on Articles:', function() {
-		describe('Fast Pixel', function() {
-			var trackingPixel;
-
-			beforeAll(function(done) {
-				trackingPixel = $('img[src*="fast.forbes.com"]');
-				trackingPixel.getAttribute('src').then(function(src) {
-					trackingPixel.srcString = src;
-					done();
-				});
-			});
-
-			xit('should have the correct parameters', function() {
-				//expect(globals.getParam(trackingPixel.srcString, 'su')).toEqual(currentUrl.replace(browser.baseUrl, "http://www-staging.forbes.com/"));
-				expect(globals.getParam(trackingPixel.srcString, 'pt')).toEqual(browser.current_page.page_data.type);
-				expect(globals.getParam(trackingPixel.srcString, 'i')).toEqual(browser.current_page.page_data.naturalId);
-				expect(globals.getParam(trackingPixel.srcString, 'at')).toEqual(browser.current_page.page_data.blogType);
-				expect(globals.getParam(trackingPixel.srcString, 'ch')).toEqual(browser.current_page.page_data.displayChannel);
-				expect(globals.getParam(trackingPixel.srcString, 'au')).toEqual(browser.current_page.page_data.authors[0].naturalId);
+        describe('Fast Pixel', function() {
+			
+            it('should have the correct parameters', function() {
+				expect(browser.executeScript('return window.trackingService.trackingCalls[0]["fast"].at')).toEqual('ad');
+				expect(browser.executeScript('return window.trackingService.trackingCalls[0]["fast"].au')).toEqual('blogAuthorId/blog/author/1965859');
+				expect(browser.executeScript('return window.trackingService.trackingCalls[0]["fast"].ch')).toEqual('business');
+				expect(browser.executeScript('return window.trackingService.trackingCalls[0]["fast"].i')).toEqual('blogAndPostId/blog/post/4248-455');
+				expect(browser.executeScript('return window.trackingService.trackingCalls[0]["fast"].mb')).toEqual('f');
+				expect(browser.executeScript('return window.trackingService.trackingCalls[0]["fast"].pt')).toEqual('blog');
+				expect(browser.executeScript('return window.trackingService.trackingCalls[0]["fast"].su')).toContain('www.forbes.com/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/');
 			});
 		});
 
