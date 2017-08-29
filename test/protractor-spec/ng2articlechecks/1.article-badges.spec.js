@@ -3,20 +3,20 @@ var ArticlePage = require('./article.page.js'),
 
 describe('Article Badges:', function() {
     
-        xdescribe('Editors Pick:', function() {
+        describe('Editors Pick:', function() {
 
             it('should get the page', function() {
                 articlePage.get();
             });
 
-            xit('should have the editors pick badge', function() {
+            it('should have the editors pick badge', function() {
                 var editorsPickBadge = element(by.css('.editors-pick'));
                 expect(editorsPickBadge.isPresent()).toBe(true);
                 expect(editorsPickBadge.getAttribute('href')).toEqual('https://www.forbes.com/editors-picks/');
             });
         });
         
-        xdescribe('Forbes on Trump:', function() {
+        describe('Forbes on Trump:', function() {
 
             it('should have the Forbes on Trump badge', function() {
                 var forbesOnTrump = element.all(by.css('.forbes-on-trump.fs-text-xxs')).get(1);
@@ -25,7 +25,7 @@ describe('Article Badges:', function() {
             });
         });
         
-        xdescribe('Forbes at 100:', function() {
+        describe('Forbes at 100:', function() {
 
             it('should have the Forbes at 100 badge', function() {
                 var forbesAt100 = element.all(by.css('.forbes-100')).get(1);
@@ -35,7 +35,7 @@ describe('Article Badges:', function() {
             });
         });
         
-        xdescribe('Women at Forbes:', function() {
+        describe('Women at Forbes:', function() {
             
             it('should get the page', function() {
                 var url = 'https://www.forbes.com/sites/katepierce/2015/05/26/taylor-swift-beyonce-and-the-most-powerful-women-in-entertainment/?view=prod';
@@ -53,7 +53,7 @@ describe('Article Badges:', function() {
             });
         });
         
-        xdescribe('Most Popular:', function() {
+        describe('Most Popular:', function() {
             
             it('should get the page', function() {
                 var url = 'https://www.forbes.com/sites/gordonkelly/2017/05/21/apple-leak-iphone-8-price-increase/?view=prod';
