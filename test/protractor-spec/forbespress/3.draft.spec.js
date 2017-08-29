@@ -12,6 +12,8 @@ describe('Compose Draft:', function() {
    var mediaToggle = element(by.css('.toggle'));
    var addMedia = element(by.css('.add-image.toggleable'));
    var addVideo = element(by.css('.add-video.toggleable'));
+   var searchInput = element(by.tagName('input'));
+   var paragraphs = element.all(by.css('.ql-editor>p'));
    var isMobile = browser.executeScript("return window.matchMedia('only screen and (max-width: 760px)').matches");
     
    it('should click create button', function() {
@@ -43,7 +45,7 @@ describe('Compose Draft:', function() {
    });
     
    it('should add body text', function() {
-       articleBody.sendKeys('Protractor added this text and it should serve as article body.\n');   
+       articleBody.sendKeys('https://www.youtube.com/watch?v=mI2dDwWaNUY \nProtractor added this text and it should serve as article body.\nProtractor added this text and it should serve as article body.\nProtractor added this text and it should serve as article body.\n');
    });
     
    it('should click to save the draft', function() {
@@ -85,7 +87,7 @@ describe('Compose Draft:', function() {
     
         it('should have excerpt', function() {
            excerpt.click();
-           excerpt.sendKeys('This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.');
+           excerpt.sendKeys('This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor.This is an excerpt entered using protractor. \n');
            var counter = element(by.css('.tray>app-excerpt>span'));
            expect(counter.getText()).toBe('-8');
            expect(browser.executeScript("return window.getComputedStyle(document.querySelector('.tray>app-excerpt>span')).getPropertyValue('color')")).toEqual('rgb(240, 34, 46)');
@@ -97,39 +99,6 @@ describe('Compose Draft:', function() {
        
         it('should close the meta box', function() {
            publishButton.first().click(); 
-        });
-       
-   });
-    
-   describe('Image Library:', function() {
-       
-        it('should toggle media options', function() {
-            if (isMobile===false) {
-               mediaToggle.click();
-               expect(addMedia.isDisplayed()).toBe(true);
-               expect(addVideo.isDisplayed()).toBe(true);
-            } else if (isMobile===true) {
-               expect(addMedia.isDisplayed()).toBe(false);
-               expect(addVideo.isDisplayed()).toBe(false);
-            };
-        });
-
-        it('should add image', function() {
-            if (isMobile===false) {
-               addMedia.click();
-               expect(element(by.tagName('app-photo-manager')).isDisplayed()).toBe(true);
-            } else if (isMobile===true) {
-               expect(isMobile).toBe(true);
-            };
-        });
-
-        it('should have image sources', function() {
-            if (isMobile===false) {
-               var sources = ['Getty', 'AP', 'Bloommberg', 'Shutterstock'];
-               expect(sources).toContain(element.all(by.css('.hoverdiv.sources>ul>li')));
-            } else if (isMobile===true) {
-               expect(isMobile).toBe(true);
-            };
         });
        
    });
