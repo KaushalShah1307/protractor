@@ -152,8 +152,8 @@ describe('Next Gallery Slide:', function() {
         describe('Simple Reach:', function() {
            
             it('should pass the right custom parameters', function() {
-                expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Kurt Badenhausen'); 
-                expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business'); 
+                expect(browser.executeScript('return window.__reach_config.authors;')).toEqual('Kurt Badenhausen'); 
+                expect(browser.executeScript('return window.__reach_config.channels;')).toEqual('business'); 
                 expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2015-08-12T14:00:00Z'); 
                 expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
                 expect(browser.executeScript('return window.__reach_config.title;')).toEqual("The World's Highest-Paid Female Athletes 2015 -Gallery"); 
