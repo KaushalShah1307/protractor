@@ -1,6 +1,6 @@
 var SimpleSeries = function() {
   this.get = function() {
-    browser.get('/series/capitalonesparkvoice/?view=simple-site', 5000);
+    browser.get('/series/capitalonesparkvoice/', 5000);
     browser.ignoreSynchronization = true;
     browser.getCurrentUrl().then(function(url) {
 		browser.current_url = url;
