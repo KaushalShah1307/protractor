@@ -128,14 +128,14 @@ exports.config = {
                 'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js'
 			]
 		},
-  /*      {
+ /*       {
             'capabilities': {
                 'browserstack.user': 'kaushalshah3',
                 'browserstack.key': 'aZuM2X6UL573W77rkbmJ',
                 'browserName': 'chrome'
             }
         },
-        {
+ /*       {
 			browserName: 'chrome',
 			logName: 'iPad Chrome',
 			chromeOptions: {
@@ -278,9 +278,9 @@ exports.config = {
 //      'test/protractor-spec/homepage/**/*.spec.js',
 //      'test/protractor-spec/angulargallery/*pagecheck.spec.js',
 //      'test/protractor-spec/angulargallery/**/*.spec.js',
-      'test/protractor-spec/forbespress/**/*.spec.js',
-//      'test/protractor-spec/amparticle/*pagecheck.spec.js',
-//      'test/protractor-spec/amparticle/**/*.spec.js',
+//      'test/protractor-spec/forbespress/**/*.spec.js',
+      'test/protractor-spec/amparticle/*pagecheck.spec.js',
+      'test/protractor-spec/amparticle/**/*.spec.js',
 //      'test/protractor-spec/ampgallery/*pagecheck.spec.js',
 //      'test/protractor-spec/ampgallery/**/*.spec.js',
 //      'test/protractor-spec/ampvideo/*pagecheck.spec.js',
