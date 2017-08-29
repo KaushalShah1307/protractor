@@ -19,7 +19,7 @@ describe('Welcome Ad:', function() {
     });
     
     it('should have the continue to site countdown', function(){
-        expect(element(by.css('.lead')).isPresent()).toBe(true); 
+        expect(element(by.css('.lead')).isPresent()).toBe(false); 
     });
     
     it('should have the Forbes branding logo', function() {
