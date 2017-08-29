@@ -1,6 +1,6 @@
 var ArticlePage = function() {
 	this.get = function() {
-    browser.get('/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?view=prod');
+    browser.get('/sites/qualityassurance/2008/03/09/testing-angular-js-apps-with-protractor/?backend=ng');
     //browser.ignoreSynchronization = true;
     browser.getCurrentUrl().then(function(url) {
 		browser.current_url = url;
