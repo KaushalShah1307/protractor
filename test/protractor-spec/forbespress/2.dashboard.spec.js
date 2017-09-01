@@ -16,7 +16,7 @@ describe('Dashboard:', function() {
         var hamburger = element(by.css('.icon.icon-hamburger.menu-icon'));
         var menuItems = element.all(by.css('.fp-dropdown.open>ul>li'));
         hamburger.click();
-        expect(menuItems.first().isDisplayed()).toBe(true);
+        expect(menuItems.first().isPresent()).toBe(true);
         expect(menuItems.first().getText()).toEqual('Dashboard');
         hamburger.click();
     });

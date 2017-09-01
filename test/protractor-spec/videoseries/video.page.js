@@ -1,6 +1,6 @@
 var SimpleVideo = function() {
   this.get = function() {
-    browser.get('/video/?view=simple-site', 5000);
+    browser.get('/video/', 5000);
     browser.ignoreSynchronization = true;
     browser.getCurrentUrl().then(function(url) {
 		browser.current_url = url;

@@ -51,19 +51,6 @@ describe('CSF:', function() {
 		});
         
         describe('SimpleReach', function() {
-            var reachpixel;
-            
-            beforeAll(function(done) {
-                reachpixel = $('script#simplereach-script[src*="d8rk54i4mohrb.cloudfront.net"]');
-                reachpixel.getAttribute('src').then(function(src) {
-                    reachpixel.srcString = src;
-                    done();
-                });      
-            });
-            
-            it('should load the SimpleReach script', function() {
-                expect(reachpixel.length > 1);
-            });
             
             it('should pass the right custom parameters', function() {
                 expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2015-07-08T20:11:56.145Z'); 

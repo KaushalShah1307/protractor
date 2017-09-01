@@ -60,23 +60,10 @@ describe('ContribHP:', function() {
 		});
         
         describe('SimpleReach', function() {
-            var reachpixel;
-            
-            beforeAll(function(done) {
-                reachpixel = $('script#simplereach-script[src*="d8rk54i4mohrb.cloudfront.net"]');
-                reachpixel.getAttribute('src').then(function(src) {
-                    reachpixel.srcString = src;
-                    done();
-                });      
-            });
-            
-            it('should load the SimpleReach script', function() {
-                expect(reachpixel.length > 1);
-            });
             
             it('should pass the right custom parameters', function() {
-                expect(browser.executeScript('return window.__reach_config.authors[0];')).toEqual('Northwestern Mutual'); 
-                expect(browser.executeScript('return window.__reach_config.channels[0];')).toEqual('business'); 
+                expect(browser.executeScript('return window.__reach_config.authors;')).toEqual('Northwestern Mutual'); 
+                expect(browser.executeScript('return window.__reach_config.channels;')).toEqual('business'); 
                 expect(browser.executeScript('return window.__reach_config.date;')).toEqual('2013-03-19T18:40:15.000Z'); 
                 expect(browser.executeScript('return window.__reach_config.pid;')).toEqual('50e4a8434240cf5c4b000009'); 
                 expect(browser.executeScript('return window.__reach_config.title;')).toEqual('Northwestern MutualVoice - We help you Live Life Differently.');

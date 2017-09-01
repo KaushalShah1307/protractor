@@ -1,7 +1,7 @@
 describe('Capital One Article:', function() {
         
    it('should get the page', function() {
-        var url = 'https://www.forbes.com/sites/capitalone/2017/08/07/a-conversation-on-ai-machine-learning/?view=prod';
+        var url = 'https://www.forbes.com/sites/capitalone/2017/08/07/a-conversation-on-ai-machine-learning/';
         browser.get(url);
         globals.pagesChecked.push(url);
     });

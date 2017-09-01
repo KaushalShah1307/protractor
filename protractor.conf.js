@@ -1,6 +1,6 @@
 exports.config = {
   	baseUrl: 'https://www.forbes.com/',
-//    'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
+    //'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
 	getPageTimeout: 30000,
   	allScriptsTimeout: 60000,
   	framework: 'jasmine2',
@@ -43,7 +43,9 @@ exports.config = {
                 'test/protractor-spec/ng2article/noleftrailview-tracking.spec.js',
                 'test/protractor-spec/videoseries/2.mobileads.spec.js',
                 'test/protractor-spec/videoseries/7.mobileads.spec.js',
-                'test/protractor-spec/article/**/*.spec.js'
+                'test/protractor-spec/article/**/*.spec.js',
+                'test/protractor-spec/bvarticle/**/*.spec.js',
+                'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js'
             ]
 		},
 		{
@@ -123,17 +125,16 @@ exports.config = {
 		        'test/protractor-spec/pulse/**/*.spec.js',
                 'test/protractor-spec/mediamanager/**/*.spec.js',
                 'test/protractor-spec/videoseries/**/*.spec.js',
-                'test/protractor-spec/article/**/*.spec.js'
+                'test/protractor-spec/article/**/*.spec.js',
+                'test/protractor-spec/bvarticle/**/*.spec.js',
+                'test/protractor-spec/ng2articlechecks/*pagecheck.spec.js'
 			]
 		},
-/*        {
+ /*       {
             'capabilities': {
                 'browserstack.user': 'kaushalshah3',
                 'browserstack.key': 'aZuM2X6UL573W77rkbmJ',
-                'browserName': 'chrome'
-                //'platform': 'MAC',
-                //'device': 'iPhone 6S Plus'
-            }
+                'browserName': 'chrome'}
         },
  /*       {
 			browserName: 'chrome',

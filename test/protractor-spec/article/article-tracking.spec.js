@@ -43,7 +43,7 @@ describe('Article:', function() {
 			it('should pass the right custom parameters', function() {
 				var sites = ['fdcmobile', 'fdc.forbes'];
                 expect(sites).toContain(dataLayer.DFPSite);
-                expect(dataLayer.DFPZone).toEqual('article-d-delta-u');
+                expect(dataLayer.DFPZone).toEqual('article-d');
 				expect(dataLayer.author).toEqual('Lewis DVorkin');
 				expect(dataLayer.channel).toEqual('business');
                 expect(dataLayer.section).toEqual('lewisdvorkinblog');
@@ -56,19 +56,6 @@ describe('Article:', function() {
 		});
         
         describe('SimpleReach', function() {
-            var reachpixel;
-            
-            beforeAll(function(done) {
-                reachpixel = $('script#simplereach-script[src*="d8rk54i4mohrb.cloudfront.net"]');
-                reachpixel.getAttribute('src').then(function(src) {
-                    reachpixel.srcString = src;
-                    done();
-                });      
-            });
-            
-            it('should load the SimpleReach script', function() {
-                expect(reachpixel.length > 1);
-            });
             
             it('should pass the right custom parameters', function() {
                 expect(browser.executeScript('return window.__reach_config.authors;')).toEqual('Lewis DVorkin'); 

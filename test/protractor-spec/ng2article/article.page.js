@@ -1,6 +1,6 @@
 var ArticlePage = function() {
 	this.get = function() {
-    browser.get('/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?view=prod');
+    browser.get('/sites/lewisdvorkin/2015/06/10/inside-forbes-the-unstoppable-force-that-will-change-the-news-industry-forever/?backend=ng');
     //browser.ignoreSynchronization = true;
     browser.getCurrentUrl().then(function(url) {
 		browser.current_url = url;

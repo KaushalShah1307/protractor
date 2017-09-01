@@ -66,11 +66,13 @@ describe('AMP Article:', function() {
             
             it('should pass the right custom parameters', function() {
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[16].innerText))[0].authors[0]')).toEqual('Lewis DVorkin');
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[16].innerText))[0].article_id')).toEqual('blogAndPostId/blog/post/50-13891');
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[16].innerText))[0].categories[0]')).toEqual('business');
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[16].innerText))[0].pid')).toEqual('50e4a8434240cf5c4b000009');
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[16].innerText))[0].published_at')).toEqual('2015-06-10T14:00:00Z');
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[16].innerText))[0].title')).toEqual('Inside Forbes: The Unstoppable Force That Will Change The News Industry Forever');
                 expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[16].innerText))[0].tags.length')).toBe(13);          
+                expect(browser.executeScript('return window.Object.values(JSON.parse(window.document.scripts[16].innerText))[0].ignore_metadata')).toBe(true);          
 			});
             
         });
