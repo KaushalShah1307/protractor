@@ -1,4 +1,4 @@
-Forbes Protractor
+Protractor - Automated Testing Framework
 ========
 
 # Dependencies
