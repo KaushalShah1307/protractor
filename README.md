@@ -14,11 +14,11 @@ Protractor - Automated Testing Framework
  
 3. Clone repo to a local directory:
 
- ```git clone git@github.forbes.com:AutomatedTests/protractor-tests.git```
+ ```git clone git@github.com:KaushalShah1307/protractor.git```
 
 4. From the Terminal, navigate to the project directory and run in the following order:
 
  ```npm install```
 
 5. Run
-  ```protractor protractor.spec.js --baseUrl http://www.forbes.com```
+  ```protractor protractor.spec.js --baseUrl http://www.google.com```

@@ -21,7 +21,7 @@ var FbsReporter = {
 		suiteInfo.user = process.env.USERNAME;
 		browser.getProcessedConfig().then(function(config) {
 			suiteInfo.browser = currentConfig = config.capabilities;
-			suiteInfo.environment = environmentName = config.baseUrl.replace("http://","").replace(".forbes.com","").replace("/","");
+			suiteInfo.environment = environmentName = config.baseUrl.replace("http://","").replace(".google.com","").replace("/","");
 		}).then(function() {
 			environmentRef = Firebase.database().ref(environmentName);
 			environmentRef.child('lastSession').once("value", function(lastSession) {
@@ -74,7 +74,7 @@ var FbsReporter = {
 	},
 
 	jasmineDone: function(suiteInfo) {
-		var from_server = process.env.USERNAME === 'bpoon',
+		var from_server = process.env.USERNAME === 'kshah',
 			destination = {
 				slack: from_server ? '%23protractor' : ('@' + process.env.USERNAME),
 				email: from_server ? 'kaushalshah1307@gmail.com' : process.env.USERNAME + '@gmail.com, kaushalshah1307@gmail.com'
