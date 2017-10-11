@@ -1,5 +1,5 @@
 exports.config = {
-  	baseUrl: 'https://www.forbes.com/',
+  	baseUrl: 'https://www.google.com/',
     //'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
 	getPageTimeout: 30000,
   	allScriptsTimeout: 60000,
