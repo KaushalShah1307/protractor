@@ -133,8 +133,8 @@ exports.config = {
 		},
  /*       {
             'capabilities': {
-                'browserstack.user': 'kaushalshah3',
-                'browserstack.key': 'aZuM2X6UL573W77rkbmJ',
+                'browserstack.user': '{replace with your browserstack ID}',
+                'browserstack.key': '{replace with your browserstack integration key}',
                 'browserName': 'chrome'}
         },
  /*       {
